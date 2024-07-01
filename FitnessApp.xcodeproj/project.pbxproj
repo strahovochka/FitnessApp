@@ -13,10 +13,10 @@
 		046B124F2C30BAE10095ECC7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B124E2C30BAE10095ECC7 /* HomeViewController.swift */; };
 		046B12512C30BB170095ECC7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12502C30BB170095ECC7 /* BaseViewController.swift */; };
 		046B12532C30BBFE0095ECC7 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12522C30BBFE0095ECC7 /* AppCoordinator.swift */; };
-		046B12552C30BE900095ECC7 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12542C30BE900095ECC7 /* Storyboarded.swift */; };
 		046B12572C30C2690095ECC7 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046B12562C30C2690095ECC7 /* Home.storyboard */; };
 		046B12592C30C2770095ECC7 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12582C30C2770095ECC7 /* HomeCoordinator.swift */; };
 		046B125B2C30C2860095ECC7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B125A2C30C2860095ECC7 /* HomeViewModel.swift */; };
+		046B12602C32BAD10095ECC7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B125F2C32BAD10095ECC7 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,10 +28,10 @@
 		046B124E2C30BAE10095ECC7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		046B12502C30BB170095ECC7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		046B12522C30BBFE0095ECC7 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		046B12542C30BE900095ECC7 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		046B12562C30C2690095ECC7 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		046B12582C30C2770095ECC7 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		046B125A2C30C2860095ECC7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		046B125F2C32BAD10095ECC7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +80,6 @@
 				046B12342C3084BD0095ECC7 /* AppDelegate.swift */,
 				046B12362C3084BD0095ECC7 /* SceneDelegate.swift */,
 				046B12522C30BBFE0095ECC7 /* AppCoordinator.swift */,
-				046B12542C30BE900095ECC7 /* Storyboarded.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -96,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				046B12502C30BB170095ECC7 /* BaseViewController.swift */,
+				046B125F2C32BAD10095ECC7 /* Coordinator.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -188,7 +188,7 @@
 				046B12352C3084BD0095ECC7 /* AppDelegate.swift in Sources */,
 				046B12592C30C2770095ECC7 /* HomeCoordinator.swift in Sources */,
 				046B12372C3084BD0095ECC7 /* SceneDelegate.swift in Sources */,
-				046B12552C30BE900095ECC7 /* Storyboarded.swift in Sources */,
+				046B12602C32BAD10095ECC7 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +320,6 @@
 				INFOPLIST_FILE = FitnessApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -347,7 +346,6 @@
 				INFOPLIST_FILE = FitnessApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

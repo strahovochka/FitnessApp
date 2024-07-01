@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class HomeViewController: BaseViewController, Storyboarded {
+class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -7,13 +7,6 @@
 
 import UIKit
 
-protocol Coordinator: AnyObject {
-    var childCoordinators: [Coordinator] { get set }
-    var navigationController: UINavigationController { get }
-    
-    func start()
-}
-
 class AppCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = [Coordinator]()
     var navigationController: UINavigationController
@@ -23,8 +16,7 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = HomeViewController.instantiate()
-        navigationController.pushViewController(vc, animated: true)
+        self.homeFlow()
     }
     
     func childDidFinish(_ child: Coordinator) {
@@ -34,5 +26,11 @@ class AppCoordinator: Coordinator {
                 break
             }
         }
+    }
+    
+    func homeFlow() {
+        let child = HomeCoordinator(navigationController: navigationController)
+        childCoordinators.append(child)
+        child.start()
     }
 }
