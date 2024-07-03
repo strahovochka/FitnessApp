@@ -17,6 +17,7 @@
 		046B12592C30C2770095ECC7 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12582C30C2770095ECC7 /* HomeCoordinator.swift */; };
 		046B125B2C30C2860095ECC7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B125A2C30C2860095ECC7 /* HomeViewModel.swift */; };
 		046B12602C32BAD10095ECC7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B125F2C32BAD10095ECC7 /* Coordinator.swift */; };
+		046B12652C3407AB0095ECC7 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12642C3407AB0095ECC7 /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		046B12582C30C2770095ECC7 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		046B125A2C30C2860095ECC7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		046B125F2C32BAD10095ECC7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		046B12642C3407AB0095ECC7 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +66,12 @@
 		046B12332C3084BD0095ECC7 /* FitnessApp */ = {
 			isa = PBXGroup;
 			children = (
+				046B12632C3402BF0095ECC7 /* UIComponents */,
+				046B12622C3402B20095ECC7 /* Extensions */,
+				046B12612C3402980095ECC7 /* Resources */,
 				046B12482C30BA480095ECC7 /* Application */,
 				046B12492C30BA530095ECC7 /* API */,
 				046B124A2C30BA590095ECC7 /* Base */,
-				046B123D2C3084BF0095ECC7 /* Assets.xcassets */,
 				046B12422C3084BF0095ECC7 /* Info.plist */,
 			);
 			path = FitnessApp;
@@ -109,6 +113,29 @@
 				046B125A2C30C2860095ECC7 /* HomeViewModel.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		046B12612C3402980095ECC7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				046B123D2C3084BF0095ECC7 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		046B12622C3402B20095ECC7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				046B12642C3407AB0095ECC7 /* UIColor+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		046B12632C3402BF0095ECC7 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +211,7 @@
 				046B12532C30BBFE0095ECC7 /* AppCoordinator.swift in Sources */,
 				046B125B2C30C2860095ECC7 /* HomeViewModel.swift in Sources */,
 				046B12512C30BB170095ECC7 /* BaseViewController.swift in Sources */,
+				046B12652C3407AB0095ECC7 /* UIColor+Extension.swift in Sources */,
 				046B124F2C30BAE10095ECC7 /* HomeViewController.swift in Sources */,
 				046B12352C3084BD0095ECC7 /* AppDelegate.swift in Sources */,
 				046B12592C30C2770095ECC7 /* HomeCoordinator.swift in Sources */,
