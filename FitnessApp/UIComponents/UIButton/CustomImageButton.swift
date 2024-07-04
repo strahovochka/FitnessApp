@@ -10,20 +10,20 @@ import UIKit
 class CustomImageButton: UIButton {
     
     private var tapped: Bool = false
-    weak var unfilledImage: UIImage?
-    weak var filledImage: UIImage?
+    @IBInspectable weak var unfilledImage: UIImage?
+    @IBInspectable weak var filledImage: UIImage?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.config()
+        self.configUI()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.config()
+        self.configUI()
     }
     
-    func config() {
+    private func configUI() {
         var buttonConfig = UIButton.Configuration.plain()
         buttonConfig.baseForegroundColor = .clear
         self.setTitle("", for: .normal)
@@ -41,5 +41,12 @@ class CustomImageButton: UIButton {
             self.setImage(filledImage, for: .normal)
             tapped.toggle()
         }
+    }
+    
+    func setImaged(filled: UIImage?, unfilled: UIImage?) {
+        self.unfilledImage = unfilled
+        self.filledImage = filled
+        self.configUI()
+        self.updateConfiguration()
     }
 }

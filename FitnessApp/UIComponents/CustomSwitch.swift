@@ -7,7 +7,6 @@
 
 import UIKit
 
-@IBDesignable
 final class CustomSwitch: UISwitch {
 
     override init(frame: CGRect) {

@@ -18,15 +18,14 @@
 		046B125B2C30C2860095ECC7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B125A2C30C2860095ECC7 /* HomeViewModel.swift */; };
 		046B12602C32BAD10095ECC7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B125F2C32BAD10095ECC7 /* Coordinator.swift */; };
 		046B12652C3407AB0095ECC7 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12642C3407AB0095ECC7 /* UIColor+Extension.swift */; };
-		046B12692C3575480095ECC7 /* FilledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12682C3575480095ECC7 /* FilledButton.swift */; };
 		046B126B2C35F40B0095ECC7 /* CustomImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B126A2C35F40B0095ECC7 /* CustomImageButton.swift */; };
 		046B126F2C35FD9B0095ECC7 /* PlainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B126E2C35FD9B0095ECC7 /* PlainButton.swift */; };
-		046B12712C35FE850095ECC7 /* UnfilledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12702C35FE850095ECC7 /* UnfilledButton.swift */; };
-		046B12732C35FFE30095ECC7 /* UnfilledAlertButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12722C35FFE30095ECC7 /* UnfilledAlertButton.swift */; };
-		046B12772C3602070095ECC7 /* CheckboxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12762C3602070095ECC7 /* CheckboxButton.swift */; };
 		046B12792C3602910095ECC7 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12782C3602910095ECC7 /* UIImage+Extension.swift */; };
-		046B127B2C3608750095ECC7 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B127A2C3608750095ECC7 /* RadioButton.swift */; };
 		046B12832C3615760095ECC7 /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12822C3615760095ECC7 /* CustomSwitch.swift */; };
+		046B12882C3689870095ECC7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12872C3689860095ECC7 /* CustomTextField.swift */; };
+		046B128A2C3689930095ECC7 /* CustomTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046B12892C3689930095ECC7 /* CustomTextField.xib */; };
+		046B128B2C36D1B90095ECC7 /* SairaRoman-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 046B126D2C35FADC0095ECC7 /* SairaRoman-Regular.ttf */; };
+		046B128D2C36D3630095ECC7 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B128C2C36D3630095ECC7 /* UIFont+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,16 +42,14 @@
 		046B125A2C30C2860095ECC7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		046B125F2C32BAD10095ECC7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		046B12642C3407AB0095ECC7 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		046B12682C3575480095ECC7 /* FilledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledButton.swift; sourceTree = "<group>"; };
 		046B126A2C35F40B0095ECC7 /* CustomImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageButton.swift; sourceTree = "<group>"; };
-		046B126D2C35FADC0095ECC7 /* Saira-Font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Font.ttf"; sourceTree = "<group>"; };
+		046B126D2C35FADC0095ECC7 /* SairaRoman-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SairaRoman-Regular.ttf"; sourceTree = "<group>"; };
 		046B126E2C35FD9B0095ECC7 /* PlainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainButton.swift; sourceTree = "<group>"; };
-		046B12702C35FE850095ECC7 /* UnfilledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnfilledButton.swift; sourceTree = "<group>"; };
-		046B12722C35FFE30095ECC7 /* UnfilledAlertButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnfilledAlertButton.swift; sourceTree = "<group>"; };
-		046B12762C3602070095ECC7 /* CheckboxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxButton.swift; sourceTree = "<group>"; };
 		046B12782C3602910095ECC7 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
-		046B127A2C3608750095ECC7 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		046B12822C3615760095ECC7 /* CustomSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitch.swift; sourceTree = "<group>"; };
+		046B12872C3689860095ECC7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		046B12892C3689930095ECC7 /* CustomTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextField.xib; sourceTree = "<group>"; };
+		046B128C2C36D3630095ECC7 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +82,6 @@
 		046B12332C3084BD0095ECC7 /* FitnessApp */ = {
 			isa = PBXGroup;
 			children = (
-				046B126C2C35FAB80095ECC7 /* Fonts */,
 				046B12632C3402BF0095ECC7 /* UIComponents */,
 				046B12622C3402B20095ECC7 /* Extensions */,
 				046B12612C3402980095ECC7 /* Resources */,
@@ -138,6 +134,7 @@
 		046B12612C3402980095ECC7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				046B126C2C35FAB80095ECC7 /* Fonts */,
 				046B123D2C3084BF0095ECC7 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -148,6 +145,7 @@
 			children = (
 				046B12642C3407AB0095ECC7 /* UIColor+Extension.swift */,
 				046B12782C3602910095ECC7 /* UIImage+Extension.swift */,
+				046B128C2C36D3630095ECC7 /* UIFont+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -155,6 +153,7 @@
 		046B12632C3402BF0095ECC7 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				046B12862C3689660095ECC7 /* UITextField */,
 				046B12672C3575210095ECC7 /* UIButton */,
 				046B12822C3615760095ECC7 /* CustomSwitch.swift */,
 			);
@@ -164,8 +163,8 @@
 		046B12672C3575210095ECC7 /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
-				046B12752C36007B0095ECC7 /* ImageButtons */,
-				046B12742C3600680095ECC7 /* PlainButtons */,
+				046B126A2C35F40B0095ECC7 /* CustomImageButton.swift */,
+				046B126E2C35FD9B0095ECC7 /* PlainButton.swift */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -173,30 +172,18 @@
 		046B126C2C35FAB80095ECC7 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				046B126D2C35FADC0095ECC7 /* Saira-Font.ttf */,
+				046B126D2C35FADC0095ECC7 /* SairaRoman-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		046B12742C3600680095ECC7 /* PlainButtons */ = {
+		046B12862C3689660095ECC7 /* UITextField */ = {
 			isa = PBXGroup;
 			children = (
-				046B126E2C35FD9B0095ECC7 /* PlainButton.swift */,
-				046B12682C3575480095ECC7 /* FilledButton.swift */,
-				046B12702C35FE850095ECC7 /* UnfilledButton.swift */,
-				046B12722C35FFE30095ECC7 /* UnfilledAlertButton.swift */,
+				046B12872C3689860095ECC7 /* CustomTextField.swift */,
+				046B12892C3689930095ECC7 /* CustomTextField.xib */,
 			);
-			path = PlainButtons;
-			sourceTree = "<group>";
-		};
-		046B12752C36007B0095ECC7 /* ImageButtons */ = {
-			isa = PBXGroup;
-			children = (
-				046B126A2C35F40B0095ECC7 /* CustomImageButton.swift */,
-				046B12762C3602070095ECC7 /* CheckboxButton.swift */,
-				046B127A2C3608750095ECC7 /* RadioButton.swift */,
-			);
-			path = ImageButtons;
+			path = UITextField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +244,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046B128B2C36D1B90095ECC7 /* SairaRoman-Regular.ttf in Resources */,
 				046B123E2C3084BF0095ECC7 /* Assets.xcassets in Resources */,
 				046B12572C30C2690095ECC7 /* Home.storyboard in Resources */,
+				046B128A2C3689930095ECC7 /* CustomTextField.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,18 +259,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				046B12532C30BBFE0095ECC7 /* AppCoordinator.swift in Sources */,
-				046B12712C35FE850095ECC7 /* UnfilledButton.swift in Sources */,
 				046B12832C3615760095ECC7 /* CustomSwitch.swift in Sources */,
 				046B125B2C30C2860095ECC7 /* HomeViewModel.swift in Sources */,
+				046B128D2C36D3630095ECC7 /* UIFont+Extension.swift in Sources */,
 				046B12512C30BB170095ECC7 /* BaseViewController.swift in Sources */,
+				046B12882C3689870095ECC7 /* CustomTextField.swift in Sources */,
 				046B12652C3407AB0095ECC7 /* UIColor+Extension.swift in Sources */,
-				046B12732C35FFE30095ECC7 /* UnfilledAlertButton.swift in Sources */,
 				046B126B2C35F40B0095ECC7 /* CustomImageButton.swift in Sources */,
-				046B12692C3575480095ECC7 /* FilledButton.swift in Sources */,
 				046B124F2C30BAE10095ECC7 /* HomeViewController.swift in Sources */,
 				046B12352C3084BD0095ECC7 /* AppDelegate.swift in Sources */,
-				046B127B2C3608750095ECC7 /* RadioButton.swift in Sources */,
-				046B12772C3602070095ECC7 /* CheckboxButton.swift in Sources */,
 				046B126F2C35FD9B0095ECC7 /* PlainButton.swift in Sources */,
 				046B12592C30C2770095ECC7 /* HomeCoordinator.swift in Sources */,
 				046B12372C3084BD0095ECC7 /* SceneDelegate.swift in Sources */,
