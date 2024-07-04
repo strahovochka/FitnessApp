@@ -36,11 +36,10 @@ class CustomImageButton: UIButton {
     @IBAction func buttonTapped(_ sender: CustomImageButton) {
         if tapped {
             self.setImage(unfilledImage, for: .normal)
-            tapped.toggle()
         } else {
             self.setImage(filledImage, for: .normal)
-            tapped.toggle()
         }
+        tapped.toggle()
     }
     
     func setImaged(filled: UIImage?, unfilled: UIImage?) {
