@@ -28,7 +28,7 @@ class BaseViewController: UIViewController {
     }
     
     private func setBackground() {
-        var imageView = UIImageView(frame: view.bounds)
+        let imageView = UIImageView(frame: view.bounds)
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.image = .background

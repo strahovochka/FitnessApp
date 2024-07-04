@@ -82,12 +82,12 @@
 		046B12332C3084BD0095ECC7 /* FitnessApp */ = {
 			isa = PBXGroup;
 			children = (
+				046B12482C30BA480095ECC7 /* Application */,
+				046B124A2C30BA590095ECC7 /* Base */,
 				046B12632C3402BF0095ECC7 /* UIComponents */,
 				046B12622C3402B20095ECC7 /* Extensions */,
 				046B12612C3402980095ECC7 /* Resources */,
-				046B12482C30BA480095ECC7 /* Application */,
 				046B12492C30BA530095ECC7 /* API */,
-				046B124A2C30BA590095ECC7 /* Base */,
 				046B12422C3084BF0095ECC7 /* Info.plist */,
 			);
 			path = FitnessApp;

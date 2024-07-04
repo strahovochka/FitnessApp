@@ -67,7 +67,7 @@ class PlainButton: UIButton {
     
     private func setFont(_ font: UIFont?) {
         if let title = self.titleLabel, let text = title.text {
-            let attributedTitle: NSAttributedString = NSAttributedString(string: text, attributes: [.font: font])
+            let attributedTitle: NSAttributedString = NSAttributedString(string: text, attributes: [.font: font ?? .systemFont(ofSize: 16)])
             self.setAttributedTitle(attributedTitle, for: .normal)
         }
     }
