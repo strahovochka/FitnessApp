@@ -15,6 +15,7 @@ class CustomImageButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.config()
     }
     
     required init?(coder: NSCoder) {

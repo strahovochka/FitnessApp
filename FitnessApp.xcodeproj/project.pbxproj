@@ -26,6 +26,7 @@
 		046B12772C3602070095ECC7 /* CheckboxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12762C3602070095ECC7 /* CheckboxButton.swift */; };
 		046B12792C3602910095ECC7 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12782C3602910095ECC7 /* UIImage+Extension.swift */; };
 		046B127B2C3608750095ECC7 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B127A2C3608750095ECC7 /* RadioButton.swift */; };
+		046B12832C3615760095ECC7 /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12822C3615760095ECC7 /* CustomSwitch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		046B12762C3602070095ECC7 /* CheckboxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxButton.swift; sourceTree = "<group>"; };
 		046B12782C3602910095ECC7 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		046B127A2C3608750095ECC7 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		046B12822C3615760095ECC7 /* CustomSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				046B12672C3575210095ECC7 /* UIButton */,
+				046B12822C3615760095ECC7 /* CustomSwitch.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			files = (
 				046B12532C30BBFE0095ECC7 /* AppCoordinator.swift in Sources */,
 				046B12712C35FE850095ECC7 /* UnfilledButton.swift in Sources */,
+				046B12832C3615760095ECC7 /* CustomSwitch.swift in Sources */,
 				046B125B2C30C2860095ECC7 /* HomeViewModel.swift in Sources */,
 				046B12512C30BB170095ECC7 /* BaseViewController.swift in Sources */,
 				046B12652C3407AB0095ECC7 /* UIColor+Extension.swift in Sources */,
