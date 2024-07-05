@@ -18,31 +18,33 @@
             <rect key="frame" x="0.0" y="0.0" width="289" height="71"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGf-oI-jqI">
-                    <rect key="frame" x="0.0" y="0.0" width="44.333333333333336" height="21"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="9aR-8t-C1h">
-                    <rect key="frame" x="0.0" y="37" width="289" height="34"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Q1L-ed-LDw">
+                    <rect key="frame" x="0.0" y="0.0" width="289" height="71"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGf-oI-jqI">
+                            <rect key="frame" x="0.0" y="0.0" width="289" height="21"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="9aR-8t-C1h">
+                            <rect key="frame" x="0.0" y="29" width="289" height="42"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
-                <constraint firstItem="9aR-8t-C1h" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="HiU-yb-FMv"/>
-                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="fGf-oI-jqI" secondAttribute="trailing" constant="247" id="RfP-m3-Nju"/>
-                <constraint firstItem="9aR-8t-C1h" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="UGv-Ym-6kU"/>
-                <constraint firstItem="fGf-oI-jqI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="WGc-DV-R3y"/>
-                <constraint firstItem="fGf-oI-jqI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gbu-Qf-7h0"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9aR-8t-C1h" secondAttribute="trailing" id="tMu-0v-RJv"/>
-                <constraint firstItem="9aR-8t-C1h" firstAttribute="top" secondItem="fGf-oI-jqI" secondAttribute="bottom" constant="16" id="xdf-Fh-HXc"/>
+                <constraint firstItem="Q1L-ed-LDw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Q1i-sz-ISg"/>
+                <constraint firstItem="Q1L-ed-LDw" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Xo3-1p-87f"/>
+                <constraint firstItem="Q1L-ed-LDw" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="s49-nD-wHl"/>
+                <constraint firstItem="Q1L-ed-LDw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="z24-YU-cBt"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="48" y="21"/>
+            <point key="canvasLocation" x="46.564885496183201" y="20.774647887323944"/>
         </view>
     </objects>
 </document>
