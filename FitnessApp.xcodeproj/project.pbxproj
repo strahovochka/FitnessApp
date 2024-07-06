@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042535632C39F36300FE9611 /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042535622C39F36300FE9611 /* SplashCoordinator.swift */; };
+		042535652C39F44F00FE9611 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042535642C39F44F00FE9611 /* UIViewController+Extension.swift */; };
 		046B12352C3084BD0095ECC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12342C3084BD0095ECC7 /* AppDelegate.swift */; };
 		046B12372C3084BD0095ECC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12362C3084BD0095ECC7 /* SceneDelegate.swift */; };
 		046B123E2C3084BF0095ECC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 046B123D2C3084BF0095ECC7 /* Assets.xcassets */; };
@@ -26,9 +28,14 @@
 		046B128A2C3689930095ECC7 /* CustomTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046B12892C3689930095ECC7 /* CustomTextField.xib */; };
 		046B128B2C36D1B90095ECC7 /* SairaRoman-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 046B126D2C35FADC0095ECC7 /* SairaRoman-Regular.ttf */; };
 		046B128D2C36D3630095ECC7 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B128C2C36D3630095ECC7 /* UIFont+Extension.swift */; };
+		046B12902C3987340095ECC7 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B128F2C3987340095ECC7 /* SplashViewController.swift */; };
+		046B12922C39874A0095ECC7 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046B12912C39874A0095ECC7 /* Splash.storyboard */; };
+		046B12952C39F20D0095ECC7 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12942C39F20D0095ECC7 /* UIImageView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		042535622C39F36300FE9611 /* SplashCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
+		042535642C39F44F00FE9611 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		046B12312C3084BD0095ECC7 /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		046B12342C3084BD0095ECC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		046B12362C3084BD0095ECC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +57,9 @@
 		046B12872C3689860095ECC7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		046B12892C3689930095ECC7 /* CustomTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextField.xib; sourceTree = "<group>"; };
 		046B128C2C36D3630095ECC7 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		046B128F2C3987340095ECC7 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		046B12912C39874A0095ECC7 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		046B12942C39F20D0095ECC7 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +106,7 @@
 		046B12482C30BA480095ECC7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				046B128E2C3986FC0095ECC7 /* SplashScreen */,
 				046B124D2C30BABE0095ECC7 /* Home */,
 				046B12342C3084BD0095ECC7 /* AppDelegate.swift */,
 				046B12362C3084BD0095ECC7 /* SceneDelegate.swift */,
@@ -146,6 +157,8 @@
 				046B12642C3407AB0095ECC7 /* UIColor+Extension.swift */,
 				046B12782C3602910095ECC7 /* UIImage+Extension.swift */,
 				046B128C2C36D3630095ECC7 /* UIFont+Extension.swift */,
+				046B12942C39F20D0095ECC7 /* UIImageView+Extension.swift */,
+				042535642C39F44F00FE9611 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -184,6 +197,16 @@
 				046B12892C3689930095ECC7 /* CustomTextField.xib */,
 			);
 			path = UITextField;
+			sourceTree = "<group>";
+		};
+		046B128E2C3986FC0095ECC7 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				046B128F2C3987340095ECC7 /* SplashViewController.swift */,
+				046B12912C39874A0095ECC7 /* Splash.storyboard */,
+				042535622C39F36300FE9611 /* SplashCoordinator.swift */,
+			);
+			path = SplashScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +270,7 @@
 				046B128B2C36D1B90095ECC7 /* SairaRoman-Regular.ttf in Resources */,
 				046B123E2C3084BF0095ECC7 /* Assets.xcassets in Resources */,
 				046B12572C30C2690095ECC7 /* Home.storyboard in Resources */,
+				046B12922C39874A0095ECC7 /* Splash.storyboard in Resources */,
 				046B128A2C3689930095ECC7 /* CustomTextField.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,10 +285,12 @@
 				046B12532C30BBFE0095ECC7 /* AppCoordinator.swift in Sources */,
 				046B12832C3615760095ECC7 /* CustomSwitch.swift in Sources */,
 				046B125B2C30C2860095ECC7 /* HomeViewModel.swift in Sources */,
+				042535632C39F36300FE9611 /* SplashCoordinator.swift in Sources */,
 				046B128D2C36D3630095ECC7 /* UIFont+Extension.swift in Sources */,
 				046B12512C30BB170095ECC7 /* BaseViewController.swift in Sources */,
 				046B12882C3689870095ECC7 /* CustomTextField.swift in Sources */,
 				046B12652C3407AB0095ECC7 /* UIColor+Extension.swift in Sources */,
+				042535652C39F44F00FE9611 /* UIViewController+Extension.swift in Sources */,
 				046B126B2C35F40B0095ECC7 /* CustomImageButton.swift in Sources */,
 				046B124F2C30BAE10095ECC7 /* HomeViewController.swift in Sources */,
 				046B12352C3084BD0095ECC7 /* AppDelegate.swift in Sources */,
@@ -273,6 +299,8 @@
 				046B12372C3084BD0095ECC7 /* SceneDelegate.swift in Sources */,
 				046B12602C32BAD10095ECC7 /* Coordinator.swift in Sources */,
 				046B12792C3602910095ECC7 /* UIImage+Extension.swift in Sources */,
+				046B12952C39F20D0095ECC7 /* UIImageView+Extension.swift in Sources */,
+				046B12902C3987340095ECC7 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

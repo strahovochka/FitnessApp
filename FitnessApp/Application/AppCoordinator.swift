@@ -16,7 +16,7 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        self.homeFlow()
+        self.chooseHeroFlow()
     }
     
     func childDidFinish(_ child: Coordinator) {
@@ -30,6 +30,12 @@ class AppCoordinator: Coordinator {
     
     func homeFlow() {
         let child = HomeCoordinator(navigationController: navigationController)
+        childCoordinators.append(child)
+        child.start()
+    }
+    
+    func chooseHeroFlow() {
+        let child = SplashCoordinator(navigationController: navigationController)
         childCoordinators.append(child)
         child.start()
     }

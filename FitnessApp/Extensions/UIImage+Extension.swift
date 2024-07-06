@@ -17,4 +17,6 @@ extension UIImage {
     
     //Background image
     static let background = UIImage(named: "background")
+    static let backgroundMan = UIImage(named: "backgroundMan")
+    static let backgroundWoman = UIImage(named: "backgroundWoman")
 }
