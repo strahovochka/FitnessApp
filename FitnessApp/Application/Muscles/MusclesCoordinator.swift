@@ -1,5 +1,5 @@
 //
-//  SplashCoordinator.swift
+//  MusclesCoordinator.swift
 //  FitnessApp
 //
 //  Created by Jane Strashok on 07.07.2024.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SplashCoordinator: Coordinator {
+final class MusclesCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
     
     var navigationController: UINavigationController
@@ -17,15 +17,8 @@ final class SplashCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = SplashViewController.instantiate(for: "Splash")
+        let vc = MusclesViewController.instantiate(for: "Muscles")
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
-    }
-    
-    func navigateToTabBar() {
-        let tabBarCoordinator = TabCoordinator(navigationController)
-        self.navigationController.navigationBar.isHidden = true
-        tabBarCoordinator.start()
-        childCoordinators.append(tabBarCoordinator)
     }
 }

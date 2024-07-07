@@ -21,6 +21,4 @@ final class HomeCoordinator: Coordinator {
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
-    
-    
 }

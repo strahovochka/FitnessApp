@@ -19,4 +19,15 @@ extension UIImage {
     static let background = UIImage(named: "background")
     static let backgroundMan = UIImage(named: "backgroundMan")
     static let backgroundWoman = UIImage(named: "backgroundWoman")
+    
+    //TabBar images
+    static let homeTab = UIImage(named: "homeTab")
+    static let homeTabSelected = UIImage(named: "homeTabSelected")
+    static let progressTab = UIImage(named: "progressTab")
+    static let progressTabSelected = UIImage(named: "progressTabSelected")
+    static let calculatorTab = UIImage(named: "calculatorTab")
+    static let calculatorTabSelected = UIImage(named: "calculatorTabSelected")
+    static let musclesTab = UIImage(named: "musclesTab")
+    static let musclesTabSelected = UIImage(named: "musclesTabSelected")
+    
 }

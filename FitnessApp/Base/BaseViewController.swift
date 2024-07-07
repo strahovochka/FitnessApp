@@ -26,6 +26,8 @@ class BaseViewController: UIViewController {
         imageView.clipsToBounds = true
         imageView.image = .background
         imageView.center = view.center
+        imageView.addGradient([.clear, .black], locations: [0.0, 0.7])
+        imageView.addoverlay()
         view.addSubview(imageView)
         self.view.sendSubviewToBack(imageView)
     }

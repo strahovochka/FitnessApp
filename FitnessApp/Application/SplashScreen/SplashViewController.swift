@@ -11,6 +11,7 @@ class SplashViewController: UIViewController {
     
     weak var coordinator: SplashCoordinator?
 
+    @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var manButton: PlainButton!
     @IBOutlet weak var girlButton: PlainButton!
     @IBOutlet weak var backgroundWomanImage: UIImageView!
@@ -21,24 +22,26 @@ class SplashViewController: UIViewController {
     }
     
     private func configUI() {
-        backgroundManImage.addGradient(frame: backgroundManImage.bounds, direction: .bottomToTop)
-        backgroundWomanImage.addGradient(frame: backgroundWomanImage.bounds, direction: .topToBottom)
-        backgroundManImage.addoverlay(color: .black, alpha: 0.5)
-        backgroundWomanImage.addoverlay(color: .black, alpha: 0.5)
+        backgroundManImage.addoverlay()
+        backgroundWomanImage.addoverlay()
         
         manButton.setType(.filled)
         girlButton.setType(.filled)
         
         manButton.setFont(.regularSaira?.withSize(18))
         girlButton.setFont(.regularSaira?.withSize(18))
+        
+        gradientView.addGradient([.clear, .black, .clear], locations: [0.0, 0.5, 1.0], frame: gradientView.bounds)
     }
     
     @IBAction func superManButtonTapped(_ sender: Any) {
         coordinator?.navigateToTabBar()
+        sex = .male
     }
     
     @IBAction func superGirlButtonTapped(_ sender: Any) {
         coordinator?.navigateToTabBar()
+        sex = .female
     }
     
 }
