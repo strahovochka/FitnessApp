@@ -22,6 +22,9 @@
 		041175F22C3A8DD800059052 /* ProgressCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175F12C3A8DD800059052 /* ProgressCoordinator.swift */; };
 		041175F42C3A8DDF00059052 /* Progress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041175F32C3A8DDF00059052 /* Progress.storyboard */; };
 		041175F62C3B3CC600059052 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175F52C3B3CC600059052 /* FirebaseService.swift */; };
+		041175F92C3B437E00059052 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 041175F82C3B437E00059052 /* FirebaseAuth */; };
+		041175FB2C3B437E00059052 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 041175FA2C3B437E00059052 /* FirebaseFirestore */; };
+		041175FD2C3B44F900059052 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 041175FC2C3B44F800059052 /* GoogleService-Info.plist */; };
 		042535632C39F36300FE9611 /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042535622C39F36300FE9611 /* SplashCoordinator.swift */; };
 		042535652C39F44F00FE9611 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042535642C39F44F00FE9611 /* UIViewController+Extension.swift */; };
 		046B12352C3084BD0095ECC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12342C3084BD0095ECC7 /* AppDelegate.swift */; };
@@ -64,6 +67,7 @@
 		041175F12C3A8DD800059052 /* ProgressCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCoordinator.swift; sourceTree = "<group>"; };
 		041175F32C3A8DDF00059052 /* Progress.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Progress.storyboard; sourceTree = "<group>"; };
 		041175F52C3B3CC600059052 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		041175FC2C3B44F800059052 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		042535622C39F36300FE9611 /* SplashCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
 		042535642C39F44F00FE9611 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		046B12312C3084BD0095ECC7 /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +101,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				041175F92C3B437E00059052 /* FirebaseAuth in Frameworks */,
+				041175FB2C3B437E00059052 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +187,7 @@
 				046B12612C3402980095ECC7 /* Resources */,
 				046B12492C30BA530095ECC7 /* API */,
 				046B12422C3084BF0095ECC7 /* Info.plist */,
+				041175FC2C3B44F800059052 /* GoogleService-Info.plist */,
 			);
 			path = FitnessApp;
 			sourceTree = "<group>";
@@ -188,13 +195,13 @@
 		046B12482C30BA480095ECC7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				046B12342C3084BD0095ECC7 /* AppDelegate.swift */,
+				046B12362C3084BD0095ECC7 /* SceneDelegate.swift */,
 				041175D92C3A016500059052 /* Muscles */,
 				041175D82C3A015900059052 /* Calculator */,
 				041175D72C3A015200059052 /* Progress */,
 				046B128E2C3986FC0095ECC7 /* SplashScreen */,
 				046B124D2C30BABE0095ECC7 /* Home */,
-				046B12342C3084BD0095ECC7 /* AppDelegate.swift */,
-				046B12362C3084BD0095ECC7 /* SceneDelegate.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -310,6 +317,10 @@
 			dependencies = (
 			);
 			name = FitnessApp;
+			packageProductDependencies = (
+				041175F82C3B437E00059052 /* FirebaseAuth */,
+				041175FA2C3B437E00059052 /* FirebaseFirestore */,
+			);
 			productName = FitnessApp;
 			productReference = 046B12312C3084BD0095ECC7 /* FitnessApp.app */;
 			productType = "com.apple.product-type.application";
@@ -338,6 +349,9 @@
 				Base,
 			);
 			mainGroup = 046B12282C3084BD0095ECC7;
+			packageReferences = (
+				041175F72C3B437E00059052 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 046B12322C3084BD0095ECC7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -354,6 +368,7 @@
 			files = (
 				046B128B2C36D1B90095ECC7 /* SairaRoman-Regular.ttf in Resources */,
 				041175E42C3A8D8300059052 /* Muscles.storyboard in Resources */,
+				041175FD2C3B44F900059052 /* GoogleService-Info.plist in Resources */,
 				046B123E2C3084BF0095ECC7 /* Assets.xcassets in Resources */,
 				046B12572C30C2690095ECC7 /* Home.storyboard in Resources */,
 				046B12922C39874A0095ECC7 /* Splash.storyboard in Resources */,
@@ -595,6 +610,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		041175F72C3B437E00059052 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		041175F82C3B437E00059052 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 041175F72C3B437E00059052 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		041175FA2C3B437E00059052 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 041175F72C3B437E00059052 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 046B12292C3084BD0095ECC7 /* Project object */;
 }
