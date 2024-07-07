@@ -21,6 +21,7 @@
 		041175F02C3A8DCD00059052 /* ProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175EF2C3A8DCD00059052 /* ProgressViewModel.swift */; };
 		041175F22C3A8DD800059052 /* ProgressCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175F12C3A8DD800059052 /* ProgressCoordinator.swift */; };
 		041175F42C3A8DDF00059052 /* Progress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041175F32C3A8DDF00059052 /* Progress.storyboard */; };
+		041175F62C3B3CC600059052 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175F52C3B3CC600059052 /* FirebaseService.swift */; };
 		042535632C39F36300FE9611 /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042535622C39F36300FE9611 /* SplashCoordinator.swift */; };
 		042535652C39F44F00FE9611 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042535642C39F44F00FE9611 /* UIViewController+Extension.swift */; };
 		046B12352C3084BD0095ECC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12342C3084BD0095ECC7 /* AppDelegate.swift */; };
@@ -62,6 +63,7 @@
 		041175EF2C3A8DCD00059052 /* ProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewModel.swift; sourceTree = "<group>"; };
 		041175F12C3A8DD800059052 /* ProgressCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCoordinator.swift; sourceTree = "<group>"; };
 		041175F32C3A8DDF00059052 /* Progress.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Progress.storyboard; sourceTree = "<group>"; };
+		041175F52C3B3CC600059052 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		042535622C39F36300FE9611 /* SplashCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
 		042535642C39F44F00FE9611 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		046B12312C3084BD0095ECC7 /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,6 +202,7 @@
 		046B12492C30BA530095ECC7 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				041175F52C3B3CC600059052 /* FirebaseService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				046B126B2C35F40B0095ECC7 /* CustomImageButton.swift in Sources */,
 				041175D62C3A006C00059052 /* TabCoordinator.swift in Sources */,
 				041175F02C3A8DCD00059052 /* ProgressViewModel.swift in Sources */,
+				041175F62C3B3CC600059052 /* FirebaseService.swift in Sources */,
 				041175DE2C3A8D4B00059052 /* MusclesViewController.swift in Sources */,
 				046B124F2C30BAE10095ECC7 /* HomeViewController.swift in Sources */,
 				046B12352C3084BD0095ECC7 /* AppDelegate.swift in Sources */,
