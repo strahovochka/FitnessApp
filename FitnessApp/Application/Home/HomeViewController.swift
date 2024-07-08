@@ -10,7 +10,7 @@ import UIKit
 
 class HomeViewController: BaseViewController {
     
-    @IBOutlet weak var sexLabel: UILabel!
+    @IBOutlet weak private var sexLabel: UILabel!
     
     var viewModel: HomeViewModel?
 
