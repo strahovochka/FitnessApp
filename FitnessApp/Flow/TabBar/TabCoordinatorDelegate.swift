@@ -52,10 +52,10 @@ enum TabBarItem: Int, CaseIterable {
         }
     }
     
-    var coordinator: Coordinator {
+    func getCoodrinator(with sex: Sex = .female) -> Coordinator {
         switch self {
         case .home:
-            return HomeCoordinator(navigationController: UINavigationController())
+            return HomeCoordinator(navigationController: UINavigationController(), sex: sex)
         case .progress:
             return ProgressCoordinator(navigationController: UINavigationController())
         case .calculator:

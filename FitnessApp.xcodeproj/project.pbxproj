@@ -22,9 +22,8 @@
 		041175F22C3A8DD800059052 /* ProgressCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175F12C3A8DD800059052 /* ProgressCoordinator.swift */; };
 		041175F42C3A8DDF00059052 /* Progress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041175F32C3A8DDF00059052 /* Progress.storyboard */; };
 		041175F62C3B3CC600059052 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175F52C3B3CC600059052 /* FirebaseService.swift */; };
-		041175F92C3B437E00059052 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 041175F82C3B437E00059052 /* FirebaseAuth */; };
-		041175FB2C3B437E00059052 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 041175FA2C3B437E00059052 /* FirebaseFirestore */; };
 		041175FD2C3B44F900059052 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 041175FC2C3B44F800059052 /* GoogleService-Info.plist */; };
+		041175FF2C3BCF7300059052 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175FE2C3BCF7300059052 /* SplashViewModel.swift */; };
 		042535632C39F36300FE9611 /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042535622C39F36300FE9611 /* SplashCoordinator.swift */; };
 		042535652C39F44F00FE9611 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042535642C39F44F00FE9611 /* UIViewController+Extension.swift */; };
 		046B12352C3084BD0095ECC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12342C3084BD0095ECC7 /* AppDelegate.swift */; };
@@ -49,6 +48,7 @@
 		046B12902C3987340095ECC7 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B128F2C3987340095ECC7 /* SplashViewController.swift */; };
 		046B12922C39874A0095ECC7 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046B12912C39874A0095ECC7 /* Splash.storyboard */; };
 		046B12952C39F20D0095ECC7 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12942C39F20D0095ECC7 /* UIView+Extension.swift */; };
+		B8E11BE2FD8050028CEA67CB /* Pods_FitnessApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0902B889C75A077F3D449C56 /* Pods_FitnessApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +68,7 @@
 		041175F32C3A8DDF00059052 /* Progress.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Progress.storyboard; sourceTree = "<group>"; };
 		041175F52C3B3CC600059052 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		041175FC2C3B44F800059052 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		041175FE2C3BCF7300059052 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		042535622C39F36300FE9611 /* SplashCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
 		042535642C39F44F00FE9611 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		046B12312C3084BD0095ECC7 /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +95,9 @@
 		046B128F2C3987340095ECC7 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		046B12912C39874A0095ECC7 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		046B12942C39F20D0095ECC7 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		0902B889C75A077F3D449C56 /* Pods_FitnessApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitnessApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A74D7DEB44DD191C5A36C4E7 /* Pods-FitnessApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitnessApp.debug.xcconfig"; path = "Target Support Files/Pods-FitnessApp/Pods-FitnessApp.debug.xcconfig"; sourceTree = "<group>"; };
+		C5E5F5AFB502649A631232E0 /* Pods-FitnessApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitnessApp.release.xcconfig"; path = "Target Support Files/Pods-FitnessApp/Pods-FitnessApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				041175F92C3B437E00059052 /* FirebaseAuth in Frameworks */,
-				041175FB2C3B437E00059052 /* FirebaseFirestore in Frameworks */,
+				B8E11BE2FD8050028CEA67CB /* Pods_FitnessApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +168,8 @@
 			children = (
 				046B12332C3084BD0095ECC7 /* FitnessApp */,
 				046B12322C3084BD0095ECC7 /* Products */,
+				7789FD7B3FD334219D0E95F1 /* Pods */,
+				33A51D1B8FDF0F25A4EF65A3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -297,8 +302,26 @@
 				046B128F2C3987340095ECC7 /* SplashViewController.swift */,
 				046B12912C39874A0095ECC7 /* Splash.storyboard */,
 				042535622C39F36300FE9611 /* SplashCoordinator.swift */,
+				041175FE2C3BCF7300059052 /* SplashViewModel.swift */,
 			);
 			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		33A51D1B8FDF0F25A4EF65A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0902B889C75A077F3D449C56 /* Pods_FitnessApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7789FD7B3FD334219D0E95F1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A74D7DEB44DD191C5A36C4E7 /* Pods-FitnessApp.debug.xcconfig */,
+				C5E5F5AFB502649A631232E0 /* Pods-FitnessApp.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,19 +331,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 046B12452C3084BF0095ECC7 /* Build configuration list for PBXNativeTarget "FitnessApp" */;
 			buildPhases = (
+				DBFE259CF3B9CA0B9B93987F /* [CP] Check Pods Manifest.lock */,
 				046B122D2C3084BD0095ECC7 /* Sources */,
 				046B122E2C3084BD0095ECC7 /* Frameworks */,
 				046B122F2C3084BD0095ECC7 /* Resources */,
+				40ECEE471B84C63DAFFB34CB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = FitnessApp;
-			packageProductDependencies = (
-				041175F82C3B437E00059052 /* FirebaseAuth */,
-				041175FA2C3B437E00059052 /* FirebaseFirestore */,
-			);
 			productName = FitnessApp;
 			productReference = 046B12312C3084BD0095ECC7 /* FitnessApp.app */;
 			productType = "com.apple.product-type.application";
@@ -349,9 +370,6 @@
 				Base,
 			);
 			mainGroup = 046B12282C3084BD0095ECC7;
-			packageReferences = (
-				041175F72C3B437E00059052 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-			);
 			productRefGroup = 046B12322C3084BD0095ECC7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -380,6 +398,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		40ECEE471B84C63DAFFB34CB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FitnessApp/Pods-FitnessApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FitnessApp/Pods-FitnessApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FitnessApp/Pods-FitnessApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBFE259CF3B9CA0B9B93987F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FitnessApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		046B122D2C3084BD0095ECC7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -392,6 +452,7 @@
 				041175EA2C3A8DA900059052 /* CalculatorCoordinator.swift in Sources */,
 				041175E02C3A8D6D00059052 /* MusclesViewModel.swift in Sources */,
 				042535632C39F36300FE9611 /* SplashCoordinator.swift in Sources */,
+				041175FF2C3BCF7300059052 /* SplashViewModel.swift in Sources */,
 				046B128D2C36D3630095ECC7 /* UIFont+Extension.swift in Sources */,
 				046B12512C30BB170095ECC7 /* BaseViewController.swift in Sources */,
 				046B12882C3689870095ECC7 /* CustomTextField.swift in Sources */,
@@ -472,7 +533,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -526,7 +587,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -538,6 +599,7 @@
 		};
 		046B12462C3084BF0095ECC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A74D7DEB44DD191C5A36C4E7 /* Pods-FitnessApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -564,6 +626,7 @@
 		};
 		046B12472C3084BF0095ECC7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5E5F5AFB502649A631232E0 /* Pods-FitnessApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -610,30 +673,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		041175F72C3B437E00059052 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		041175F82C3B437E00059052 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 041175F72C3B437E00059052 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		041175FA2C3B437E00059052 /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 041175F72C3B437E00059052 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 046B12292C3084BD0095ECC7 /* Project object */;
 }

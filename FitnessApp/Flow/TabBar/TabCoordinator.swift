@@ -12,12 +12,14 @@ class TabCoordinator: NSObject, TabCoordinatorDelegate {
     
     var navigationController: UINavigationController
     var tabBarController: UITabBarController
+    private var sex: Sex
     
-    init(_ navigationController: UINavigationController) {
+    init(_ navigationController: UINavigationController, sex: Sex) {
         self.navigationController = navigationController
         self.tabBarController = .init()
         self.tabBarController.tabBar.tintColor = .primaryYellow
         self.tabBarController.tabBar.unselectedItemTintColor = UIColor(hex: "#D9D9D9", alpha: 1)
+        self.sex = sex
     }
     
     func start() {
@@ -51,7 +53,7 @@ private extension TabCoordinator {
     }
     
     func getTabCoordinator(_ tab: TabBarItem) -> Coordinator {
-        let coordinator = tab.coordinator
+        let coordinator = tab.getCoodrinator(with: sex)
         coordinator.navigationController.setNavigationBarHidden(true, animated: false)
         coordinator.navigationController.tabBarItem = UITabBarItem.init(title: tab.title, image: tab.image, tag: tab.rawValue)
         coordinator.navigationController.tabBarItem.selectedImage = tab.selectedImage

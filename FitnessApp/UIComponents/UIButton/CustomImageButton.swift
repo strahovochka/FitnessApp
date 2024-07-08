@@ -10,8 +10,8 @@ import UIKit
 class CustomImageButton: UIButton {
     
     private var tapped: Bool = false
-    @IBInspectable weak var unfilledImage: UIImage?
-    @IBInspectable weak var filledImage: UIImage?
+    @IBInspectable weak private var unfilledImage: UIImage?
+    @IBInspectable weak private var filledImage: UIImage?
     
     override init(frame: CGRect) {
         super.init(frame: frame)

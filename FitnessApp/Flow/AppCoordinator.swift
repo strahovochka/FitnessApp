@@ -28,12 +28,6 @@ class AppCoordinator: Coordinator {
         }
     }
     
-    func homeFlow() {
-        let child = HomeCoordinator(navigationController: navigationController)
-        childCoordinators.append(child)
-        child.start()
-    }
-    
     func chooseHeroFlow() {
         let child = SplashCoordinator(navigationController: navigationController)
         childCoordinators.append(child)

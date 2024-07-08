@@ -15,8 +15,8 @@ final class CustomTextField: UIView {
         case error
     }
 
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak private var label: UILabel!
+    @IBOutlet weak private var textField: UITextField!
     
     @IBInspectable var labelTitle: String = "Label" {
         didSet {

@@ -18,7 +18,6 @@ final class CalculatorCoordinator: Coordinator {
     
     func start() {
         let vc = CalculatorViewController.instantiate(for: "Calculator")
-        vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
 }

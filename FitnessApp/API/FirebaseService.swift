@@ -6,15 +6,11 @@
 //
 
 import Foundation
+import FirebaseCore
+import FirebaseAuth
+import FirebaseFirestore
 
 class FirebaseService {
     static let shared = FirebaseService()
-    
-    private init() {}
-}
 
-extension FirebaseService: NSCopying {
-    func copy(with zone: NSZone? = nil) -> Any {
-        self
-    }
 }

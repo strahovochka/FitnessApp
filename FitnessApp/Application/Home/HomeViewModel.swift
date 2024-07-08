@@ -7,13 +7,12 @@
 
 import UIKit
 
-enum Sex: String {
-    case male = "Superman"
-    case female = "Supergirl"
-}
-
-var sex: Sex = .female
-
-class HomeViewModel {
+final class HomeViewModel {
     
+    private(set) var sex: Sex
+    var coordinator: Coordinator?
+    
+    init(sex: Sex) {
+        self.sex = sex
+    }
 }

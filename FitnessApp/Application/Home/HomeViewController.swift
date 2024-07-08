@@ -12,12 +12,14 @@ class HomeViewController: BaseViewController {
     
     @IBOutlet weak var sexLabel: UILabel!
     
+    var viewModel: HomeViewModel?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
     }
     
     private func configUI() {
-        self.sexLabel.text = sex.rawValue
+        self.sexLabel.text = viewModel?.sex.rawValue
     }
 }

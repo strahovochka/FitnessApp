@@ -7,20 +7,21 @@
 
 import UIKit
 
-class SplashViewController: UIViewController {
-    
-    weak var coordinator: SplashCoordinator?
+final class SplashViewController: UIViewController {
 
-    @IBOutlet weak var gradientView: UIView!
-    @IBOutlet weak var manButton: PlainButton!
-    @IBOutlet weak var girlButton: PlainButton!
-    @IBOutlet weak var backgroundWomanImage: UIImageView!
-    @IBOutlet weak var backgroundManImage: UIImageView!
+    @IBOutlet weak private var gradientView: UIView!
+    @IBOutlet weak private var manButton: PlainButton!
+    @IBOutlet weak private var girlButton: PlainButton!
+    @IBOutlet weak private var backgroundWomanImage: UIImageView!
+    @IBOutlet weak private var backgroundManImage: UIImageView!
+    
+    var viewModel: SplashViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
     }
-    
+
     private func configUI() {
         backgroundManImage.addoverlay()
         backgroundWomanImage.addoverlay()
@@ -35,13 +36,11 @@ class SplashViewController: UIViewController {
     }
     
     @IBAction func superManButtonTapped(_ sender: Any) {
-        coordinator?.navigateToTabBar()
-        sex = .male
+        self.viewModel?.heroChosen(.male)
     }
     
     @IBAction func superGirlButtonTapped(_ sender: Any) {
-        coordinator?.navigateToTabBar()
-        sex = .female
+        self.viewModel?.heroChosen(.female)
     }
     
 }

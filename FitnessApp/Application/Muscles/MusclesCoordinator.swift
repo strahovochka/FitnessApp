@@ -18,7 +18,6 @@ final class MusclesCoordinator: Coordinator {
     
     func start() {
         let vc = MusclesViewController.instantiate(for: "Muscles")
-        vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
 }

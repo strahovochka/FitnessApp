@@ -18,7 +18,6 @@ final class ProgressCoordinator: Coordinator {
     
     func start() {
         let vc = ProgressViewController.instantiate(for: "Progress")
-        vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
 }
