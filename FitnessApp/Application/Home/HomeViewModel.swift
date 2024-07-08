@@ -7,6 +7,12 @@
 
 import UIKit
 
-class HomeViewModel {
+final class HomeViewModel {
     
+    private(set) var sex: Sex
+    var coordinator: Coordinator?
+    
+    init(sex: Sex) {
+        self.sex = sex
+    }
 }

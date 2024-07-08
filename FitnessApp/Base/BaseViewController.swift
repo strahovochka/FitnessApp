@@ -9,18 +9,9 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
-    weak var coordinator: Coordinator?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackground()
-    }
-    
-    static func instantiate(for storyboardName: String) -> Self {
-        let fullName = NSStringFromClass(self)
-        let className = fullName.components(separatedBy: ".")[1]
-        let storyboard = UIStoryboard(name: storyboardName, bundle: Bundle.main)
-        return storyboard.instantiateViewController(withIdentifier: className) as! Self
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -33,6 +24,8 @@ class BaseViewController: UIViewController {
         imageView.clipsToBounds = true
         imageView.image = .background
         imageView.center = view.center
+        imageView.addGradient([.clear, .black], locations: [0.0, 0.7])
+        imageView.addoverlay()
         view.addSubview(imageView)
         self.view.sendSubviewToBack(imageView)
     }

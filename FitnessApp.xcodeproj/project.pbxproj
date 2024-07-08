@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041175D62C3A006C00059052 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175D52C3A006C00059052 /* TabCoordinator.swift */; };
+		041175DC2C3A01E500059052 /* TabCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175DB2C3A01E500059052 /* TabCoordinatorDelegate.swift */; };
+		041175DE2C3A8D4B00059052 /* MusclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175DD2C3A8D4B00059052 /* MusclesViewController.swift */; };
+		041175E02C3A8D6D00059052 /* MusclesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175DF2C3A8D6D00059052 /* MusclesViewModel.swift */; };
+		041175E22C3A8D7900059052 /* MusclesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175E12C3A8D7900059052 /* MusclesCoordinator.swift */; };
+		041175E42C3A8D8300059052 /* Muscles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041175E32C3A8D8300059052 /* Muscles.storyboard */; };
+		041175E62C3A8D9100059052 /* ClaculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175E52C3A8D9100059052 /* ClaculatorViewController.swift */; };
+		041175E82C3A8D9B00059052 /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175E72C3A8D9B00059052 /* CalculatorViewModel.swift */; };
+		041175EA2C3A8DA900059052 /* CalculatorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175E92C3A8DA900059052 /* CalculatorCoordinator.swift */; };
+		041175EC2C3A8DB300059052 /* Calculator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041175EB2C3A8DB300059052 /* Calculator.storyboard */; };
+		041175EE2C3A8DC200059052 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175ED2C3A8DC200059052 /* ProgressViewController.swift */; };
+		041175F02C3A8DCD00059052 /* ProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175EF2C3A8DCD00059052 /* ProgressViewModel.swift */; };
+		041175F22C3A8DD800059052 /* ProgressCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175F12C3A8DD800059052 /* ProgressCoordinator.swift */; };
+		041175F42C3A8DDF00059052 /* Progress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041175F32C3A8DDF00059052 /* Progress.storyboard */; };
+		041175F62C3B3CC600059052 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175F52C3B3CC600059052 /* FirebaseService.swift */; };
+		041175FD2C3B44F900059052 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 041175FC2C3B44F800059052 /* GoogleService-Info.plist */; };
+		041175FF2C3BCF7300059052 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175FE2C3BCF7300059052 /* SplashViewModel.swift */; };
+		042535632C39F36300FE9611 /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042535622C39F36300FE9611 /* SplashCoordinator.swift */; };
+		042535652C39F44F00FE9611 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042535642C39F44F00FE9611 /* UIViewController+Extension.swift */; };
 		046B12352C3084BD0095ECC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12342C3084BD0095ECC7 /* AppDelegate.swift */; };
 		046B12372C3084BD0095ECC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12362C3084BD0095ECC7 /* SceneDelegate.swift */; };
 		046B123E2C3084BF0095ECC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 046B123D2C3084BF0095ECC7 /* Assets.xcassets */; };
@@ -26,9 +45,32 @@
 		046B128A2C3689930095ECC7 /* CustomTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046B12892C3689930095ECC7 /* CustomTextField.xib */; };
 		046B128B2C36D1B90095ECC7 /* SairaRoman-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 046B126D2C35FADC0095ECC7 /* SairaRoman-Regular.ttf */; };
 		046B128D2C36D3630095ECC7 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B128C2C36D3630095ECC7 /* UIFont+Extension.swift */; };
+		046B12902C3987340095ECC7 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B128F2C3987340095ECC7 /* SplashViewController.swift */; };
+		046B12922C39874A0095ECC7 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046B12912C39874A0095ECC7 /* Splash.storyboard */; };
+		046B12952C39F20D0095ECC7 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12942C39F20D0095ECC7 /* UIView+Extension.swift */; };
+		B8E11BE2FD8050028CEA67CB /* Pods_FitnessApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0902B889C75A077F3D449C56 /* Pods_FitnessApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		041175D52C3A006C00059052 /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
+		041175DB2C3A01E500059052 /* TabCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinatorDelegate.swift; sourceTree = "<group>"; };
+		041175DD2C3A8D4B00059052 /* MusclesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusclesViewController.swift; sourceTree = "<group>"; };
+		041175DF2C3A8D6D00059052 /* MusclesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusclesViewModel.swift; sourceTree = "<group>"; };
+		041175E12C3A8D7900059052 /* MusclesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusclesCoordinator.swift; sourceTree = "<group>"; };
+		041175E32C3A8D8300059052 /* Muscles.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Muscles.storyboard; sourceTree = "<group>"; };
+		041175E52C3A8D9100059052 /* ClaculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaculatorViewController.swift; sourceTree = "<group>"; };
+		041175E72C3A8D9B00059052 /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
+		041175E92C3A8DA900059052 /* CalculatorCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorCoordinator.swift; sourceTree = "<group>"; };
+		041175EB2C3A8DB300059052 /* Calculator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calculator.storyboard; sourceTree = "<group>"; };
+		041175ED2C3A8DC200059052 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		041175EF2C3A8DCD00059052 /* ProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewModel.swift; sourceTree = "<group>"; };
+		041175F12C3A8DD800059052 /* ProgressCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCoordinator.swift; sourceTree = "<group>"; };
+		041175F32C3A8DDF00059052 /* Progress.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Progress.storyboard; sourceTree = "<group>"; };
+		041175F52C3B3CC600059052 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		041175FC2C3B44F800059052 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		041175FE2C3BCF7300059052 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		042535622C39F36300FE9611 /* SplashCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
+		042535642C39F44F00FE9611 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		046B12312C3084BD0095ECC7 /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		046B12342C3084BD0095ECC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		046B12362C3084BD0095ECC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +92,12 @@
 		046B12872C3689860095ECC7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		046B12892C3689930095ECC7 /* CustomTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextField.xib; sourceTree = "<group>"; };
 		046B128C2C36D3630095ECC7 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		046B128F2C3987340095ECC7 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		046B12912C39874A0095ECC7 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		046B12942C39F20D0095ECC7 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		0902B889C75A077F3D449C56 /* Pods_FitnessApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitnessApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A74D7DEB44DD191C5A36C4E7 /* Pods-FitnessApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitnessApp.debug.xcconfig"; path = "Target Support Files/Pods-FitnessApp/Pods-FitnessApp.debug.xcconfig"; sourceTree = "<group>"; };
+		C5E5F5AFB502649A631232E0 /* Pods-FitnessApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitnessApp.release.xcconfig"; path = "Target Support Files/Pods-FitnessApp/Pods-FitnessApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,17 +105,71 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8E11BE2FD8050028CEA67CB /* Pods_FitnessApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041175D42C3A005200059052 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				041175DA2C3A01CA00059052 /* TabBar */,
+				046B12522C30BBFE0095ECC7 /* AppCoordinator.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		041175D72C3A015200059052 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				041175ED2C3A8DC200059052 /* ProgressViewController.swift */,
+				041175EF2C3A8DCD00059052 /* ProgressViewModel.swift */,
+				041175F12C3A8DD800059052 /* ProgressCoordinator.swift */,
+				041175F32C3A8DDF00059052 /* Progress.storyboard */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
+		041175D82C3A015900059052 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				041175E52C3A8D9100059052 /* ClaculatorViewController.swift */,
+				041175E72C3A8D9B00059052 /* CalculatorViewModel.swift */,
+				041175E92C3A8DA900059052 /* CalculatorCoordinator.swift */,
+				041175EB2C3A8DB300059052 /* Calculator.storyboard */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		041175D92C3A016500059052 /* Muscles */ = {
+			isa = PBXGroup;
+			children = (
+				041175DD2C3A8D4B00059052 /* MusclesViewController.swift */,
+				041175DF2C3A8D6D00059052 /* MusclesViewModel.swift */,
+				041175E12C3A8D7900059052 /* MusclesCoordinator.swift */,
+				041175E32C3A8D8300059052 /* Muscles.storyboard */,
+			);
+			path = Muscles;
+			sourceTree = "<group>";
+		};
+		041175DA2C3A01CA00059052 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				041175D52C3A006C00059052 /* TabCoordinator.swift */,
+				041175DB2C3A01E500059052 /* TabCoordinatorDelegate.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		046B12282C3084BD0095ECC7 = {
 			isa = PBXGroup;
 			children = (
 				046B12332C3084BD0095ECC7 /* FitnessApp */,
 				046B12322C3084BD0095ECC7 /* Products */,
+				7789FD7B3FD334219D0E95F1 /* Pods */,
+				33A51D1B8FDF0F25A4EF65A3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +184,7 @@
 		046B12332C3084BD0095ECC7 /* FitnessApp */ = {
 			isa = PBXGroup;
 			children = (
+				041175D42C3A005200059052 /* Flow */,
 				046B12482C30BA480095ECC7 /* Application */,
 				046B124A2C30BA590095ECC7 /* Base */,
 				046B12632C3402BF0095ECC7 /* UIComponents */,
@@ -89,6 +192,7 @@
 				046B12612C3402980095ECC7 /* Resources */,
 				046B12492C30BA530095ECC7 /* API */,
 				046B12422C3084BF0095ECC7 /* Info.plist */,
+				041175FC2C3B44F800059052 /* GoogleService-Info.plist */,
 			);
 			path = FitnessApp;
 			sourceTree = "<group>";
@@ -96,10 +200,13 @@
 		046B12482C30BA480095ECC7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				046B124D2C30BABE0095ECC7 /* Home */,
 				046B12342C3084BD0095ECC7 /* AppDelegate.swift */,
 				046B12362C3084BD0095ECC7 /* SceneDelegate.swift */,
-				046B12522C30BBFE0095ECC7 /* AppCoordinator.swift */,
+				041175D92C3A016500059052 /* Muscles */,
+				041175D82C3A015900059052 /* Calculator */,
+				041175D72C3A015200059052 /* Progress */,
+				046B128E2C3986FC0095ECC7 /* SplashScreen */,
+				046B124D2C30BABE0095ECC7 /* Home */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -107,6 +214,7 @@
 		046B12492C30BA530095ECC7 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				041175F52C3B3CC600059052 /* FirebaseService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -146,6 +254,8 @@
 				046B12642C3407AB0095ECC7 /* UIColor+Extension.swift */,
 				046B12782C3602910095ECC7 /* UIImage+Extension.swift */,
 				046B128C2C36D3630095ECC7 /* UIFont+Extension.swift */,
+				046B12942C39F20D0095ECC7 /* UIView+Extension.swift */,
+				042535642C39F44F00FE9611 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -186,6 +296,34 @@
 			path = UITextField;
 			sourceTree = "<group>";
 		};
+		046B128E2C3986FC0095ECC7 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				046B128F2C3987340095ECC7 /* SplashViewController.swift */,
+				046B12912C39874A0095ECC7 /* Splash.storyboard */,
+				042535622C39F36300FE9611 /* SplashCoordinator.swift */,
+				041175FE2C3BCF7300059052 /* SplashViewModel.swift */,
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		33A51D1B8FDF0F25A4EF65A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0902B889C75A077F3D449C56 /* Pods_FitnessApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7789FD7B3FD334219D0E95F1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A74D7DEB44DD191C5A36C4E7 /* Pods-FitnessApp.debug.xcconfig */,
+				C5E5F5AFB502649A631232E0 /* Pods-FitnessApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -193,9 +331,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 046B12452C3084BF0095ECC7 /* Build configuration list for PBXNativeTarget "FitnessApp" */;
 			buildPhases = (
+				DBFE259CF3B9CA0B9B93987F /* [CP] Check Pods Manifest.lock */,
 				046B122D2C3084BD0095ECC7 /* Sources */,
 				046B122E2C3084BD0095ECC7 /* Frameworks */,
 				046B122F2C3084BD0095ECC7 /* Resources */,
+				40ECEE471B84C63DAFFB34CB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -245,13 +385,60 @@
 			buildActionMask = 2147483647;
 			files = (
 				046B128B2C36D1B90095ECC7 /* SairaRoman-Regular.ttf in Resources */,
+				041175E42C3A8D8300059052 /* Muscles.storyboard in Resources */,
+				041175FD2C3B44F900059052 /* GoogleService-Info.plist in Resources */,
 				046B123E2C3084BF0095ECC7 /* Assets.xcassets in Resources */,
 				046B12572C30C2690095ECC7 /* Home.storyboard in Resources */,
+				046B12922C39874A0095ECC7 /* Splash.storyboard in Resources */,
 				046B128A2C3689930095ECC7 /* CustomTextField.xib in Resources */,
+				041175EC2C3A8DB300059052 /* Calculator.storyboard in Resources */,
+				041175F42C3A8DDF00059052 /* Progress.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		40ECEE471B84C63DAFFB34CB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FitnessApp/Pods-FitnessApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FitnessApp/Pods-FitnessApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FitnessApp/Pods-FitnessApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBFE259CF3B9CA0B9B93987F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FitnessApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		046B122D2C3084BD0095ECC7 /* Sources */ = {
@@ -261,18 +448,35 @@
 				046B12532C30BBFE0095ECC7 /* AppCoordinator.swift in Sources */,
 				046B12832C3615760095ECC7 /* CustomSwitch.swift in Sources */,
 				046B125B2C30C2860095ECC7 /* HomeViewModel.swift in Sources */,
+				041175EE2C3A8DC200059052 /* ProgressViewController.swift in Sources */,
+				041175EA2C3A8DA900059052 /* CalculatorCoordinator.swift in Sources */,
+				041175E02C3A8D6D00059052 /* MusclesViewModel.swift in Sources */,
+				042535632C39F36300FE9611 /* SplashCoordinator.swift in Sources */,
+				041175FF2C3BCF7300059052 /* SplashViewModel.swift in Sources */,
 				046B128D2C36D3630095ECC7 /* UIFont+Extension.swift in Sources */,
 				046B12512C30BB170095ECC7 /* BaseViewController.swift in Sources */,
 				046B12882C3689870095ECC7 /* CustomTextField.swift in Sources */,
+				041175E62C3A8D9100059052 /* ClaculatorViewController.swift in Sources */,
 				046B12652C3407AB0095ECC7 /* UIColor+Extension.swift in Sources */,
+				042535652C39F44F00FE9611 /* UIViewController+Extension.swift in Sources */,
 				046B126B2C35F40B0095ECC7 /* CustomImageButton.swift in Sources */,
+				041175D62C3A006C00059052 /* TabCoordinator.swift in Sources */,
+				041175F02C3A8DCD00059052 /* ProgressViewModel.swift in Sources */,
+				041175F62C3B3CC600059052 /* FirebaseService.swift in Sources */,
+				041175DE2C3A8D4B00059052 /* MusclesViewController.swift in Sources */,
 				046B124F2C30BAE10095ECC7 /* HomeViewController.swift in Sources */,
 				046B12352C3084BD0095ECC7 /* AppDelegate.swift in Sources */,
+				041175E82C3A8D9B00059052 /* CalculatorViewModel.swift in Sources */,
+				041175DC2C3A01E500059052 /* TabCoordinatorDelegate.swift in Sources */,
 				046B126F2C35FD9B0095ECC7 /* PlainButton.swift in Sources */,
 				046B12592C30C2770095ECC7 /* HomeCoordinator.swift in Sources */,
 				046B12372C3084BD0095ECC7 /* SceneDelegate.swift in Sources */,
+				041175E22C3A8D7900059052 /* MusclesCoordinator.swift in Sources */,
 				046B12602C32BAD10095ECC7 /* Coordinator.swift in Sources */,
 				046B12792C3602910095ECC7 /* UIImage+Extension.swift in Sources */,
+				041175F22C3A8DD800059052 /* ProgressCoordinator.swift in Sources */,
+				046B12952C39F20D0095ECC7 /* UIView+Extension.swift in Sources */,
+				046B12902C3987340095ECC7 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +533,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -383,7 +587,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -395,6 +599,7 @@
 		};
 		046B12462C3084BF0095ECC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A74D7DEB44DD191C5A36C4E7 /* Pods-FitnessApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -421,6 +626,7 @@
 		};
 		046B12472C3084BF0095ECC7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5E5F5AFB502649A631232E0 /* Pods-FitnessApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

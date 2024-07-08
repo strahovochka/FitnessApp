@@ -1,0 +1,33 @@
+//
+//  SplashCoordinator.swift
+//  FitnessApp
+//
+//  Created by Jane Strashok on 07.07.2024.
+//
+
+import UIKit
+
+final class SplashCoordinator: Coordinator {
+    var childCoordinators: [Coordinator] = []
+    
+    var navigationController: UINavigationController
+    
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
+    
+    func start() {
+        let vc = SplashViewController.instantiate(for: "Splash")
+        let viewModel = SplashViewModel()
+        viewModel.coordinator = self
+        vc.viewModel = viewModel
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToTabBar(with hero: Sex) {
+        let tabBarCoordinator = TabCoordinator(navigationController, sex: hero)
+        self.navigationController.navigationBar.isHidden = true
+        tabBarCoordinator.start()
+        childCoordinators.append(tabBarCoordinator)
+    }
+}
