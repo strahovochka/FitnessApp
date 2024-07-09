@@ -1,8 +1,8 @@
 //
-//  TabBarCoordinatorDelegate.swift
+//  TabViewModel.swift
 //  FitnessApp
 //
-//  Created by Jane Strashok on 07.07.2024.
+//  Created by Jane Strashok on 09.07.2024.
 //
 
 import UIKit
@@ -66,9 +66,25 @@ enum TabBarItem: Int, CaseIterable {
     }
 }
 
-protocol TabCoordinatorDelegate: Coordinator {
-    var tabBarController: UITabBarController { get set }
-    func selectTab(_ tab: TabBarItem)
-    func setSelectedIndex(_ index: Int)
-    func currentTab() -> TabBarItem?
+final class TabViewModel: BaseViewModel<TabCoordinator> {
+    
+    private(set) var sex: Sex
+    
+    init(sex: Sex) {
+        self.sex = sex
+    }
+    
+    func getControllers() -> [UIViewController] {
+        var controllers = [UIViewController]()
+        let tabs = TabBarItem.allCases
+        tabs.forEach { tab in
+            let coordinator = tab.getCoodrinator(with: sex)
+            coordinator.navigationController.setNavigationBarHidden(true, animated: false)
+            coordinator.navigationController.tabBarItem = UITabBarItem.init(title: tab.title, image: tab.image, tag: tab.rawValue)
+            coordinator.navigationController.tabBarItem.selectedImage = tab.selectedImage
+            coordinator.start()
+            controllers.append(coordinator.navigationController)
+        }
+        return controllers
+    }
 }

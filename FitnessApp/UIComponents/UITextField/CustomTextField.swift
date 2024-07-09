@@ -80,16 +80,16 @@ final class CustomTextField: UIView {
         switch state {
         case .unfilled:
             self.label.textColor = .primaryWhite
-            self.textField.layer.borderColor = UIColor.secondaryGray?.cgColor
+            self.textField.layer.borderColor = UIColor.secondaryGray.cgColor
             self.textField.textColor = .primaryWhite
-            self.textField.attributedPlaceholder = NSAttributedString(string: self.placeholderText, attributes: [.foregroundColor: UIColor.secondaryGray ?? .gray])
+            self.textField.attributedPlaceholder = NSAttributedString(string: self.placeholderText, attributes: [.foregroundColor: UIColor.secondaryGray])
         case .filled:
             self.label.textColor = .primaryWhite
-            self.textField.layer.borderColor = UIColor.primaryWhite?.cgColor
+            self.textField.layer.borderColor = UIColor.primaryWhite.cgColor
             self.textField.textColor = .primaryWhite
         case .error:
             self.label.textColor = .primaryRed
-            self.textField.layer.borderColor = UIColor.primaryRed?.cgColor
+            self.textField.layer.borderColor = UIColor.primaryRed.cgColor
             self.textField.textColor = .primaryRed
         }
     }

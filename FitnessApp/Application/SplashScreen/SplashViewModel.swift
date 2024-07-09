@@ -12,9 +12,7 @@ enum Sex: String {
     case female = "Supergirl"
 }
 
-final class SplashViewModel {
-    
-    weak var coordinator: SplashCoordinator?
+final class SplashViewModel: BaseViewModel<SplashCoordinator> {
     
     func heroChosen(_ sex: Sex) {
         coordinator?.navigateToTabBar(with: sex)

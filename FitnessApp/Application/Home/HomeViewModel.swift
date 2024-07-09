@@ -7,10 +7,9 @@
 
 import UIKit
 
-final class HomeViewModel {
+final class HomeViewModel: BaseViewModel<HomeCoordinator> {
     
     private(set) var sex: Sex
-    var coordinator: Coordinator?
     
     init(sex: Sex) {
         self.sex = sex

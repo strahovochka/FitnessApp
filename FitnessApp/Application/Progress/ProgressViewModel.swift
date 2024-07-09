@@ -7,6 +7,6 @@
 
 import Foundation
 
-final class ProgressViewModel {
+final class ProgressViewModel: BaseViewModel<ProgressCoordinator> {
     
 }

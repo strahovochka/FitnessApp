@@ -7,6 +7,6 @@
 
 import Foundation
 
-final class CalculatorViewModel {
+final class CalculatorViewModel: BaseViewModel<CalculatorCoordinator> {
     
 }
