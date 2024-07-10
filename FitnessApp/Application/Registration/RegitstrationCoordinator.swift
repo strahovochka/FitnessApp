@@ -1,27 +1,24 @@
 //
-//  HomeCoordinator.swift
+//  RegitstrationCoordinator.swift
 //  FitnessApp
 //
-//  Created by Jane Strashok on 30.06.2024.
+//  Created by Jane Strashok on 09.07.2024.
 //
 
 import UIKit
 
-final class HomeCoordinator: Coordinator {
+final class RegistrationCoordinator: Coordinator {
     
     var childCoordinators: [Coordinator] = []
-    
     var navigationController: UINavigationController
-    private var sex: Sex
     
-    init(navigationController: UINavigationController, sex: Sex) {
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.sex = sex
     }
     
     func start() {
-        let vc = HomeViewController.instantiate(from: Identifiers.Storyboard.home)
-        let viewModel = HomeViewModel(sex: sex)
+        let vc = RegistrationViewController.instantiate(from: Identifiers.Storyboard.registration)
+        let viewModel = RegistrationViewModel()
         viewModel.coordinator = self
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)

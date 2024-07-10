@@ -17,7 +17,7 @@ final class SplashCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = SplashViewController.instantiate(for: "Splash")
+        let vc = SplashViewController.instantiate(from: Identifiers.Storyboard.splashScreen)
         let viewModel = SplashViewModel()
         viewModel.coordinator = self
         vc.viewModel = viewModel

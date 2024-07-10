@@ -17,6 +17,7 @@ final class CustomTextField: UIView {
 
     @IBOutlet weak private var label: UILabel!
     @IBOutlet weak private var textField: UITextField!
+    var errorChecker: ((String) -> (Bool))?
     
     @IBInspectable var labelTitle: String = "Label" {
         didSet {
@@ -41,8 +42,6 @@ final class CustomTextField: UIView {
         }
     }
     
-    var errorChecker: ((String?) -> (Bool))?
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initSubviews()
@@ -54,7 +53,7 @@ final class CustomTextField: UIView {
     }
     
     private func initSubviews() {
-        let nib = UINib(nibName: "CustomTextField", bundle: nil)
+        let nib = UINib(nibName: Identifiers.NibNames.textField, bundle: nil)
         guard let view = nib.instantiate(withOwner: self, options: nil).first as? UIView else {
             fatalError("Unable to convert nib")
         }
@@ -98,12 +97,16 @@ final class CustomTextField: UIView {
         if let text = textField.text, text.isEmpty {
             self.state = .unfilled
         } else {
-            if let errorChecker = errorChecker, errorChecker(textField.text) {
+            if let errorChecker = errorChecker, let text = textField.text, errorChecker(text) {
                 self.state = .error
             } else {
                 self.state = .filled
             }
         }
+    }
+    
+    func getText() -> String? {
+        return textField.text
     }
     
 }

@@ -19,7 +19,7 @@ class TabCoordinator: NSObject, Coordinator {
     }
     
     func start() {
-        let controller = TabViewController.instantiate(for: "TabBar")
+        let controller = TabViewController.instantiate(from: Identifiers.Storyboard.tabBar)
         let viewModel = TabViewModel(sex: sex)
         viewModel.coordinator = self
         controller.viewModel = viewModel
