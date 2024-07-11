@@ -12,16 +12,16 @@ final class HomeCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
     
     var navigationController: UINavigationController
-    private var sex: Sex
+    private var user: RegistrationModel
     
-    init(navigationController: UINavigationController, sex: Sex) {
+    init(navigationController: UINavigationController, user: RegistrationModel) {
         self.navigationController = navigationController
-        self.sex = sex
+        self.user = user
     }
     
     func start() {
         let vc = HomeViewController.instantiate(from: Identifiers.Storyboard.home)
-        let viewModel = HomeViewModel(sex: sex)
+        let viewModel = HomeViewModel(user: user)
         viewModel.coordinator = self
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)

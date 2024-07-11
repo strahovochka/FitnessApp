@@ -25,7 +25,7 @@ final class SplashCoordinator: Coordinator {
     }
     
     func navigateToTabBar(with hero: Sex) {
-        let tabBarCoordinator = TabCoordinator(navigationController, sex: hero)
+        let tabBarCoordinator = TabCoordinator(navigationController)
         self.navigationController.navigationBar.isHidden = true
         tabBarCoordinator.start()
         childCoordinators.append(tabBarCoordinator)

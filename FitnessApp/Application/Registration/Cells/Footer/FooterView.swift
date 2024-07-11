@@ -7,7 +7,11 @@
 
 import UIKit
 
-class FooterView: UIView {
+protocol RegistrationFooteViewDelegate: NSObject {
+    func enableSignUpButton(_ state: Bool)
+}
+
+final class FooterView: UIView {
     
     @IBOutlet weak private var signUpButton: PlainButton!
     
@@ -35,6 +39,18 @@ class FooterView: UIView {
     }
     
     private func configUI() {
+        self.signUpButton.isHidden = false
         self.signUpButton.setType(.filled)
+        self.isUserInteractionEnabled = true
+    }
+    
+    func addAction(target: Any, _ action: Selector) {
+        self.signUpButton.addTarget(target, action: action, for: .touchUpInside)
+    }
+}
+
+extension FooterView: RegistrationFooteViewDelegate {
+    func enableSignUpButton(_ state: Bool) {
+        self.signUpButton.isEnabled = state
     }
 }

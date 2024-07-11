@@ -23,4 +23,11 @@ final class RegistrationCoordinator: Coordinator {
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
     }
+    
+    func navigateToSplashScreen() {
+        let child = SplashCoordinator(navigationController: navigationController)
+        childCoordinators.append(child)
+        child.navigationController.navigationBar.isHidden = true
+        child.start()
+    }
 }

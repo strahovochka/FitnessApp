@@ -13,3 +13,5 @@ struct RegistrationModel {
   var sex: String?
   var password: String
 }
+
+

@@ -10,6 +10,7 @@ import UIKit
 class TextFieldTableViewCell: UITableViewCell {
 
     @IBOutlet weak private var textFieldView: CustomTextField!
+    private var cellType: RegistrationViewModel.CellType?
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -18,14 +19,20 @@ class TextFieldTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func config(title: String, placeholder: String, errorAction: ((String) -> (Bool))? = nil) {
-        self.textFieldView.labelTitle = title
-        self.textFieldView.placeholderText = placeholder
-        self.textFieldView.errorChecker = errorAction
+    func config(cellType: RegistrationViewModel.CellType, delegate: TextFieldRegistrationDelegate?) {
+        self.textFieldView.labelTitle = cellType.title
+        self.textFieldView.placeholderText = cellType.placeholderText
+        self.textFieldView.errorChecker = cellType.errorChecker
+        self.textFieldView.delegate = delegate
+        self.textFieldView.setCellType(cellType)
     }
     
-    func getText() -> String? {
-        textFieldView.getText()
+    func setErrorChecker(_ checker: @escaping (String) -> (Bool)) {
+        self.textFieldView.errorChecker = checker
+    }
+    
+    func isError() -> Bool {
+        textFieldView.isError()
     }
     
 }

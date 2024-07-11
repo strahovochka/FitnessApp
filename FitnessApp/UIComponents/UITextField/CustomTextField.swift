@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol TextFieldRegistrationDelegate {
+    func updateValue(for type: RegistrationViewModel.CellType, as newValue: String)
+}
+
 final class CustomTextField: UIView {
     
     enum State {
@@ -18,6 +22,8 @@ final class CustomTextField: UIView {
     @IBOutlet weak private var label: UILabel!
     @IBOutlet weak private var textField: UITextField!
     var errorChecker: ((String) -> (Bool))?
+    var delegate: TextFieldRegistrationDelegate?
+    private var cellType: RegistrationViewModel.CellType?
     
     @IBInspectable var labelTitle: String = "Label" {
         didSet {
@@ -52,7 +58,34 @@ final class CustomTextField: UIView {
         initSubviews()
     }
     
-    private func initSubviews() {
+    func setCellType(_ type: RegistrationViewModel.CellType) {
+        self.cellType = type
+    }
+    
+    func getState() -> State {
+        return state
+    }
+    
+    func isError() -> Bool {
+        if let text = textField.text, let errorCheck = errorChecker, errorCheck(text) {
+            self.state = .error
+            return true
+        }
+        return false
+    }
+}
+
+extension CustomTextField: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let text = textField.text, let type = cellType {
+            delegate?.updateValue(for: type, as: text)
+        }
+    }
+}
+
+//-MARK: Private functions
+private extension CustomTextField {
+    func initSubviews() {
         let nib = UINib(nibName: Identifiers.NibNames.textField, bundle: nil)
         guard let view = nib.instantiate(withOwner: self, options: nil).first as? UIView else {
             fatalError("Unable to convert nib")
@@ -65,7 +98,7 @@ final class CustomTextField: UIView {
         initialUISetup()
     }
     
-    private func initialUISetup() {
+    func initialUISetup() {
         self.textField.layer.borderWidth = 1
         self.textField.layer.cornerRadius = 12
         self.textField.layer.masksToBounds = true
@@ -75,7 +108,7 @@ final class CustomTextField: UIView {
         updateUI()
     }
     
-    private func updateUI() {
+    func updateUI() {
         switch state {
         case .unfilled:
             self.label.textColor = .primaryWhite
@@ -93,24 +126,11 @@ final class CustomTextField: UIView {
         }
     }
     
-    @IBAction private func textFieldDidChange(_ textField: UITextField) {
+    @IBAction func textFieldDidChange(_ textField: UITextField) {
         if let text = textField.text, text.isEmpty {
             self.state = .unfilled
         } else {
-            if let errorChecker = errorChecker, let text = textField.text, errorChecker(text) {
-                self.state = .error
-            } else {
-                self.state = .filled
-            }
+            self.state = .filled
         }
     }
-    
-    func getText() -> String? {
-        return textField.text
-    }
-    
-}
-
-extension CustomTextField: UITextFieldDelegate {
-    
 }

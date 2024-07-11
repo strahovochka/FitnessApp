@@ -41,17 +41,13 @@ extension RegistrationViewController: UITableViewDataSource {
         guard let viewModel = viewModel else { return UITableViewCell() }
         
         let cellData = viewModel.getCells()[indexPath.section]
+        cell.config(cellType: cellData, delegate: viewModel)
         if cellData == .confirmPassword {
-            let errorChecker: (String) -> (Bool) = { text in
-                if let index = viewModel.getCells().firstIndex(of: .password), let passwordCell = tableView.cellForRow(at: IndexPath(row: 0, section: index)) as? TextFieldTableViewCell, let password = passwordCell.getText() {
-                    return text != password
-                } else {
-                    return false
-                }
+            cell.setErrorChecker { [weak self] text in
+                guard let self = self else { return false }
+                guard let viewModel = self.viewModel else { return false }
+                return viewModel.password != text
             }
-            cell.config(title: cellData.title, placeholder: cellData.placeholderText, errorAction: errorChecker)
-        } else {
-            cell.config(title: cellData.title, placeholder: cellData.placeholderText, errorAction: cellData.errorChecker)
         }
         cell.backgroundColor = .clear
         return cell
@@ -77,7 +73,10 @@ extension RegistrationViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         if section == tableView.numberOfSections - 1 {
-            return FooterView()
+            let view = FooterView()
+            view.addAction(target: self, #selector(signUpButtonTouched))
+            viewModel?.delegate = view
+            return view
         }
         return nil
     }
@@ -102,5 +101,18 @@ private extension RegistrationViewController {
     
     func configUI() {
         self.logInButton.setType(.unfilled)
+    }
+    
+    @objc func signUpButtonTouched(_ sender: UIButton) {
+        if let viewModel = viewModel {
+            for section in 0..<tableView.numberOfSections {
+                if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: section)) as? TextFieldTableViewCell {
+                    if cell.isError(){
+                        return
+                    }
+                }
+            }
+            viewModel.registerUser()
+        }
     }
 }
