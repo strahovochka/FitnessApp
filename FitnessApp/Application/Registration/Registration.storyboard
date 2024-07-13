@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -21,26 +21,26 @@
             <objects>
                 <viewController storyboardIdentifier="RegistrationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="RegistrationViewController" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7a-os-ADR">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="103" width="430" height="795"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="wRn-in-O9q">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="430" height="600.33333333333337"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="oaw-o4-0dd">
-                                                <rect key="frame" x="77" y="0.0" width="221" height="97"/>
+                                                <rect key="frame" x="104.66666666666669" y="0.0" width="221" height="97"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUPERHERO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94Q-X1-kgK">
-                                                        <rect key="frame" x="0.0" y="0.0" width="221" height="51"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="221" height="50.666666666666664"/>
                                                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="32"/>
                                                         <color key="textColor" name="primaryYellow"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create your account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOK-XT-UHk">
-                                                        <rect key="frame" x="0.0" y="51" width="221" height="46"/>
+                                                        <rect key="frame" x="0.0" y="50.666666666666657" width="221" height="46.333333333333343"/>
                                                         <fontDescription key="fontDescription" name="SairaRoman-Regular" family="Saira" pointSize="24"/>
                                                         <color key="textColor" name="primaryWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -51,22 +51,22 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="1fH-6q-qE9">
-                                                <rect key="frame" x="43" y="137" width="289" height="332"/>
+                                                <rect key="frame" x="43" y="137" width="344" height="332"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LlL-XQ-TsI" customClass="CustomTextField" customModule="FitnessApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="289" height="71"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="344" height="71"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BbE-0E-9lu" customClass="CustomTextField" customModule="FitnessApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="87" width="289" height="71"/>
+                                                        <rect key="frame" x="0.0" y="87" width="344" height="71"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vaT-NO-WuM" customClass="CustomTextField" customModule="FitnessApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="174" width="289" height="71"/>
+                                                        <rect key="frame" x="0.0" y="174" width="344" height="71"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ju3-ja-1mr" customClass="CustomTextField" customModule="FitnessApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="261" width="289" height="71"/>
+                                                        <rect key="frame" x="0.0" y="261" width="344" height="71"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
                                                 </subviews>
@@ -75,10 +75,10 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wW8-Jg-Etr" userLabel="SignUpStack">
-                                                <rect key="frame" x="0.0" y="509" width="375" height="114"/>
+                                                <rect key="frame" x="0.0" y="508.99999999999994" width="430" height="91.333333333333314"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ui1-AE-wck" customClass="PlainButton" customModule="FitnessApp" customModuleProvider="target">
-                                                        <rect key="frame" x="43" y="0.0" width="289" height="49"/>
+                                                        <rect key="frame" x="43" y="0.0" width="344" height="49"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="49" id="Rqa-lI-bFU"/>
                                                         </constraints>
@@ -89,16 +89,16 @@
                                                         </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="htn-XD-5kB">
-                                                        <rect key="frame" x="57" y="79.5" width="261.5" height="34.5"/>
+                                                        <rect key="frame" x="84.333333333333343" y="57" width="261.33333333333326" height="34.333333333333343"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPy-Rk-Qv6">
-                                                                <rect key="frame" x="0.0" y="0.0" width="189.5" height="34.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="189.33333333333334" height="34.333333333333336"/>
                                                                 <fontDescription key="fontDescription" name="SairaRoman-Light" family="Saira" pointSize="16"/>
                                                                 <color key="textColor" name="secondaryGray"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJ0-0U-rJA" customClass="PlainButton" customModule="FitnessApp" customModuleProvider="target">
-                                                                <rect key="frame" x="191.5" y="0.0" width="70" height="34.5"/>
+                                                                <rect key="frame" x="191.33333333333337" y="0.0" width="70" height="34.333333333333336"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Log in"/>
                                                             </button>
@@ -120,7 +120,6 @@
                                     <constraint firstItem="wRn-in-O9q" firstAttribute="leading" secondItem="iZu-87-CwB" secondAttribute="leading" id="09X-cs-dIH"/>
                                     <constraint firstItem="iZu-87-CwB" firstAttribute="trailing" secondItem="wRn-in-O9q" secondAttribute="trailing" id="eLp-k8-tTz"/>
                                     <constraint firstItem="wRn-in-O9q" firstAttribute="top" secondItem="y7a-os-ADR" secondAttribute="top" id="hif-gz-8nx"/>
-                                    <constraint firstItem="wRn-in-O9q" firstAttribute="bottom" secondItem="iZu-87-CwB" secondAttribute="bottom" id="jeP-DI-Aa5"/>
                                     <constraint firstItem="wRn-in-O9q" firstAttribute="width" secondItem="wus-Vn-riA" secondAttribute="width" id="nC0-Zg-T9l"/>
                                     <constraint firstItem="wRn-in-O9q" firstAttribute="height" secondItem="wus-Vn-riA" secondAttribute="height" id="uLw-7b-HFx"/>
                                 </constraints>
@@ -131,7 +130,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="y7a-os-ADR" secondAttribute="trailing" id="9JP-d1-ZYi"/>
-                            <constraint firstItem="y7a-os-ADR" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="44" id="SkD-uA-fPh"/>
+                            <constraint firstItem="y7a-os-ADR" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="44" id="SkD-uA-fPh"/>
                             <constraint firstItem="y7a-os-ADR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ddS-uY-RoQ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="y7a-os-ADR" secondAttribute="bottom" id="k4a-MX-WA8"/>
                         </constraints>
