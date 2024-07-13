@@ -15,14 +15,11 @@ final class RegistrationViewModel: BaseViewModel<RegistrationCoordinator> {
         static let password = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
     }
     
-    enum CellType: Int, CaseIterable {
+    enum TextFieldType: Int, CaseIterable {
         case name
         case email
         case password
         case confirmPassword
-        
-        static let rowHeight: CGFloat = 71
-        static let footerHeight: CGFloat = 89
         
         var title: String {
             switch self {
@@ -49,42 +46,17 @@ final class RegistrationViewModel: BaseViewModel<RegistrationCoordinator> {
                 return "Enter password"
             }
         }
-        
-        var errorChecker: (String) -> (Bool) {
-            switch self {
-            case .name:
-                return {
-                    let regex = try! NSRegularExpression(pattern: Patterns.name)
-                    return !regex.matches($0) || $0.isEmpty
-                }
-            case .email:
-                return {
-                    let regex = try! NSRegularExpression(pattern: Patterns.email)
-                    return !regex.matches($0) || $0.isEmpty
-                }
-            case .password, .confirmPassword:
-                return {
-                    let regex = try! NSRegularExpression(pattern: Patterns.password)
-                    return !regex.matches($0) || $0.isEmpty
-                }
-            }
-        }
     }
-    
-    let title = "Superhero"
-    let subtitle = "Create your account"
+
     private var userName: String = ""
     private var email: String = ""
-    private(set) var password: String = ""
-    private var passwordConfirmation: String = ""
-    weak var delegate: RegistrationFooteViewDelegate?
+    private var password: String = ""
     
-    func getCells() -> [CellType] {
-        CellType.allCases
+    func getTextFieldsData() -> [TextFieldType] {
+        TextFieldType.allCases
     }
-    
+
     func registerUser() {
-        delegate?.enableSignUpButton(false)
         let user = RegistrationModel(userName: userName, email: email, sex: nil, password: password)
         FirebaseService.shared.registerUser(user) { [weak self] response in
             guard let self = self else { return }
@@ -93,33 +65,41 @@ final class RegistrationViewModel: BaseViewModel<RegistrationCoordinator> {
                 self.coordinator?.navigateToSplashScreen()
             case .failure(let errorMessage):
                 self.coordinator?.showAlert(title: errorMessage, actions: ["Ok": .default])
-                self.delegate?.enableSignUpButton(true)
             case .unknown:
-                self.delegate?.enableSignUpButton(true)
+                break
             }
         }
     }
     
-    func getEmptyData() -> [CellType] {
-        var emptyCells = [CellType]()
-        if userName.isEmpty {
-            emptyCells.append(.name)
+    func getErrorChecker(for textField: TextFieldType) -> ((String) -> (Bool)) {
+        switch textField {
+        case .name:
+            return {
+                let regex = try! NSRegularExpression(pattern: Patterns.name)
+                return !regex.matches($0) || $0.isEmpty
+            }
+        case .email:
+            return {
+                let regex = try! NSRegularExpression(pattern: Patterns.email)
+                return !regex.matches($0) || $0.isEmpty
+            }
+        case .password:
+            return {
+                let regex = try! NSRegularExpression(pattern: Patterns.password)
+                return !regex.matches($0) || $0.isEmpty
+            }
+        case .confirmPassword:
+            return { [weak self] in
+                guard let self = self else { return true }
+                return self.password != $0 || $0.isEmpty
+            }
         }
-        if email.isEmpty {
-            emptyCells.append(.email)
-        }
-        if password.isEmpty {
-            emptyCells.append(.password)
-        }
-        if passwordConfirmation.isEmpty {
-            emptyCells.append(.confirmPassword)
-        }
-        return emptyCells
     }
 }
 
 extension RegistrationViewModel: TextFieldRegistrationDelegate {
-    func updateValue(for type: CellType, as newValue: String) {
+    func updateValue(for tag: Int, as newValue: String) {
+        let type = TextFieldType(rawValue: tag)
         switch type {
         case .name:
             userName = newValue
@@ -127,8 +107,8 @@ extension RegistrationViewModel: TextFieldRegistrationDelegate {
             email = newValue
         case .password:
             password = newValue
-        case .confirmPassword:
-            passwordConfirmation = newValue
+        case .confirmPassword, .none:
+            break
         }
     }
 }

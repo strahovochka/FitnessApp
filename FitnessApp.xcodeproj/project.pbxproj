@@ -57,12 +57,6 @@
 		04F3C5602C3D3EF1000E14C7 /* RegitstrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3C55F2C3D3EF1000E14C7 /* RegitstrationViewModel.swift */; };
 		04F3C5632C3D3F1E000E14C7 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3C5612C3D3F1E000E14C7 /* RegistrationViewController.swift */; };
 		04F3C5662C3D3F44000E14C7 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F3C5652C3D3F44000E14C7 /* Registration.storyboard */; };
-		04F3C56A2C3D66EB000E14C7 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3C5682C3D66EA000E14C7 /* TextFieldTableViewCell.swift */; };
-		04F3C56B2C3D66EB000E14C7 /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F3C5692C3D66EB000E14C7 /* TextFieldTableViewCell.xib */; };
-		04F3C5702C3D69A4000E14C7 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3C56F2C3D69A4000E14C7 /* HeaderView.swift */; };
-		04F3C5722C3D69B2000E14C7 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F3C5712C3D69B2000E14C7 /* HeaderView.xib */; };
-		04F3C5742C3D6CDB000E14C7 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3C5732C3D6CDB000E14C7 /* FooterView.swift */; };
-		04F3C5762C3D6CEF000E14C7 /* FooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F3C5752C3D6CEF000E14C7 /* FooterView.xib */; };
 		04F3C5782C3D7475000E14C7 /* RegExp+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3C5772C3D7475000E14C7 /* RegExp+Extension.swift */; };
 		04F3C57A2C3D77F1000E14C7 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3C5792C3D77F1000E14C7 /* UITableView+Extension.swift */; };
 		04F3C57C2C3D7814000E14C7 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3C57B2C3D7814000E14C7 /* UITableViewCell+Extension.swift */; };
@@ -122,12 +116,6 @@
 		04F3C55F2C3D3EF1000E14C7 /* RegitstrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegitstrationViewModel.swift; sourceTree = "<group>"; };
 		04F3C5612C3D3F1E000E14C7 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		04F3C5652C3D3F44000E14C7 /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
-		04F3C5682C3D66EA000E14C7 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
-		04F3C5692C3D66EB000E14C7 /* TextFieldTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldTableViewCell.xib; sourceTree = "<group>"; };
-		04F3C56F2C3D69A4000E14C7 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		04F3C5712C3D69B2000E14C7 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
-		04F3C5732C3D6CDB000E14C7 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
-		04F3C5752C3D6CEF000E14C7 /* FooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterView.xib; sourceTree = "<group>"; };
 		04F3C5772C3D7475000E14C7 /* RegExp+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegExp+Extension.swift"; sourceTree = "<group>"; };
 		04F3C5792C3D77F1000E14C7 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		04F3C57B2C3D7814000E14C7 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
@@ -363,50 +351,12 @@
 		04F3C55C2C3D3ECD000E14C7 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
-				04F3C5672C3D669F000E14C7 /* Cells */,
 				04F3C55D2C3D3EE1000E14C7 /* RegitstrationCoordinator.swift */,
 				04F3C55F2C3D3EF1000E14C7 /* RegitstrationViewModel.swift */,
 				04F3C5612C3D3F1E000E14C7 /* RegistrationViewController.swift */,
 				04F3C5652C3D3F44000E14C7 /* Registration.storyboard */,
 			);
 			path = Registration;
-			sourceTree = "<group>";
-		};
-		04F3C5672C3D669F000E14C7 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				04F3C56E2C3D6947000E14C7 /* Footer */,
-				04F3C56D2C3D693B000E14C7 /* Header */,
-				04F3C56C2C3D6928000E14C7 /* TextFieldCell */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		04F3C56C2C3D6928000E14C7 /* TextFieldCell */ = {
-			isa = PBXGroup;
-			children = (
-				04F3C5682C3D66EA000E14C7 /* TextFieldTableViewCell.swift */,
-				04F3C5692C3D66EB000E14C7 /* TextFieldTableViewCell.xib */,
-			);
-			path = TextFieldCell;
-			sourceTree = "<group>";
-		};
-		04F3C56D2C3D693B000E14C7 /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				04F3C56F2C3D69A4000E14C7 /* HeaderView.swift */,
-				04F3C5712C3D69B2000E14C7 /* HeaderView.xib */,
-			);
-			path = Header;
-			sourceTree = "<group>";
-		};
-		04F3C56E2C3D6947000E14C7 /* Footer */ = {
-			isa = PBXGroup;
-			children = (
-				04F3C5732C3D6CDB000E14C7 /* FooterView.swift */,
-				04F3C5752C3D6CEF000E14C7 /* FooterView.xib */,
-			);
-			path = Footer;
 			sourceTree = "<group>";
 		};
 		33A51D1B8FDF0F25A4EF65A3 /* Frameworks */ = {
@@ -486,15 +436,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04F3C5722C3D69B2000E14C7 /* HeaderView.xib in Resources */,
 				04F3C5572C3D3220000E14C7 /* TabBar.storyboard in Resources */,
 				046B128B2C36D1B90095ECC7 /* SairaRoman-Regular.ttf in Resources */,
 				04F3C5662C3D3F44000E14C7 /* Registration.storyboard in Resources */,
 				041175E42C3A8D8300059052 /* Muscles.storyboard in Resources */,
 				046B123E2C3084BF0095ECC7 /* Assets.xcassets in Resources */,
-				04F3C5762C3D6CEF000E14C7 /* FooterView.xib in Resources */,
 				046B12572C30C2690095ECC7 /* Home.storyboard in Resources */,
-				04F3C56B2C3D66EB000E14C7 /* TextFieldTableViewCell.xib in Resources */,
 				046B12922C39874A0095ECC7 /* Splash.storyboard in Resources */,
 				046B128A2C3689930095ECC7 /* CustomTextField.xib in Resources */,
 				041175EC2C3A8DB300059052 /* Calculator.storyboard in Resources */,
@@ -566,7 +513,6 @@
 				046B12512C30BB170095ECC7 /* BaseViewController.swift in Sources */,
 				046B12882C3689870095ECC7 /* CustomTextField.swift in Sources */,
 				04F3C5542C3D31A9000E14C7 /* TabViewController.swift in Sources */,
-				04F3C5742C3D6CDB000E14C7 /* FooterView.swift in Sources */,
 				041175E62C3A8D9100059052 /* ClaculatorViewController.swift in Sources */,
 				046B12652C3407AB0095ECC7 /* UIColor+Extension.swift in Sources */,
 				042535652C39F44F00FE9611 /* UIViewController+Extension.swift in Sources */,
@@ -582,7 +528,6 @@
 				041175F62C3B3CC600059052 /* FirebaseService.swift in Sources */,
 				041175DE2C3A8D4B00059052 /* MusclesViewController.swift in Sources */,
 				046B124F2C30BAE10095ECC7 /* HomeViewController.swift in Sources */,
-				04F3C5702C3D69A4000E14C7 /* HeaderView.swift in Sources */,
 				046B12352C3084BD0095ECC7 /* AppDelegate.swift in Sources */,
 				041175E82C3A8D9B00059052 /* CalculatorViewModel.swift in Sources */,
 				046B126F2C35FD9B0095ECC7 /* PlainButton.swift in Sources */,
@@ -595,7 +540,6 @@
 				041175F22C3A8DD800059052 /* ProgressCoordinator.swift in Sources */,
 				046B12952C39F20D0095ECC7 /* UIView+Extension.swift in Sources */,
 				046B12902C3987340095ECC7 /* SplashViewController.swift in Sources */,
-				04F3C56A2C3D66EB000E14C7 /* TextFieldTableViewCell.swift in Sources */,
 				044E85502C3F38EA00E0916D /* RegistrationModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

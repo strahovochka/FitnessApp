@@ -8,7 +8,7 @@
 import UIKit
 
 protocol TextFieldRegistrationDelegate {
-    func updateValue(for type: RegistrationViewModel.CellType, as newValue: String)
+    func updateValue(for tag: Int, as newValue: String)
 }
 
 final class CustomTextField: UIView {
@@ -23,7 +23,7 @@ final class CustomTextField: UIView {
     @IBOutlet weak private var textField: UITextField!
     var errorChecker: ((String) -> (Bool))?
     var delegate: TextFieldRegistrationDelegate?
-    private var cellType: RegistrationViewModel.CellType?
+    private var cellType: RegistrationViewModel.TextFieldType?
     
     @IBInspectable var labelTitle: String = "Label" {
         didSet {
@@ -58,27 +58,21 @@ final class CustomTextField: UIView {
         initSubviews()
     }
     
-    func setCellType(_ type: RegistrationViewModel.CellType) {
-        self.cellType = type
+    func checkForError() {
+        if let text = textField.text, let errorCheck = errorChecker, errorCheck(text) {
+            self.state = .error
+        }
     }
     
     func getState() -> State {
-        return state
-    }
-    
-    func isError() -> Bool {
-        if let text = textField.text, let errorCheck = errorChecker, errorCheck(text) {
-            self.state = .error
-            return true
-        }
-        return false
+        self.state
     }
 }
 
 extension CustomTextField: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if let text = textField.text, let type = cellType {
-            delegate?.updateValue(for: type, as: text)
+        if let text = textField.text {
+            delegate?.updateValue(for: self.tag, as: text)
         }
     }
 }

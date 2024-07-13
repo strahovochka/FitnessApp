@@ -35,7 +35,7 @@ class FirebaseService: NSObject {
                 "email": userData.email as NSString,
                 "id": user.uid as NSString,
                 "sex": "" as NSString,
-                "name": userData.userName as NSString
+                "userName": userData.userName as NSString
             ]
             let db = Firestore.firestore()
             db.collection("users").addDocument(data: data as [String : Any]) { error in

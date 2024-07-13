@@ -15,14 +15,14 @@ final class HomeViewModel: BaseViewModel<HomeCoordinator> {
         self.user = user
     }
     
-    func getUserSex() -> String {
+    func getUserSex() -> (title: String, sex: Sex) {
         if let sex = user.sex {
             if sex == "female" {
-                return "Supergirl"
+                return ("Supergirl", .female)
             } else {
-                return "Superman"
+                return ("Superman", .male)
             }
         }
-        return ""
+        return ("", .male)
     }
 }

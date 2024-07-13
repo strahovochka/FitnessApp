@@ -21,10 +21,9 @@ class AppCoordinator: Coordinator {
         if let user = Auth.auth().currentUser {
             let db = FirebaseService.shared.firestore
             let document = db.collection("users").document(user.uid)
-            print(user.uid)
-            document.getDocument { [weak self] snapshop, error in
+            document.getDocument { [weak self] snapshot, error in
                 guard let self = self else { return }
-                if let data = snapshop?.data() {
+                if let data = snapshot?.data() {
                     if let sex = data["sex"] as? String {
                         if sex.isEmpty {
                             self.splashFlow()

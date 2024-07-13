@@ -18,18 +18,13 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let model = viewModel {
-            if model.getUserSex() == "Supergirl" {
-                setBackground(for: .female)
-            } else {
-                setBackground(for: .male)
-            }
+            setBackground(for: model.getUserSex().sex)
         }
-        
         configUI()
     }
     
     private func configUI() {
-        self.sexLabel.text = viewModel?.getUserSex()
+        self.sexLabel.text = viewModel?.getUserSex().title
         self.nameLabel.text = viewModel?.user.userName
     }
 }
