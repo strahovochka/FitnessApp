@@ -25,7 +25,7 @@ final class CustomSwitch: UISwitch {
         self.subviews[0].subviews[0].backgroundColor = .primaryGray
         for i in 0...1 {
             self.subviews[0].subviews[i].layer.borderWidth = 1
-            self.subviews[0].subviews[i].layer.borderColor = UIColor.primaryWhite?.cgColor
+            self.subviews[0].subviews[i].layer.borderColor = UIColor.primaryWhite.cgColor
         }
     }
 }

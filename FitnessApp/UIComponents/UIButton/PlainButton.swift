@@ -21,6 +21,13 @@ class PlainButton: UIButton {
         }
     }
     
+    override var isEnabled: Bool {
+        didSet {
+            self.configuration?.baseBackgroundColor = isEnabled ? .primaryYellow : UIColor(hex: "#E1E1E1")
+            self.alpha = 1.0
+        }
+    }
+    
     init(type: PlainButton.ViewType) {
         self.type = type
         super.init(frame: .zero)
@@ -71,5 +78,4 @@ class PlainButton: UIButton {
             self.setAttributedTitle(attributedTitle, for: .normal)
         }
     }
-
 }

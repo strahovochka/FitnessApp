@@ -10,14 +10,14 @@ import UIKit
 //-MARK: Colors of the app
 extension UIColor {
     //Primary colors
-    static let primaryRed = UIColor(named: "primaryRed")
-    static let primaryOrange = UIColor(named: "primaryOrange")
-    static let primaryYellow = UIColor(named: "primaryYellow")
-    static let primaryGray = UIColor(named: "primaryGray")
-    static let primaryWhite = UIColor(named: "primaryWhite")
+    static let primaryRed = UIColor(hex: "#FF0000")
+    static let primaryOrange = UIColor(hex: "#FA6969")
+    static let primaryYellow = UIColor(hex: "#FFDB64")
+    static let primaryGray = UIColor(hex: "#717171")
+    static let primaryWhite = UIColor(hex: "#FFFFFF")
     
     //Secondary colors
-    static let secondaryGray = UIColor(named: "secondaryGray")
+    static let secondaryGray = UIColor(hex: "#BFBFBF")
 }
 
 //-MARK: Extension methods

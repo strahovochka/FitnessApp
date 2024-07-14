@@ -7,6 +7,6 @@
 
 import Foundation
 
-final class MusclesViewModel {
+final class MusclesViewModel: BaseViewModel<MusclesCoordinator> {
     
 }

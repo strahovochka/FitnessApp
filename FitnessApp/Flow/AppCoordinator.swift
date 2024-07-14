@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class AppCoordinator: Coordinator {
+
     var childCoordinators: [Coordinator] = [Coordinator]()
     var navigationController: UINavigationController
     
@@ -16,7 +18,28 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        self.chooseHeroFlow()
+        if let user = Auth.auth().currentUser {
+            let db = FirebaseService.shared.firestore
+            let document = db.collection("users").document(user.uid)
+            document.getDocument { [weak self] snapshot, error in
+                guard let self = self else { return }
+                if let data = snapshot?.data() {
+                    if let sex = data["sex"] as? String {
+                        if sex.isEmpty {
+                            self.splashFlow()
+                        } else {
+                            self.mainFlow()
+                        }
+                    } else {
+                        self.registerFlow()
+                    }
+                } else {
+                    self.registerFlow()
+                }
+            }
+        } else {
+            registerFlow()
+        }
     }
     
     func childDidFinish(_ child: Coordinator) {
@@ -28,8 +51,20 @@ class AppCoordinator: Coordinator {
         }
     }
     
-    func chooseHeroFlow() {
+    func registerFlow() {
+        let child = RegistrationCoordinator(navigationController: navigationController)
+        childCoordinators.append(child)
+        child.start()
+    }
+    
+    func splashFlow() {
         let child = SplashCoordinator(navigationController: navigationController)
+        childCoordinators.append(child)
+        child.start()
+    }
+    
+    func mainFlow() {
+        let child = TabCoordinator(navigationController)
         childCoordinators.append(child)
         child.start()
     }

@@ -18,11 +18,16 @@ class BaseViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    private func setBackground() {
+    func setBackground(for sex: Sex = .male) {
         let imageView = UIImageView(frame: view.bounds)
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.image = .background
+        switch sex {
+        case .female:
+            imageView.image = .backgroundWomanFull
+        case .male:
+            imageView.image = .background
+        }
         imageView.center = view.center
         imageView.addGradient([.clear, .black], locations: [0.0, 0.7])
         imageView.addoverlay()

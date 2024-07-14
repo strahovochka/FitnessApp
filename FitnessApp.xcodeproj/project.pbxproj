@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		041175D62C3A006C00059052 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175D52C3A006C00059052 /* TabCoordinator.swift */; };
-		041175DC2C3A01E500059052 /* TabCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175DB2C3A01E500059052 /* TabCoordinatorDelegate.swift */; };
 		041175DE2C3A8D4B00059052 /* MusclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175DD2C3A8D4B00059052 /* MusclesViewController.swift */; };
 		041175E02C3A8D6D00059052 /* MusclesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175DF2C3A8D6D00059052 /* MusclesViewModel.swift */; };
 		041175E22C3A8D7900059052 /* MusclesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175E12C3A8D7900059052 /* MusclesCoordinator.swift */; };
@@ -22,10 +21,12 @@
 		041175F22C3A8DD800059052 /* ProgressCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175F12C3A8DD800059052 /* ProgressCoordinator.swift */; };
 		041175F42C3A8DDF00059052 /* Progress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041175F32C3A8DDF00059052 /* Progress.storyboard */; };
 		041175F62C3B3CC600059052 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175F52C3B3CC600059052 /* FirebaseService.swift */; };
-		041175FD2C3B44F900059052 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 041175FC2C3B44F800059052 /* GoogleService-Info.plist */; };
 		041175FF2C3BCF7300059052 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175FE2C3BCF7300059052 /* SplashViewModel.swift */; };
 		042535632C39F36300FE9611 /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042535622C39F36300FE9611 /* SplashCoordinator.swift */; };
 		042535652C39F44F00FE9611 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042535642C39F44F00FE9611 /* UIViewController+Extension.swift */; };
+		044E854E2C3E6A1300E0916D /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E854D2C3E6A1300E0916D /* Identifiers.swift */; };
+		044E85502C3F38EA00E0916D /* RegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E854F2C3F38EA00E0916D /* RegistrationModel.swift */; };
+		044E85552C407EAA00E0916D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 044E85542C407EAA00E0916D /* GoogleService-Info.plist */; };
 		046B12352C3084BD0095ECC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12342C3084BD0095ECC7 /* AppDelegate.swift */; };
 		046B12372C3084BD0095ECC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12362C3084BD0095ECC7 /* SceneDelegate.swift */; };
 		046B123E2C3084BF0095ECC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 046B123D2C3084BF0095ECC7 /* Assets.xcassets */; };
@@ -48,12 +49,22 @@
 		046B12902C3987340095ECC7 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B128F2C3987340095ECC7 /* SplashViewController.swift */; };
 		046B12922C39874A0095ECC7 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046B12912C39874A0095ECC7 /* Splash.storyboard */; };
 		046B12952C39F20D0095ECC7 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12942C39F20D0095ECC7 /* UIView+Extension.swift */; };
+		04F3C5512C3D3185000E14C7 /* TabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3C5502C3D3185000E14C7 /* TabViewModel.swift */; };
+		04F3C5542C3D31A9000E14C7 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3C5522C3D31A9000E14C7 /* TabViewController.swift */; };
+		04F3C5572C3D3220000E14C7 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F3C5562C3D3220000E14C7 /* TabBar.storyboard */; };
+		04F3C55B2C3D3BFD000E14C7 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3C55A2C3D3BFD000E14C7 /* BaseViewModel.swift */; };
+		04F3C55E2C3D3EE1000E14C7 /* RegitstrationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3C55D2C3D3EE1000E14C7 /* RegitstrationCoordinator.swift */; };
+		04F3C5602C3D3EF1000E14C7 /* RegitstrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3C55F2C3D3EF1000E14C7 /* RegitstrationViewModel.swift */; };
+		04F3C5632C3D3F1E000E14C7 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3C5612C3D3F1E000E14C7 /* RegistrationViewController.swift */; };
+		04F3C5662C3D3F44000E14C7 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F3C5652C3D3F44000E14C7 /* Registration.storyboard */; };
+		04F3C5782C3D7475000E14C7 /* RegExp+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3C5772C3D7475000E14C7 /* RegExp+Extension.swift */; };
+		04F3C57A2C3D77F1000E14C7 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3C5792C3D77F1000E14C7 /* UITableView+Extension.swift */; };
+		04F3C57C2C3D7814000E14C7 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3C57B2C3D7814000E14C7 /* UITableViewCell+Extension.swift */; };
 		B8E11BE2FD8050028CEA67CB /* Pods_FitnessApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0902B889C75A077F3D449C56 /* Pods_FitnessApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		041175D52C3A006C00059052 /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
-		041175DB2C3A01E500059052 /* TabCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinatorDelegate.swift; sourceTree = "<group>"; };
 		041175DD2C3A8D4B00059052 /* MusclesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusclesViewController.swift; sourceTree = "<group>"; };
 		041175DF2C3A8D6D00059052 /* MusclesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusclesViewModel.swift; sourceTree = "<group>"; };
 		041175E12C3A8D7900059052 /* MusclesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusclesCoordinator.swift; sourceTree = "<group>"; };
@@ -67,10 +78,12 @@
 		041175F12C3A8DD800059052 /* ProgressCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCoordinator.swift; sourceTree = "<group>"; };
 		041175F32C3A8DDF00059052 /* Progress.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Progress.storyboard; sourceTree = "<group>"; };
 		041175F52C3B3CC600059052 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
-		041175FC2C3B44F800059052 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		041175FE2C3BCF7300059052 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		042535622C39F36300FE9611 /* SplashCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
 		042535642C39F44F00FE9611 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		044E854D2C3E6A1300E0916D /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
+		044E854F2C3F38EA00E0916D /* RegistrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationModel.swift; sourceTree = "<group>"; };
+		044E85542C407EAA00E0916D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		046B12312C3084BD0095ECC7 /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		046B12342C3084BD0095ECC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		046B12362C3084BD0095ECC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +108,17 @@
 		046B128F2C3987340095ECC7 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		046B12912C39874A0095ECC7 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		046B12942C39F20D0095ECC7 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		04F3C5502C3D3185000E14C7 /* TabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewModel.swift; sourceTree = "<group>"; };
+		04F3C5522C3D31A9000E14C7 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		04F3C5562C3D3220000E14C7 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		04F3C55A2C3D3BFD000E14C7 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		04F3C55D2C3D3EE1000E14C7 /* RegitstrationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegitstrationCoordinator.swift; sourceTree = "<group>"; };
+		04F3C55F2C3D3EF1000E14C7 /* RegitstrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegitstrationViewModel.swift; sourceTree = "<group>"; };
+		04F3C5612C3D3F1E000E14C7 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		04F3C5652C3D3F44000E14C7 /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
+		04F3C5772C3D7475000E14C7 /* RegExp+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegExp+Extension.swift"; sourceTree = "<group>"; };
+		04F3C5792C3D77F1000E14C7 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		04F3C57B2C3D7814000E14C7 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		0902B889C75A077F3D449C56 /* Pods_FitnessApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitnessApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A74D7DEB44DD191C5A36C4E7 /* Pods-FitnessApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitnessApp.debug.xcconfig"; path = "Target Support Files/Pods-FitnessApp/Pods-FitnessApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C5E5F5AFB502649A631232E0 /* Pods-FitnessApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitnessApp.release.xcconfig"; path = "Target Support Files/Pods-FitnessApp/Pods-FitnessApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -158,9 +182,19 @@
 			isa = PBXGroup;
 			children = (
 				041175D52C3A006C00059052 /* TabCoordinator.swift */,
-				041175DB2C3A01E500059052 /* TabCoordinatorDelegate.swift */,
+				04F3C5502C3D3185000E14C7 /* TabViewModel.swift */,
+				04F3C5522C3D31A9000E14C7 /* TabViewController.swift */,
+				04F3C5562C3D3220000E14C7 /* TabBar.storyboard */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		044E85512C3F395200E0916D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				044E854F2C3F38EA00E0916D /* RegistrationModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		046B12282C3084BD0095ECC7 = {
@@ -192,7 +226,7 @@
 				046B12612C3402980095ECC7 /* Resources */,
 				046B12492C30BA530095ECC7 /* API */,
 				046B12422C3084BF0095ECC7 /* Info.plist */,
-				041175FC2C3B44F800059052 /* GoogleService-Info.plist */,
+				044E85542C407EAA00E0916D /* GoogleService-Info.plist */,
 			);
 			path = FitnessApp;
 			sourceTree = "<group>";
@@ -200,6 +234,7 @@
 		046B12482C30BA480095ECC7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				04F3C55C2C3D3ECD000E14C7 /* Registration */,
 				046B12342C3084BD0095ECC7 /* AppDelegate.swift */,
 				046B12362C3084BD0095ECC7 /* SceneDelegate.swift */,
 				041175D92C3A016500059052 /* Muscles */,
@@ -214,6 +249,7 @@
 		046B12492C30BA530095ECC7 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				044E85512C3F395200E0916D /* Models */,
 				041175F52C3B3CC600059052 /* FirebaseService.swift */,
 			);
 			path = API;
@@ -224,6 +260,8 @@
 			children = (
 				046B12502C30BB170095ECC7 /* BaseViewController.swift */,
 				046B125F2C32BAD10095ECC7 /* Coordinator.swift */,
+				04F3C55A2C3D3BFD000E14C7 /* BaseViewModel.swift */,
+				044E854D2C3E6A1300E0916D /* Identifiers.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -256,6 +294,9 @@
 				046B128C2C36D3630095ECC7 /* UIFont+Extension.swift */,
 				046B12942C39F20D0095ECC7 /* UIView+Extension.swift */,
 				042535642C39F44F00FE9611 /* UIViewController+Extension.swift */,
+				04F3C5772C3D7475000E14C7 /* RegExp+Extension.swift */,
+				04F3C5792C3D77F1000E14C7 /* UITableView+Extension.swift */,
+				04F3C57B2C3D7814000E14C7 /* UITableViewCell+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -305,6 +346,17 @@
 				041175FE2C3BCF7300059052 /* SplashViewModel.swift */,
 			);
 			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		04F3C55C2C3D3ECD000E14C7 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				04F3C55D2C3D3EE1000E14C7 /* RegitstrationCoordinator.swift */,
+				04F3C55F2C3D3EF1000E14C7 /* RegitstrationViewModel.swift */,
+				04F3C5612C3D3F1E000E14C7 /* RegistrationViewController.swift */,
+				04F3C5652C3D3F44000E14C7 /* Registration.storyboard */,
+			);
+			path = Registration;
 			sourceTree = "<group>";
 		};
 		33A51D1B8FDF0F25A4EF65A3 /* Frameworks */ = {
@@ -384,15 +436,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F3C5572C3D3220000E14C7 /* TabBar.storyboard in Resources */,
 				046B128B2C36D1B90095ECC7 /* SairaRoman-Regular.ttf in Resources */,
+				04F3C5662C3D3F44000E14C7 /* Registration.storyboard in Resources */,
 				041175E42C3A8D8300059052 /* Muscles.storyboard in Resources */,
-				041175FD2C3B44F900059052 /* GoogleService-Info.plist in Resources */,
 				046B123E2C3084BF0095ECC7 /* Assets.xcassets in Resources */,
 				046B12572C30C2690095ECC7 /* Home.storyboard in Resources */,
 				046B12922C39874A0095ECC7 /* Splash.storyboard in Resources */,
 				046B128A2C3689930095ECC7 /* CustomTextField.xib in Resources */,
 				041175EC2C3A8DB300059052 /* Calculator.storyboard in Resources */,
 				041175F42C3A8DDF00059052 /* Progress.storyboard in Resources */,
+				044E85552C407EAA00E0916D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,31 +506,41 @@
 				041175EA2C3A8DA900059052 /* CalculatorCoordinator.swift in Sources */,
 				041175E02C3A8D6D00059052 /* MusclesViewModel.swift in Sources */,
 				042535632C39F36300FE9611 /* SplashCoordinator.swift in Sources */,
+				04F3C5512C3D3185000E14C7 /* TabViewModel.swift in Sources */,
 				041175FF2C3BCF7300059052 /* SplashViewModel.swift in Sources */,
 				046B128D2C36D3630095ECC7 /* UIFont+Extension.swift in Sources */,
+				044E854E2C3E6A1300E0916D /* Identifiers.swift in Sources */,
 				046B12512C30BB170095ECC7 /* BaseViewController.swift in Sources */,
 				046B12882C3689870095ECC7 /* CustomTextField.swift in Sources */,
+				04F3C5542C3D31A9000E14C7 /* TabViewController.swift in Sources */,
 				041175E62C3A8D9100059052 /* ClaculatorViewController.swift in Sources */,
 				046B12652C3407AB0095ECC7 /* UIColor+Extension.swift in Sources */,
 				042535652C39F44F00FE9611 /* UIViewController+Extension.swift in Sources */,
 				046B126B2C35F40B0095ECC7 /* CustomImageButton.swift in Sources */,
 				041175D62C3A006C00059052 /* TabCoordinator.swift in Sources */,
+				04F3C5602C3D3EF1000E14C7 /* RegitstrationViewModel.swift in Sources */,
+				04F3C57C2C3D7814000E14C7 /* UITableViewCell+Extension.swift in Sources */,
+				04F3C5782C3D7475000E14C7 /* RegExp+Extension.swift in Sources */,
 				041175F02C3A8DCD00059052 /* ProgressViewModel.swift in Sources */,
+				04F3C5632C3D3F1E000E14C7 /* RegistrationViewController.swift in Sources */,
+				04F3C57A2C3D77F1000E14C7 /* UITableView+Extension.swift in Sources */,
+				04F3C55B2C3D3BFD000E14C7 /* BaseViewModel.swift in Sources */,
 				041175F62C3B3CC600059052 /* FirebaseService.swift in Sources */,
 				041175DE2C3A8D4B00059052 /* MusclesViewController.swift in Sources */,
 				046B124F2C30BAE10095ECC7 /* HomeViewController.swift in Sources */,
 				046B12352C3084BD0095ECC7 /* AppDelegate.swift in Sources */,
 				041175E82C3A8D9B00059052 /* CalculatorViewModel.swift in Sources */,
-				041175DC2C3A01E500059052 /* TabCoordinatorDelegate.swift in Sources */,
 				046B126F2C35FD9B0095ECC7 /* PlainButton.swift in Sources */,
 				046B12592C30C2770095ECC7 /* HomeCoordinator.swift in Sources */,
 				046B12372C3084BD0095ECC7 /* SceneDelegate.swift in Sources */,
 				041175E22C3A8D7900059052 /* MusclesCoordinator.swift in Sources */,
 				046B12602C32BAD10095ECC7 /* Coordinator.swift in Sources */,
+				04F3C55E2C3D3EE1000E14C7 /* RegitstrationCoordinator.swift in Sources */,
 				046B12792C3602910095ECC7 /* UIImage+Extension.swift in Sources */,
 				041175F22C3A8DD800059052 /* ProgressCoordinator.swift in Sources */,
 				046B12952C39F20D0095ECC7 /* UIView+Extension.swift in Sources */,
 				046B12902C3987340095ECC7 /* SplashViewController.swift in Sources */,
+				044E85502C3F38EA00E0916D /* RegistrationModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

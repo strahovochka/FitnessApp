@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -27,15 +28,24 @@
                                 <color key="textColor" name="primaryWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLM-RO-bLe">
+                                <rect key="frame" x="176.33333333333334" y="136" width="40.333333333333343" height="25.333333333333343"/>
+                                <fontDescription key="fontDescription" name="SairaRoman-Regular" family="Saira" pointSize="16"/>
+                                <color key="textColor" name="primaryWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="DLM-RO-bLe" firstAttribute="centerX" secondItem="wXS-KF-ta8" secondAttribute="centerX" id="F5c-JY-7Ef"/>
                             <constraint firstItem="wXS-KF-ta8" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="OFa-Tv-h97"/>
+                            <constraint firstItem="DLM-RO-bLe" firstAttribute="top" secondItem="wXS-KF-ta8" secondAttribute="bottom" constant="7" id="WVM-GN-Pik"/>
                             <constraint firstItem="wXS-KF-ta8" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="32" id="bVX-uo-6RD"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nameLabel" destination="DLM-RO-bLe" id="7MI-Ga-6gT"/>
                         <outlet property="sexLabel" destination="wXS-KF-ta8" id="E78-7L-Lys"/>
                     </connections>
                 </viewController>

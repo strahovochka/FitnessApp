@@ -11,15 +11,20 @@ import UIKit
 class HomeViewController: BaseViewController {
     
     @IBOutlet weak private var sexLabel: UILabel!
+    @IBOutlet weak private var nameLabel: UILabel!
     
     var viewModel: HomeViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let model = viewModel {
+            setBackground(for: model.getUserSex().sex)
+        }
         configUI()
     }
     
     private func configUI() {
-        self.sexLabel.text = viewModel?.sex.rawValue
+        self.sexLabel.text = viewModel?.getUserSex().title
+        self.nameLabel.text = viewModel?.user.userName
     }
 }

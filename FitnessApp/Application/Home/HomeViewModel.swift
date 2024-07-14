@@ -7,12 +7,22 @@
 
 import UIKit
 
-final class HomeViewModel {
+final class HomeViewModel: BaseViewModel<HomeCoordinator> {
     
-    private(set) var sex: Sex
-    var coordinator: Coordinator?
+    private(set) var user: RegistrationModel
     
-    init(sex: Sex) {
-        self.sex = sex
+    init(user: RegistrationModel) {
+        self.user = user
+    }
+    
+    func getUserSex() -> (title: String, sex: Sex) {
+        if let sex = user.sex {
+            if sex == "female" {
+                return ("Supergirl", .female)
+            } else {
+                return ("Superman", .male)
+            }
+        }
+        return ("", .male)
     }
 }
