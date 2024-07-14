@@ -24,7 +24,6 @@ class RegistrationViewController: BaseViewController {
         self.signUpButton.isEnabled = true
     }
     
-    
     @IBAction func signUpButtonPressed(_ sender: Any) {
         textFields.forEach { $0.checkForError() }
         guard let _ = textFields.first(where: { $0.getState() == .error}) else {

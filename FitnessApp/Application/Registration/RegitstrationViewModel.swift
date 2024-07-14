@@ -7,45 +7,45 @@
 
 import Foundation
 
+enum TextFieldType: Int, CaseIterable {
+    case name
+    case email
+    case password
+    case confirmPassword
+    
+    var title: String {
+        switch self {
+        case .name:
+            return "Name"
+        case .email:
+            return "Email"
+        case .password:
+            return "Password"
+        case .confirmPassword:
+            return "Confirm Password"
+        }
+    }
+    
+    var placeholderText: String {
+        switch self {
+        case .name:
+            return "Enter name"
+        case .email:
+            return "Enter email"
+        case .password:
+            return "Create password"
+        case .confirmPassword:
+            return "Enter password"
+        }
+    }
+}
+
 final class RegistrationViewModel: BaseViewModel<RegistrationCoordinator> {
     
     private enum Patterns {
         static let name = #"^[a-zA-Z0-9-''']+(?: [a-zA-Z0-9-''']+)*$"#
         static let email = #"^\S+@\S+\.\S+$"#
         static let password = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
-    }
-    
-    enum TextFieldType: Int, CaseIterable {
-        case name
-        case email
-        case password
-        case confirmPassword
-        
-        var title: String {
-            switch self {
-            case .name:
-                return "Name"
-            case .email:
-                return "Email"
-            case .password:
-                return "Password"
-            case .confirmPassword:
-                return "Confirm Password"
-            }
-        }
-        
-        var placeholderText: String {
-            switch self {
-            case .name:
-                return "Enter name"
-            case .email:
-                return "Enter email"
-            case .password:
-                return "Create password"
-            case .confirmPassword:
-                return "Enter password"
-            }
-        }
     }
 
     private var userName: String = ""
@@ -97,7 +97,7 @@ final class RegistrationViewModel: BaseViewModel<RegistrationCoordinator> {
     }
 }
 
-extension RegistrationViewModel: TextFieldRegistrationDelegate {
+extension RegistrationViewModel: CustomTextFieldDelegate {
     func updateValue(for tag: Int, as newValue: String) {
         let type = TextFieldType(rawValue: tag)
         switch type {

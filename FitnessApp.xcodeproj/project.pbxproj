@@ -24,6 +24,10 @@
 		041175FF2C3BCF7300059052 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175FE2C3BCF7300059052 /* SplashViewModel.swift */; };
 		042535632C39F36300FE9611 /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042535622C39F36300FE9611 /* SplashCoordinator.swift */; };
 		042535652C39F44F00FE9611 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042535642C39F44F00FE9611 /* UIViewController+Extension.swift */; };
+		0435DB122C43CFC000D66FB1 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB112C43CFC000D66FB1 /* LogInViewModel.swift */; };
+		0435DB142C43CFD300D66FB1 /* LogInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB132C43CFD300D66FB1 /* LogInCoordinator.swift */; };
+		0435DB162C43CFE200D66FB1 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB152C43CFE200D66FB1 /* LogInViewController.swift */; };
+		0435DB182C43CFED00D66FB1 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0435DB172C43CFED00D66FB1 /* LogIn.storyboard */; };
 		044E854E2C3E6A1300E0916D /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E854D2C3E6A1300E0916D /* Identifiers.swift */; };
 		044E85502C3F38EA00E0916D /* RegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E854F2C3F38EA00E0916D /* RegistrationModel.swift */; };
 		044E85552C407EAA00E0916D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 044E85542C407EAA00E0916D /* GoogleService-Info.plist */; };
@@ -81,6 +85,10 @@
 		041175FE2C3BCF7300059052 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		042535622C39F36300FE9611 /* SplashCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
 		042535642C39F44F00FE9611 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		0435DB112C43CFC000D66FB1 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
+		0435DB132C43CFD300D66FB1 /* LogInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInCoordinator.swift; sourceTree = "<group>"; };
+		0435DB152C43CFE200D66FB1 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		0435DB172C43CFED00D66FB1 /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
 		044E854D2C3E6A1300E0916D /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
 		044E854F2C3F38EA00E0916D /* RegistrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationModel.swift; sourceTree = "<group>"; };
 		044E85542C407EAA00E0916D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -189,6 +197,17 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		0435DB102C43CFA700D66FB1 /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				0435DB112C43CFC000D66FB1 /* LogInViewModel.swift */,
+				0435DB132C43CFD300D66FB1 /* LogInCoordinator.swift */,
+				0435DB152C43CFE200D66FB1 /* LogInViewController.swift */,
+				0435DB172C43CFED00D66FB1 /* LogIn.storyboard */,
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
 		044E85512C3F395200E0916D /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +253,7 @@
 		046B12482C30BA480095ECC7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				0435DB102C43CFA700D66FB1 /* LogIn */,
 				04F3C55C2C3D3ECD000E14C7 /* Registration */,
 				046B12342C3084BD0095ECC7 /* AppDelegate.swift */,
 				046B12362C3084BD0095ECC7 /* SceneDelegate.swift */,
@@ -440,6 +460,7 @@
 				046B128B2C36D1B90095ECC7 /* SairaRoman-Regular.ttf in Resources */,
 				04F3C5662C3D3F44000E14C7 /* Registration.storyboard in Resources */,
 				041175E42C3A8D8300059052 /* Muscles.storyboard in Resources */,
+				0435DB182C43CFED00D66FB1 /* LogIn.storyboard in Resources */,
 				046B123E2C3084BF0095ECC7 /* Assets.xcassets in Resources */,
 				046B12572C30C2690095ECC7 /* Home.storyboard in Resources */,
 				046B12922C39874A0095ECC7 /* Splash.storyboard in Resources */,
@@ -509,6 +530,7 @@
 				04F3C5512C3D3185000E14C7 /* TabViewModel.swift in Sources */,
 				041175FF2C3BCF7300059052 /* SplashViewModel.swift in Sources */,
 				046B128D2C36D3630095ECC7 /* UIFont+Extension.swift in Sources */,
+				0435DB142C43CFD300D66FB1 /* LogInCoordinator.swift in Sources */,
 				044E854E2C3E6A1300E0916D /* Identifiers.swift in Sources */,
 				046B12512C30BB170095ECC7 /* BaseViewController.swift in Sources */,
 				046B12882C3689870095ECC7 /* CustomTextField.swift in Sources */,
@@ -532,9 +554,11 @@
 				041175E82C3A8D9B00059052 /* CalculatorViewModel.swift in Sources */,
 				046B126F2C35FD9B0095ECC7 /* PlainButton.swift in Sources */,
 				046B12592C30C2770095ECC7 /* HomeCoordinator.swift in Sources */,
+				0435DB122C43CFC000D66FB1 /* LogInViewModel.swift in Sources */,
 				046B12372C3084BD0095ECC7 /* SceneDelegate.swift in Sources */,
 				041175E22C3A8D7900059052 /* MusclesCoordinator.swift in Sources */,
 				046B12602C32BAD10095ECC7 /* Coordinator.swift in Sources */,
+				0435DB162C43CFE200D66FB1 /* LogInViewController.swift in Sources */,
 				04F3C55E2C3D3EE1000E14C7 /* RegitstrationCoordinator.swift in Sources */,
 				046B12792C3602910095ECC7 /* UIImage+Extension.swift in Sources */,
 				041175F22C3A8DD800059052 /* ProgressCoordinator.swift in Sources */,
