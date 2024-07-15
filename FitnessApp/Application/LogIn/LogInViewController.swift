@@ -19,17 +19,29 @@ final class LogInViewController: BaseViewController {
         super.viewDidLoad()
         configUI()
     }
+    
+    @IBAction func loginButtonPressed(_ sender: Any) {
+        loginButton.isEnabled = false
+        viewModel?.logIn(completition: { [weak self] isSuccessful in
+            guard let self = self else { return }
+            if !isSuccessful {
+                self.loginButton.isEnabled = true
+            }
+        })
+    }
 }
 
 private extension LogInViewController {
     func configUI() {
         forgotPasswordButton.setType(.unfilled)
         loginButton.setType(.filled)
-        viewModel?.textFieldsData.forEach { data in
-            textFields[data.rawValue].labelTitle = data.title
-            textFields[data.rawValue].placeholderText = data.placeholderText
-            textFields[data.rawValue].tag = data.rawValue
-            textFields[data.rawValue].delegate = viewModel
+        if let viewModel = viewModel {
+            for (index, data) in viewModel.textFieldsData.enumerated() {
+                textFields[index].labelTitle = data.title
+                textFields[index].placeholderText = viewModel.getPlaceholder(for: data)
+                textFields[index].tag = data.rawValue
+                textFields[index].delegate = viewModel
+            }
         }
     }
 }

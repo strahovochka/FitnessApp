@@ -23,4 +23,10 @@ final class LogInCoordinator: Coordinator {
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
     }
+    
+    func navigateToTabBar(with user: RegistrationModel) {
+        let child = TabCoordinator(navigationController, user: user)
+        childCoordinators.append(child)
+        child.start()
+    }
 }

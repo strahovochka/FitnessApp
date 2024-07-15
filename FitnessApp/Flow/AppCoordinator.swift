@@ -19,21 +19,20 @@ class AppCoordinator: Coordinator {
     
     func start() {
         if let user = Auth.auth().currentUser {
-            let db = FirebaseService.shared.firestore
-            let document = db.collection("users").document(user.uid)
-            document.getDocument { [weak self] snapshot, error in
+            FirebaseService.shared.getUser { [weak self] response in
                 guard let self = self else { return }
-                if let data = snapshot?.data() {
-                    if let sex = data["sex"] as? String {
+                switch response {
+                case .success(let user):
+                    if let sex = user.sex {
                         if sex.isEmpty {
                             self.splashFlow()
                         } else {
-                            self.mainFlow()
+                            self.mainFlow(with: user)
                         }
                     } else {
                         self.registerFlow()
                     }
-                } else {
+                default:
                     self.registerFlow()
                 }
             }
@@ -63,8 +62,8 @@ class AppCoordinator: Coordinator {
         child.start()
     }
     
-    func mainFlow() {
-        let child = TabCoordinator(navigationController)
+    func mainFlow(with user: RegistrationModel) {
+        let child = TabCoordinator(navigationController, user: user)
         childCoordinators.append(child)
         child.start()
     }

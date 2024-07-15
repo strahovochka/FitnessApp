@@ -16,7 +16,6 @@ class HomeViewController: BaseViewController {
     var viewModel: HomeViewModel?
 
     override func viewDidLoad() {
-        super.viewDidLoad()
         if let model = viewModel {
             setBackground(for: model.getUserSex().sex)
         }

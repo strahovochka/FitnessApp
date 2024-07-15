@@ -9,9 +9,26 @@ import Foundation
 
 final class LogInViewModel: BaseViewModel<LogInCoordinator> {
     
-    let textFieldsData: [TextFieldType] = [.email, .password]
+    let textFieldsData: [TextFieldType] = []
     private var email: String = ""
     private var password: String = ""
+    
+    func logIn(completition: @escaping (Bool) -> ()) {
+        FirebaseService.shared.loginUser(withEmail: email, password: password) { [weak self] response in
+            guard let self = self else { return }
+            switch response {
+            case .success(let user):
+                self.coordinator?.navigateToTabBar(with: user)
+                completition(true)
+            case .failure(let error):
+                self.coordinator?.showAlert(title: error)
+                completition(false)
+            case .unknown:
+                self.coordinator?.showAlert(title: "An unknown error occured")
+                completition(false)
+            }
+        }
+    }
 }
 
 extension LogInViewModel: CustomTextFieldDelegate {
@@ -19,7 +36,7 @@ extension LogInViewModel: CustomTextFieldDelegate {
         let type = TextFieldType(rawValue: tag)
         if type == .email {
             email = newValue
-        } else if type == .password {
+        } else if type == .enterPassword {
             password = newValue
         }
     }

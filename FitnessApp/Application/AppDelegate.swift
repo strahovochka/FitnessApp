@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        signOutOldUser()
         return true
     }
 
@@ -23,5 +24,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) { }
+}
+
+extension AppDelegate{
+    func signOutOldUser(){
+        guard let _ = UserDefaults.standard.value(forKey: "isNewuser") else {
+            do {
+                UserDefaults.standard.set(true, forKey: "isNewuser")
+                try Auth.auth().signOut()
+            } catch{}
+            return
+        }
+    }
 }
 

@@ -91,13 +91,17 @@ final class TabViewModel: BaseViewModel<TabCoordinator> {
             guard let self = self else { return }
             switch response {
             case .success(let userModel):
-                if let user = userModel {
-                    self.user = user
-                    completition(user)
-                }
-            default:
-                break;
+                self.user = userModel
+                completition(userModel)
+            case .failure(let error):
+                self.coordinator?.showAlert(title: error)
+            case .unknown:
+                self.coordinator?.showAlert(title: "An unknown error occured")
             }
         }
+    }
+    
+    func setUser(_ user: RegistrationModel) {
+        self.user = user
     }
 }

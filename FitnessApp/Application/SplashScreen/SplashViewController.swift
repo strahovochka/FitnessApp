@@ -36,11 +36,27 @@ final class SplashViewController: UIViewController {
     }
     
     @IBAction func superManButtonTapped(_ sender: Any) {
-        self.viewModel?.heroChosen(.male)
+        manButton.isEnabled = false
+        girlButton.isEnabled = false
+        viewModel?.heroChosen(.male) { [weak self] isSuccessful in
+            guard let self = self else { return }
+            if !isSuccessful {
+                self.manButton.isEnabled = true
+            }
+            
+        }
     }
     
     @IBAction func superGirlButtonTapped(_ sender: Any) {
-        self.viewModel?.heroChosen(.female)
+        girlButton.isEnabled = false
+        manButton.isEnabled = false
+        viewModel?.heroChosen(.female) { [weak self] isSuccessful in
+            guard let self = self else { return }
+            if !isSuccessful {
+                self.girlButton.isEnabled = true
+            }
+            
+        }
     }
     
 }

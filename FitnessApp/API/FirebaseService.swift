@@ -12,8 +12,8 @@ import FirebaseFirestore
 
 class FirebaseService: NSObject {
     
-    enum Response<T> {
-        case success(T?)
+    enum Response<T: Any> {
+        case success(T)
         case failure(String)
         case unknown
     }
@@ -37,14 +37,16 @@ class FirebaseService: NSObject {
                 "sex": "" as NSString,
                 "userName": userData.userName as NSString
             ]
-            let db = Firestore.firestore()
-            db.collection("users").addDocument(data: data as [String : Any]) { error in
-                if let error = error {
-                    completition(.failure(error.localizedDescription))
-                } else {
-                    completition(.success(true))
+            Firestore.firestore()
+                .collection("users")
+                .document(user.uid)
+                .setData(data) { error in
+                    if let error = error {
+                        completition(.failure(error.localizedDescription))
+                    } else {
+                        completition(.success(true))
+                    }
                 }
-            }
         }
     }
     
@@ -63,15 +65,16 @@ class FirebaseService: NSObject {
         }
     }
     
-    func getUser(completition: @escaping (Response<RegistrationModel>) -> Void ) {
+    func getUser(completition: @escaping (Response<RegistrationModel>) -> () ) {
         if let user = currentUser {
             let userData = firestore.collection("users").document(user.uid)
             userData.getDocument { snapshot, error in
                 if let error = error {
                     completition(.failure(error.localizedDescription))
+                    return
                 }
                 if let data = snapshot?.data() {
-                    if let name = data["name"] as? String,
+                    if let name = data["userName"] as? String,
                        let sex = data["sex"] as? String,
                        let email = data["email"] as? String {
                         completition(.success(RegistrationModel(userName: name, email: email, sex: sex, password: "")))
@@ -84,6 +87,23 @@ class FirebaseService: NSObject {
             }
         } else {
             completition(.failure("No authentificated user"))
+        }
+    }
+    
+    func loginUser(withEmail: String, password: String, completition: @escaping (Response<RegistrationModel>) -> ()) {
+        Auth.auth().signIn(withEmail: withEmail, password: password) { [weak self] result, error in
+            if let error = error {
+                completition(.failure(error.localizedDescription))
+                return
+            }
+            guard let self = self else { return }
+            if result != nil {
+                self.getUser { response in
+                    completition(response)
+                }
+            } else {
+                completition(.unknown)
+            }
         }
     }
 }

@@ -14,16 +14,19 @@ enum Sex: String {
 
 final class SplashViewModel: BaseViewModel<SplashCoordinator> {
     
-    func heroChosen(_ sex: Sex) {
+    func heroChosen(_ sex: Sex, completition: @escaping (Bool) -> ()) {
         FirebaseService.shared.setUserSex(sex) { [weak self] response in
             guard let self = self else { return }
             switch response {
             case .success:
-                self.coordinator?.navigateToTabBar(with: sex)
+                self.coordinator?.navigateToTabBar()
+                completition(true)
             case .failure(let error):
-                self.coordinator?.showAlert(title: error, actions: ["Ok": .default])
+                self.coordinator?.showAlert(title: error)
+                completition(false)
             case .unknown:
-                break
+                self.coordinator?.showAlert(title: "An unknown error occured")
+                completition(false)
             }
         }
         
