@@ -16,7 +16,7 @@ extension UIImage {
     static let radioFilled = UIImage(named: "radioFilled")
     
     //Background image
-    static let background = UIImage(named: "background")
+    static let backgroundManFull = UIImage(named: "background")
     static let backgroundWomanFull = UIImage(named: "backgroundWomanFull")
     static let backgroundMan = UIImage(named: "backgroundMan")
     static let backgroundWoman = UIImage(named: "backgroundWoman")

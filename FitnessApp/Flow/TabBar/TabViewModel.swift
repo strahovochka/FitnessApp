@@ -52,10 +52,10 @@ enum TabBarItem: Int, CaseIterable {
         }
     }
     
-    func getCoodrinator(with user: RegistrationModel) -> Coordinator {
+    func getCoodrinator() -> Coordinator {
         switch self {
         case .home:
-            return HomeCoordinator(navigationController: UINavigationController(), user: user)
+            return HomeCoordinator(navigationController: UINavigationController())
         case .progress:
             return ProgressCoordinator(navigationController: UINavigationController())
         case .calculator:
@@ -68,40 +68,17 @@ enum TabBarItem: Int, CaseIterable {
 
 final class TabViewModel: BaseViewModel<TabCoordinator> {
     
-    private(set) var user: RegistrationModel?
-    
     func getControllers() -> [UIViewController] {
         var controllers = [UIViewController]()
         let tabs = TabBarItem.allCases
         tabs.forEach { tab in
-            if let user = user {
-                let coordinator = tab.getCoodrinator(with: user)
-                coordinator.navigationController.setNavigationBarHidden(true, animated: false)
-                coordinator.navigationController.tabBarItem = UITabBarItem.init(title: tab.title, image: tab.image, tag: tab.rawValue)
-                coordinator.navigationController.tabBarItem.selectedImage = tab.selectedImage
-                coordinator.start()
-                controllers.append(coordinator.navigationController)
-            }
+            let coordinator = tab.getCoodrinator()
+            coordinator.navigationController.setNavigationBarHidden(true, animated: false)
+            coordinator.navigationController.tabBarItem = UITabBarItem.init(title: tab.title, image: tab.image, tag: tab.rawValue)
+            coordinator.navigationController.tabBarItem.selectedImage = tab.selectedImage
+            coordinator.start()
+            controllers.append(coordinator.navigationController)
         }
         return controllers
-    }
-    
-    func getUser(completition: @escaping (RegistrationModel) -> ()) {
-        FirebaseService.shared.getUser { [weak self] response in
-            guard let self = self else { return }
-            switch response {
-            case .success(let userModel):
-                self.user = userModel
-                completition(userModel)
-            case .failure(let error):
-                self.coordinator?.showAlert(title: error)
-            case .unknown:
-                self.coordinator?.showAlert(title: "An unknown error occured")
-            }
-        }
-    }
-    
-    func setUser(_ user: RegistrationModel) {
-        self.user = user
     }
 }

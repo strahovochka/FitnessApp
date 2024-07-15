@@ -12,9 +12,9 @@ final class HomeCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
     
     var navigationController: UINavigationController
-    private var user: RegistrationModel
+    private var user: RegistrationModel?
     
-    init(navigationController: UINavigationController, user: RegistrationModel) {
+    init(navigationController: UINavigationController, user: RegistrationModel? = nil) {
         self.navigationController = navigationController
         self.user = user
     }

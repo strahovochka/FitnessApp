@@ -10,11 +10,9 @@ import UIKit
 class TabCoordinator: NSObject, Coordinator {
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
-    var user: RegistrationModel?
     
-    init(_ navigationController: UINavigationController, user: RegistrationModel? = nil) {
+    init(_ navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.user = user
     }
     
     func start() {
@@ -22,15 +20,6 @@ class TabCoordinator: NSObject, Coordinator {
         let viewModel = TabViewModel()
         viewModel.coordinator = self
         controller.viewModel = viewModel
-        if let user = user {
-            viewModel.setUser(user)
-            self.navigationController.pushViewController(controller, animated: true)
-        } else {
-            viewModel.getUser { [weak self] user in
-                guard let self = self else { return }
-                self.user = user
-                self.navigationController.pushViewController(controller, animated: true)
-            }
-        }
+        self.navigationController.pushViewController(controller, animated: true)
     }
 }

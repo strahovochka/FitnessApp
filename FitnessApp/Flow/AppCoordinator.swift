@@ -63,7 +63,7 @@ class AppCoordinator: Coordinator {
     }
     
     func mainFlow(with user: RegistrationModel) {
-        let child = TabCoordinator(navigationController, user: user)
+        let child = TabCoordinator(navigationController)
         childCoordinators.append(child)
         child.start()
     }

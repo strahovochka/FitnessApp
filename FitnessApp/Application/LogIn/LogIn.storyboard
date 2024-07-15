@@ -91,6 +91,8 @@
                     <connections>
                         <outlet property="forgotPasswordButton" destination="PeE-b9-xta" id="Xax-vD-6g1"/>
                         <outlet property="loginButton" destination="RQL-9x-w9w" id="iLS-Cx-rXa"/>
+                        <outlet property="mainTitle" destination="b42-76-syO" id="9Av-CL-4EM"/>
+                        <outlet property="subtitle" destination="dd2-jP-I55" id="oeU-Gg-FR6"/>
                         <outletCollection property="textFields" destination="Lyk-BN-hdl" collectionClass="NSMutableArray" id="SLv-PC-GU4"/>
                         <outletCollection property="textFields" destination="XfZ-fj-pFx" collectionClass="NSMutableArray" id="JIy-R8-UX7"/>
                     </connections>

@@ -13,10 +13,10 @@ class TabViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        config()
+        configUI()
     }
     
-    private func config() {
+    private func configUI() {
         self.tabBar.tintColor = .primaryYellow
         self.tabBar.unselectedItemTintColor = UIColor(hex: "#D9D9D9")
         prepareTabBarController()

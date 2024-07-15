@@ -14,25 +14,14 @@ final class SplashViewController: UIViewController {
     @IBOutlet weak private var girlButton: PlainButton!
     @IBOutlet weak private var backgroundWomanImage: UIImageView!
     @IBOutlet weak private var backgroundManImage: UIImageView!
+    @IBOutlet weak private var mainTitle: UILabel!
+    @IBOutlet weak private var subtitle: UILabel!
     
     var viewModel: SplashViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
-    }
-
-    private func configUI() {
-        backgroundManImage.addoverlay()
-        backgroundWomanImage.addoverlay()
-        
-        manButton.setType(.filled)
-        girlButton.setType(.filled)
-        
-        manButton.setFont(.regularSaira?.withSize(18))
-        girlButton.setFont(.regularSaira?.withSize(18))
-        
-        gradientView.addGradient([.clear, .black, .clear], locations: [0.0, 0.5, 1.0], frame: gradientView.bounds)
     }
     
     @IBAction func superManButtonTapped(_ sender: Any) {
@@ -58,5 +47,26 @@ final class SplashViewController: UIViewController {
             
         }
     }
-    
+}
+
+private extension SplashViewController {
+    func configUI() {
+        backgroundManImage.addoverlay()
+        backgroundWomanImage.addoverlay()
+        backgroundManImage.image = .backgroundMan
+        backgroundWomanImage.image = .backgroundWoman
+        
+        manButton.setType(.filled)
+        girlButton.setType(.filled)
+        manButton.setTitle(Sex.male.heroName, for: .normal)
+        girlButton.setTitle(Sex.female.heroName, for: .normal)
+        manButton.setFont(.regularSaira?.withSize(18))
+        girlButton.setFont(.regularSaira?.withSize(18))
+        
+        mainTitle.text = viewModel?.title
+        subtitle.text = viewModel?.subtitle
+        mainTitle.font = .boldFutura?.withSize(32)
+        subtitle.font = .thinSaira
+        gradientView.addGradient([.clear, .black, .clear], locations: [0.0, 0.5, 1.0], frame: gradientView.bounds)
+    }
 }

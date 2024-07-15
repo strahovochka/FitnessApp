@@ -52,6 +52,11 @@ final class RegistrationViewModel: BaseViewModel<RegistrationCoordinator> {
     }
     
     let textFieldsData: [TextFieldType] = [.name, .email, .createPassword, .confirmPassword]
+    let title = "Superhero".uppercased()
+    let subtitle = "Create your account"
+    let signInButtonText = "Sign in"
+    let loginText = "Already have an account?"
+    let logInButtonText = "Login"
     private var userName: String = ""
     private var email: String = ""
     private var password: String = ""

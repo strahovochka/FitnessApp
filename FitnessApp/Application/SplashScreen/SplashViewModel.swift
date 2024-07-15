@@ -10,9 +10,21 @@ import Foundation
 enum Sex: String {
     case male = "male"
     case female = "female"
+    
+    var heroName: String {
+        switch self {
+        case .male:
+            return "Superman"
+        case .female:
+            return "Supergirl"
+        }
+    }
 }
 
 final class SplashViewModel: BaseViewModel<SplashCoordinator> {
+    
+    let title = "Superhero".uppercased()
+    let subtitle = "Choose your hero"
     
     func heroChosen(_ sex: Sex, completition: @escaping (Bool) -> ()) {
         FirebaseService.shared.setUserSex(sex) { [weak self] response in

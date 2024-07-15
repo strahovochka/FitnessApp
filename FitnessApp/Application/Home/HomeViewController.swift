@@ -16,14 +16,27 @@ class HomeViewController: BaseViewController {
     var viewModel: HomeViewModel?
 
     override func viewDidLoad() {
-        if let model = viewModel {
-            setBackground(for: model.getUserSex().sex)
-        }
         configUI()
+        if let model = viewModel {
+            model.getUser { [weak self] user in
+                guard let self = self else { return }
+                self.updateUI()
+            }
+        }
+    }
+}
+
+private extension HomeViewController {
+    func configUI() {
+        sexLabel.text = viewModel?.heroPlaceholderName
+        nameLabel.text = viewModel?.namePlaceholder
+        sexLabel.font = .regularSaira?.withSize(24)
+        nameLabel.font = .regularSaira?.withSize(16)
     }
     
-    private func configUI() {
+    func updateUI() {
+        setBackground(for: viewModel?.getUserSex().sex ?? .male)
         self.sexLabel.text = viewModel?.getUserSex().title
-        self.nameLabel.text = viewModel?.user.userName
+        self.nameLabel.text = viewModel?.user?.userName
     }
 }

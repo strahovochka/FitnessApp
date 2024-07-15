@@ -10,6 +10,10 @@ import Foundation
 final class LogInViewModel: BaseViewModel<LogInCoordinator> {
     
     let textFieldsData: [TextFieldType] = []
+    let title = "Superhero".uppercased()
+    let subtitle = "Login to your account"
+    let loginButtonText = "Login"
+    let forgotPasswordText = "Forgot password?".capitalized
     private var email: String = ""
     private var password: String = ""
     
