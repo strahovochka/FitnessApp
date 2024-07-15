@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol TextFieldRegistrationDelegate {
+protocol CustomTextFieldDelegate {
     func updateValue(for tag: Int, as newValue: String)
 }
 
@@ -22,8 +22,7 @@ final class CustomTextField: UIView {
     @IBOutlet weak private var label: UILabel!
     @IBOutlet weak private var textField: UITextField!
     var errorChecker: ((String) -> (Bool))?
-    var delegate: TextFieldRegistrationDelegate?
-    private var cellType: RegistrationViewModel.TextFieldType?
+    var delegate: CustomTextFieldDelegate?
     
     @IBInspectable var labelTitle: String = "Label" {
         didSet {
@@ -69,14 +68,6 @@ final class CustomTextField: UIView {
     }
 }
 
-extension CustomTextField: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if let text = textField.text {
-            delegate?.updateValue(for: self.tag, as: text)
-        }
-    }
-}
-
 //-MARK: Private functions
 private extension CustomTextField {
     func initSubviews() {
@@ -96,7 +87,6 @@ private extension CustomTextField {
         self.textField.layer.borderWidth = 1
         self.textField.layer.cornerRadius = 12
         self.textField.layer.masksToBounds = true
-        self.textField.delegate = self
         self.backgroundColor = .clear
         self.textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         updateUI()
@@ -121,10 +111,13 @@ private extension CustomTextField {
     }
     
     @IBAction func textFieldDidChange(_ textField: UITextField) {
-        if let text = textField.text, text.isEmpty {
-            self.state = .unfilled
-        } else {
-            self.state = .filled
+        if let text = textField.text {
+            if text.isEmpty {
+                self.state = .unfilled
+            } else {
+                self.state = .filled
+                delegate?.updateValue(for: self.tag, as: text)
+            }
         }
     }
 }

@@ -18,12 +18,8 @@ class TabCoordinator: NSObject, Coordinator {
     func start() {
         let controller = TabViewController.instantiate(from: Identifiers.Storyboard.tabBar)
         let viewModel = TabViewModel()
-        viewModel.getUser { [weak self] user in
-            guard let self = self else { return }
-            viewModel.coordinator = self
-            controller.viewModel = viewModel
-            self.navigationController.pushViewController(controller, animated: true)
-        }
-        
+        viewModel.coordinator = self
+        controller.viewModel = viewModel
+        self.navigationController.pushViewController(controller, animated: true)
     }
 }

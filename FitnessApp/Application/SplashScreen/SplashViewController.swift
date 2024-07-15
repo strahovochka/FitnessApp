@@ -14,6 +14,8 @@ final class SplashViewController: UIViewController {
     @IBOutlet weak private var girlButton: PlainButton!
     @IBOutlet weak private var backgroundWomanImage: UIImageView!
     @IBOutlet weak private var backgroundManImage: UIImageView!
+    @IBOutlet weak private var mainTitle: UILabel!
+    @IBOutlet weak private var subtitle: UILabel!
     
     var viewModel: SplashViewModel?
     
@@ -21,26 +23,50 @@ final class SplashViewController: UIViewController {
         super.viewDidLoad()
         configUI()
     }
-
-    private func configUI() {
-        backgroundManImage.addoverlay()
-        backgroundWomanImage.addoverlay()
-        
-        manButton.setType(.filled)
-        girlButton.setType(.filled)
-        
-        manButton.setFont(.regularSaira?.withSize(18))
-        girlButton.setFont(.regularSaira?.withSize(18))
-        
-        gradientView.addGradient([.clear, .black, .clear], locations: [0.0, 0.5, 1.0], frame: gradientView.bounds)
-    }
     
     @IBAction func superManButtonTapped(_ sender: Any) {
-        self.viewModel?.heroChosen(.male)
+        manButton.isEnabled = false
+        girlButton.isEnabled = false
+        viewModel?.heroChosen(.male) { [weak self] isSuccessful in
+            guard let self = self else { return }
+            if !isSuccessful {
+                self.manButton.isEnabled = true
+            }
+            
+        }
     }
     
     @IBAction func superGirlButtonTapped(_ sender: Any) {
-        self.viewModel?.heroChosen(.female)
+        girlButton.isEnabled = false
+        manButton.isEnabled = false
+        viewModel?.heroChosen(.female) { [weak self] isSuccessful in
+            guard let self = self else { return }
+            if !isSuccessful {
+                self.girlButton.isEnabled = true
+            }
+            
+        }
     }
-    
+}
+
+private extension SplashViewController {
+    func configUI() {
+        backgroundManImage.addoverlay()
+        backgroundWomanImage.addoverlay()
+        backgroundManImage.image = .backgroundMan
+        backgroundWomanImage.image = .backgroundWoman
+        
+        manButton.setType(.filled)
+        girlButton.setType(.filled)
+        manButton.setTitle(Sex.male.heroName, for: .normal)
+        girlButton.setTitle(Sex.female.heroName, for: .normal)
+        manButton.setFont(.regularSaira?.withSize(18))
+        girlButton.setFont(.regularSaira?.withSize(18))
+        
+        mainTitle.text = viewModel?.title
+        subtitle.text = viewModel?.subtitle
+        mainTitle.font = .boldFutura?.withSize(32)
+        subtitle.font = .thinSaira
+        gradientView.addGradient([.clear, .black, .clear], locations: [0.0, 0.5, 1.0], frame: gradientView.bounds)
+    }
 }

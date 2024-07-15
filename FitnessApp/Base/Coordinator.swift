@@ -15,7 +15,7 @@ protocol Coordinator: AnyObject {
 }
 
 extension Coordinator {
-    func showAlert(title: String, message: String? = nil, actions: [String: UIAlertAction.Style]) {
+    func showAlert(title: String, message: String? = nil, actions: [String: UIAlertAction.Style] = ["Ok": .default]) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         for (title, style) in actions {
             let alertAction = UIAlertAction(title: title, style: style)

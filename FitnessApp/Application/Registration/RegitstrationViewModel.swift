@@ -7,6 +7,42 @@
 
 import Foundation
 
+enum TextFieldType: Int, CaseIterable {
+    case name
+    case email
+    case enterPassword
+    case createPassword
+    case confirmPassword
+    
+    var title: String {
+        switch self {
+        case .name:
+            return "Name"
+        case .email:
+            return "Email"
+        case .createPassword, .enterPassword:
+            return "Password"
+        case .confirmPassword:
+            return "Confirm Password"
+        }
+    }
+    
+    var placeholderText: String {
+        switch self {
+        case .name:
+            return "Enter name"
+        case .email:
+            return "Enter email"
+        case .enterPassword:
+            return "Enter password"
+        case .createPassword:
+            return "Create password"
+        case .confirmPassword:
+            return "Enter password"
+        }
+    }
+}
+
 final class RegistrationViewModel: BaseViewModel<RegistrationCoordinator> {
     
     private enum Patterns {
@@ -15,58 +51,30 @@ final class RegistrationViewModel: BaseViewModel<RegistrationCoordinator> {
         static let password = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
     }
     
-    enum TextFieldType: Int, CaseIterable {
-        case name
-        case email
-        case password
-        case confirmPassword
-        
-        var title: String {
-            switch self {
-            case .name:
-                return "Name"
-            case .email:
-                return "Email"
-            case .password:
-                return "Password"
-            case .confirmPassword:
-                return "Confirm Password"
-            }
-        }
-        
-        var placeholderText: String {
-            switch self {
-            case .name:
-                return "Enter name"
-            case .email:
-                return "Enter email"
-            case .password:
-                return "Create password"
-            case .confirmPassword:
-                return "Enter password"
-            }
-        }
-    }
-
+    let textFieldsData: [TextFieldType] = [.name, .email, .createPassword, .confirmPassword]
+    let title = "Superhero".uppercased()
+    let subtitle = "Create your account"
+    let signInButtonText = "Sign in"
+    let loginText = "Already have an account?"
+    let logInButtonText = "Login"
     private var userName: String = ""
     private var email: String = ""
     private var password: String = ""
-    
-    func getTextFieldsData() -> [TextFieldType] {
-        TextFieldType.allCases
-    }
 
-    func registerUser() {
+    func registerUser(completition: @escaping (Bool) -> ()) {
         let user = RegistrationModel(userName: userName, email: email, sex: nil, password: password)
         FirebaseService.shared.registerUser(user) { [weak self] response in
             guard let self = self else { return }
             switch response {
             case .success:
                 self.coordinator?.navigateToSplashScreen()
+                completition(true)
             case .failure(let errorMessage):
-                self.coordinator?.showAlert(title: errorMessage, actions: ["Ok": .default])
+                self.coordinator?.showAlert(title: errorMessage)
+                completition(false)
             case .unknown:
-                break
+                self.coordinator?.showAlert(title: "An unknown error occured")
+                completition(false)
             }
         }
     }
@@ -83,7 +91,7 @@ final class RegistrationViewModel: BaseViewModel<RegistrationCoordinator> {
                 let regex = try! NSRegularExpression(pattern: Patterns.email)
                 return !regex.matches($0) || $0.isEmpty
             }
-        case .password:
+        case .createPassword:
             return {
                 let regex = try! NSRegularExpression(pattern: Patterns.password)
                 return !regex.matches($0) || $0.isEmpty
@@ -93,11 +101,19 @@ final class RegistrationViewModel: BaseViewModel<RegistrationCoordinator> {
                 guard let self = self else { return true }
                 return self.password != $0 || $0.isEmpty
             }
+        case .enterPassword:
+            return { _ in
+                false
+            }
         }
+    }
+    
+    func goToLogin() {
+        coordinator?.navigateToLogIn()
     }
 }
 
-extension RegistrationViewModel: TextFieldRegistrationDelegate {
+extension RegistrationViewModel: CustomTextFieldDelegate {
     func updateValue(for tag: Int, as newValue: String) {
         let type = TextFieldType(rawValue: tag)
         switch type {
@@ -105,9 +121,9 @@ extension RegistrationViewModel: TextFieldRegistrationDelegate {
             userName = newValue
         case .email:
             email = newValue
-        case .password:
+        case .createPassword:
             password = newValue
-        case .confirmPassword, .none:
+        default:
             break
         }
     }

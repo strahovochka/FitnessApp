@@ -101,6 +101,9 @@
                                                                 <rect key="frame" x="191.33333333333337" y="0.0" width="70" height="34.333333333333336"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Log in"/>
+                                                                <connections>
+                                                                    <action selector="loginButtonPresses:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="YTY-23-8wz"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -137,7 +140,10 @@
                     </view>
                     <connections>
                         <outlet property="logInButton" destination="sJ0-0U-rJA" id="KYr-bI-TlL"/>
+                        <outlet property="loginLabel" destination="BPy-Rk-Qv6" id="NQg-If-tMi"/>
+                        <outlet property="mainTitle" destination="94Q-X1-kgK" id="Hsy-dW-l4H"/>
                         <outlet property="signUpButton" destination="Ui1-AE-wck" id="FWP-BZ-lNO"/>
+                        <outlet property="subtitle" destination="vOK-XT-UHk" id="V5r-8p-08B"/>
                         <outletCollection property="textFields" destination="LlL-XQ-TsI" collectionClass="NSMutableArray" id="7ZV-HD-BeW"/>
                         <outletCollection property="textFields" destination="BbE-0E-9lu" collectionClass="NSMutableArray" id="eBt-Rw-TbP"/>
                         <outletCollection property="textFields" destination="vaT-NO-WuM" collectionClass="NSMutableArray" id="4Ov-si-hUL"/>

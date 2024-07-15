@@ -26,7 +26,7 @@ class BaseViewController: UIViewController {
         case .female:
             imageView.image = .backgroundWomanFull
         case .male:
-            imageView.image = .background
+            imageView.image = .backgroundMan
         }
         imageView.center = view.center
         imageView.addGradient([.clear, .black], locations: [0.0, 0.7])

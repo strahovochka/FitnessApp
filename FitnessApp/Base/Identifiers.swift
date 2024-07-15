@@ -16,6 +16,7 @@ enum Identifiers {
         static let progress = "Progress"
         static let calculator = "Calculator"
         static let muscles = "Muscles"
+        static let logIn = "LogIn"
     }
     
     enum NibNames {
