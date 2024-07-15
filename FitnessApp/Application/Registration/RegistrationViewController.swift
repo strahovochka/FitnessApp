@@ -22,24 +22,6 @@ class RegistrationViewController: BaseViewController {
         super.viewDidLoad()
         configUI()
     }
-
-    @IBAction func signUpButtonPressed(_ sender: Any) {
-        textFields.forEach { $0.checkForError() }
-        guard let _ = textFields.first(where: { $0.getState() == .error}) else {
-            self.signUpButton.isEnabled = false
-            viewModel?.registerUser { [weak self] status in
-                guard let self = self else { return }
-                if !status {
-                    self.signUpButton.isEnabled = true
-                }
-            }
-            return
-        }
-    }
-    
-    @IBAction func loginButtonPresses(_ sender: Any) {
-        viewModel?.goToLogin()
-    }
     
 }
 
@@ -67,5 +49,23 @@ private extension RegistrationViewController {
             logInButton.setType(.unfilled)
             logInButton.setTitle(viewModel.logInButtonText, for: .normal)
         }
+    }
+    
+    @IBAction func signUpButtonPressed(_ sender: Any) {
+        textFields.forEach { $0.checkForError() }
+        guard let _ = textFields.first(where: { $0.getState() == .error}) else {
+            self.signUpButton.isEnabled = false
+            viewModel?.registerUser { [weak self] status in
+                guard let self = self else { return }
+                if !status {
+                    self.signUpButton.isEnabled = true
+                }
+            }
+            return
+        }
+    }
+    
+    @IBAction func loginButtonPresses(_ sender: Any) {
+        viewModel?.goToLogin()
     }
 }
