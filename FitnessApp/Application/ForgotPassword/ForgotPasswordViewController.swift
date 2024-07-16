@@ -32,6 +32,7 @@ private extension ForgotPasswordViewController {
         subtitleLabel.text = viewModel?.subtitle
         emailTextField.labelTitle = viewModel?.field.title
         emailTextField.placeholderText = viewModel?.field.placeholderText
+        emailTextField.delegate = viewModel
         explanationTextLabel.font = .lightSaira?.withSize(16)
         explanationTextLabel.numberOfLines = 0
         explanationTextLabel.text = viewModel?.explanationText
@@ -43,5 +44,9 @@ private extension ForgotPasswordViewController {
     
     @IBAction func backToLoginButtonPressed(_ sender: Any) {
         viewModel?.goBackToLogin()
+    }
+    
+    @IBAction func continueButtonPressed(_ sender: Any) {
+        
     }
 }
