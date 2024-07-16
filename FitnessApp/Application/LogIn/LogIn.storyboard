@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -20,20 +20,20 @@
             <objects>
                 <viewController storyboardIdentifier="LogInViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="LogInViewController" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="uy0-IJ-Sbj">
-                                <rect key="frame" x="43" y="103" width="307" height="91.666666666666686"/>
+                                <rect key="frame" x="43" y="103" width="344" height="91.666666666666686"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUPERHERO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b42-76-syO">
-                                        <rect key="frame" x="50.333333333333329" y="0.0" width="206.33333333333337" height="41.666666666666664"/>
+                                        <rect key="frame" x="69.000000000000014" y="0.0" width="206.33333333333337" height="41.666666666666664"/>
                                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="32"/>
                                         <color key="textColor" name="primaryYellow"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login to your account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dd2-jP-I55">
-                                        <rect key="frame" x="34.666666666666686" y="53.666666666666657" width="238" height="38"/>
+                                        <rect key="frame" x="53" y="53.666666666666657" width="238" height="38"/>
                                         <fontDescription key="fontDescription" name="SairaRoman-Light" family="Saira" pointSize="24"/>
                                         <color key="textColor" name="primaryWhite"/>
                                         <nil key="highlightedColor"/>
@@ -41,14 +41,14 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="cAu-Me-XRd">
-                                <rect key="frame" x="43" y="238.66666666666663" width="307" height="158"/>
+                                <rect key="frame" x="43" y="238.66666666666663" width="344" height="158"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lyk-BN-hdl" customClass="CustomTextField" customModule="FitnessApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="307" height="71"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="344" height="71"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XfZ-fj-pFx" customClass="CustomTextField" customModule="FitnessApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="87.000000000000028" width="307" height="71"/>
+                                        <rect key="frame" x="0.0" y="87.000000000000028" width="344" height="71"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                 </subviews>
@@ -57,12 +57,15 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PeE-b9-xta" customClass="PlainButton" customModule="FitnessApp" customModuleProvider="target">
-                                <rect key="frame" x="190" y="400.66666666666669" width="160" height="34.333333333333314"/>
+                                <rect key="frame" x="227" y="400.66666666666669" width="160" height="34.333333333333314"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Forgot Password?"/>
+                                <connections>
+                                    <action selector="forgotPasswordButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vfm-G7-gjo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQL-9x-w9w" customClass="PlainButton" customModule="FitnessApp" customModuleProvider="target">
-                                <rect key="frame" x="43" y="485.66666666666669" width="307" height="49.000000000000057"/>
+                                <rect key="frame" x="43" y="485.66666666666669" width="344" height="49.000000000000057"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="2Qg-6c-xVj"/>
                                 </constraints>

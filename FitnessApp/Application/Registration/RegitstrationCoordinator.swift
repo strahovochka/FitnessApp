@@ -18,6 +18,7 @@ final class RegistrationCoordinator: Coordinator {
     
     func start() {
         let vc = RegistrationViewController.instantiate(from: Identifiers.Storyboard.registration)
+        self.navigationController.navigationBar.isHidden = true
         let viewModel = RegistrationViewModel()
         viewModel.coordinator = self
         vc.viewModel = viewModel

@@ -52,4 +52,8 @@ private extension LogInViewController {
             }
         })
     }
+    
+    @IBAction func forgotPasswordButtonPressed(_ sender: Any) {
+        viewModel?.goToForgotPassword()
+    }
 }

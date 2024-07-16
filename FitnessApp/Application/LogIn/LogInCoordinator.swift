@@ -29,4 +29,16 @@ final class LogInCoordinator: Coordinator {
         childCoordinators.append(child)
         child.start()
     }
+    
+    func navigateToSplash() {
+        let child = SplashCoordinator(navigationController: navigationController)
+        childCoordinators.append(child)
+        child.start()
+    }
+    
+    func navigateToForgotPassword() {
+        let child = ForgotPasswordCoodinator(navigationController: navigationController)
+        childCoordinators.append(child)
+        child.start()
+    }
 }

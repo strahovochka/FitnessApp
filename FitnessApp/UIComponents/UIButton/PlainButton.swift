@@ -21,6 +21,13 @@ class PlainButton: UIButton {
         }
     }
     
+    var title: String? = "" {
+        didSet {
+            titleLabel?.text = title
+            configUI()
+        }
+    }
+    
     override var isEnabled: Bool {
         didSet {
             self.configuration?.baseBackgroundColor = isEnabled ? .primaryYellow : UIColor(hex: "#E1E1E1")

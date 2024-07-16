@@ -24,14 +24,14 @@ final class CustomTextField: UIView {
     var errorChecker: ((String) -> (Bool))?
     var delegate: CustomTextFieldDelegate?
     
-    @IBInspectable var labelTitle: String = "Label" {
+    @IBInspectable var labelTitle: String? = "Label" {
         didSet {
             self.label.text = labelTitle
         }
     }
     
-    @IBInspectable var placeholderText: String = "Placeholder" {
-        didSet{
+    @IBInspectable var placeholderText: String? = "Placeholder" {
+        didSet {
             self.textField.text = nil
             self.textField.placeholder = placeholderText
         }
@@ -98,7 +98,7 @@ private extension CustomTextField {
             self.label.textColor = .primaryWhite
             self.textField.layer.borderColor = UIColor.secondaryGray.cgColor
             self.textField.textColor = .primaryWhite
-            self.textField.attributedPlaceholder = NSAttributedString(string: self.placeholderText, attributes: [.foregroundColor: UIColor.secondaryGray])
+            self.textField.attributedPlaceholder = NSAttributedString(string: self.placeholderText ?? "", attributes: [.foregroundColor: UIColor.secondaryGray])
         case .filled:
             self.label.textColor = .primaryWhite
             self.textField.layer.borderColor = UIColor.primaryWhite.cgColor
