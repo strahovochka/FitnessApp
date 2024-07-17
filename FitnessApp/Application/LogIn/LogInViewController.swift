@@ -50,9 +50,7 @@ private extension LogInViewController {
         loginButton.isEnabled = false
         viewModel?.logIn(completition: { [weak self] isSuccessful in
             guard let self = self else { return }
-            if !isSuccessful {
-                self.loginButton.isEnabled = true
-            }
+            self.loginButton.isEnabled = !isSuccessful
         })
     }
     

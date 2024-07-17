@@ -29,10 +29,7 @@ final class SplashViewController: UIViewController {
         girlButton.isEnabled = false
         viewModel?.heroChosen(.male) { [weak self] isSuccessful in
             guard let self = self else { return }
-            if !isSuccessful {
-                self.manButton.isEnabled = true
-            }
-            
+            self.manButton.isEnabled = !isSuccessful
         }
     }
     
@@ -41,10 +38,7 @@ final class SplashViewController: UIViewController {
         manButton.isEnabled = false
         viewModel?.heroChosen(.female) { [weak self] isSuccessful in
             guard let self = self else { return }
-            if !isSuccessful {
-                self.girlButton.isEnabled = true
-            }
-            
+            self.girlButton.isEnabled = !isSuccessful
         }
     }
 }

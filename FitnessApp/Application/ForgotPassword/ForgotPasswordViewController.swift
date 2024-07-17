@@ -33,6 +33,7 @@ private extension ForgotPasswordViewController {
         emailTextField.labelTitle = viewModel?.field.title
         emailTextField.placeholderText = viewModel?.field.placeholderText
         emailTextField.delegate = viewModel
+        emailTextField.tag = viewModel?.field.rawValue ?? TextFieldType.email.rawValue
         explanationTextLabel.font = .lightSaira?.withSize(16)
         explanationTextLabel.numberOfLines = 0
         explanationTextLabel.text = viewModel?.explanationText
@@ -47,6 +48,11 @@ private extension ForgotPasswordViewController {
     }
     
     @IBAction func continueButtonPressed(_ sender: Any) {
-        
+        view.endEditing(true)
+        continueButton.isEnabled = false
+        viewModel?.resetPassword { [weak self] isSuccessful in
+            guard let self = self else { return }
+            self.continueButton.isEnabled = !isSuccessful
+        }
     }
 }

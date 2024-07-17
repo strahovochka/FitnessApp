@@ -23,5 +23,6 @@ enum Identifiers {
     enum NibNames {
         static let textField = "CustomTextField"
         static let titleView = "CustomTitleView"
+        static let popUp = "CustomPopUp"
     }
 }

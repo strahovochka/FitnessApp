@@ -34,10 +34,10 @@ final class SplashViewModel: BaseViewModel<SplashCoordinator> {
                 self.coordinator?.navigateToTabBar()
                 completition(true)
             case .failure(let error):
-                self.coordinator?.showAlert(title: error)
+                self.coordinator?.showPopUp(title: error, actions: ["Ok": .ok])
                 completition(false)
             case .unknown:
-                self.coordinator?.showAlert(title: "An unknown error occured")
+                self.coordinator?.showPopUp(title: "An unknown error occured", actions: ["Ok": .ok])
                 completition(false)
             }
         }

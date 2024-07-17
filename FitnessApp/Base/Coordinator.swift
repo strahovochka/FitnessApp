@@ -15,12 +15,18 @@ protocol Coordinator: AnyObject {
 }
 
 extension Coordinator {
-    func showAlert(title: String, message: String? = nil, actions: [String: UIAlertAction.Style] = ["Ok": .default]) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        for (title, style) in actions {
-            let alertAction = UIAlertAction(title: title, style: style)
-            alert.addAction(alertAction)
+    func showPopUp(title: String, actions: [String: CustomPopUp.ButtonType], handler: ((CustomPopUp.ButtonType) -> ())? = nil) {
+        let popUpViewController = CustomPopUp()
+        popUpViewController.title = title
+        for (title, type) in actions {
+            if let handler = handler {
+                popUpViewController.addAction(title: title, type: type) { type in
+                    handler(type)
+                }
+            } else {
+                popUpViewController.addAction(title: title, type: type)
+            }
         }
-        self.navigationController.present(alert, animated: true)
+        navigationController.topViewController?.present(popUpViewController, animated: true)
     }
 }

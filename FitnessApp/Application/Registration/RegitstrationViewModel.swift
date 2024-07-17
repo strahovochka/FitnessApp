@@ -70,10 +70,10 @@ final class RegistrationViewModel: BaseViewModel<RegistrationCoordinator> {
                 self.coordinator?.navigateToSplashScreen()
                 completition(true)
             case .failure(let errorMessage):
-                self.coordinator?.showAlert(title: errorMessage)
+                self.coordinator?.showPopUp(title: errorMessage, actions: ["Ok": .ok])
                 completition(false)
             case .unknown:
-                self.coordinator?.showAlert(title: "An unknown error occured")
+                self.coordinator?.showPopUp(title: "An unknown error occured", actions: ["Ok": .ok])
                 completition(false)
             }
         }
