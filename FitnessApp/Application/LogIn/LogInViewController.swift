@@ -11,9 +11,10 @@ final class LogInViewController: BaseViewController {
     
     @IBOutlet weak private var mainTitle: UILabel!
     @IBOutlet weak private var subtitle: UILabel!
-    @IBOutlet var textFields: [CustomTextField]!
-    @IBOutlet weak var forgotPasswordButton: PlainButton!
-    @IBOutlet weak var loginButton: PlainButton!
+    @IBOutlet private var textFields: [CustomTextField]!
+    @IBOutlet weak private var forgotPasswordButton: PlainButton!
+    @IBOutlet weak private var loginButton: PlainButton!
+    @IBOutlet weak private var backToRegistrationButton: PlainButton!
     
     var viewModel: LogInViewModel?
 
@@ -38,9 +39,11 @@ private extension LogInViewController {
             }
         }
         forgotPasswordButton.setType(.unfilled)
-        forgotPasswordButton.setTitle(viewModel?.forgotPasswordText, for: .normal)
+        forgotPasswordButton.title = viewModel?.forgotPasswordText
         loginButton.setType(.filled)
-        loginButton.setTitle(viewModel?.loginButtonText, for: .normal)
+        loginButton.title = viewModel?.loginButtonText
+        backToRegistrationButton.setType(.unfilled)
+        backToRegistrationButton.title = viewModel?.backToRegisterButtonText
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
@@ -55,5 +58,9 @@ private extension LogInViewController {
     
     @IBAction func forgotPasswordButtonPressed(_ sender: Any) {
         viewModel?.goToForgotPassword()
+    }
+    
+    @IBAction func backToRegisterButtonPressed(_ sender: Any) {
+        viewModel?.goBackToRegister()
     }
 }

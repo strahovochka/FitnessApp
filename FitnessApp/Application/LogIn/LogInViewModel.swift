@@ -14,6 +14,7 @@ final class LogInViewModel: BaseViewModel<LogInCoordinator> {
     let subtitle = "Login to your account"
     let loginButtonText = "Login"
     let forgotPasswordText = "Forgot password?".capitalized
+    let backToRegisterButtonText = "Bact to register"
     private var email: String = ""
     private var password: String = ""
     
@@ -40,6 +41,10 @@ final class LogInViewModel: BaseViewModel<LogInCoordinator> {
     
     func goToForgotPassword() {
         coordinator?.navigateToForgotPassword()
+    }
+    
+    func goBackToRegister() {
+        coordinator?.navigateBackToRegister()
     }
 }
 

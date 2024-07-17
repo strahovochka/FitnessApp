@@ -41,4 +41,8 @@ final class LogInCoordinator: Coordinator {
         childCoordinators.append(child)
         child.start()
     }
+    
+    func navigateBackToRegister() {
+        navigationController.popViewController(animated: true)
+    }
 }
