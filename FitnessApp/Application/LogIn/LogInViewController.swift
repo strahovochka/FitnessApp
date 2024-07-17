@@ -34,6 +34,7 @@ private extension LogInViewController {
             for (index, data) in viewModel.textFieldsData.enumerated() {
                 textFields[index].labelTitle = data.title
                 textFields[index].placeholderText = data.placeholderText
+                textFields[index].errorChecker = data.getErrorChecker()
                 textFields[index].tag = data.rawValue
                 textFields[index].delegate = viewModel
             }
@@ -47,11 +48,16 @@ private extension LogInViewController {
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
-        loginButton.isEnabled = false
-        viewModel?.logIn(completition: { [weak self] isSuccessful in
-            guard let self = self else { return }
-            self.loginButton.isEnabled = !isSuccessful
-        })
+        view.endEditing(true)
+        textFields.forEach { $0.checkForError()}
+        guard let _ = textFields.first(where: { $0.getState() == .error}) else {
+            loginButton.isEnabled = false
+            viewModel?.logIn(completition: { [weak self] isSuccessful in
+                guard let self = self else { return }
+                self.loginButton.isEnabled = !isSuccessful
+            })
+            return
+        }
     }
     
     @IBAction func forgotPasswordButtonPressed(_ sender: Any) {
