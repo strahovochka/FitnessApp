@@ -12,7 +12,8 @@ final class PopUpViewConrtoller: UIViewController {
     
     @IBOutlet weak private var containerView: UIView!
     @IBOutlet weak private var titleLabel: UILabel!
-    @IBOutlet weak var buttonStackView: UIStackView!
+    @IBOutlet weak private var buttonStackView: UIStackView!
+    @IBOutlet weak private var buttonStackWidth: NSLayoutConstraint!
     
     var viewModel: PopUpViewModel?
     
@@ -43,6 +44,16 @@ private extension PopUpViewConrtoller {
     }
     
     func configButtons() {
+        if let leftTitle = viewModel?.leftButtonTitle, let leftAction = viewModel?.leftButtonAction {
+            let leftButton = PlainButton()
+            leftButton.setType(.unfilled)
+            leftButton.title = leftTitle
+            leftButton.addAction(UIAction(handler: { _ in
+                leftAction()
+            }), for: .touchUpInside)
+            buttonStackWidth.priority = UILayoutPriority(998)
+            buttonStackView.addArrangedSubview(leftButton)
+        }
         let defaultButton = PlainButton()
         defaultButton.setType(.filled)
         defaultButton.title = viewModel?.defaultButtonTitle
@@ -51,13 +62,5 @@ private extension PopUpViewConrtoller {
             self.viewModel?.defaultAction()
         }), for: .touchUpInside)
         buttonStackView.addArrangedSubview(defaultButton)
-        if let leftTitle = viewModel?.leftButtonTitle, let leftAction = viewModel?.leftButtonAction {
-            let defaultButton = PlainButton()
-            defaultButton.setType(.unfilled)
-            defaultButton.title = leftTitle
-            defaultButton.addAction(UIAction(handler: { _ in
-                leftAction()
-            }), for: .touchUpInside)
-        }
     }
 }

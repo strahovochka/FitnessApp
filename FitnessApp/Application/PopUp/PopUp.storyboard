@@ -32,11 +32,14 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aaM-x0-fIF">
                                                 <rect key="frame" x="70" y="44.333333333333371" width="129" height="49"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="width" constant="129" id="2n5-YQ-i5i"/>
                                                     <constraint firstAttribute="height" constant="49" id="q1x-OQ-sFG"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="129" id="woZ-Qd-f9u"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="aaM-x0-fIF" firstAttribute="width" secondItem="11D-tq-hFP" secondAttribute="width" priority="999" id="kjJ-KX-LWH"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -58,6 +61,7 @@
                     </view>
                     <connections>
                         <outlet property="buttonStackView" destination="aaM-x0-fIF" id="Gwx-km-pMW"/>
+                        <outlet property="buttonStackWidth" destination="2n5-YQ-i5i" id="ODE-HA-qLp"/>
                         <outlet property="containerView" destination="s7k-W1-KJM" id="yn5-9z-Xhy"/>
                         <outlet property="titleLabel" destination="ARS-He-CkL" id="I2E-ug-dds"/>
                     </connections>

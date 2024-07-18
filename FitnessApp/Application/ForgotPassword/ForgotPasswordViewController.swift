@@ -33,7 +33,7 @@ private extension ForgotPasswordViewController {
         subtitleLabel.text = viewModel?.subtitle
         emailTextField.labelTitle = viewModel?.field.title
         emailTextField.placeholderText = viewModel?.field.placeholderText
-        emailTextField.errorChecker = viewModel?.field.getErrorChecker()
+        //emailTextField.errorChecker = viewModel?.field.getErrorChecker()
         emailTextField.delegate = viewModel
         emailTextField.tag = viewModel?.field.rawValue ?? TextFieldType.email.rawValue
         explanationTextLabel.font = .lightSaira?.withSize(16)
