@@ -57,7 +57,7 @@ class PlainButton: UIButton {
             var buttonConfig = UIButton.Configuration.filled()
             buttonConfig.cornerStyle = .capsule
             buttonConfig.baseBackgroundColor = .primaryYellow
-            buttonConfig.baseForegroundColor = .black
+            buttonConfig.baseForegroundColor = .primaryBlack
             self.configuration = buttonConfig
             self.setFont(.regularSaira)
         case .unfilled:

@@ -8,7 +8,6 @@
 import UIKit
 
 extension UIImage {
-    
     //Button images
     static let checkboxUnfilled = UIImage(named: "checkboxUnfilled")
     static let checkboxFilled = UIImage(named: "checkboxFilled")
@@ -30,5 +29,4 @@ extension UIImage {
     static let calculatorTabSelected = UIImage(named: "calculatorTabSelected")
     static let musclesTab = UIImage(named: "musclesTab")
     static let musclesTabSelected = UIImage(named: "musclesTabSelected")
-    
 }

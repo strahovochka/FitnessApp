@@ -61,6 +61,6 @@ private extension SplashViewController {
         subtitle.text = viewModel?.subtitle
         mainTitle.font = .boldFutura?.withSize(32)
         subtitle.font = .thinSaira
-        gradientView.addGradient([.clear, .black, .clear], locations: [0.0, 0.5, 1.0], frame: gradientView.bounds)
+        gradientView.addGradient([.clear, .primaryBlack, .clear], locations: [0.0, 0.5, 1.0], frame: gradientView.bounds)
     }
 }

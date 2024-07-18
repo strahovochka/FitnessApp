@@ -9,7 +9,7 @@ import UIKit
 
 final class PopUpViewConrtoller: UIViewController {
     
-    
+    @IBOutlet weak private var backView: UIView!
     @IBOutlet weak private var containerView: UIView!
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var buttonStackView: UIStackView!
@@ -21,16 +21,12 @@ final class PopUpViewConrtoller: UIViewController {
         super.viewDidLoad()
         configUI()
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.dismiss(animated: true)
-    }
 }
 
 private extension PopUpViewConrtoller {
     
     func configUI() {
-        view.backgroundColor = .black.withAlphaComponent(0.7)
+        view.backgroundColor = .primaryBlack.withAlphaComponent(0.7)
         containerView.backgroundColor = UIColor(hex: "#010102")
         containerView.layer.borderColor = UIColor.primaryWhite.cgColor
         containerView.layer.borderWidth = 1
@@ -40,6 +36,8 @@ private extension PopUpViewConrtoller {
         titleLabel.textAlignment = .center
         titleLabel.textColor = .primaryWhite
         titleLabel.text = viewModel?.title
+        
+        backView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hide)))
         configButtons()
     }
     
@@ -62,5 +60,9 @@ private extension PopUpViewConrtoller {
             self.viewModel?.defaultAction()
         }), for: .touchUpInside)
         buttonStackView.addArrangedSubview(defaultButton)
+    }
+    
+    @objc func hide() {
+        dismiss(animated: true)
     }
 }

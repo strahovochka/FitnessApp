@@ -17,6 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4S-aU-LXC">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s7k-W1-KJM">
                                 <rect key="frame" x="46" y="363.33333333333331" width="301" height="125.33333333333331"/>
                                 <subviews>
@@ -54,12 +57,17 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="R4S-aU-LXC" secondAttribute="bottom" id="3VI-Id-6ov"/>
+                            <constraint firstItem="R4S-aU-LXC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="GUK-0G-E0P"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="R4S-aU-LXC" secondAttribute="trailing" id="HYk-On-8Jg"/>
+                            <constraint firstItem="R4S-aU-LXC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="LxE-Mj-Yi5"/>
                             <constraint firstItem="s7k-W1-KJM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="46" id="ZcJ-UG-Q05"/>
                             <constraint firstItem="s7k-W1-KJM" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="ecV-um-tsH"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="s7k-W1-KJM" secondAttribute="trailing" constant="46" id="m7U-2e-ptG"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backView" destination="R4S-aU-LXC" id="nVK-ci-hUx"/>
                         <outlet property="buttonStackView" destination="aaM-x0-fIF" id="Gwx-km-pMW"/>
                         <outlet property="buttonStackWidth" destination="2n5-YQ-i5i" id="ODE-HA-qLp"/>
                         <outlet property="containerView" destination="s7k-W1-KJM" id="yn5-9z-Xhy"/>

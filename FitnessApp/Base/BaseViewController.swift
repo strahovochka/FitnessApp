@@ -29,7 +29,7 @@ class BaseViewController: UIViewController {
             imageView.image = .backgroundMan
         }
         imageView.center = view.center
-        imageView.addGradient([.clear, .black], locations: [0.0, 0.7])
+        imageView.addGradient([.clear, .primaryBlack], locations: [0.0, 0.7])
         imageView.addoverlay()
         view.addSubview(imageView)
         self.view.sendSubviewToBack(imageView)
