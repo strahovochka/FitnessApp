@@ -13,13 +13,14 @@ final class ForgotPasswordViewController: BaseViewController {
     @IBOutlet weak private var subtitleLabel: UILabel!
     @IBOutlet weak private var emailTextField: CustomTextField!
     @IBOutlet weak private var explanationTextLabel: UILabel!
-    @IBOutlet weak var continueButton: PlainButton!
-    @IBOutlet weak var backToLoginButton: PlainButton!
+    @IBOutlet weak private var continueButton: PlainButton!
+    @IBOutlet weak private var backToLoginButton: PlainButton!
     
     var viewModel: ForgotPasswordViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
         configUI()
     }
 }

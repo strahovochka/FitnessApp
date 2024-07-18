@@ -17,9 +17,10 @@ final class LogInViewController: BaseViewController {
     @IBOutlet weak private var backToRegistrationButton: PlainButton!
     
     var viewModel: LogInViewModel?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
         configUI()
     }
 }

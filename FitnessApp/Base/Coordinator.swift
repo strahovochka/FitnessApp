@@ -15,18 +15,9 @@ protocol Coordinator: AnyObject {
 }
 
 extension Coordinator {
-    func showPopUp(title: String, actions: [String: CustomPopUp.ButtonType], handler: ((CustomPopUp.ButtonType) -> ())? = nil) {
-        let popUpViewController = CustomPopUp()
-        popUpViewController.title = title
-        for (title, type) in actions {
-            if let handler = handler {
-                popUpViewController.addAction(title: title, type: type) { type in
-                    handler(type)
-                }
-            } else {
-                popUpViewController.addAction(title: title, type: type)
-            }
-        }
-        navigationController.topViewController?.present(popUpViewController, animated: true)
+    func showPopUp(title: String, buttonTitle: String, secondaryTitle: String? = nil, buttonAction: @escaping () -> (), secondaryAction: (() -> ())? = nil) {
+        let child = PopUpCoordinator(navigationController: navigationController, message: title, defaultButtonTitile: buttonTitle, secondaryButtonTitle: secondaryTitle, defaultAction: buttonAction, secondaryAction: secondaryAction)
+        childCoordinators.append(child)
+        child.start()
     }
 }

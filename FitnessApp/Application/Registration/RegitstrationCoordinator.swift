@@ -18,7 +18,6 @@ final class RegistrationCoordinator: Coordinator {
     
     func start() {
         let vc = RegistrationViewController.instantiate(from: Identifiers.Storyboard.registration)
-        self.navigationController.navigationBar.isHidden = true
         let viewModel = RegistrationViewModel()
         viewModel.coordinator = self
         vc.viewModel = viewModel
@@ -28,14 +27,12 @@ final class RegistrationCoordinator: Coordinator {
     func navigateToSplashScreen() {
         let child = SplashCoordinator(navigationController: navigationController)
         childCoordinators.append(child)
-        child.navigationController.navigationBar.isHidden = true
         child.start()
     }
     
     func navigateToLogIn() {
         let child = LogInCoordinator(navigationController: navigationController)
         childCoordinators.append(child)
-        child.navigationController.navigationBar.isHidden = true
         child.start()
     }
 }

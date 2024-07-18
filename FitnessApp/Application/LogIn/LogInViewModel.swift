@@ -30,10 +30,14 @@ final class LogInViewModel: BaseViewModel<LogInCoordinator> {
                 }
                 completition(true)
             case .failure(let error):
-                self.coordinator?.showPopUp(title: error, actions: ["Ok": .ok])
+                self.coordinator?.showPopUp(title: error, buttonTitle: "Ok", buttonAction: {
+                    self.coordinator?.navigationController.dismiss(animated: true)
+                })
                 completition(false)
             case .unknown:
-                self.coordinator?.showPopUp(title: "An unknown error occured", actions: ["Ok": .ok])
+                self.coordinator?.showPopUp(title: "An unknown error occured", buttonTitle: "Ok", buttonAction: {
+                    self.coordinator?.navigationController.dismiss(animated: true)
+                })
                 completition(false)
             }
         }

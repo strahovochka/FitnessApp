@@ -26,21 +26,23 @@ final class ForgotPasswordViewModel: BaseViewModel<ForgotPasswordCoodinator> {
             guard let self = self else { return }
             switch response {
             case .success:
-                self.coordinator?.showPopUp(title: "The form has been sent to your e-mail", actions: ["Ok": .ok], handler: { [weak self] type in
-                    guard let self = self else { return }
-                    self.goBackToLogin()
+                self.coordinator?.showPopUp(title: "The form has been sent to your e-mail", buttonTitle: "Ok", buttonAction: {
+                    self.coordinator?.navigationController.dismiss(animated: true)
+                    self.coordinator?.navigateBackToLogIn()
                 })
                 completition(true)
             case .failure(let error):
-                self.coordinator?.showPopUp(title: error, actions: ["Ok": .ok, "Cancel": .cancel], handler: { [weak self] type in
-                    guard let self = self else { return }
-                    if type == .cancel {
-                        self.goBackToLogin()
-                    }
+                self.coordinator?.showPopUp(title: error, buttonTitle: "Ok", secondaryTitle: "Cancel", buttonAction: {
+                    self.coordinator?.navigationController.dismiss(animated: true)
+                }, secondaryAction: {
+                    self.coordinator?.navigationController.dismiss(animated: true)
+                    self.coordinator?.navigateBackToLogIn()
                 })
                 completition(false)
             case .unknown:
-                self.coordinator?.showPopUp(title: "An unknown error occured", actions: ["Ok": .ok])
+                self.coordinator?.showPopUp(title: "An unknown error occured", buttonTitle: "Ok", buttonAction: {
+                    self.coordinator?.navigationController.dismiss(animated: true)
+                })
             }
         }
     }

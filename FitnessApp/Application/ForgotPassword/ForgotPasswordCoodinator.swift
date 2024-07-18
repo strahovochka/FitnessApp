@@ -20,7 +20,6 @@ final class ForgotPasswordCoodinator: Coordinator {
         let viewModel = ForgotPasswordViewModel()
         viewModel.coordinator = self
         vc.viewModel = viewModel
-        navigationController.navigationBar.isHidden = true
         navigationController.pushViewController(vc, animated: true)
     }
     

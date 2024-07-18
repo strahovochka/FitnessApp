@@ -40,9 +40,13 @@ final class HomeViewModel: BaseViewModel<HomeCoordinator> {
                 self.user = userModel
                 completition(userModel)
             case .failure(let error):
-                self.coordinator?.showPopUp(title: error, actions: ["Ok": .ok])
+                self.coordinator?.showPopUp(title: error, buttonTitle: "Ok", buttonAction: {
+                    self.coordinator?.navigationController.dismiss(animated: true)
+                })
             case .unknown:
-                self.coordinator?.showPopUp(title: "An unknown error occured", actions: ["Ok": .ok])
+                self.coordinator?.showPopUp(title: "An unknown error occured", buttonTitle: "Ok", buttonAction: {
+                    self.coordinator?.navigationController.dismiss(animated: true)
+                })
             }
         }
     }

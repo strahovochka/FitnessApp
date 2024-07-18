@@ -28,6 +28,9 @@
 		0435DB142C43CFD300D66FB1 /* LogInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB132C43CFD300D66FB1 /* LogInCoordinator.swift */; };
 		0435DB162C43CFE200D66FB1 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB152C43CFE200D66FB1 /* LogInViewController.swift */; };
 		0435DB182C43CFED00D66FB1 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0435DB172C43CFED00D66FB1 /* LogIn.storyboard */; };
+		043C42A72C4912B500FCF502 /* PopUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C42A62C4912B500FCF502 /* PopUpViewModel.swift */; };
+		043C42A92C4912F500FCF502 /* PopUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C42A82C4912F500FCF502 /* PopUpCoordinator.swift */; };
+		043C42AB2C4914BC00FCF502 /* PopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043C42AA2C4914BC00FCF502 /* PopUp.storyboard */; };
 		044E854E2C3E6A1300E0916D /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E854D2C3E6A1300E0916D /* Identifiers.swift */; };
 		044E85502C3F38EA00E0916D /* RegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E854F2C3F38EA00E0916D /* RegistrationModel.swift */; };
 		046B12352C3084BD0095ECC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12342C3084BD0095ECC7 /* AppDelegate.swift */; };
@@ -52,8 +55,7 @@
 		046B12902C3987340095ECC7 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B128F2C3987340095ECC7 /* SplashViewController.swift */; };
 		046B12922C39874A0095ECC7 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046B12912C39874A0095ECC7 /* Splash.storyboard */; };
 		046B12952C39F20D0095ECC7 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12942C39F20D0095ECC7 /* UIView+Extension.swift */; };
-		04C17A2F2C47D18000B929B9 /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C17A2D2C47D18000B929B9 /* CustomPopUp.swift */; };
-		04C17A302C47D18000B929B9 /* CustomPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C17A2E2C47D18000B929B9 /* CustomPopUp.xib */; };
+		04C17A2F2C47D18000B929B9 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C17A2D2C47D18000B929B9 /* PopUpViewController.swift */; };
 		04D356452C46A3C00087859F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04D356442C46A3C00087859F /* GoogleService-Info.plist */; };
 		04D356482C46A4B60087859F /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D356472C46A4B60087859F /* ForgotPasswordViewModel.swift */; };
 		04D3564A2C46A4C40087859F /* ForgotPasswordCoodinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D356492C46A4C40087859F /* ForgotPasswordCoodinator.swift */; };
@@ -95,6 +97,9 @@
 		0435DB132C43CFD300D66FB1 /* LogInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInCoordinator.swift; sourceTree = "<group>"; };
 		0435DB152C43CFE200D66FB1 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		0435DB172C43CFED00D66FB1 /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
+		043C42A62C4912B500FCF502 /* PopUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewModel.swift; sourceTree = "<group>"; };
+		043C42A82C4912F500FCF502 /* PopUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpCoordinator.swift; sourceTree = "<group>"; };
+		043C42AA2C4914BC00FCF502 /* PopUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopUp.storyboard; sourceTree = "<group>"; };
 		044E854D2C3E6A1300E0916D /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
 		044E854F2C3F38EA00E0916D /* RegistrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationModel.swift; sourceTree = "<group>"; };
 		046B12312C3084BD0095ECC7 /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,8 +126,7 @@
 		046B128F2C3987340095ECC7 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		046B12912C39874A0095ECC7 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		046B12942C39F20D0095ECC7 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		04C17A2D2C47D18000B929B9 /* CustomPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
-		04C17A2E2C47D18000B929B9 /* CustomPopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPopUp.xib; sourceTree = "<group>"; };
+		04C17A2D2C47D18000B929B9 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		04D356442C46A3C00087859F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04D356472C46A4B60087859F /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		04D356492C46A4C40087859F /* ForgotPasswordCoodinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordCoodinator.swift; sourceTree = "<group>"; };
@@ -274,6 +278,7 @@
 				041175D82C3A015900059052 /* Calculator */,
 				041175D72C3A015200059052 /* Progress */,
 				046B128E2C3986FC0095ECC7 /* SplashScreen */,
+				04C17A2C2C47D16A00B929B9 /* PopUp */,
 				046B124D2C30BABE0095ECC7 /* Home */,
 			);
 			path = Application;
@@ -337,7 +342,6 @@
 		046B12632C3402BF0095ECC7 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				04C17A2C2C47D16A00B929B9 /* PopUp */,
 				046B12862C3689660095ECC7 /* UITextField */,
 				046B12672C3575210095ECC7 /* UIButton */,
 				046B12822C3615760095ECC7 /* CustomSwitch.swift */,
@@ -385,8 +389,10 @@
 		04C17A2C2C47D16A00B929B9 /* PopUp */ = {
 			isa = PBXGroup;
 			children = (
-				04C17A2D2C47D18000B929B9 /* CustomPopUp.swift */,
-				04C17A2E2C47D18000B929B9 /* CustomPopUp.xib */,
+				04C17A2D2C47D18000B929B9 /* PopUpViewController.swift */,
+				043C42A62C4912B500FCF502 /* PopUpViewModel.swift */,
+				043C42A82C4912F500FCF502 /* PopUpCoordinator.swift */,
+				043C42AA2C4914BC00FCF502 /* PopUp.storyboard */,
 			);
 			path = PopUp;
 			sourceTree = "<group>";
@@ -493,13 +499,13 @@
 				04F3C5572C3D3220000E14C7 /* TabBar.storyboard in Resources */,
 				046B128B2C36D1B90095ECC7 /* SairaRoman-Regular.ttf in Resources */,
 				04F3C5662C3D3F44000E14C7 /* Registration.storyboard in Resources */,
+				043C42AB2C4914BC00FCF502 /* PopUp.storyboard in Resources */,
 				041175E42C3A8D8300059052 /* Muscles.storyboard in Resources */,
 				0435DB182C43CFED00D66FB1 /* LogIn.storyboard in Resources */,
 				04D356452C46A3C00087859F /* GoogleService-Info.plist in Resources */,
 				046B123E2C3084BF0095ECC7 /* Assets.xcassets in Resources */,
 				046B12572C30C2690095ECC7 /* Home.storyboard in Resources */,
 				046B12922C39874A0095ECC7 /* Splash.storyboard in Resources */,
-				04C17A302C47D18000B929B9 /* CustomPopUp.xib in Resources */,
 				046B128A2C3689930095ECC7 /* CustomTextField.xib in Resources */,
 				041175EC2C3A8DB300059052 /* Calculator.storyboard in Resources */,
 				041175F42C3A8DDF00059052 /* Progress.storyboard in Resources */,
@@ -585,13 +591,15 @@
 				04F3C55B2C3D3BFD000E14C7 /* BaseViewModel.swift in Sources */,
 				041175F62C3B3CC600059052 /* FirebaseService.swift in Sources */,
 				041175DE2C3A8D4B00059052 /* MusclesViewController.swift in Sources */,
+				043C42A72C4912B500FCF502 /* PopUpViewModel.swift in Sources */,
 				046B124F2C30BAE10095ECC7 /* HomeViewController.swift in Sources */,
 				046B12352C3084BD0095ECC7 /* AppDelegate.swift in Sources */,
 				041175E82C3A8D9B00059052 /* CalculatorViewModel.swift in Sources */,
+				043C42A92C4912F500FCF502 /* PopUpCoordinator.swift in Sources */,
 				04D3564C2C46A4D20087859F /* ForgotPasswordViewController.swift in Sources */,
 				046B126F2C35FD9B0095ECC7 /* PlainButton.swift in Sources */,
 				046B12592C30C2770095ECC7 /* HomeCoordinator.swift in Sources */,
-				04C17A2F2C47D18000B929B9 /* CustomPopUp.swift in Sources */,
+				04C17A2F2C47D18000B929B9 /* PopUpViewController.swift in Sources */,
 				0435DB122C43CFC000D66FB1 /* LogInViewModel.swift in Sources */,
 				046B12372C3084BD0095ECC7 /* SceneDelegate.swift in Sources */,
 				041175E22C3A8D7900059052 /* MusclesCoordinator.swift in Sources */,

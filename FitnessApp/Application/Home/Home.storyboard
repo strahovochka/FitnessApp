@@ -23,13 +23,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXS-KF-ta8">
-                                <rect key="frame" x="166.33333333333334" y="76" width="60.333333333333343" height="38"/>
+                                <rect key="frame" x="166.33333333333334" y="103" width="60.333333333333343" height="38"/>
                                 <fontDescription key="fontDescription" name="SairaRoman-Regular" family="Saira" pointSize="24"/>
                                 <color key="textColor" name="primaryWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLM-RO-bLe">
-                                <rect key="frame" x="176.33333333333334" y="120.99999999999999" width="40.333333333333343" height="25.333333333333329"/>
+                                <rect key="frame" x="176.33333333333334" y="148" width="40.333333333333343" height="25.333333333333343"/>
                                 <fontDescription key="fontDescription" name="SairaRoman-Regular" family="Saira" pointSize="16"/>
                                 <color key="textColor" name="primaryWhite"/>
                                 <nil key="highlightedColor"/>
@@ -41,7 +41,7 @@
                             <constraint firstItem="DLM-RO-bLe" firstAttribute="centerX" secondItem="wXS-KF-ta8" secondAttribute="centerX" id="F5c-JY-7Ef"/>
                             <constraint firstItem="wXS-KF-ta8" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="OFa-Tv-h97"/>
                             <constraint firstItem="DLM-RO-bLe" firstAttribute="top" secondItem="wXS-KF-ta8" secondAttribute="bottom" constant="7" id="WVM-GN-Pik"/>
-                            <constraint firstItem="wXS-KF-ta8" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="76" id="bVX-uo-6RD"/>
+                            <constraint firstItem="wXS-KF-ta8" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="44" id="bVX-uo-6RD"/>
                         </constraints>
                     </view>
                     <connections>
