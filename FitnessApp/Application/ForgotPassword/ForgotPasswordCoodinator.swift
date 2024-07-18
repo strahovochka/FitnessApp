@@ -1,15 +1,14 @@
 //
-//  SplashCoordinator.swift
+//  ForgotPasswordCoodinator.swift
 //  FitnessApp
 //
-//  Created by Jane Strashok on 07.07.2024.
+//  Created by Jane Strashok on 16.07.2024.
 //
 
 import UIKit
 
-final class SplashCoordinator: Coordinator {
+final class ForgotPasswordCoodinator: Coordinator {
     var childCoordinators: [Coordinator] = []
-    
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
@@ -17,16 +16,15 @@ final class SplashCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = SplashViewController.instantiate(from: Identifiers.Storyboard.splashScreen)
-        let viewModel = SplashViewModel()
+        let vc = ForgotPasswordViewController.instantiate(from: Identifiers.Storyboard.forgotPassword)
+        let viewModel = ForgotPasswordViewModel()
         viewModel.coordinator = self
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func navigateToTabBar() {
-        let tabBarCoordinator = TabCoordinator(navigationController)
-        childCoordinators.append(tabBarCoordinator)
-        tabBarCoordinator.start()
+    @objc func navigateBackToLogIn() {
+        navigationController.popViewController(animated: true)
     }
+    
 }

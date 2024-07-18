@@ -19,7 +19,7 @@ extension UIView {
         layer.insertSublayer(gradientLayer, at: 0)
     }
     
-    func addoverlay(color: UIColor = .black, alpha : CGFloat = 0.6) {
+    func addoverlay(color: UIColor = .primaryBlack, alpha : CGFloat = 0.6) {
         let overlay = UIView()
         overlay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         overlay.frame = bounds

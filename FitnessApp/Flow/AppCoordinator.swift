@@ -18,7 +18,7 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        if let user = Auth.auth().currentUser {
+        if let _ = Auth.auth().currentUser {
             FirebaseService.shared.getUser { [weak self] response in
                 guard let self = self else { return }
                 switch response {

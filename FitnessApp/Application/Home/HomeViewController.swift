@@ -20,7 +20,9 @@ class HomeViewController: BaseViewController {
         if let model = viewModel {
             model.getUser { [weak self] user in
                 guard let self = self else { return }
-                self.updateUI()
+                DispatchQueue.main.async {
+                    self.updateUI()
+                }
             }
         }
     }

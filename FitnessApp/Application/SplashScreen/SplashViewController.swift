@@ -29,10 +29,7 @@ final class SplashViewController: UIViewController {
         girlButton.isEnabled = false
         viewModel?.heroChosen(.male) { [weak self] isSuccessful in
             guard let self = self else { return }
-            if !isSuccessful {
-                self.manButton.isEnabled = true
-            }
-            
+            self.manButton.isEnabled = !isSuccessful
         }
     }
     
@@ -41,10 +38,7 @@ final class SplashViewController: UIViewController {
         manButton.isEnabled = false
         viewModel?.heroChosen(.female) { [weak self] isSuccessful in
             guard let self = self else { return }
-            if !isSuccessful {
-                self.girlButton.isEnabled = true
-            }
-            
+            self.girlButton.isEnabled = !isSuccessful
         }
     }
 }
@@ -67,6 +61,6 @@ private extension SplashViewController {
         subtitle.text = viewModel?.subtitle
         mainTitle.font = .boldFutura?.withSize(32)
         subtitle.font = .thinSaira
-        gradientView.addGradient([.clear, .black, .clear], locations: [0.0, 0.5, 1.0], frame: gradientView.bounds)
+        gradientView.addGradient([.clear, .primaryBlack, .clear], locations: [0.0, 0.5, 1.0], frame: gradientView.bounds)
     }
 }

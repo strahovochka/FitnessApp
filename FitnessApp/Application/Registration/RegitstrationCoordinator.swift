@@ -27,14 +27,12 @@ final class RegistrationCoordinator: Coordinator {
     func navigateToSplashScreen() {
         let child = SplashCoordinator(navigationController: navigationController)
         childCoordinators.append(child)
-        child.navigationController.navigationBar.isHidden = true
         child.start()
     }
     
     func navigateToLogIn() {
         let child = LogInCoordinator(navigationController: navigationController)
         childCoordinators.append(child)
-        child.navigationController.navigationBar.isHidden = true
         child.start()
     }
 }

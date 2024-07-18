@@ -106,4 +106,14 @@ class FirebaseService: NSObject {
             }
         }
     }
+    
+    func resetPassword(for email: String, completiton: @escaping (Response<Bool>) -> ()) {
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            if let error = error {
+                completiton(.failure(error.localizedDescription))
+                return
+            }
+            completiton(.success(true))
+        }
+    }
 }

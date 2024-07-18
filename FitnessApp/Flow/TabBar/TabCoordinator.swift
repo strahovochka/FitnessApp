@@ -10,14 +10,16 @@ import UIKit
 class TabCoordinator: NSObject, Coordinator {
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
+    let user: RegistrationModel?
     
-    init(_ navigationController: UINavigationController) {
+    init(_ navigationController: UINavigationController, user: RegistrationModel? = nil) {
         self.navigationController = navigationController
+        self.user = user
     }
     
     func start() {
         let controller = TabViewController.instantiate(from: Identifiers.Storyboard.tabBar)
-        let viewModel = TabViewModel()
+        let viewModel = TabViewModel(user: user)
         viewModel.coordinator = self
         controller.viewModel = viewModel
         self.navigationController.pushViewController(controller, animated: true)

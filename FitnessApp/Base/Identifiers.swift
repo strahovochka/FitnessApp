@@ -17,11 +17,12 @@ enum Identifiers {
         static let calculator = "Calculator"
         static let muscles = "Muscles"
         static let logIn = "LogIn"
+        static let forgotPassword = "ForgotPassword"
+        static let popUp = "PopUp"
     }
     
     enum NibNames {
         static let textField = "CustomTextField"
-        static let registrationHeader = "HeaderView"
-        static let registrationFooter = "FooterView"
+        static let titleView = "CustomTitleView"
     }
 }

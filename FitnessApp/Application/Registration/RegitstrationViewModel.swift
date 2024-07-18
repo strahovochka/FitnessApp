@@ -8,6 +8,12 @@
 import Foundation
 
 enum TextFieldType: Int, CaseIterable {
+    private enum Patterns {
+        static let name = "^[a-zA-Z0-9-''']+(?: [a-zA-Z0-9-''']+)*$"
+        static let email = #"^\S+@\S+\.\S+$"#
+        static let password = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
+    }
+    
     case name
     case email
     case enterPassword
@@ -41,15 +47,35 @@ enum TextFieldType: Int, CaseIterable {
             return "Enter password"
         }
     }
+    
+    func getErrorChecker(whichMatches text: String? = nil) -> ((String) -> (Bool)) {
+        switch self {
+        case .name:
+            return {
+                let regex = try! NSRegularExpression(pattern: Patterns.name)
+                return !regex.matches($0) || $0.isEmpty
+            }
+        case .email:
+            return {
+                let regex = try! NSRegularExpression(pattern: Patterns.email)
+                return !regex.matches($0) || $0.isEmpty
+            }
+        case .createPassword, .enterPassword:
+            return {
+                let regex = try! NSRegularExpression(pattern: Patterns.password)
+                return !regex.matches($0) || $0.isEmpty
+            }
+        case .confirmPassword:
+            return {
+                let regex = try! NSRegularExpression(pattern: Patterns.password)
+                return text != $0 || !regex.matches($0) || $0.isEmpty
+            }
+        }
+    }
+    
 }
 
 final class RegistrationViewModel: BaseViewModel<RegistrationCoordinator> {
-    
-    private enum Patterns {
-        static let name = #"^[a-zA-Z0-9-''']+(?: [a-zA-Z0-9-''']+)*$"#
-        static let email = #"^\S+@\S+\.\S+$"#
-        static let password = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
-    }
     
     let textFieldsData: [TextFieldType] = [.name, .email, .createPassword, .confirmPassword]
     let title = "Superhero".uppercased()
@@ -70,42 +96,21 @@ final class RegistrationViewModel: BaseViewModel<RegistrationCoordinator> {
                 self.coordinator?.navigateToSplashScreen()
                 completition(true)
             case .failure(let errorMessage):
-                self.coordinator?.showAlert(title: errorMessage)
+                self.coordinator?.showPopUp(title: errorMessage, buttonTitle: "Ok", buttonAction: {
+                    self.coordinator?.navigationController.dismiss(animated: true)
+                })
                 completition(false)
             case .unknown:
-                self.coordinator?.showAlert(title: "An unknown error occured")
+                self.coordinator?.showPopUp(title: "An unknown error occured", buttonTitle: "Ok", buttonAction: {
+                    self.coordinator?.navigationController.dismiss(animated: true)
+                })
                 completition(false)
             }
         }
     }
     
-    func getErrorChecker(for textField: TextFieldType) -> ((String) -> (Bool)) {
-        switch textField {
-        case .name:
-            return {
-                let regex = try! NSRegularExpression(pattern: Patterns.name)
-                return !regex.matches($0) || $0.isEmpty
-            }
-        case .email:
-            return {
-                let regex = try! NSRegularExpression(pattern: Patterns.email)
-                return !regex.matches($0) || $0.isEmpty
-            }
-        case .createPassword:
-            return {
-                let regex = try! NSRegularExpression(pattern: Patterns.password)
-                return !regex.matches($0) || $0.isEmpty
-            }
-        case .confirmPassword:
-            return { [weak self] in
-                guard let self = self else { return true }
-                return self.password != $0 || $0.isEmpty
-            }
-        case .enterPassword:
-            return { _ in
-                false
-            }
-        }
+    func getErrorChecker(for type: TextFieldType) -> ((String) -> (Bool)) {
+        type.getErrorChecker(whichMatches: password)
     }
     
     func goToLogin() {

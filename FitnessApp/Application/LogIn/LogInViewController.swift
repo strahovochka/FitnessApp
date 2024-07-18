@@ -11,14 +11,16 @@ final class LogInViewController: BaseViewController {
     
     @IBOutlet weak private var mainTitle: UILabel!
     @IBOutlet weak private var subtitle: UILabel!
-    @IBOutlet var textFields: [CustomTextField]!
-    @IBOutlet weak var forgotPasswordButton: PlainButton!
-    @IBOutlet weak var loginButton: PlainButton!
+    @IBOutlet private var textFields: [CustomTextField]!
+    @IBOutlet weak private var forgotPasswordButton: PlainButton!
+    @IBOutlet weak private var loginButton: PlainButton!
+    @IBOutlet weak private var backToRegistrationButton: PlainButton!
     
     var viewModel: LogInViewModel?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
         configUI()
     }
 }
@@ -33,23 +35,37 @@ private extension LogInViewController {
             for (index, data) in viewModel.textFieldsData.enumerated() {
                 textFields[index].labelTitle = data.title
                 textFields[index].placeholderText = data.placeholderText
+                textFields[index].errorChecker = data.getErrorChecker()
                 textFields[index].tag = data.rawValue
                 textFields[index].delegate = viewModel
             }
         }
         forgotPasswordButton.setType(.unfilled)
-        forgotPasswordButton.setTitle(viewModel?.forgotPasswordText, for: .normal)
+        forgotPasswordButton.title = viewModel?.forgotPasswordText
         loginButton.setType(.filled)
-        loginButton.setTitle(viewModel?.loginButtonText, for: .normal)
+        loginButton.title = viewModel?.loginButtonText
+        backToRegistrationButton.setType(.unfilled)
+        backToRegistrationButton.title = viewModel?.backToRegisterButtonText
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
-        loginButton.isEnabled = false
-        viewModel?.logIn(completition: { [weak self] isSuccessful in
-            guard let self = self else { return }
-            if !isSuccessful {
-                self.loginButton.isEnabled = true
-            }
-        })
+        view.endEditing(true)
+        textFields.forEach { $0.checkForError()}
+        guard let _ = textFields.first(where: { $0.getState() == .error}) else {
+            loginButton.isEnabled = false
+            viewModel?.logIn(completition: { [weak self] isSuccessful in
+                guard let self = self else { return }
+                self.loginButton.isEnabled = !isSuccessful
+            })
+            return
+        }
+    }
+    
+    @IBAction func forgotPasswordButtonPressed(_ sender: Any) {
+        viewModel?.goToForgotPassword()
+    }
+    
+    @IBAction func backToRegisterButtonPressed(_ sender: Any) {
+        viewModel?.goBackToRegister()
     }
 }

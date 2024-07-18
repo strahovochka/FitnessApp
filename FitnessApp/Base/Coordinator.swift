@@ -15,12 +15,9 @@ protocol Coordinator: AnyObject {
 }
 
 extension Coordinator {
-    func showAlert(title: String, message: String? = nil, actions: [String: UIAlertAction.Style] = ["Ok": .default]) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        for (title, style) in actions {
-            let alertAction = UIAlertAction(title: title, style: style)
-            alert.addAction(alertAction)
-        }
-        self.navigationController.present(alert, animated: true)
+    func showPopUp(title: String, buttonTitle: String, secondaryTitle: String? = nil, buttonAction: @escaping () -> (), secondaryAction: (() -> ())? = nil) {
+        let child = PopUpCoordinator(navigationController: navigationController, message: title, defaultButtonTitile: buttonTitle, secondaryButtonTitle: secondaryTitle, defaultAction: buttonAction, secondaryAction: secondaryAction)
+        childCoordinators.append(child)
+        child.start()
     }
 }

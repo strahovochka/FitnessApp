@@ -9,11 +9,12 @@ import Foundation
 
 final class LogInViewModel: BaseViewModel<LogInCoordinator> {
     
-    let textFieldsData: [TextFieldType] = []
+    let textFieldsData: [TextFieldType] = [.email, .enterPassword]
     let title = "Superhero".uppercased()
     let subtitle = "Login to your account"
     let loginButtonText = "Login"
     let forgotPasswordText = "Forgot password?".capitalized
+    let backToRegisterButtonText = "Bact to register"
     private var email: String = ""
     private var password: String = ""
     
@@ -22,16 +23,32 @@ final class LogInViewModel: BaseViewModel<LogInCoordinator> {
             guard let self = self else { return }
             switch response {
             case .success(let user):
-                self.coordinator?.navigateToTabBar(with: user)
+                if let sex = user.sex, sex.isEmpty {
+                    self.coordinator?.navigateToSplash()
+                } else {
+                    self.coordinator?.navigateToTabBar(with: user)
+                }
                 completition(true)
             case .failure(let error):
-                self.coordinator?.showAlert(title: error)
+                self.coordinator?.showPopUp(title: error, buttonTitle: "Ok", buttonAction: {
+                    self.coordinator?.navigationController.dismiss(animated: true)
+                })
                 completition(false)
             case .unknown:
-                self.coordinator?.showAlert(title: "An unknown error occured")
+                self.coordinator?.showPopUp(title: "An unknown error occured", buttonTitle: "Ok", buttonAction: {
+                    self.coordinator?.navigationController.dismiss(animated: true)
+                })
                 completition(false)
             }
         }
+    }
+    
+    func goToForgotPassword() {
+        coordinator?.navigateToForgotPassword()
+    }
+    
+    func goBackToRegister() {
+        coordinator?.navigateBackToRegister()
     }
 }
 

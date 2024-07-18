@@ -20,6 +20,7 @@ class RegistrationViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
         configUI()
     }
     
@@ -55,11 +56,9 @@ private extension RegistrationViewController {
         textFields.forEach { $0.checkForError() }
         guard let _ = textFields.first(where: { $0.getState() == .error}) else {
             self.signUpButton.isEnabled = false
-            viewModel?.registerUser { [weak self] status in
+            viewModel?.registerUser { [weak self] isSuccessful in
                 guard let self = self else { return }
-                if !status {
-                    self.signUpButton.isEnabled = true
-                }
+                self.signUpButton.isEnabled = !isSuccessful
             }
             return
         }

@@ -21,6 +21,13 @@ class PlainButton: UIButton {
         }
     }
     
+    var title: String? = "" {
+        didSet {
+            titleLabel?.text = title
+            configUI()
+        }
+    }
+    
     override var isEnabled: Bool {
         didSet {
             self.configuration?.baseBackgroundColor = isEnabled ? .primaryYellow : UIColor(hex: "#E1E1E1")
@@ -50,7 +57,7 @@ class PlainButton: UIButton {
             var buttonConfig = UIButton.Configuration.filled()
             buttonConfig.cornerStyle = .capsule
             buttonConfig.baseBackgroundColor = .primaryYellow
-            buttonConfig.baseForegroundColor = .black
+            buttonConfig.baseForegroundColor = .primaryBlack
             self.configuration = buttonConfig
             self.setFont(.regularSaira)
         case .unfilled:
