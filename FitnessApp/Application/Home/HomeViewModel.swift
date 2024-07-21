@@ -9,17 +9,24 @@ import UIKit
 
 final class HomeViewModel: BaseViewModel<HomeCoordinator> {
     
-    private(set) var user: RegistrationModel?
+    private(set) var user: UserModel?
     let heroPlaceholderName = "Hero"
     let namePlaceholder = "Name"
     
-    init(user: RegistrationModel? = nil) {
+    init(user: UserModel? = nil) {
         self.user = user
     }
     
+    func getProfileImage() -> UIImage? {
+        if let profileImageData = user?.profileImage {
+            return UIImage(data: profileImageData)
+        }
+        return .profileImage
+    }
+    
     func getUserSex() -> (title: String, sex: Sex) {
-        if let user = user, let sex = user.sex {
-            if sex == "female" {
+        if let user = user {
+            if user.sex == "female" {
                 return ("Supergirl", .female)
             } else {
                 return ("Superman", .male)
@@ -28,7 +35,7 @@ final class HomeViewModel: BaseViewModel<HomeCoordinator> {
         return ("", .male)
     }
     
-    func getUser(completition: @escaping (RegistrationModel) -> ()) {
+    func getUser(completition: @escaping (UserModel) -> ()) {
         if let user = user {
             completition(user)
             return
@@ -40,14 +47,16 @@ final class HomeViewModel: BaseViewModel<HomeCoordinator> {
                 self.user = userModel
                 completition(userModel)
             case .failure(let error):
-                self.coordinator?.showPopUp(title: error, buttonTitle: "Ok", buttonAction: {
-                    self.coordinator?.navigationController.dismiss(animated: true)
-                })
+                self.coordinator?.showPopUp(title: error, type: .oneButton((title: "Ok", type: .filled, action: nil)))
             case .unknown:
-                self.coordinator?.showPopUp(title: "An unknown error occured", buttonTitle: "Ok", buttonAction: {
-                    self.coordinator?.navigationController.dismiss(animated: true)
-                })
+                self.coordinator?.showPopUp(title: "An unknow error occured", type: .oneButton((title: "Ok", type: .filled, action: nil)))
             }
+        }
+    }
+    
+    func goToProfile() {
+        if let user = user {
+            coordinator?.navigateToProfile(with: user)
         }
     }
 }

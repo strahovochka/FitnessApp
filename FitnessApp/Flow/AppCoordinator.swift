@@ -23,14 +23,10 @@ class AppCoordinator: Coordinator {
                 guard let self = self else { return }
                 switch response {
                 case .success(let user):
-                    if let sex = user.sex {
-                        if sex.isEmpty {
-                            self.splashFlow()
-                        } else {
-                            self.mainFlow(with: user)
-                        }
+                    if user.sex.isEmpty {
+                        self.splashFlow()
                     } else {
-                        self.registerFlow()
+                        self.mainFlow(with: user)
                     }
                 default:
                     self.registerFlow()
@@ -62,8 +58,8 @@ class AppCoordinator: Coordinator {
         child.start()
     }
     
-    func mainFlow(with user: RegistrationModel) {
-        let child = TabCoordinator(navigationController)
+    func mainFlow(with user: UserModel) {
+        let child = TabCoordinator(navigationController, user: user)
         childCoordinators.append(child)
         child.start()
     }

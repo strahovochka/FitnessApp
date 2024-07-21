@@ -52,7 +52,7 @@ enum TabBarItem: Int, CaseIterable {
         }
     }
     
-    func getCoodrinator(with user: RegistrationModel? = nil) -> Coordinator {
+    func getCoodrinator(with user: UserModel? = nil) -> Coordinator {
         switch self {
         case .home:
             if let user = user {
@@ -71,9 +71,9 @@ enum TabBarItem: Int, CaseIterable {
 
 final class TabViewModel: BaseViewModel<TabCoordinator> {
     
-    let user: RegistrationModel?
+    let user: UserModel?
     
-    init(user: RegistrationModel? = nil) {
+    init(user: UserModel? = nil) {
         self.user = user
     }
     
@@ -86,6 +86,7 @@ final class TabViewModel: BaseViewModel<TabCoordinator> {
             coordinator.navigationController.tabBarItem = UITabBarItem.init(title: tab.title, image: tab.image, tag: tab.rawValue)
             coordinator.navigationController.tabBarItem.selectedImage = tab.selectedImage
             coordinator.start()
+            self.coordinator?.childCoordinators.append(coordinator)
             controllers.append(coordinator.navigationController)
         }
         return controllers

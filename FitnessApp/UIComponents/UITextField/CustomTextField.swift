@@ -24,16 +24,22 @@ final class CustomTextField: UIView {
     var errorChecker: ((String) -> (Bool))?
     var delegate: CustomTextFieldDelegate?
     
-    @IBInspectable var labelTitle: String? = "Label" {
+    var labelTitle: String? = "Label" {
         didSet {
             self.label.text = labelTitle
         }
     }
     
-    @IBInspectable var placeholderText: String? = "Placeholder" {
+    var placeholderText: String? = "Placeholder" {
         didSet {
             self.textField.text = nil
             self.textField.placeholder = placeholderText
+        }
+    }
+    
+    var text: String? = nil {
+        didSet {
+            textField.text = text
         }
     }
     

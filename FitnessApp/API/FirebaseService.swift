@@ -65,7 +65,7 @@ class FirebaseService: NSObject {
         }
     }
     
-    func getUser(completition: @escaping (Response<RegistrationModel>) -> () ) {
+    func getUser(completition: @escaping (Response<UserModel>) -> () ) {
         if let user = currentUser {
             let userData = firestore.collection("users").document(user.uid)
             userData.getDocument { snapshot, error in
@@ -77,7 +77,11 @@ class FirebaseService: NSObject {
                     if let name = data["userName"] as? String,
                        let sex = data["sex"] as? String,
                        let email = data["email"] as? String {
-                        completition(.success(RegistrationModel(userName: name, email: email, sex: sex, password: "")))
+                        if let profileImage = data["profileImage"] as? Data {
+                            completition(.success(UserModel(email: email, id: user.uid, name: name, sex: sex, profileImage: profileImage)))
+                        } else {
+                            completition(.success(UserModel(email: email, id: user.uid, name: name, sex: sex)))
+                        }
                     } else {
                         completition(.failure("Could not parse data"))
                     }
@@ -90,7 +94,7 @@ class FirebaseService: NSObject {
         }
     }
     
-    func loginUser(withEmail: String, password: String, completition: @escaping (Response<RegistrationModel>) -> ()) {
+    func loginUser(withEmail: String, password: String, completition: @escaping (Response<UserModel>) -> ()) {
         Auth.auth().signIn(withEmail: withEmail, password: password) { [weak self] result, error in
             if let error = error {
                 completition(.failure(error.localizedDescription))

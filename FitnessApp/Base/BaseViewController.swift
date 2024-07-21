@@ -12,6 +12,7 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackground()
+        customizeNavBar()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -33,5 +34,45 @@ class BaseViewController: UIViewController {
         imageView.addoverlay()
         view.addSubview(imageView)
         self.view.sendSubviewToBack(imageView)
+    }
+    
+    func createNavButton(text: String?, selector: Selector, isEnabled: Bool = true) -> UIBarButtonItem {
+        let button = PlainButton(type: .unfilled)
+        button.title = text
+        button.isActive = isEnabled
+        button.addTarget(self, action: selector, for: .touchUpInside)
+        return UIBarButtonItem(customView: button)
+    }
+    
+    func customizeNavBar() {
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            .font: UIFont.regularSaira?.withSize(18) ?? .systemFont(ofSize: 18),
+            .foregroundColor: UIColor.primaryWhite
+        ]
+        customizeBackButton()
+    }
+}
+
+private extension BaseViewController {
+    
+    func customizeBackButton() {
+        let backView = UIStackView()
+        backView.axis = .horizontal
+        backView.alignment = .fill
+        backView.spacing = 4
+        backView.backgroundColor = .clear
+        let backImage = UIImageView(image: .backIcon)
+        backImage.contentMode = .center
+        let backButton = PlainButton(type: .unfilled)
+        backButton.setType(.unfilled)
+        backButton.title = "Back"
+        backView.addArrangedSubview(backImage)
+        backView.addArrangedSubview(backButton)
+        backButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backView)
+    }
+    
+    @objc func backAction() {
+        self.navigationController?.popViewController(animated: true)
     }
 }

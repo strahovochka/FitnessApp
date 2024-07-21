@@ -53,10 +53,10 @@ private extension ForgotPasswordViewController {
         view.endEditing(true)
         emailTextField.checkForError()
         if emailTextField.getState() != .error {
-            continueButton.isEnabled = false
+            continueButton.isActive = false
             viewModel?.resetPassword { [weak self] isSuccessful in
                 guard let self = self else { return }
-                self.continueButton.isEnabled = !isSuccessful
+                self.continueButton.isActive = !isSuccessful
             }
         }
     }

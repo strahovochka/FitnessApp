@@ -95,15 +95,11 @@ final class RegistrationViewModel: BaseViewModel<RegistrationCoordinator> {
             case .success:
                 self.coordinator?.navigateToSplashScreen()
                 completition(true)
-            case .failure(let errorMessage):
-                self.coordinator?.showPopUp(title: errorMessage, buttonTitle: "Ok", buttonAction: {
-                    self.coordinator?.navigationController.dismiss(animated: true)
-                })
+            case .failure(let error):
+                self.coordinator?.showPopUp(title: error, type: .oneButton((title: "Ok", type: .filled, action: nil)))
                 completition(false)
             case .unknown:
-                self.coordinator?.showPopUp(title: "An unknown error occured", buttonTitle: "Ok", buttonAction: {
-                    self.coordinator?.navigationController.dismiss(animated: true)
-                })
+                self.coordinator?.showPopUp(title: "An unknow error occured", type: .oneButton((title: "Ok", type: .filled, action: nil)))
                 completition(false)
             }
         }

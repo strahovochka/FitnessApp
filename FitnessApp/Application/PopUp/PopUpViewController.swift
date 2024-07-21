@@ -9,12 +9,13 @@ import UIKit
 
 final class PopUpViewConrtoller: UIViewController {
     
+    @IBOutlet weak var labelImageView: UIImageView!
     @IBOutlet weak private var backView: UIView!
     @IBOutlet weak private var containerView: UIView!
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var buttonStackView: UIStackView!
     @IBOutlet weak private var buttonStackWidth: NSLayoutConstraint!
-    
+    @IBOutlet weak var buttonStackHeight: NSLayoutConstraint!
     var viewModel: PopUpViewModel?
     
     override func viewDidLoad() {
@@ -42,24 +43,38 @@ private extension PopUpViewConrtoller {
     }
     
     func configButtons() {
-        if let leftTitle = viewModel?.leftButtonTitle, let leftAction = viewModel?.leftButtonAction {
-            let leftButton = PlainButton()
-            leftButton.setType(.unfilled)
-            leftButton.title = leftTitle
-            leftButton.addAction(UIAction(handler: { _ in
-                leftAction()
-            }), for: .touchUpInside)
-            buttonStackWidth.priority = UILayoutPriority(998)
-            buttonStackView.addArrangedSubview(leftButton)
+        if let type = viewModel?.type {
+            switch type {
+            case .buttonless(let image):
+                buttonStackHeight.constant = 0
+                labelImageView.image = image
+            case .oneButton(let buttonConfig):
+                addButton(with: buttonConfig)
+            case .twoButtons(let buttonTuple):
+                let buttonArray = [buttonTuple.leftButton, buttonTuple.rightButton]
+                buttonArray.forEach { config in
+                    addButton(with: config)
+                }
+            }
         }
-        let defaultButton = PlainButton()
-        defaultButton.setType(.filled)
-        defaultButton.title = viewModel?.defaultButtonTitle
-        defaultButton.addAction(UIAction(handler: { [weak self] _ in
+    }
+    
+    func addButton(with config: PopUpButtonConfig) {
+        let button = PlainButton()
+        button.setType(config.type)
+        button.title = config.title
+        button.addAction(UIAction(handler: { [weak self] _ in
             guard let self = self else { return }
-            self.viewModel?.defaultAction()
+            if let action = config.action {
+                action()
+            } else {
+                self.hide()
+            }
         }), for: .touchUpInside)
-        buttonStackView.addArrangedSubview(defaultButton)
+        buttonStackView.addArrangedSubview(button)
+        if buttonStackView.arrangedSubviews.count > 1 {
+            buttonStackWidth.priority = UILayoutPriority(998)
+        }
     }
     
     @objc func hide() {

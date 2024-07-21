@@ -29,4 +29,11 @@ extension UIImage {
     static let calculatorTabSelected = UIImage(named: "calculatorTabSelected")
     static let musclesTab = UIImage(named: "musclesTab")
     static let musclesTabSelected = UIImage(named: "musclesTabSelected")
+    
+    //Icons
+    static let backIcon = UIImage(named: "backIcon")
+    
+    //Placeholders
+    static let profileImage = UIImage(named: "profileImage")
+    static let editProfile = UIImage(named: "editProfileImage")
 }

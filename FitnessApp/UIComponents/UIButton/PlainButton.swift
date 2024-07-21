@@ -23,15 +23,14 @@ class PlainButton: UIButton {
     
     var title: String? = "" {
         didSet {
-            titleLabel?.text = title
             configUI()
         }
     }
     
-    override var isEnabled: Bool {
+    var isActive: Bool = true {
         didSet {
-            self.configuration?.baseBackgroundColor = isEnabled ? .primaryYellow : UIColor(hex: "#E1E1E1")
-            self.alpha = 1.0
+            self.isEnabled = isActive
+            configUI()
         }
     }
     
@@ -62,7 +61,7 @@ class PlainButton: UIButton {
             self.setFont(.regularSaira)
         case .unfilled:
             var buttonConfig = UIButton.Configuration.plain()
-            buttonConfig.baseForegroundColor = .primaryYellow
+            buttonConfig.baseForegroundColor = isEnabled ? .primaryYellow : .secondaryGray
             self.configuration = buttonConfig
             self.setFont(.mediumSaira)
         case .alert:
@@ -80,8 +79,8 @@ class PlainButton: UIButton {
     }
     
     func setFont(_ font: UIFont?) {
-        if let title = self.titleLabel, let text = title.text {
-            let attributedTitle: NSAttributedString = NSAttributedString(string: text, attributes: [.font: font ?? .systemFont(ofSize: 16)])
+        if let title = title {
+            let attributedTitle: NSAttributedString = NSAttributedString(string: title, attributes: [.font: font ?? .systemFont(ofSize: 16)])
             self.setAttributedTitle(attributedTitle, for: .normal)
         }
     }

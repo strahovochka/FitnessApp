@@ -12,6 +12,7 @@ class HomeViewController: BaseViewController {
     
     @IBOutlet weak private var sexLabel: UILabel!
     @IBOutlet weak private var nameLabel: UILabel!
+    @IBOutlet weak var profileButton: UIButton!
     
     var viewModel: HomeViewModel?
 
@@ -34,11 +35,22 @@ private extension HomeViewController {
         nameLabel.text = viewModel?.namePlaceholder
         sexLabel.font = .regularSaira?.withSize(24)
         nameLabel.font = .regularSaira?.withSize(16)
+        profileButton.setImage(viewModel?.getProfileImage(), for: .normal)
+        profileButton.imageView?.contentMode = .scaleAspectFill
+        profileButton.layer.cornerRadius = 8
+        profileButton.layer.borderWidth = 1
+        profileButton.layer.borderColor = UIColor.primaryYellow.cgColor
+        profileButton.layer.masksToBounds = true
     }
     
     func updateUI() {
         setBackground(for: viewModel?.getUserSex().sex ?? .male)
         self.sexLabel.text = viewModel?.getUserSex().title
-        self.nameLabel.text = viewModel?.user?.userName
+        self.nameLabel.text = viewModel?.user?.name
     }
+    
+    @IBAction func profileButtonPressed(_ sender: Any) {
+        viewModel?.goToProfile()
+    }
+    
 }
