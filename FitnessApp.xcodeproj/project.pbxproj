@@ -61,6 +61,7 @@
 		046B12922C39874A0095ECC7 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046B12912C39874A0095ECC7 /* Splash.storyboard */; };
 		046B12952C39F20D0095ECC7 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12942C39F20D0095ECC7 /* UIView+Extension.swift */; };
 		04C17A2F2C47D18000B929B9 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C17A2D2C47D18000B929B9 /* PopUpViewController.swift */; };
+		04CE3E8B2C4EF37A00A0C121 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE3E8A2C4EF37A00A0C121 /* Style.swift */; };
 		04D356452C46A3C00087859F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04D356442C46A3C00087859F /* GoogleService-Info.plist */; };
 		04D356482C46A4B60087859F /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D356472C46A4B60087859F /* ForgotPasswordViewModel.swift */; };
 		04D3564A2C46A4C40087859F /* ForgotPasswordCoodinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D356492C46A4C40087859F /* ForgotPasswordCoodinator.swift */; };
@@ -137,6 +138,7 @@
 		046B12912C39874A0095ECC7 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		046B12942C39F20D0095ECC7 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		04C17A2D2C47D18000B929B9 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		04CE3E8A2C4EF37A00A0C121 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		04D356442C46A3C00087859F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04D356472C46A4B60087859F /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		04D356492C46A4C40087859F /* ForgotPasswordCoodinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordCoodinator.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 				046B125F2C32BAD10095ECC7 /* Coordinator.swift */,
 				04F3C55A2C3D3BFD000E14C7 /* BaseViewModel.swift */,
 				044E854D2C3E6A1300E0916D /* Identifiers.swift */,
+				04CE3E8A2C4EF37A00A0C121 /* Style.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -633,6 +636,7 @@
 				041175E22C3A8D7900059052 /* MusclesCoordinator.swift in Sources */,
 				046B12602C32BAD10095ECC7 /* Coordinator.swift in Sources */,
 				0435DB162C43CFE200D66FB1 /* LogInViewController.swift in Sources */,
+				04CE3E8B2C4EF37A00A0C121 /* Style.swift in Sources */,
 				04F3C55E2C3D3EE1000E14C7 /* RegitstrationCoordinator.swift in Sources */,
 				04D3564A2C46A4C40087859F /* ForgotPasswordCoodinator.swift in Sources */,
 				046B12792C3602910095ECC7 /* UIImage+Extension.swift in Sources */,

@@ -35,17 +35,13 @@ final class HomeViewModel: BaseViewModel<HomeCoordinator> {
         return ("", .male)
     }
     
-    func getUser(completition: @escaping (UserModel) -> ()) {
-        if let user = user {
-            completition(user)
-            return
-        }
+    func getUser(completition: @escaping () -> ()) {
         FirebaseService.shared.getUser { [weak self] response in
             guard let self = self else { return }
             switch response {
             case .success(let userModel):
                 self.user = userModel
-                completition(userModel)
+                completition()
             case .failure(let error):
                 self.coordinator?.showPopUp(title: error, type: .oneButton((title: "Ok", type: .filled, action: nil)))
             case .unknown:
@@ -54,9 +50,9 @@ final class HomeViewModel: BaseViewModel<HomeCoordinator> {
         }
     }
     
-    func goToProfile() {
+    func goToProfile(delegate: UserDataChangable) {
         if let user = user {
-            coordinator?.navigateToProfile(with: user)
+            coordinator?.navigateToProfile(with: user, delegate: delegate)
         }
     }
 }

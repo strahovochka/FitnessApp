@@ -20,22 +20,20 @@ final class PopUpCoordinator: Coordinator {
     var navigationController: UINavigationController
     let message: String
     let type: ViewType
+    let completition: (() -> ())?
     
-    init(navigationController: UINavigationController, message: String, type: ViewType) {
+    init(navigationController: UINavigationController, message: String, type: ViewType, completition: (() -> ())? = nil) {
         self.navigationController = navigationController
         self.message = message
         self.type = type
+        self.completition = completition
     }
     
     func start() {
         let vc = PopUpViewConrtoller.instantiate(from: Identifiers.Storyboard.popUp)
-        let viewModel = PopUpViewModel(title: message, type: type)
+        let viewModel = PopUpViewModel(title: message, type: type, completiton: completition)
         viewModel.coordinator = self
         vc.viewModel = viewModel
         navigationController.present(vc, animated: true)
-    }
-    
-    func navigateBack() {
-        navigationController.popViewController(animated: true)
     }
 }

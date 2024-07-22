@@ -15,7 +15,8 @@ final class PopUpViewConrtoller: UIViewController {
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var buttonStackView: UIStackView!
     @IBOutlet weak private var buttonStackWidth: NSLayoutConstraint!
-    @IBOutlet weak var buttonStackHeight: NSLayoutConstraint!
+    @IBOutlet weak var mainStackTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var mainStackBottomConstraint: NSLayoutConstraint!
     var viewModel: PopUpViewModel?
     
     override func viewDidLoad() {
@@ -46,8 +47,10 @@ private extension PopUpViewConrtoller {
         if let type = viewModel?.type {
             switch type {
             case .buttonless(let image):
-                buttonStackHeight.constant = 0
+                buttonStackView.isHidden = true
                 labelImageView.image = image
+                mainStackTopConstraint.constant = 27
+                mainStackBottomConstraint.constant = 27
             case .oneButton(let buttonConfig):
                 addButton(with: buttonConfig)
             case .twoButtons(let buttonTuple):
@@ -79,5 +82,8 @@ private extension PopUpViewConrtoller {
     
     @objc func hide() {
         dismiss(animated: true)
+        if let completition = viewModel?.completition {
+            completition()
+        }
     }
 }

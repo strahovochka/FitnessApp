@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol UserDataChangable {
+    func fetchData()
+}
+
 class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -39,14 +43,16 @@ class BaseViewController: UIViewController {
     func createNavButton(text: String?, selector: Selector, isEnabled: Bool = true) -> UIBarButtonItem {
         let button = PlainButton(type: .unfilled)
         button.title = text
-        button.isActive = isEnabled
+        button.setFont(.mediumSaira?.withSize(18))
         button.addTarget(self, action: selector, for: .touchUpInside)
-        return UIBarButtonItem(customView: button)
+        let barButton = UIBarButtonItem(customView: button)
+        barButton.isEnabled = false
+        return barButton
     }
     
     func customizeNavBar() {
         self.navigationController?.navigationBar.titleTextAttributes = [
-            .font: UIFont.regularSaira?.withSize(18) ?? .systemFont(ofSize: 18),
+            .font: UIFont.mediumSaira?.withSize(18) ?? .systemFont(ofSize: 18),
             .foregroundColor: UIColor.primaryWhite
         ]
         customizeBackButton()
@@ -66,6 +72,7 @@ private extension BaseViewController {
         let backButton = PlainButton(type: .unfilled)
         backButton.setType(.unfilled)
         backButton.title = "Back"
+        backButton.setFont(.mediumSaira?.withSize(18))
         backView.addArrangedSubview(backImage)
         backView.addArrangedSubview(backButton)
         backButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)

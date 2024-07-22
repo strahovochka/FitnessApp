@@ -8,24 +8,41 @@
 import Foundation
 import UIKit
 
-class HomeViewController: BaseViewController {
+final class HomeViewController: BaseViewController {
     
     @IBOutlet weak private var sexLabel: UILabel!
     @IBOutlet weak private var nameLabel: UILabel!
     @IBOutlet weak var profileButton: UIButton!
     
     var viewModel: HomeViewModel?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
 
     override func viewDidLoad() {
         configUI()
-        if let model = viewModel {
-            model.getUser { [weak self] user in
+        guard let _ = viewModel?.user else  {
+            viewModel?.getUser { [weak self] in
                 guard let self = self else { return }
                 DispatchQueue.main.async {
                     self.updateUI()
                 }
             }
+            return
         }
+        updateUI()
+    }
+}
+
+extension HomeViewController: UserDataChangable {
+    func fetchData() {
+        viewModel?.getUser(completition: { [weak self] in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.updateUI()
+            }
+        })
     }
 }
 
@@ -50,7 +67,7 @@ private extension HomeViewController {
     }
     
     @IBAction func profileButtonPressed(_ sender: Any) {
-        viewModel?.goToProfile()
+        viewModel?.goToProfile(delegate: self)
     }
     
 }

@@ -10,7 +10,55 @@ import FirebaseCore
 import FirebaseAuth
 import FirebaseFirestore
 
+enum DataFields {
+    enum User {
+        case name(String)
+        case email(String)
+        case sex(String)
+        case id(String)
+        case profileImage(Data)
+        
+        var value: Any {
+            switch self {
+            case .name(let name):
+                return name
+            case .email(let email):
+                return email
+            case .sex(let sex):
+                return sex
+            case .id(let id):
+                return id
+            case .profileImage(let data):
+                return data
+            }
+        }
+        
+        var identifier: String {
+            switch self {
+            case .name:
+                return "userName"
+            case .email:
+                return "email"
+            case .sex:
+                return "sex"
+            case .id:
+                return "id"
+            case .profileImage:
+                return "profileImage"
+            }
+        }
+    }
+}
+
 class FirebaseService: NSObject {
+    
+    private enum ErrorType: String {
+        case noCurrentUser = "No authentificated user"
+        case userWasNotCreated = "No user created"
+        case parseError = "Could not parse data"
+        case fetchDataError = "Could not retrieve data"
+        case encodingError = "Could not encode object"
+    }
     
     enum Response<T: Any> {
         case success(T)
@@ -30,7 +78,7 @@ class FirebaseService: NSObject {
                 completition(.failure(error.localizedDescription))
                 return
             }
-            guard let user = result?.user else { return completition(.failure("No user created"))}
+            guard let user = result?.user else { return completition(.failure(ErrorType.userWasNotCreated.rawValue))}
             let data = [
                 "email": userData.email as NSString,
                 "id": user.uid as NSString,
@@ -61,7 +109,7 @@ class FirebaseService: NSObject {
                 completition(.success(true))
             }
         } else {
-            completition(.failure("Unable to find user"))
+            completition(.failure(ErrorType.noCurrentUser.rawValue))
         }
     }
     
@@ -83,14 +131,14 @@ class FirebaseService: NSObject {
                             completition(.success(UserModel(email: email, id: user.uid, name: name, sex: sex)))
                         }
                     } else {
-                        completition(.failure("Could not parse data"))
+                        completition(.failure(ErrorType.parseError.rawValue))
                     }
                 } else {
-                    completition(.failure("Unable to get data for user"))
+                    completition(.failure(ErrorType.fetchDataError.rawValue))
                 }
             }
         } else {
-            completition(.failure("No authentificated user"))
+            completition(.failure(ErrorType.noCurrentUser.rawValue))
         }
     }
     
@@ -118,6 +166,26 @@ class FirebaseService: NSObject {
                 return
             }
             completiton(.success(true))
+        }
+    }
+    
+    func updateUser(fields: [DataFields.User], completition: @escaping (Response<Bool>) -> ()) {
+        if let user = currentUser {
+            let data: [String: Any] = fields.reduce(into: [:]) { partialResult, field in
+                partialResult[field.identifier] = field.value
+            }
+            firestore
+                .collection("users")
+                .document(user.uid)
+                .setData(data, merge: true) { error in
+                    if let error = error {
+                        completition(.failure(error.localizedDescription))
+                        return
+                    }
+                    completition(.success(true))
+                }
+        } else {
+            completition(.failure(ErrorType.noCurrentUser.rawValue))
         }
     }
 }

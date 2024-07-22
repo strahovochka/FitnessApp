@@ -76,11 +76,12 @@
                     </view>
                     <connections>
                         <outlet property="backView" destination="R4S-aU-LXC" id="nVK-ci-hUx"/>
-                        <outlet property="buttonStackHeight" destination="q1x-OQ-sFG" id="hEt-Sf-KPR"/>
                         <outlet property="buttonStackView" destination="aaM-x0-fIF" id="Gwx-km-pMW"/>
                         <outlet property="buttonStackWidth" destination="2n5-YQ-i5i" id="ODE-HA-qLp"/>
                         <outlet property="containerView" destination="s7k-W1-KJM" id="yn5-9z-Xhy"/>
                         <outlet property="labelImageView" destination="cn1-pX-3iz" id="25D-x2-g9N"/>
+                        <outlet property="mainStackBottomConstraint" destination="hca-z3-Mol" id="gHw-tS-ztz"/>
+                        <outlet property="mainStackTopConstraint" destination="ZmB-00-Par" id="hDj-Q0-VbR"/>
                         <outlet property="titleLabel" destination="ARS-He-CkL" id="I2E-ug-dds"/>
                     </connections>
                 </viewController>
