@@ -42,18 +42,19 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
                 viewModel?.userPhoto = image
             }
         }
+        self.dismiss(animated: true)
     }
 }
 
 private extension ProfileViewController {
     
     func reload() {
-        if viewModel?.user.name != viewModel?.updatedUserName {
-            navigationItem.rightBarButtonItem?.isEnabled = true
-        }
-        if let image = viewModel?.userPhoto {
-            profileImageView.image = image
-            navigationItem.rightBarButtonItem?.isEnabled = true
+        if let model = viewModel {
+            navigationItem.rightBarButtonItem?.isEnabled = model.isNameChanged()
+            if let image = model.userPhoto {
+                profileImageView.image = image
+                navigationItem.rightBarButtonItem?.isEnabled = true
+            }
         }
     }
     

@@ -30,7 +30,7 @@ final class ForgotPasswordViewModel: BaseViewModel<ForgotPasswordCoodinator> {
                 completition(true)
             case .failure(let error):
                 self.coordinator?.showPopUp(title: error, type: .twoButtons((leftButton: (title: "Cancel", type: .unfilled, action: {
-                    self.coordinator?.navigationController.dismiss(animated: true)
+                    self.coordinator?.dismiss()
                     self.coordinator?.navigateBackToLogIn()
                 }), rightButton: (title: "Ok", type: .filled, action: nil))))
                 completition(false)
@@ -42,7 +42,7 @@ final class ForgotPasswordViewModel: BaseViewModel<ForgotPasswordCoodinator> {
 }
 
 extension ForgotPasswordViewModel: CustomTextFieldDelegate {
-    func updateValue(for tag: Int, as newValue: String) {
+    func updateValue(_ textField: CustomTextField, for tag: Int, as newValue: String) {
         if tag == field.rawValue {
             email = newValue
         }

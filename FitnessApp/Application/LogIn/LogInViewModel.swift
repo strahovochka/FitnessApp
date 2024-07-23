@@ -49,7 +49,7 @@ final class LogInViewModel: BaseViewModel<LogInCoordinator> {
 }
 
 extension LogInViewModel: CustomTextFieldDelegate {
-    func updateValue(for tag: Int, as newValue: String) {
+    func updateValue(_ textField: CustomTextField, for tag: Int, as newValue: String) {
         let type = TextFieldType(rawValue: tag)
         if type == .email {
             email = newValue

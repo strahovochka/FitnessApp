@@ -21,7 +21,7 @@ final class HomeViewModel: BaseViewModel<HomeCoordinator> {
         if let profileImageData = user?.profileImage {
             return UIImage(data: profileImageData)
         }
-        return .profileImage
+        return nil
     }
     
     func getUserSex() -> (title: String, sex: Sex) {

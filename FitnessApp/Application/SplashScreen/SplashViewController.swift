@@ -52,8 +52,8 @@ private extension SplashViewController {
         
         manButton.setType(.filled)
         girlButton.setType(.filled)
-        manButton.setTitle(Sex.male.heroName, for: .normal)
-        girlButton.setTitle(Sex.female.heroName, for: .normal)
+        manButton.title = Sex.male.heroName.uppercased()
+        girlButton.title = Sex.female.heroName.uppercased()
         manButton.setFont(.regularSaira?.withSize(18))
         girlButton.setFont(.regularSaira?.withSize(18))
         

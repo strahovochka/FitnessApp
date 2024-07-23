@@ -27,6 +27,10 @@ extension Coordinator {
         navigationController.popViewController(animated: true)
     }
     
+    func dismiss() {
+        navigationController.dismiss(animated: true)
+    }
+    
     private func imagePicker(sourceType: UIImagePickerController.SourceType) -> UIImagePickerController {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = sourceType
@@ -70,6 +74,6 @@ extension Coordinator {
         alertVC.addAction(cameraAction)
         alertVC.addAction(libraryAction)
         alertVC.addAction(cancelAtion)
-        self.navigationController.topViewController?.present(alertVC, animated: true)
+        self.navigationController.present(alertVC, animated: true)
     }
 }

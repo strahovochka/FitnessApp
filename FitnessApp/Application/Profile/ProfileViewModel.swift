@@ -39,6 +39,13 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
         coordinator?.showImagePickerOptions(delegate: delegate)
     }
     
+    func isNameChanged() -> Bool {
+        if updatedUserName != user.name, !updatedUserName.isEmpty {
+            return true
+        }
+        return false
+    }
+    
     func uploadChanges(completition: @escaping () -> ()) {
         var dataToUpdate: [DataFields.User] = []
         if user.name != updatedUserName {
@@ -54,15 +61,14 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
                 self.coordinator?.showPopUp(title: "Profile has been saved", type: .buttonless(.successIcon), completition: {
                     self.coordinator?.navigateBack()
                 })
+                completition()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     UIView.animate(withDuration: 1.0) {
                         self.coordinator?.navigationController.presentedViewController?.view.alpha = 0
                     } completion: { _ in
-                        self.coordinator?.navigationController.dismiss(animated: true)
-                        self.coordinator?.navigateBack()
+                        self.coordinator?.dismiss()
                     }
                 }
-                completition()
             case .failure(let error):
                 self.coordinator?.showPopUp(title: error, type: .oneButton((title: "Ok", type: .filled, action: nil)))
             case .unknown:
@@ -73,7 +79,7 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
 }
 
 extension ProfileViewModel: CustomTextFieldDelegate {
-    func updateValue(for tag: Int, as newValue: String) {
+    func updateValue(_ textField: CustomTextField, for tag: Int, as newValue: String) {
         if tag == TextFieldType.name.rawValue {
             self.updatedUserName = newValue
             self.update()

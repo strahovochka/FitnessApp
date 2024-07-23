@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CustomTextFieldDelegate {
-    func updateValue(for tag: Int, as newValue: String)
+    func updateValue(_ textField: CustomTextField, for tag: Int, as newValue: String)
 }
 
 final class CustomTextField: UIView {
@@ -122,7 +122,7 @@ private extension CustomTextField {
                 self.state = .unfilled
             } else {
                 self.state = .filled
-                delegate?.updateValue(for: self.tag, as: text)
+                delegate?.updateValue(self, for: self.tag, as: text)
             }
         }
     }

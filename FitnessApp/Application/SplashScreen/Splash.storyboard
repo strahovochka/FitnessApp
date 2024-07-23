@@ -30,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="426"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKq-S3-rmj" customClass="PlainButton" customModule="FitnessApp" customModuleProvider="target">
-                                <rect key="frame" x="139.66666666666666" y="621.66666666666663" width="113.66666666666666" height="35"/>
+                                <rect key="frame" x="124.66666666666669" y="621.66666666666663" width="144" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="SUPERGIRL"/>
                                 <connections>
@@ -38,7 +38,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kkh-qx-9aL" customClass="PlainButton" customModule="FitnessApp" customModuleProvider="target">
-                                <rect key="frame" x="139" y="196" width="115" height="34.333333333333343"/>
+                                <rect key="frame" x="124.66666666666669" y="196" width="144" height="34.333333333333343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="144" id="DQR-wo-teF"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="SUPERMAN"/>
                                 <connections>
@@ -79,6 +82,7 @@
                             <constraint firstItem="aKq-S3-rmj" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="UNf-gA-MfL"/>
                             <constraint firstItem="Kkh-qx-9aL" firstAttribute="centerY" secondItem="Wzc-xu-CRw" secondAttribute="centerY" id="UPa-Ru-N6D"/>
                             <constraint firstItem="Wzc-xu-CRw" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="WyX-wO-ujS"/>
+                            <constraint firstItem="aKq-S3-rmj" firstAttribute="width" secondItem="Kkh-qx-9aL" secondAttribute="width" id="XMx-Qi-z39"/>
                             <constraint firstItem="V1Z-L1-aAe" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="XNX-e3-3RR"/>
                             <constraint firstAttribute="bottom" secondItem="fvH-hD-832" secondAttribute="bottom" id="eRK-GP-TRG"/>
                             <constraint firstItem="V1Z-L1-aAe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="hXS-K8-rxR"/>
