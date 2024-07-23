@@ -38,9 +38,7 @@ final class ProfileViewController: BaseViewController {
 extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
-            if !image.isEqual(profileImageView.image) {
-                viewModel?.userPhoto = image
-            }
+            viewModel?.userPhoto = image
         }
         self.dismiss(animated: true)
     }
@@ -53,6 +51,7 @@ private extension ProfileViewController {
             navigationItem.rightBarButtonItem?.isEnabled = model.isNameChanged()
             if let image = model.userPhoto {
                 profileImageView.image = image
+                configImageView()
                 navigationItem.rightBarButtonItem?.isEnabled = true
             }
         }
@@ -66,8 +65,9 @@ private extension ProfileViewController {
         profileImageView.contentMode = viewModel?.user.profileImage == nil ? .center : .scaleAspectFill
         profileImageView.isUserInteractionEnabled = true
         profileImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showPhotoOptions)))
-        configImageView()
-        
+        if let _ = viewModel?.user.profileImage {
+            configImageView()
+        }
         nameTextField.labelTitle = viewModel?.textFieldData.title
         nameTextField.text = viewModel?.user.name
         nameTextField.delegate = viewModel
@@ -80,11 +80,11 @@ private extension ProfileViewController {
     }
     
     func configImageView() {
-        if let _ = viewModel?.user.profileImage {
-            profileImageView.contentMode = .scaleAspectFill
-            profileImageView.layer.borderWidth = 1
-            profileImageView.layer.borderColor = UIColor.primaryYellow.cgColor
-        }
+        profileImageView.backgroundColor = .clear
+        profileImageView.contentMode = .scaleAspectFill
+        profileImageView.layer.borderWidth = 1
+        profileImageView.layer.borderColor = UIColor.primaryYellow.cgColor
+        
     }
     
     @objc func saveData() {
