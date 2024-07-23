@@ -10,9 +10,9 @@ import UIKit
 class TabCoordinator: NSObject, Coordinator {
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
-    let user: RegistrationModel?
+    let user: UserModel?
     
-    init(_ navigationController: UINavigationController, user: RegistrationModel? = nil) {
+    init(_ navigationController: UINavigationController, user: UserModel? = nil) {
         self.navigationController = navigationController
         self.user = user
     }

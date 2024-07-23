@@ -8,21 +8,14 @@
 import Foundation
 
 final class PopUpViewModel: BaseViewModel<PopUpCoordinator> {
-
+    
     let title: String
-    let defaultAction: () -> ()
-    let defaultButtonTitle: String
-    private(set) var leftButtonAction: (() -> ())?
-    private(set) var leftButtonTitle: String?
+    let type: PopUpCoordinator.ViewType
+    let completition: (() -> ())?
     
-    init(title: String, defaultButtonTitle: String, defaultAction: @escaping () -> ()) {
+    init(title: String, type: PopUpCoordinator.ViewType, completiton: (() -> ())? = nil) {
         self.title = title
-        self.defaultButtonTitle = defaultButtonTitle
-        self.defaultAction = defaultAction
-    }
-    
-    func addAction(title: String, action: (() -> ())?) {
-        leftButtonAction = action
-        leftButtonTitle = title
+        self.type = type
+        self.completition = completiton
     }
 }

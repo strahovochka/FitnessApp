@@ -29,4 +29,33 @@ extension UIImage {
     static let calculatorTabSelected = UIImage(named: "calculatorTabSelected")
     static let musclesTab = UIImage(named: "musclesTab")
     static let musclesTabSelected = UIImage(named: "musclesTabSelected")
+    
+    //Icons
+    static let backIcon = UIImage(named: "backIcon")
+    static let successIcon = UIImage(named: "successIcon")
+    
+    //Placeholders
+    static let profileImage = UIImage(named: "profileImage")
+    static let editProfile = UIImage(named: "editProfileImage")
 }
+
+extension UIImage {
+    func getCompressedData(to kbCount: Int) -> Data? {
+        let bytes = kbCount * 1024
+        var compression: CGFloat = 1.0
+        let step: CGFloat = 0.05
+        if var data = self.jpegData(compressionQuality: compression) {
+            while(data.count > bytes) {
+                let ratio = CGFloat(data.count / bytes)
+                compression -= step * ratio
+                if let newData = self.jpegData(compressionQuality: compression) {
+                    data = newData
+                }
+            }
+            return data
+        }
+        return Data()
+    }
+}
+
+

@@ -52,10 +52,10 @@ private extension LogInViewController {
         view.endEditing(true)
         textFields.forEach { $0.checkForError()}
         guard let _ = textFields.first(where: { $0.getState() == .error}) else {
-            loginButton.isEnabled = false
+            loginButton.isActive = false
             viewModel?.logIn(completition: { [weak self] isSuccessful in
                 guard let self = self else { return }
-                self.loginButton.isEnabled = !isSuccessful
+                self.loginButton.isActive = !isSuccessful
             })
             return
         }

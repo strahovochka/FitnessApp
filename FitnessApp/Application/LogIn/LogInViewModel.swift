@@ -23,21 +23,17 @@ final class LogInViewModel: BaseViewModel<LogInCoordinator> {
             guard let self = self else { return }
             switch response {
             case .success(let user):
-                if let sex = user.sex, sex.isEmpty {
+                if user.sex.isEmpty {
                     self.coordinator?.navigateToSplash()
                 } else {
                     self.coordinator?.navigateToTabBar(with: user)
                 }
                 completition(true)
             case .failure(let error):
-                self.coordinator?.showPopUp(title: error, buttonTitle: "Ok", buttonAction: {
-                    self.coordinator?.navigationController.dismiss(animated: true)
-                })
+                self.coordinator?.showPopUp(title: error, type: .oneButton((title: "Ok", type: .filled, action: nil)))
                 completition(false)
             case .unknown:
-                self.coordinator?.showPopUp(title: "An unknown error occured", buttonTitle: "Ok", buttonAction: {
-                    self.coordinator?.navigationController.dismiss(animated: true)
-                })
+                self.coordinator?.showPopUp(title: "An unknow error occured", type: .oneButton((title: "Ok", type: .filled, action: nil)))
                 completition(false)
             }
         }
@@ -53,7 +49,7 @@ final class LogInViewModel: BaseViewModel<LogInCoordinator> {
 }
 
 extension LogInViewModel: CustomTextFieldDelegate {
-    func updateValue(for tag: Int, as newValue: String) {
+    func updateValue(_ textField: CustomTextField, for tag: Int, as newValue: String) {
         let type = TextFieldType(rawValue: tag)
         if type == .email {
             email = newValue

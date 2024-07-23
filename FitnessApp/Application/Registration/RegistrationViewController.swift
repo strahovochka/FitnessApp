@@ -44,21 +44,21 @@ private extension RegistrationViewController {
                 self.textFields[index].delegate = self.viewModel
             }
             signUpButton.setType(.filled)
-            signUpButton.setTitle(viewModel.signInButtonText, for: .normal)
+            signUpButton.title = viewModel.signInButtonText
             loginLabel.text = viewModel.loginText
             loginLabel.font = .lightSaira
             logInButton.setType(.unfilled)
-            logInButton.setTitle(viewModel.logInButtonText, for: .normal)
+            logInButton.title = viewModel.logInButtonText
         }
     }
     
     @IBAction func signUpButtonPressed(_ sender: Any) {
         textFields.forEach { $0.checkForError() }
         guard let _ = textFields.first(where: { $0.getState() == .error}) else {
-            self.signUpButton.isEnabled = false
+            self.signUpButton.isActive = false
             viewModel?.registerUser { [weak self] isSuccessful in
                 guard let self = self else { return }
-                self.signUpButton.isEnabled = !isSuccessful
+                self.signUpButton.isActive = !isSuccessful
             }
             return
         }

@@ -25,20 +25,20 @@ final class SplashViewController: UIViewController {
     }
     
     @IBAction func superManButtonTapped(_ sender: Any) {
-        manButton.isEnabled = false
-        girlButton.isEnabled = false
+        manButton.isActive = false
+        girlButton.isActive = false
         viewModel?.heroChosen(.male) { [weak self] isSuccessful in
             guard let self = self else { return }
-            self.manButton.isEnabled = !isSuccessful
+            self.manButton.isActive = !isSuccessful
         }
     }
     
     @IBAction func superGirlButtonTapped(_ sender: Any) {
-        girlButton.isEnabled = false
-        manButton.isEnabled = false
+        girlButton.isActive = false
+        manButton.isActive = false
         viewModel?.heroChosen(.female) { [weak self] isSuccessful in
             guard let self = self else { return }
-            self.girlButton.isEnabled = !isSuccessful
+            self.girlButton.isActive = !isSuccessful
         }
     }
 }
@@ -52,8 +52,8 @@ private extension SplashViewController {
         
         manButton.setType(.filled)
         girlButton.setType(.filled)
-        manButton.setTitle(Sex.male.heroName, for: .normal)
-        girlButton.setTitle(Sex.female.heroName, for: .normal)
+        manButton.title = Sex.male.heroName.uppercased()
+        girlButton.title = Sex.female.heroName.uppercased()
         manButton.setFont(.regularSaira?.withSize(18))
         girlButton.setFont(.regularSaira?.withSize(18))
         

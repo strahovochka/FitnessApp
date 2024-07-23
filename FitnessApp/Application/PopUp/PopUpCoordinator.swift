@@ -6,37 +6,34 @@
 //
 
 import UIKit
+typealias PopUpButtonConfig = (title: String, type: PlainButton.ViewType, action: (()->())?)
 
 final class PopUpCoordinator: Coordinator {
+
+    enum ViewType {
+        case buttonless(UIImage?)
+        case oneButton(PopUpButtonConfig)
+        case twoButtons((leftButton: PopUpButtonConfig, rightButton: PopUpButtonConfig))
+    }
+    
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
     let message: String
-    let defaultButtonTitile: String
-    let defaultAction: () -> ()
-    var secondaryAction: (() -> ())?
-    var secondaryButtonTitile: String?
+    let type: ViewType
+    let completition: (() -> ())?
     
-    init(navigationController: UINavigationController, message: String, defaultButtonTitile: String, secondaryButtonTitle: String? = nil, defaultAction: @escaping () -> (), secondaryAction: (() -> ())? = nil) {
+    init(navigationController: UINavigationController, message: String, type: ViewType, completition: (() -> ())? = nil) {
         self.navigationController = navigationController
         self.message = message
-        self.defaultButtonTitile = defaultButtonTitile
-        self.defaultAction = defaultAction
-        self.secondaryButtonTitile = secondaryButtonTitle
-        self.secondaryAction = secondaryAction
+        self.type = type
+        self.completition = completition
     }
     
     func start() {
         let vc = PopUpViewConrtoller.instantiate(from: Identifiers.Storyboard.popUp)
-        let viewModel = PopUpViewModel(title: message, defaultButtonTitle: defaultButtonTitile, defaultAction: defaultAction)
-        if let secondaryButtonTitile = secondaryButtonTitile, let secondaryAction = secondaryAction {
-            viewModel.addAction(title: secondaryButtonTitile, action: secondaryAction)
-        }
+        let viewModel = PopUpViewModel(title: message, type: type, completiton: completition)
         viewModel.coordinator = self
         vc.viewModel = viewModel
         navigationController.present(vc, animated: true)
-    }
-    
-    func navigateBack() {
-        navigationController.popViewController(animated: true)
     }
 }

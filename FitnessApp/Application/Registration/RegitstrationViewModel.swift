@@ -95,22 +95,18 @@ final class RegistrationViewModel: BaseViewModel<RegistrationCoordinator> {
             case .success:
                 self.coordinator?.navigateToSplashScreen()
                 completition(true)
-            case .failure(let errorMessage):
-                self.coordinator?.showPopUp(title: errorMessage, buttonTitle: "Ok", buttonAction: {
-                    self.coordinator?.navigationController.dismiss(animated: true)
-                })
+            case .failure(let error):
+                self.coordinator?.showPopUp(title: error, type: .oneButton((title: "Ok", type: .filled, action: nil)))
                 completition(false)
             case .unknown:
-                self.coordinator?.showPopUp(title: "An unknown error occured", buttonTitle: "Ok", buttonAction: {
-                    self.coordinator?.navigationController.dismiss(animated: true)
-                })
+                self.coordinator?.showPopUp(title: "An unknow error occured", type: .oneButton((title: "Ok", type: .filled, action: nil)))
                 completition(false)
             }
         }
     }
     
     func getErrorChecker(for type: TextFieldType) -> ((String) -> (Bool)) {
-        type.getErrorChecker(whichMatches: password)
+        type.getErrorChecker()
     }
     
     func goToLogin() {
@@ -119,7 +115,7 @@ final class RegistrationViewModel: BaseViewModel<RegistrationCoordinator> {
 }
 
 extension RegistrationViewModel: CustomTextFieldDelegate {
-    func updateValue(for tag: Int, as newValue: String) {
+    func updateValue(_ textField: CustomTextField, for tag: Int, as newValue: String) {
         let type = TextFieldType(rawValue: tag)
         switch type {
         case .name:
@@ -128,6 +124,8 @@ extension RegistrationViewModel: CustomTextFieldDelegate {
             email = newValue
         case .createPassword:
             password = newValue
+        case .confirmPassword:
+            textField.errorChecker = type?.getErrorChecker(whichMatches: password)
         default:
             break
         }

@@ -26,30 +26,23 @@ final class ForgotPasswordViewModel: BaseViewModel<ForgotPasswordCoodinator> {
             guard let self = self else { return }
             switch response {
             case .success:
-                self.coordinator?.showPopUp(title: "The form has been sent to your e-mail", buttonTitle: "Ok", buttonAction: {
-                    self.coordinator?.navigationController.dismiss(animated: true)
-                    self.coordinator?.navigateBackToLogIn()
-                })
+                self.coordinator?.showPopUp(title: "The form has been sent to your e-mail", type: .oneButton((title: "Ok", type: .filled, action: nil)))
                 completition(true)
             case .failure(let error):
-                self.coordinator?.showPopUp(title: error, buttonTitle: "Ok", secondaryTitle: "Cancel", buttonAction: {
-                    self.coordinator?.navigationController.dismiss(animated: true)
-                }, secondaryAction: {
-                    self.coordinator?.navigationController.dismiss(animated: true)
+                self.coordinator?.showPopUp(title: error, type: .twoButtons((leftButton: (title: "Cancel", type: .unfilled, action: {
+                    self.coordinator?.dismiss()
                     self.coordinator?.navigateBackToLogIn()
-                })
+                }), rightButton: (title: "Ok", type: .filled, action: nil))))
                 completition(false)
             case .unknown:
-                self.coordinator?.showPopUp(title: "An unknown error occured", buttonTitle: "Ok", buttonAction: {
-                    self.coordinator?.navigationController.dismiss(animated: true)
-                })
+                self.coordinator?.showPopUp(title: "An unknow error occured", type: .oneButton((title: "Ok", type: .filled, action: nil)))
             }
         }
     }
 }
 
 extension ForgotPasswordViewModel: CustomTextFieldDelegate {
-    func updateValue(for tag: Int, as newValue: String) {
+    func updateValue(_ textField: CustomTextField, for tag: Int, as newValue: String) {
         if tag == field.rawValue {
             email = newValue
         }

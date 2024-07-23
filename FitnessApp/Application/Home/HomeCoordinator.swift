@@ -12,9 +12,9 @@ final class HomeCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
     
     var navigationController: UINavigationController
-    private var user: RegistrationModel?
+    private var user: UserModel?
     
-    init(navigationController: UINavigationController, user: RegistrationModel? = nil) {
+    init(navigationController: UINavigationController, user: UserModel? = nil) {
         self.navigationController = navigationController
         self.user = user
     }
@@ -25,5 +25,11 @@ final class HomeCoordinator: Coordinator {
         viewModel.coordinator = self
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToProfile(with user: UserModel, delegate: UserDataChangable) {
+        let child = ProfileCoordinator(navigationController: navigationController, user: user, delegate: delegate)
+        childCoordinators.append(child)
+        child.start()
     }
 }

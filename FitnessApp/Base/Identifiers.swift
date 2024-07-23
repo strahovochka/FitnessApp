@@ -19,6 +19,7 @@ enum Identifiers {
         static let logIn = "LogIn"
         static let forgotPassword = "ForgotPassword"
         static let popUp = "PopUp"
+        static let profile = "Profile"
     }
     
     enum NibNames {
