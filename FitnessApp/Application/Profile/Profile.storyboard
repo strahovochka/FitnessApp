@@ -23,11 +23,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bQe-Ci-9gI">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bQe-Ci-9gI">
                                 <rect key="frame" x="0.0" y="59" width="393" height="641"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="76" translatesAutoresizingMaskIntoConstraints="NO" id="Mqx-WX-S3G">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="352.33333333333331"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="76" translatesAutoresizingMaskIntoConstraints="NO" id="Mqx-WX-S3G">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="504.33333333333331"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNl-RS-hid">
                                                 <rect key="frame" x="43" y="0.0" width="307" height="156"/>
@@ -46,8 +46,8 @@
                                                     <constraint firstAttribute="bottom" secondItem="zbg-71-bOh" secondAttribute="bottom" id="s24-eL-VMB"/>
                                                 </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Zyl-oT-8yV">
-                                                <rect key="frame" x="43" y="232.00000000000003" width="307" height="120.33333333333334"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Zyl-oT-8yV">
+                                                <rect key="frame" x="43" y="231.99999999999997" width="307" height="272.33333333333326"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fM-7B-zYA" customClass="CustomTextField" customModule="FitnessApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="307" height="71"/>
@@ -62,6 +62,9 @@
                                                         <color key="textColor" name="secondaryGray"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="PR0-4a-rvM">
+                                                        <rect key="frame" x="0.0" y="144.33333333333331" width="307" height="128"/>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -93,6 +96,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                        <connections>
+                                            <action selector="addOptionsButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ShK-E2-0n2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -118,6 +124,7 @@
                         <outlet property="addOptionsButton" destination="O4x-a7-Rgy" id="3QW-AL-F5T"/>
                         <outlet property="explanationTextLabel" destination="GLV-Be-FuT" id="8qf-5W-dUD"/>
                         <outlet property="nameTextField" destination="2fM-7B-zYA" id="mWU-xx-jv5"/>
+                        <outlet property="optionsStackView" destination="PR0-4a-rvM" id="4aT-rL-p8h"/>
                         <outlet property="profileImageView" destination="zbg-71-bOh" id="uLT-jq-92V"/>
                     </connections>
                 </viewController>

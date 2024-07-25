@@ -42,10 +42,6 @@ final class LogInViewModel: BaseViewModel<LogInCoordinator> {
     func goToForgotPassword() {
         coordinator?.navigateToForgotPassword()
     }
-    
-    func goBackToRegister() {
-        coordinator?.navigateBackToRegister()
-    }
 }
 
 extension LogInViewModel: CustomTextFieldDelegate {

@@ -72,6 +72,14 @@ final class CustomTextField: UIView {
     func getState() -> State {
         self.state
     }
+    
+    func getText() -> String? {
+        textField.text
+    }
+    
+    func setTextFieldDelegate(_ delegate: UITextFieldDelegate) {
+        textField.delegate = delegate
+    }
 }
 
 //-MARK: Private functions
@@ -90,6 +98,7 @@ private extension CustomTextField {
     }
     
     func initialUISetup() {
+        self.label.font = .systemFont(ofSize: 18)
         self.textField.layer.borderWidth = 1
         self.textField.layer.cornerRadius = 12
         self.textField.layer.masksToBounds = true
@@ -120,6 +129,7 @@ private extension CustomTextField {
         if let text = textField.text {
             if text.isEmpty {
                 self.state = .unfilled
+                delegate?.updateValue(self, for: self.tag, as: "")
             } else {
                 self.state = .filled
                 delegate?.updateValue(self, for: self.tag, as: text)

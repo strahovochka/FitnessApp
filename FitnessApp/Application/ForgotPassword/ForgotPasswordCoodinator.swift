@@ -22,9 +22,4 @@ final class ForgotPasswordCoodinator: Coordinator {
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
     }
-    
-    @objc func navigateBackToLogIn() {
-        navigationController.popViewController(animated: true)
-    }
-    
 }

@@ -20,10 +20,12 @@ enum Identifiers {
         static let forgotPassword = "ForgotPassword"
         static let popUp = "PopUp"
         static let profile = "Profile"
+        static let optionsPopUp = "OptionsPopUp"
     }
     
     enum NibNames {
         static let textField = "CustomTextField"
-        static let titleView = "CustomTitleView"
+        static let optionCell = "OptionTableViewCell"
+        static let optionView = "OptionView"
     }
 }

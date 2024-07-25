@@ -28,4 +28,10 @@ final class ProfileCoordinator: Coordinator {
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
     }
+    
+    func navigateToOptions(with selectedOptions: [OptionDataName], delegate: OptionsPopUpDelegate) {
+        let child = OptionsPopUpCoordinator(navigationController: navigationController, selection: selectedOptions, delegate: delegate)
+        childCoordinators.append(child)
+        child.start()
+    }
 }
