@@ -56,6 +56,8 @@ enum OptionDataName: String, Codable, CaseIterable {
 
 struct OptionModel: Codable, Hashable {
     var optionName: OptionDataName
-    var value: Double?
+    var valueArray: [Double?]
+    var changedValue: Double?
+    var dateArray: [Int]
     var isShown: Bool? = false
 }

@@ -76,7 +76,6 @@ private extension OptionsPopUpViewController {
         }
         self.dismiss(animated: true)
     }
-    
 }
 
 extension OptionsPopUpViewController: UITableViewDataSource, UITableViewDelegate {

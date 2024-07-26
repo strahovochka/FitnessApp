@@ -17,12 +17,10 @@ final class ProfileViewController: BaseViewController {
     var viewModel: ProfileViewModel?
     var delegate: UserDataChangable?
     
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(false, animated: true)
-        tabBarController?.tabBar.isHidden = true
-    }
-    
     override func viewDidLoad() {
+        if let sex = Sex(rawValue: viewModel?.user.sex ?? "") {
+            setBackground(for: sex)
+        }
         super.viewDidLoad()
         viewModel?.update = { [weak self] in
             self?.reload()
@@ -76,7 +74,9 @@ private extension ProfileViewController {
         profileImageView.contentMode = viewModel?.user.profileImage == nil ? .center : .scaleAspectFill
         profileImageView.isUserInteractionEnabled = true
         profileImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showPhotoOptions)))
-        configImageView()
+        if let _ = viewModel?.user.profileImage {
+            configImageView()
+        }
         nameTextField.labelTitle = viewModel?.textFieldData.title
         nameTextField.text = viewModel?.user.userName
         nameTextField.delegate = viewModel

@@ -60,7 +60,7 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
     //MARK: -Update checks
     func isOptionsValid() -> Bool {
         if !selectedOptions.isEmpty {
-            return !selectedOptions.contains { $0.value == nil }
+            return !selectedOptions.contains { $0.valueArray == [] }
         }
         return true
     }
@@ -74,10 +74,12 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
         var newOptions: [OptionModel] = []
         OptionDataName.allCases.forEach { optionName in
             if options.contains(optionName) {
-                if let selectedOption = selectedOptions.first(where: { $0.optionName == optionName}) {
+                if let selectedOption = selectedOptions.first(where: { $0.optionName == optionName }) {
                     newOptions.append(selectedOption)
+                } else if let oldOption = user.userOptions?.first(where: { $0.optionName == optionName }) {
+                    newOptions.append(oldOption)
                 } else {
-                    newOptions.append(OptionModel(optionName: optionName, isShown: true))
+                    newOptions.append(OptionModel(optionName: optionName, valueArray: [], changedValue: nil, dateArray: [], isShown: true))
                 }
             }
         }

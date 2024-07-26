@@ -12,7 +12,8 @@ final class HomeViewController: BaseViewController {
     
     @IBOutlet weak private var sexLabel: UILabel!
     @IBOutlet weak private var nameLabel: UILabel!
-    @IBOutlet weak var profileButton: UIButton!
+    @IBOutlet weak private var profileButton: UIButton!
+    @IBOutlet weak private var collectionView: UICollectionView!
     
     var viewModel: HomeViewModel?
     
