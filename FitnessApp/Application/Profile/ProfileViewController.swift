@@ -59,13 +59,9 @@ private extension ProfileViewController {
     
     func reload() {
         if let model = viewModel {
+            configImageView()
             if model.isOptionsValid() {
-                navigationItem.rightBarButtonItem?.isEnabled = model.isNameChanged() || model.isOptionsChanged()
-                if let image = model.userPhoto {
-                    profileImageView.image = image
-                    configImageView()
-                    navigationItem.rightBarButtonItem?.isEnabled = true
-                }
+                navigationItem.rightBarButtonItem?.isEnabled = model.isSaveAllowed()
             } else {
                 navigationItem.rightBarButtonItem?.isEnabled = false
             }
@@ -80,11 +76,9 @@ private extension ProfileViewController {
         profileImageView.contentMode = viewModel?.user.profileImage == nil ? .center : .scaleAspectFill
         profileImageView.isUserInteractionEnabled = true
         profileImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showPhotoOptions)))
-        if let _ = viewModel?.user.profileImage {
-            configImageView()
-        }
+        configImageView()
         nameTextField.labelTitle = viewModel?.textFieldData.title
-        nameTextField.text = viewModel?.user.name
+        nameTextField.text = viewModel?.user.userName
         nameTextField.delegate = viewModel
         explanationTextLabel.text = viewModel?.explanationText
         explanationTextLabel.numberOfLines = 0
@@ -95,6 +89,9 @@ private extension ProfileViewController {
     }
     
     func configImageView() {
+        if let updatedImage = viewModel?.userPhoto {
+            profileImageView.image = updatedImage
+        }
         profileImageView.backgroundColor = .clear
         profileImageView.contentMode = .scaleAspectFill
         profileImageView.layer.borderWidth = 1

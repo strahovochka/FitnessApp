@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct UserModel: Codable {
+struct UserModel: Codable, Equatable {
     let email: String
     let id: String
-    let name: String
+    let userName: String
     let sex: String
     var profileImage: Data? = nil
     var userOptions: [OptionModel]? = nil

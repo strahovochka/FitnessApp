@@ -27,10 +27,10 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
     }
     private(set) var updatedUserName: String {
         didSet {
-            if user.name != updatedUserName && !updatedUserName.isEmpty  {
-                updatedUser = UserModel(email: user.email, id: user.id, name: updatedUserName, sex: user.sex, profileImage: updatedUser.profileImage, userOptions: updatedUser.userOptions)
+            if user.userName != updatedUserName && !updatedUserName.isEmpty  {
+                updatedUser = UserModel(email: user.email, id: user.id, userName: updatedUserName, sex: user.sex, profileImage: updatedUser.profileImage, userOptions: updatedUser.userOptions)
             } else {
-                updatedUser = UserModel(email: updatedUser.email, id: updatedUser.id, name: user.name, sex: updatedUser.sex, profileImage: updatedUser.profileImage, userOptions: updatedUser.userOptions)
+                updatedUser = UserModel(email: updatedUser.email, id: updatedUser.id, userName: user.userName, sex: updatedUser.sex, profileImage: updatedUser.profileImage, userOptions: updatedUser.userOptions)
             }
             self.update()
         }
@@ -45,13 +45,13 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
             self.update()
         }
     }
-   
+    
     var update: () -> Void = { }
     
     init(user: UserModel) {
         self.user = user
         self.updatedUser = user
-        updatedUserName = user.name
+        updatedUserName = user.userName
         if let options = user.userOptions {
             selectedOptions = options
         }
@@ -59,7 +59,7 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
     
     //MARK: -Update checks
     func isNameChanged() -> Bool {
-        updatedUser.name != user.name
+        updatedUser.userName != user.userName
     }
     
     func isOptionsChanged() -> Bool {
@@ -74,6 +74,10 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
             return !selectedOptions.contains { $0.value == nil }
         }
         return true
+    }
+    
+    func isSaveAllowed() -> Bool {
+        updatedUser != user
     }
     
     //MARK: -Value updaters
