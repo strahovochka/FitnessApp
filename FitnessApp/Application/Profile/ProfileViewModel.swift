@@ -58,17 +58,6 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
     }
     
     //MARK: -Update checks
-    func isNameChanged() -> Bool {
-        updatedUser.userName != user.userName
-    }
-    
-    func isOptionsChanged() -> Bool {
-        if selectedOptions.isEmpty && user.userOptions == nil {
-            return false
-        }
-        return selectedOptions != user.userOptions
-    }
-    
     func isOptionsValid() -> Bool {
         if !selectedOptions.isEmpty {
             return !selectedOptions.contains { $0.value == nil }

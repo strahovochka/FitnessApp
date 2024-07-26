@@ -574,8 +574,8 @@
             filePath = "FitnessApp/Application/Profile/ProfileViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "isOptionsValid()"
             landmarkType = "7">
             <Locations>
@@ -654,8 +654,8 @@
             filePath = "FitnessApp/Application/Profile/ProfileViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "uploadChanges(completition:)"
             landmarkType = "7">
             <Locations>
@@ -702,8 +702,8 @@
             filePath = "FitnessApp/Application/Profile/ProfileViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "updateSelectedOptions(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -718,8 +718,8 @@
             filePath = "FitnessApp/Application/Profile/ProfileViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "updateSelectedOptions(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -734,8 +734,8 @@
             filePath = "FitnessApp/Application/Profile/ProfileViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "uploadChanges(completition:)"
             landmarkType = "7">
          </BreakpointContent>
