@@ -14,47 +14,85 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
     let addOptionsButtonText = "Add options".capitalized
     let saveButtonText = "Save"
     let textFieldData: TextFieldType = .name
+    private(set) var updatedUser: UserModel
     private(set) var user: UserModel
-    private(set) var updatedUserName: String
-    var userPhoto: UIImage? {
+    private(set) var selectedOptions: [OptionModel] = [] {
         didSet {
+            if !selectedOptions.isEmpty {
+                updatedUser.userOptions = selectedOptions
+            } else {
+                updatedUser.userOptions = nil
+            }
+        }
+    }
+    private(set) var updatedUserName: String {
+        didSet {
+            if user.userName != updatedUserName && !updatedUserName.isEmpty  {
+                updatedUser = UserModel(email: user.email, id: user.id, userName: updatedUserName, sex: user.sex, profileImage: updatedUser.profileImage, userOptions: updatedUser.userOptions)
+            } else {
+                updatedUser = UserModel(email: updatedUser.email, id: updatedUser.id, userName: user.userName, sex: updatedUser.sex, profileImage: updatedUser.profileImage, userOptions: updatedUser.userOptions)
+            }
             self.update()
         }
     }
+    var userPhoto: UIImage? {
+        didSet {
+            if let newImage = userPhoto, let data = newImage.getCompressedData(to: 900) {
+                updatedUser.profileImage = data
+            } else {
+                updatedUser.profileImage = nil
+            }
+            self.update()
+        }
+    }
+    
     var update: () -> Void = { }
     
     init(user: UserModel) {
         self.user = user
-        updatedUserName = user.name
-    }
-    
-    func getProfileImage() -> UIImage? {
-        if let profileImageData = user.profileImage {
-            return UIImage(data: profileImageData)
+        self.updatedUser = user
+        updatedUserName = user.userName
+        if let options = user.userOptions {
+            selectedOptions = options
         }
-        return .editProfile
     }
     
-    func showImagePickerOptions(delegate: (UIImagePickerControllerDelegate & UINavigationControllerDelegate)) {
-        coordinator?.showImagePickerOptions(delegate: delegate)
-    }
-    
-    func isNameChanged() -> Bool {
-        if updatedUserName != user.name, !updatedUserName.isEmpty {
-            return true
+    //MARK: -Update checks
+    func isOptionsValid() -> Bool {
+        if !selectedOptions.isEmpty {
+            return !selectedOptions.contains { $0.value == nil }
         }
-        return false
+        return true
     }
     
+    func isSaveAllowed() -> Bool {
+        updatedUser != user
+    }
+    
+    //MARK: -Value updaters
+    func updateSelectedOptions(with options: [OptionDataName]) {
+        var newOptions: [OptionModel] = []
+        OptionDataName.allCases.forEach { optionName in
+            if options.contains(optionName) {
+                if let selectedOption = selectedOptions.first(where: { $0.optionName == optionName}) {
+                    newOptions.append(selectedOption)
+                } else {
+                    newOptions.append(OptionModel(optionName: optionName, isShown: true))
+                }
+            }
+        }
+        selectedOptions = newOptions
+    }
+    
+    func updateOption(with model: OptionModel) {
+        if let optionIndex = selectedOptions.firstIndex(where: { $0.optionName == model.optionName }) {
+            selectedOptions[optionIndex] = model
+        }
+    }
+    
+    //MARK: -Upload method
     func uploadChanges(completition: @escaping () -> ()) {
-        var dataToUpdate: [DataFields.User] = []
-        if user.name != updatedUserName {
-            dataToUpdate.append(.name(updatedUserName))
-        }
-        if let newImage = userPhoto, let data = newImage.getCompressedData(to: 900) {
-            dataToUpdate.append(.profileImage(data))
-        }
-        FirebaseService.shared.updateUser(fields: dataToUpdate) { [weak self] response in
+        FirebaseService.shared.updateUser(updatedUser) { [weak self] response in
             guard let self = self else { return }
             switch response {
             case .success:
@@ -76,13 +114,30 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
             }
         }
     }
+    
+    
+    
+//MARK: -Navigation
+    func getProfileImage() -> UIImage? {
+        if let profileImageData = user.profileImage {
+            return UIImage(data: profileImageData)
+        }
+        return .editProfile
+    }
+    
+    func showImagePickerOptions(delegate: (UIImagePickerControllerDelegate & UINavigationControllerDelegate)) {
+        coordinator?.showImagePickerOptions(delegate: delegate)
+    }
+    
+    func goToOptions(delegate: OptionsPopUpDelegate, with selectedOptions: [OptionDataName]) {
+        coordinator?.navigateToOptions(with: selectedOptions, delegate: delegate)
+    }
 }
 
 extension ProfileViewModel: CustomTextFieldDelegate {
     func updateValue(_ textField: CustomTextField, for tag: Int, as newValue: String) {
         if tag == TextFieldType.name.rawValue {
             self.updatedUserName = newValue
-            self.update()
         }
     }
 }

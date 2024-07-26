@@ -66,6 +66,6 @@ private extension LogInViewController {
     }
     
     @IBAction func backToRegisterButtonPressed(_ sender: Any) {
-        viewModel?.goBackToRegister()
+        viewModel?.goBack()
     }
 }

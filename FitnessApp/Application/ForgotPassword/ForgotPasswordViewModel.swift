@@ -17,10 +17,6 @@ final class ForgotPasswordViewModel: BaseViewModel<ForgotPasswordCoodinator> {
     
     private var email: String = ""
     
-    func goBackToLogin() {
-        coordinator?.navigateBackToLogIn()
-    }
-    
     func resetPassword(completition: @escaping (Bool) -> ()) {
         FirebaseService.shared.resetPassword(for: email) { [weak self] response in
             guard let self = self else { return }
@@ -31,7 +27,7 @@ final class ForgotPasswordViewModel: BaseViewModel<ForgotPasswordCoodinator> {
             case .failure(let error):
                 self.coordinator?.showPopUp(title: error, type: .twoButtons((leftButton: (title: "Cancel", type: .unfilled, action: {
                     self.coordinator?.dismiss()
-                    self.coordinator?.navigateBackToLogIn()
+                    self.goBack()
                 }), rightButton: (title: "Ok", type: .filled, action: nil))))
                 completition(false)
             case .unknown:

@@ -16,4 +16,8 @@ class BaseViewModel<T: Coordinator> {
         imagePicker.sourceType = sourceType
         return imagePicker
     }
+    
+    func goBack() {
+        coordinator?.navigateBack()
+    }
 }

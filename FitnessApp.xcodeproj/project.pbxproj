@@ -24,6 +24,8 @@
 		041175FF2C3BCF7300059052 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175FE2C3BCF7300059052 /* SplashViewModel.swift */; };
 		042535632C39F36300FE9611 /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042535622C39F36300FE9611 /* SplashCoordinator.swift */; };
 		042535652C39F44F00FE9611 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042535642C39F44F00FE9611 /* UIViewController+Extension.swift */; };
+		042DF4992C514183004436DD /* OptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4982C514183004436DD /* OptionView.swift */; };
+		042DF49D2C51426E004436DD /* OptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042DF49C2C51426E004436DD /* OptionView.xib */; };
 		0433DEAD2C4BB7E500DB4B31 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433DEAC2C4BB7E500DB4B31 /* UserModel.swift */; };
 		0435DB122C43CFC000D66FB1 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB112C43CFC000D66FB1 /* LogInViewModel.swift */; };
 		0435DB142C43CFD300D66FB1 /* LogInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB132C43CFD300D66FB1 /* LogInCoordinator.swift */; };
@@ -62,11 +64,21 @@
 		046B12952C39F20D0095ECC7 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12942C39F20D0095ECC7 /* UIView+Extension.swift */; };
 		04C17A2F2C47D18000B929B9 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C17A2D2C47D18000B929B9 /* PopUpViewController.swift */; };
 		04CE3E8B2C4EF37A00A0C121 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE3E8A2C4EF37A00A0C121 /* Style.swift */; };
+		04D2F1912C51075300F85ED9 /* OptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2F1902C51075300F85ED9 /* OptionModel.swift */; };
+		04D2F1942C510CBE00F85ED9 /* OptionsPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2F1932C510CBE00F85ED9 /* OptionsPopUpViewController.swift */; };
+		04D2F1962C510CCB00F85ED9 /* OptionsPopUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2F1952C510CCB00F85ED9 /* OptionsPopUpCoordinator.swift */; };
+		04D2F1982C510CDA00F85ED9 /* OptionsPopUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2F1972C510CD900F85ED9 /* OptionsPopUpViewModel.swift */; };
+		04D2F19A2C510CE900F85ED9 /* OptionsPopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D2F1992C510CE900F85ED9 /* OptionsPopUp.storyboard */; };
+		04D2F19E2C510E9B00F85ED9 /* PopupTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2F19C2C510E9B00F85ED9 /* PopupTransitioningDelegate.swift */; };
+		04D2F19F2C510E9B00F85ED9 /* PopupTransitioningPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2F19D2C510E9B00F85ED9 /* PopupTransitioningPresentationController.swift */; };
 		04D356452C46A3C00087859F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04D356442C46A3C00087859F /* GoogleService-Info.plist */; };
 		04D356482C46A4B60087859F /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D356472C46A4B60087859F /* ForgotPasswordViewModel.swift */; };
 		04D3564A2C46A4C40087859F /* ForgotPasswordCoodinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D356492C46A4C40087859F /* ForgotPasswordCoodinator.swift */; };
 		04D3564C2C46A4D20087859F /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3564B2C46A4D20087859F /* ForgotPasswordViewController.swift */; };
 		04D3564E2C46A4DE0087859F /* ForgotPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D3564D2C46A4DE0087859F /* ForgotPassword.storyboard */; };
+		04E5AAC52C51182500DA61C7 /* AdjustableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E5AAC42C51182500DA61C7 /* AdjustableTableView.swift */; };
+		04E5AAC92C511A8500DA61C7 /* OptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E5AAC72C511A8500DA61C7 /* OptionTableViewCell.swift */; };
+		04E5AACA2C511A8500DA61C7 /* OptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E5AAC82C511A8500DA61C7 /* OptionTableViewCell.xib */; };
 		04F3C5512C3D3185000E14C7 /* TabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3C5502C3D3185000E14C7 /* TabViewModel.swift */; };
 		04F3C5542C3D31A9000E14C7 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3C5522C3D31A9000E14C7 /* TabViewController.swift */; };
 		04F3C5572C3D3220000E14C7 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F3C5562C3D3220000E14C7 /* TabBar.storyboard */; };
@@ -99,6 +111,8 @@
 		041175FE2C3BCF7300059052 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		042535622C39F36300FE9611 /* SplashCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
 		042535642C39F44F00FE9611 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		042DF4982C514183004436DD /* OptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionView.swift; sourceTree = "<group>"; };
+		042DF49C2C51426E004436DD /* OptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionView.xib; sourceTree = "<group>"; };
 		0433DEAC2C4BB7E500DB4B31 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		0435DB112C43CFC000D66FB1 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		0435DB132C43CFD300D66FB1 /* LogInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInCoordinator.swift; sourceTree = "<group>"; };
@@ -139,11 +153,21 @@
 		046B12942C39F20D0095ECC7 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		04C17A2D2C47D18000B929B9 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		04CE3E8A2C4EF37A00A0C121 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		04D2F1902C51075300F85ED9 /* OptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionModel.swift; sourceTree = "<group>"; };
+		04D2F1932C510CBE00F85ED9 /* OptionsPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsPopUpViewController.swift; sourceTree = "<group>"; };
+		04D2F1952C510CCB00F85ED9 /* OptionsPopUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsPopUpCoordinator.swift; sourceTree = "<group>"; };
+		04D2F1972C510CD900F85ED9 /* OptionsPopUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsPopUpViewModel.swift; sourceTree = "<group>"; };
+		04D2F1992C510CE900F85ED9 /* OptionsPopUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OptionsPopUp.storyboard; sourceTree = "<group>"; };
+		04D2F19C2C510E9B00F85ED9 /* PopupTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupTransitioningDelegate.swift; sourceTree = "<group>"; };
+		04D2F19D2C510E9B00F85ED9 /* PopupTransitioningPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupTransitioningPresentationController.swift; sourceTree = "<group>"; };
 		04D356442C46A3C00087859F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04D356472C46A4B60087859F /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		04D356492C46A4C40087859F /* ForgotPasswordCoodinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordCoodinator.swift; sourceTree = "<group>"; };
 		04D3564B2C46A4D20087859F /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		04D3564D2C46A4DE0087859F /* ForgotPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPassword.storyboard; sourceTree = "<group>"; };
+		04E5AAC42C51182500DA61C7 /* AdjustableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustableTableView.swift; sourceTree = "<group>"; };
+		04E5AAC72C511A8500DA61C7 /* OptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionTableViewCell.swift; sourceTree = "<group>"; };
+		04E5AAC82C511A8500DA61C7 /* OptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionTableViewCell.xib; sourceTree = "<group>"; };
 		04F3C5502C3D3185000E14C7 /* TabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewModel.swift; sourceTree = "<group>"; };
 		04F3C5522C3D31A9000E14C7 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		04F3C5562C3D3220000E14C7 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
@@ -225,6 +249,15 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		042DF4972C514161004436DD /* OptionView */ = {
+			isa = PBXGroup;
+			children = (
+				042DF4982C514183004436DD /* OptionView.swift */,
+				042DF49C2C51426E004436DD /* OptionView.xib */,
+			);
+			path = OptionView;
+			sourceTree = "<group>";
+		};
 		0435DB102C43CFA700D66FB1 /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +285,7 @@
 			children = (
 				044E854F2C3F38EA00E0916D /* RegistrationModel.swift */,
 				0433DEAC2C4BB7E500DB4B31 /* UserModel.swift */,
+				04D2F1902C51075300F85ED9 /* OptionModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -277,6 +311,7 @@
 		046B12332C3084BD0095ECC7 /* FitnessApp */ = {
 			isa = PBXGroup;
 			children = (
+				04D2F19B2C510E8700F85ED9 /* Transition */,
 				041175D42C3A005200059052 /* Flow */,
 				046B12482C30BA480095ECC7 /* Application */,
 				046B124A2C30BA590095ECC7 /* Base */,
@@ -293,6 +328,7 @@
 		046B12482C30BA480095ECC7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				04D2F1922C510CA700F85ED9 /* OptionsPopUp */,
 				043C42AC2C4BB0C400FCF502 /* Profile */,
 				04D356462C46A49F0087859F /* ForgotPassword */,
 				0435DB102C43CFA700D66FB1 /* LogIn */,
@@ -303,7 +339,6 @@
 				041175D82C3A015900059052 /* Calculator */,
 				041175D72C3A015200059052 /* Progress */,
 				046B128E2C3986FC0095ECC7 /* SplashScreen */,
-				04C17A2C2C47D16A00B929B9 /* PopUp */,
 				046B124D2C30BABE0095ECC7 /* Home */,
 			);
 			path = Application;
@@ -368,9 +403,12 @@
 		046B12632C3402BF0095ECC7 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				042DF4972C514161004436DD /* OptionView */,
+				04C17A2C2C47D16A00B929B9 /* PopUp */,
 				046B12862C3689660095ECC7 /* UITextField */,
 				046B12672C3575210095ECC7 /* UIButton */,
 				046B12822C3615760095ECC7 /* CustomSwitch.swift */,
+				04E5AAC42C51182500DA61C7 /* AdjustableTableView.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -423,6 +461,27 @@
 			path = PopUp;
 			sourceTree = "<group>";
 		};
+		04D2F1922C510CA700F85ED9 /* OptionsPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				04E5AAC62C511A7500DA61C7 /* Cells */,
+				04D2F1932C510CBE00F85ED9 /* OptionsPopUpViewController.swift */,
+				04D2F1952C510CCB00F85ED9 /* OptionsPopUpCoordinator.swift */,
+				04D2F1972C510CD900F85ED9 /* OptionsPopUpViewModel.swift */,
+				04D2F1992C510CE900F85ED9 /* OptionsPopUp.storyboard */,
+			);
+			path = OptionsPopUp;
+			sourceTree = "<group>";
+		};
+		04D2F19B2C510E8700F85ED9 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				04D2F19C2C510E9B00F85ED9 /* PopupTransitioningDelegate.swift */,
+				04D2F19D2C510E9B00F85ED9 /* PopupTransitioningPresentationController.swift */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
 		04D356462C46A49F0087859F /* ForgotPassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -432,6 +491,15 @@
 				04D3564D2C46A4DE0087859F /* ForgotPassword.storyboard */,
 			);
 			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		04E5AAC62C511A7500DA61C7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				04E5AAC72C511A8500DA61C7 /* OptionTableViewCell.swift */,
+				04E5AAC82C511A8500DA61C7 /* OptionTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		04F3C55C2C3D3ECD000E14C7 /* Registration */ = {
@@ -531,11 +599,14 @@
 				04D356452C46A3C00087859F /* GoogleService-Info.plist in Resources */,
 				046B123E2C3084BF0095ECC7 /* Assets.xcassets in Resources */,
 				046B12572C30C2690095ECC7 /* Home.storyboard in Resources */,
+				042DF49D2C51426E004436DD /* OptionView.xib in Resources */,
 				046B12922C39874A0095ECC7 /* Splash.storyboard in Resources */,
 				046B128A2C3689930095ECC7 /* CustomTextField.xib in Resources */,
+				04E5AACA2C511A8500DA61C7 /* OptionTableViewCell.xib in Resources */,
 				041175EC2C3A8DB300059052 /* Calculator.storyboard in Resources */,
 				043C42B42C4BB10B00FCF502 /* Profile.storyboard in Resources */,
 				041175F42C3A8DDF00059052 /* Progress.storyboard in Resources */,
+				04D2F19A2C510CE900F85ED9 /* OptionsPopUp.storyboard in Resources */,
 				04D3564E2C46A4DE0087859F /* ForgotPassword.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -597,6 +668,7 @@
 				041175E02C3A8D6D00059052 /* MusclesViewModel.swift in Sources */,
 				043C42B22C4BB10200FCF502 /* ProfileViewController.swift in Sources */,
 				042535632C39F36300FE9611 /* SplashCoordinator.swift in Sources */,
+				042DF4992C514183004436DD /* OptionView.swift in Sources */,
 				04F3C5512C3D3185000E14C7 /* TabViewModel.swift in Sources */,
 				043C42AE2C4BB0EA00FCF502 /* ProfileCoordinator.swift in Sources */,
 				041175FF2C3BCF7300059052 /* SplashViewModel.swift in Sources */,
@@ -614,13 +686,16 @@
 				041175D62C3A006C00059052 /* TabCoordinator.swift in Sources */,
 				04F3C5602C3D3EF1000E14C7 /* RegitstrationViewModel.swift in Sources */,
 				04F3C57C2C3D7814000E14C7 /* UITableViewCell+Extension.swift in Sources */,
+				04D2F19E2C510E9B00F85ED9 /* PopupTransitioningDelegate.swift in Sources */,
 				04F3C5782C3D7475000E14C7 /* RegExp+Extension.swift in Sources */,
 				041175F02C3A8DCD00059052 /* ProgressViewModel.swift in Sources */,
 				04F3C5632C3D3F1E000E14C7 /* RegistrationViewController.swift in Sources */,
 				04F3C57A2C3D77F1000E14C7 /* UITableView+Extension.swift in Sources */,
 				04F3C55B2C3D3BFD000E14C7 /* BaseViewModel.swift in Sources */,
 				041175F62C3B3CC600059052 /* FirebaseService.swift in Sources */,
+				04E5AAC52C51182500DA61C7 /* AdjustableTableView.swift in Sources */,
 				041175DE2C3A8D4B00059052 /* MusclesViewController.swift in Sources */,
+				04D2F1942C510CBE00F85ED9 /* OptionsPopUpViewController.swift in Sources */,
 				043C42A72C4912B500FCF502 /* PopUpViewModel.swift in Sources */,
 				046B124F2C30BAE10095ECC7 /* HomeViewController.swift in Sources */,
 				046B12352C3084BD0095ECC7 /* AppDelegate.swift in Sources */,
@@ -634,16 +709,21 @@
 				046B12372C3084BD0095ECC7 /* SceneDelegate.swift in Sources */,
 				0433DEAD2C4BB7E500DB4B31 /* UserModel.swift in Sources */,
 				041175E22C3A8D7900059052 /* MusclesCoordinator.swift in Sources */,
+				04E5AAC92C511A8500DA61C7 /* OptionTableViewCell.swift in Sources */,
 				046B12602C32BAD10095ECC7 /* Coordinator.swift in Sources */,
 				0435DB162C43CFE200D66FB1 /* LogInViewController.swift in Sources */,
 				04CE3E8B2C4EF37A00A0C121 /* Style.swift in Sources */,
 				04F3C55E2C3D3EE1000E14C7 /* RegitstrationCoordinator.swift in Sources */,
 				04D3564A2C46A4C40087859F /* ForgotPasswordCoodinator.swift in Sources */,
+				04D2F1962C510CCB00F85ED9 /* OptionsPopUpCoordinator.swift in Sources */,
 				046B12792C3602910095ECC7 /* UIImage+Extension.swift in Sources */,
 				041175F22C3A8DD800059052 /* ProgressCoordinator.swift in Sources */,
 				04D356482C46A4B60087859F /* ForgotPasswordViewModel.swift in Sources */,
+				04D2F1912C51075300F85ED9 /* OptionModel.swift in Sources */,
 				046B12952C39F20D0095ECC7 /* UIView+Extension.swift in Sources */,
+				04D2F19F2C510E9B00F85ED9 /* PopupTransitioningPresentationController.swift in Sources */,
 				046B12902C3987340095ECC7 /* SplashViewController.swift in Sources */,
+				04D2F1982C510CDA00F85ED9 /* OptionsPopUpViewModel.swift in Sources */,
 				044E85502C3F38EA00E0916D /* RegistrationModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

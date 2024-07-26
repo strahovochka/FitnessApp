@@ -9,7 +9,7 @@ import UIKit
 
 class CustomImageButton: UIButton {
     
-    private var tapped: Bool = false
+    private(set) var tapped: Bool = false
     @IBInspectable weak private var unfilledImage: UIImage?
     @IBInspectable weak private var filledImage: UIImage?
     

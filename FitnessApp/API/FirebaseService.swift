@@ -10,46 +10,6 @@ import FirebaseCore
 import FirebaseAuth
 import FirebaseFirestore
 
-enum DataFields {
-    enum User {
-        case name(String)
-        case email(String)
-        case sex(String)
-        case id(String)
-        case profileImage(Data)
-        
-        var value: Any {
-            switch self {
-            case .name(let name):
-                return name
-            case .email(let email):
-                return email
-            case .sex(let sex):
-                return sex
-            case .id(let id):
-                return id
-            case .profileImage(let data):
-                return data
-            }
-        }
-        
-        var identifier: String {
-            switch self {
-            case .name:
-                return "userName"
-            case .email:
-                return "email"
-            case .sex:
-                return "sex"
-            case .id:
-                return "id"
-            case .profileImage:
-                return "profileImage"
-            }
-        }
-    }
-}
-
 class FirebaseService: NSObject {
     
     private enum ErrorType: String {
@@ -115,28 +75,19 @@ class FirebaseService: NSObject {
     
     func getUser(completition: @escaping (Response<UserModel>) -> () ) {
         if let user = currentUser {
-            let userData = firestore.collection("users").document(user.uid)
-            userData.getDocument { snapshot, error in
-                if let error = error {
-                    completition(.failure(error.localizedDescription))
-                    return
-                }
-                if let data = snapshot?.data() {
-                    if let name = data["userName"] as? String,
-                       let sex = data["sex"] as? String,
-                       let email = data["email"] as? String {
-                        if let profileImage = data["profileImage"] as? Data {
-                            completition(.success(UserModel(email: email, id: user.uid, name: name, sex: sex, profileImage: profileImage)))
-                        } else {
-                            completition(.success(UserModel(email: email, id: user.uid, name: name, sex: sex)))
-                        }
-                    } else {
-                        completition(.failure(ErrorType.parseError.rawValue))
+            firestore
+                .collection("users")
+                .document(user.uid)
+                .getDocument(as: UserModel.self, completion: { result in
+                    switch result {
+                    case .success(let user):
+                        completition(.success(user))
+                        break;
+                    case .failure(let error):
+                        completition(.failure(error.localizedDescription))
+                        
                     }
-                } else {
-                    completition(.failure(ErrorType.fetchDataError.rawValue))
-                }
-            }
+                })
         } else {
             completition(.failure(ErrorType.noCurrentUser.rawValue))
         }
@@ -169,21 +120,24 @@ class FirebaseService: NSObject {
         }
     }
     
-    func updateUser(fields: [DataFields.User], completition: @escaping (Response<Bool>) -> ()) {
-        if let user = currentUser {
-            let data: [String: Any] = fields.reduce(into: [:]) { partialResult, field in
-                partialResult[field.identifier] = field.value
-            }
-            firestore
-                .collection("users")
-                .document(user.uid)
-                .setData(data, merge: true) { error in
-                    if let error = error {
-                        completition(.failure(error.localizedDescription))
-                        return
+    //TODO: update only changed fields
+    func updateUser(_ user: UserModel, completition: @escaping (Response<Bool>) -> ()) {
+        if let _ = currentUser {
+            do {
+                try firestore
+                    .collection("users")
+                    .document(user.id)
+                    .setData(from: user) { error in
+                        if let error = error {
+                            completition(.failure(error.localizedDescription))
+                            return
+                        }
+                        completition(.success(true))
                     }
-                    completition(.success(true))
-                }
+            } catch {
+                completition(.failure(error.localizedDescription))
+            }
+            
         } else {
             completition(.failure(ErrorType.noCurrentUser.rawValue))
         }

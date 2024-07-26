@@ -63,7 +63,7 @@ private extension HomeViewController {
     func updateUI() {
         setBackground(for: viewModel?.getUserSex().sex ?? .male)
         self.sexLabel.text = viewModel?.getUserSex().title
-        self.nameLabel.text = viewModel?.user?.name
+        self.nameLabel.text = viewModel?.user?.userName
         profileButton.setImage(viewModel?.getProfileImage(), for: .normal)
     }
     
