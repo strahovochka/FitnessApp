@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreText
 
 extension UIFont {
     //Saira family
@@ -23,4 +24,13 @@ extension UIFont {
     static let boldFutura = UIFont(name: "Futura-Bold", size: 16)
     static let condensedMediumFutura = UIFont(name: "Futura-CondensedMedium", size: 16)
     static let condensedExtraBoldFutura = UIFont(name: "Futura-CondensedExtraBold", size: 16)
+    //Gilroy
+    static let regularGilroy = UIFont(name: "Gilroy-Semibold", size: 16)
+}
+
+extension UIFont {
+    var cgFont: CGFont? {
+        let ctFont = CTFontCreateWithName(self.fontName as NSString, self.pointSize, nil)
+        return CTFontCopyGraphicsFont(ctFont, nil)
+    }
 }

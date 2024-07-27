@@ -7,6 +7,7 @@
 
 import UIKit
 
+let screenSize = UIScreen.main.bounds
 protocol UserDataChangable {
     func fetchData()
 }

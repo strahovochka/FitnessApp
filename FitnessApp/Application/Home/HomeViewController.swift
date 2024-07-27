@@ -22,7 +22,16 @@ final class HomeViewController: BaseViewController {
     }
 
     override func viewDidLoad() {
+        let identifier: String = "[SYSTEM FONTS]"
+            // Here's the functionality that prints all the system fonts.
+            for family in UIFont.familyNames as [String] {
+                debugPrint("\(identifier) FONT FAMILY :  \(family)")
+                for name in UIFont.fontNames(forFamilyName: family) {
+                    debugPrint("\(identifier) FONT NAME :  \(name)")
+                }
+            }
         configUI()
+        configCollection()
         guard let _ = viewModel?.user else  {
             viewModel?.getUser { [weak self] in
                 guard let self = self else { return }
@@ -33,17 +42,6 @@ final class HomeViewController: BaseViewController {
             return
         }
         updateUI()
-    }
-}
-
-extension HomeViewController: UserDataChangable {
-    func fetchData() {
-        viewModel?.getUser(completition: { [weak self] in
-            guard let self = self else { return }
-            DispatchQueue.main.async {
-                self.updateUI()
-            }
-        })
     }
 }
 
@@ -59,6 +57,13 @@ private extension HomeViewController {
         profileButton.layer.borderWidth = 1
         profileButton.layer.borderColor = UIColor.primaryYellow.cgColor
         profileButton.layer.masksToBounds = true
+        collectionView.backgroundColor = .clear
+    }
+    
+    func configCollection() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(UINib(nibName: Identifiers.NibNames.optionCollectionCell, bundle: nil), forCellWithReuseIdentifier: Identifiers.NibNames.optionCollectionCell)
     }
     
     func updateUI() {
@@ -66,6 +71,7 @@ private extension HomeViewController {
         self.sexLabel.text = viewModel?.getUserSex().title
         self.nameLabel.text = viewModel?.user?.userName
         profileButton.setImage(viewModel?.getProfileImage(), for: .normal)
+        collectionView.reloadData()
     }
     
     @IBAction func profileButtonPressed(_ sender: Any) {
@@ -73,3 +79,46 @@ private extension HomeViewController {
     }
     
 }
+
+
+extension HomeViewController: UserDataChangable {
+    func fetchData() {
+        viewModel?.getUser(completition: { [weak self] in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.updateUI()
+            }
+        })
+    }
+}
+
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        viewModel?.getVisibleOptions().count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.NibNames.optionCollectionCell, for: indexPath) as? OptionCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        if let visibleOptions = viewModel?.getVisibleOptions() {
+            cell.config(with: visibleOptions[indexPath.section])
+        }
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: screenSize.width - 106, height: 104)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
+    }
+    
+}
+

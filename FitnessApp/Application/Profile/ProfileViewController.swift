@@ -109,7 +109,7 @@ private extension ProfileViewController {
                 optionsStackView.isHidden = false
                 viewModel.selectedOptions.forEach { option in
                     let view = OptionView()
-                    view.translatesAutoresizingMaskIntoConstraints = true
+                    view.translatesAutoresizingMaskIntoConstraints = false
                     view.heightAnchor.constraint(equalToConstant: 70).isActive = true
                     view.config(with: option) { [weak self] optionModel in
                         guard let self = self else { return }

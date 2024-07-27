@@ -51,13 +51,19 @@ final class OptionView: UIView {
            let model = model {
             if let currentValue = Double(textField.getText() ?? "") { //current value exists
                 if let lastElement = model.valueArray.last { // array is not empty
-                    if let lastValue = lastElement { //old value not nil case -> check if equal
-                        if lastValue != currentValue { // values are not equal -> return updated arrays
-                            return OptionModel(optionName: optionName, valueArray: model.valueArray + [currentValue], changedValue: lastValue - currentValue, dateArray: model.dateArray + [Int(Date().timeIntervalSince1970)], isShown: optionSwitch.isOn)
+                    if let lastValue = lastElement { //old value not nil -> check if equal
+                        if lastValue != currentValue { // values are not equal -> check date
+                            if let lastTime = model.dateArray.last, Int(Date().timeIntervalSince1970) - lastTime > 120 {//more than 2 minutes -> update
+                                print(Int(Date().timeIntervalSince1970))
+                                print(lastTime)
+                                return OptionModel(optionName: optionName, valueArray: model.valueArray + [currentValue], changedValue: currentValue - lastValue, dateArray: model.dateArray + [Int(Date().timeIntervalSince1970)], isShown: optionSwitch.isOn)
+                            } else { //less than 2 minutes -> rewrite value
+                                return OptionModel(optionName: optionName, valueArray: model.valueArray + [lastValue], changedValue: nil, dateArray: model.dateArray + [Int(Date().timeIntervalSince1970)], isShown: optionSwitch.isOn)
+                            }
                         } else { // values are equal -> return old arrays
                             return OptionModel(optionName: optionName, valueArray: model.valueArray, changedValue: model.changedValue, dateArray: model.dateArray, isShown: optionSwitch.isOn)
                         }
-                    } else { //old value is nil case
+                    } else { //old value is nil
                         return OptionModel(optionName: optionName, valueArray: model.valueArray + [currentValue], changedValue: nil, dateArray: model.dateArray + [Int(Date().timeIntervalSince1970)], isShown: optionSwitch.isOn)
                     }
                 } else { //array is empty

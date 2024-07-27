@@ -34,7 +34,7 @@ private extension OptionsPopUpViewController {
     func configTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UINib(nibName: Identifiers.NibNames.optionCell, bundle: nil), forCellReuseIdentifier: Identifiers.NibNames.optionCell)
+        tableView.register(UINib(nibName: Identifiers.NibNames.optionTableCell, bundle: nil), forCellReuseIdentifier: Identifiers.NibNames.optionTableCell)
         tableView.setMinHeight(28)
         tableView.setMaxHeight(UIScreen.main.bounds.height / 1.56)
     }
@@ -85,7 +85,7 @@ extension OptionsPopUpViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.NibNames.optionCell, for: indexPath) as? OptionTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.NibNames.optionTableCell, for: indexPath) as? OptionTableViewCell else {
             return UITableViewCell()
         }
         if let model = viewModel {
