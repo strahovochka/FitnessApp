@@ -75,19 +75,26 @@ class FirebaseService: NSObject {
     
     func getUser(completition: @escaping (Response<UserModel>) -> () ) {
         if let user = currentUser {
-            firestore
-                .collection("users")
-                .document(user.uid)
-                .getDocument(as: UserModel.self, completion: { result in
-                    switch result {
-                    case .success(let user):
-                        completition(.success(user))
-                        break;
-                    case .failure(let error):
-                        completition(.failure(error.localizedDescription))
+            let query = firestore.collection("users").whereField("id", isEqualTo: user.uid)
+            query.getDocuments { snapshot, error in
+                if let error = error {
+                    completition(.failure(error.localizedDescription))
+                    return
+                }
+                if let snapshot = snapshot {
+                    snapshot.documents.forEach { document in
+                        do {
+                            let user = try document.data(as: UserModel.self)
+                            completition(.success(user))
+                        } catch {
+                            completition(.failure(error.localizedDescription))
+                        }
                         
                     }
-                })
+                } else {
+                    completition(.failure(ErrorType.fetchDataError.rawValue))
+                }
+            }
         } else {
             completition(.failure(ErrorType.noCurrentUser.rawValue))
         }

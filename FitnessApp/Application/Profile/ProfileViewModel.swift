@@ -28,9 +28,9 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
     private(set) var updatedUserName: String {
         didSet {
             if user.userName != updatedUserName && !updatedUserName.isEmpty  {
-                updatedUser = UserModel(email: user.email, id: user.id, userName: updatedUserName, sex: user.sex, profileImage: updatedUser.profileImage, userOptions: updatedUser.userOptions)
+                updatedUser = UserModel(email: user.email, id: user.id, sex: user.sex, userName: updatedUserName, profileImage: updatedUser.profileImage, userOptions: updatedUser.userOptions)
             } else {
-                updatedUser = UserModel(email: updatedUser.email, id: updatedUser.id, userName: user.userName, sex: updatedUser.sex, profileImage: updatedUser.profileImage, userOptions: updatedUser.userOptions)
+                updatedUser = UserModel(email: updatedUser.email, id: updatedUser.id, sex: updatedUser.sex, userName: user.userName, profileImage: updatedUser.profileImage, userOptions: updatedUser.userOptions)
             }
             self.update()
         }

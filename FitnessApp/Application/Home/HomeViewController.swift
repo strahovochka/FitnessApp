@@ -22,14 +22,6 @@ final class HomeViewController: BaseViewController {
     }
 
     override func viewDidLoad() {
-        let identifier: String = "[SYSTEM FONTS]"
-            // Here's the functionality that prints all the system fonts.
-            for family in UIFont.familyNames as [String] {
-                debugPrint("\(identifier) FONT FAMILY :  \(family)")
-                for name in UIFont.fontNames(forFamilyName: family) {
-                    debugPrint("\(identifier) FONT NAME :  \(name)")
-                }
-            }
         configUI()
         configCollection()
         guard let _ = viewModel?.user else  {
