@@ -74,9 +74,7 @@ private extension ProfileViewController {
         profileImageView.contentMode = viewModel?.user.profileImage == nil ? .center : .scaleAspectFill
         profileImageView.isUserInteractionEnabled = true
         profileImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showPhotoOptions)))
-        if let _ = viewModel?.user.profileImage {
-            configImageView()
-        }
+        configImageView()
         nameTextField.labelTitle = viewModel?.textFieldData.title
         nameTextField.text = viewModel?.user.userName
         nameTextField.delegate = viewModel
@@ -89,13 +87,13 @@ private extension ProfileViewController {
     }
     
     func configImageView() {
-        if let updatedImage = viewModel?.userPhoto {
-            profileImageView.image = updatedImage
+        if let profileImage = viewModel?.userPhoto {
+            profileImageView.image = profileImage
+            profileImageView.backgroundColor = .clear
+            profileImageView.contentMode = .scaleAspectFill
+            profileImageView.layer.borderWidth = 1
+            profileImageView.layer.borderColor = UIColor.primaryYellow.cgColor
         }
-        profileImageView.backgroundColor = .clear
-        profileImageView.contentMode = .scaleAspectFill
-        profileImageView.layer.borderWidth = 1
-        profileImageView.layer.borderColor = UIColor.primaryYellow.cgColor
     }
     
     func configStackView() {

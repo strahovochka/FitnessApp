@@ -17,6 +17,11 @@ class OptionCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         initialUISetup()
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        progressLabel.isHidden = true
+    }
 
     func config(with option: OptionModel) {
         optionNameLabel.text = option.optionName.rawValue

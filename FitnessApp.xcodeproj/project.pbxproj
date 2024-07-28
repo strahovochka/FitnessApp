@@ -289,6 +289,7 @@
 		043C42AC2C4BB0C400FCF502 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				042DF4972C514161004436DD /* OptionView */,
 				043C42AD2C4BB0EA00FCF502 /* ProfileCoordinator.swift */,
 				043C42AF2C4BB0F500FCF502 /* ProfileViewModel.swift */,
 				043C42B12C4BB10200FCF502 /* ProfileViewController.swift */,
@@ -422,7 +423,6 @@
 		046B12632C3402BF0095ECC7 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				042DF4972C514161004436DD /* OptionView */,
 				04C17A2C2C47D16A00B929B9 /* PopUp */,
 				046B12862C3689660095ECC7 /* UITextField */,
 				046B12672C3575210095ECC7 /* UIButton */,

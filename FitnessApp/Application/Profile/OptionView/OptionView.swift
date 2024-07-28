@@ -28,8 +28,16 @@ final class OptionView: UIView {
     
     func config(with option: OptionModel, updateAction: ((OptionModel) -> ())?) {
         model = option
-        if let lastElement = option.valueArray.last, let value = lastElement {
-            textField.text = String(value)
+        optionSwitch.isOn = option.isShown ?? true
+        if let lastElement = option.valueArray.last {
+            if let value = lastElement {
+                textField.text = String(value)
+            } else {
+                if option.valueArray.count > 1 {
+                    textField.text = String(option.valueArray[option.valueArray.count - 2] ?? 0)
+                    optionSwitch.isOn = true
+                }
+            }
         } else {
             textField.text = ""
         }
@@ -41,7 +49,6 @@ final class OptionView: UIView {
         textField.setTextFieldDelegate(self)
         textField.delegate = self
         unitLabel.text = option.optionName.metricValue
-        optionSwitch.isOn = option.isShown ?? true
         self.updateAction = updateAction
     }
     
@@ -54,8 +61,6 @@ final class OptionView: UIView {
                     if let lastValue = lastElement { //old value not nil -> check if equal
                         if lastValue != currentValue { // values are not equal -> check date
                             if let lastTime = model.dateArray.last, Int(Date().timeIntervalSince1970) - lastTime > 120 {//more than 2 minutes -> update
-                                print(Int(Date().timeIntervalSince1970))
-                                print(lastTime)
                                 return OptionModel(optionName: optionName, valueArray: model.valueArray + [currentValue], changedValue: currentValue - lastValue, dateArray: model.dateArray + [Int(Date().timeIntervalSince1970)], isShown: optionSwitch.isOn)
                             } else { //less than 2 minutes -> rewrite value
                                 return OptionModel(optionName: optionName, valueArray: model.valueArray + [lastValue], changedValue: nil, dateArray: model.dateArray + [Int(Date().timeIntervalSince1970)], isShown: optionSwitch.isOn)
@@ -111,10 +116,8 @@ private extension OptionView {
         guard let view = nib.instantiate(withOwner: self, options: nil).first as? UIView else {
             fatalError("Unable to convert nib")
         }
-        
         view.frame = bounds
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
         addSubview(view)
         initialUISetup()
     }
