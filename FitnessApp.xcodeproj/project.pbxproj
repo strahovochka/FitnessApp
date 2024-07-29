@@ -30,6 +30,7 @@
 		042DF4A22C53C8AF004436DD /* OptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042DF4A02C53C8AF004436DD /* OptionCollectionViewCell.xib */; };
 		042DF4A42C542744004436DD /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4A32C542743004436DD /* Double+Extensions.swift */; };
 		042DF4AF2C544850004436DD /* Gilroy-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 042DF4AE2C54484F004436DD /* Gilroy-Semibold.ttf */; };
+		042DF4B22C57DB81004436DD /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4B12C57DB81004436DD /* Date+Extension.swift */; };
 		0433DEAD2C4BB7E500DB4B31 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433DEAC2C4BB7E500DB4B31 /* UserModel.swift */; };
 		0435DB122C43CFC000D66FB1 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB112C43CFC000D66FB1 /* LogInViewModel.swift */; };
 		0435DB142C43CFD300D66FB1 /* LogInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB132C43CFD300D66FB1 /* LogInCoordinator.swift */; };
@@ -121,6 +122,7 @@
 		042DF4A02C53C8AF004436DD /* OptionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionCollectionViewCell.xib; sourceTree = "<group>"; };
 		042DF4A32C542743004436DD /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		042DF4AE2C54484F004436DD /* Gilroy-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Semibold.ttf"; sourceTree = "<group>"; };
+		042DF4B12C57DB81004436DD /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		0433DEAC2C4BB7E500DB4B31 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		0435DB112C43CFC000D66FB1 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		0435DB132C43CFD300D66FB1 /* LogInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInCoordinator.swift; sourceTree = "<group>"; };
@@ -416,6 +418,7 @@
 				04F3C5792C3D77F1000E14C7 /* UITableView+Extension.swift */,
 				04F3C57B2C3D7814000E14C7 /* UITableViewCell+Extension.swift */,
 				042DF4A32C542743004436DD /* Double+Extensions.swift */,
+				042DF4B12C57DB81004436DD /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -691,6 +694,7 @@
 				043C42B22C4BB10200FCF502 /* ProfileViewController.swift in Sources */,
 				042535632C39F36300FE9611 /* SplashCoordinator.swift in Sources */,
 				042DF4992C514183004436DD /* OptionView.swift in Sources */,
+				042DF4B22C57DB81004436DD /* Date+Extension.swift in Sources */,
 				04F3C5512C3D3185000E14C7 /* TabViewModel.swift in Sources */,
 				043C42AE2C4BB0EA00FCF502 /* ProfileCoordinator.swift in Sources */,
 				042DF4A12C53C8AF004436DD /* OptionCollectionViewCell.swift in Sources */,

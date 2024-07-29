@@ -10,6 +10,8 @@ import FirebaseCore
 import FirebaseAuth
 import FirebaseFirestore
 
+//TODO: -Make an adapter for firebase data
+
 class FirebaseService: NSObject {
     
     private enum ErrorType: String {

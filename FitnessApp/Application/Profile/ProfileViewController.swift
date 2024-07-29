@@ -112,7 +112,6 @@ private extension ProfileViewController {
                     view.config(with: option) { [weak self] optionModel in
                         guard let self = self else { return }
                         self.viewModel?.updateOption(with: optionModel)
-                        self.reload()
                     }
                     optionsStackView.addArrangedSubview(view)
                 }

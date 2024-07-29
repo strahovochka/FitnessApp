@@ -53,39 +53,22 @@ final class OptionView: UIView {
     }
     
     func getModel() -> OptionModel? {
-        if let title = textField.labelTitle,
-           let optionName = OptionDataName(rawValue: title),
-           let model = model {
-            if let currentValue = Double(textField.getText() ?? "") { //current value exists
-                if let lastElement = model.valueArray.last { // array is not empty
-                    if let lastValue = lastElement { //old value not nil -> check if equal
-                        if lastValue != currentValue { // values are not equal -> check date
-                            if let lastTime = model.dateArray.last, Int(Date().timeIntervalSince1970) - lastTime > 120 {//more than 2 minutes -> update
-                                return OptionModel(optionName: optionName, valueArray: model.valueArray + [currentValue], changedValue: currentValue - lastValue, dateArray: model.dateArray + [Int(Date().timeIntervalSince1970)], isShown: optionSwitch.isOn)
-                            } else { //less than 2 minutes -> rewrite value
-                                return OptionModel(optionName: optionName, valueArray: model.valueArray + [lastValue], changedValue: nil, dateArray: model.dateArray + [Int(Date().timeIntervalSince1970)], isShown: optionSwitch.isOn)
-                            }
-                        } else { // values are equal -> return old arrays
-                            return OptionModel(optionName: optionName, valueArray: model.valueArray, changedValue: model.changedValue, dateArray: model.dateArray, isShown: optionSwitch.isOn)
-                        }
-                    } else { //old value is nil
-                        return OptionModel(optionName: optionName, valueArray: model.valueArray + [currentValue], changedValue: nil, dateArray: model.dateArray + [Int(Date().timeIntervalSince1970)], isShown: optionSwitch.isOn)
-                    }
-                } else { //array is empty
-                    return OptionModel(optionName: optionName, valueArray: [currentValue], changedValue: nil, dateArray: [Int(Date().timeIntervalSince1970)], isShown: optionSwitch.isOn)
-                }
-            } else { //empty field
-                return OptionModel(optionName: optionName, valueArray: [], dateArray: [])
-            }
+        guard let title = textField.labelTitle,
+              let optionName = OptionDataName(rawValue: title),
+              let model = model else {
+            return nil
         }
-        return nil
+        guard let value = Double(textField.getText() ?? "") else { return OptionModel(optionName: optionName, valueArray: [], dateArray: []) }
+        if let lastValue = model.valueArray.last ?? nil, lastValue == value {
+            return OptionModel(optionName: optionName, valueArray: model.valueArray, changedValue: model.changedValue, dateArray: model.dateArray, isShown: optionSwitch.isOn)
+        } else {
+            return OptionModel(optionName: optionName, valueArray: model.valueArray + [value], dateArray: model.dateArray + [Date().getSecondsSince1970()], isShown: optionSwitch.isOn)
+        }
     }
     
     func getOption() -> OptionDataName? {
-        if let title = textField.labelTitle, let option = OptionDataName(rawValue: title) {
-            return option
-        }
-        return nil
+        guard let title = textField.labelTitle, let option = OptionDataName(rawValue: title) else { return nil }
+        return option
     }
     
     func checkForError() -> Bool {
@@ -104,9 +87,8 @@ extension OptionView: UITextFieldDelegate {
 
 extension OptionView: CustomTextFieldDelegate {
     func updateValue(_ textField: CustomTextField, for tag: Int, as newValue: String) {
-        if let newModel = getModel() {
-            updateAction?(newModel)
-        }
+        guard let newModel = getModel() else { return }
+        updateAction?(newModel)
     }
 }
 
@@ -129,8 +111,7 @@ private extension OptionView {
     }
     
     @IBAction func switchToggled(_ sender: Any) {
-        if let newModel = getModel() {
-            updateAction?(newModel)
-        }
+        guard let newModel = getModel() else { return }
+        updateAction?(newModel)
     }
 }

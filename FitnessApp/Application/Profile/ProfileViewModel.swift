@@ -16,7 +16,15 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
     let textFieldData: TextFieldType = .name
     private(set) var updatedUser: UserModel
     private(set) var user: UserModel
-    private(set) var selectedOptions: [OptionModel] = []
+    private(set) var selectedOptions: [OptionModel] = [] {
+        didSet {
+            if selectedOptions.isEmpty {
+                updatedUser.userOptions = nil
+            } else {
+                updatedUser.userOptions = selectedOptions
+            }
+        }
+    }
     private(set) var updatedUserName: String {
         didSet {
             if user.userName != updatedUserName && !updatedUserName.isEmpty  {
@@ -48,11 +56,7 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
             userPhoto = UIImage(data: profileImageData)
         }
         if let options = user.userOptions {
-            for i in 0..<options.count {
-                if let last = options[i].valueArray.last, last != nil {
-                    selectedOptions.append(options[i])
-                }
-            }
+            selectedOptions = options
         }
     }
     
@@ -66,7 +70,7 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
     }
     
     func isSaveAllowed() -> Bool {
-        updatedUser != user || user.userOptions != selectedOptions
+        updatedUser != user 
     }
     
     //MARK: -Value updaters
@@ -87,35 +91,30 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
         self.update()
     }
     
-    func updateOption(with model: OptionModel) {
-        if let optionIndex = selectedOptions.firstIndex(where: { $0.optionName == model.optionName }) {
-            selectedOptions[optionIndex] = model
-        }
-    }
-    
-    func updateUserOptions() {
-        selectedOptions.forEach { model in
-            if let index = updatedUser.userOptions?.firstIndex(where: { $0.optionName == model.optionName}) {
-                updatedUser.userOptions?[index] = model
-            } else {
-                updatedUser.userOptions?.append(model)
+    func updateOption(with updatedOption: OptionModel) {
+        guard let selectedIndex = selectedOptions.firstIndex(where: { $0.optionName == updatedOption.optionName }) else { return }
+        var newOption = updatedOption
+        if updatedOption.valueArray.isEmpty || updatedOption.valueArray.count == 1 {
+            selectedOptions[selectedIndex] = updatedOption
+        } else {
+            guard let userIndex = user.userOptions?.firstIndex(where: { $0.optionName == updatedOption.optionName }),
+                  let lastValue = updatedOption.valueArray.last ?? nil,
+                  let lastSeledctedValue = user.userOptions?[userIndex].valueArray.last ?? nil,
+                  let lastDate = updatedOption.dateArray.last,
+                  let lastSeledctedDate = user.userOptions?[userIndex].dateArray.last,
+                  lastValue != lastSeledctedValue else { return }
+            if lastDate - lastSeledctedDate < 120 {
+                newOption.valueArray.remove(at: newOption.valueArray.count - 2)
+                newOption.dateArray.remove(at: newOption.dateArray.count - 2)
             }
+            newOption.changedValue = newOption.getChangedValue()
+            selectedOptions[selectedIndex] = newOption
         }
-        for i in 0..<(updatedUser.userOptions?.count ?? 0) {
-            if !selectedOptions.contains(where: { $0.optionName == updatedUser.userOptions?[i].optionName }) {
-                if let last = updatedUser.userOptions?[i].valueArray.last, let _ = last {
-                    updatedUser.userOptions?[i].valueArray.append(nil)
-                    updatedUser.userOptions?[i].dateArray.append(Int(Date().timeIntervalSince1970))
-                    updatedUser.userOptions?[i].changedValue = nil
-                    updatedUser.userOptions?[i].isShown = false
-                }
-            }
-        }
+        self.update()
     }
     
     //MARK: -Upload method
     func uploadChanges(completition: @escaping () -> ()) {
-        updateUserOptions()
         FirebaseService.shared.updateUser(updatedUser) { [weak self] response in
             guard let self = self else { return }
             switch response {
@@ -143,10 +142,8 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
     
 //MARK: -Navigation
     func getProfileImage() -> UIImage? {
-        if let userPhoto = userPhoto {
-            return userPhoto
-        }
-        return .editProfile
+        guard let userPhoto = userPhoto else { return .editProfile }
+        return userPhoto
     }
     
     func showImagePickerOptions(delegate: (UIImagePickerControllerDelegate & UINavigationControllerDelegate)) {

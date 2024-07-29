@@ -7,9 +7,9 @@
 
 import UIKit
 
+//TODO: -Make style for different ui elements
 struct Style {
     static func customizeNavBar() {
-        
         UINavigationBar.appearance().tintColor = .primaryYellow
         let buttonAppearance = UIBarButtonItemAppearance(style: .plain)
         buttonAppearance.normal.titleTextAttributes = [

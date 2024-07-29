@@ -60,4 +60,14 @@ struct OptionModel: Codable, Hashable {
     var changedValue: Double?
     var dateArray: [Int]
     var isShown: Bool? = false
+    
+    func getChangedValue() -> Double? {
+        guard valueArray.count >= 2 else { return nil }
+        if let lastValue = valueArray.last ?? nil,
+           let beforeLastValue = valueArray[valueArray.count - 2] {
+            return lastValue - beforeLastValue
+        } else {
+            return nil
+        }
+    }
 }
