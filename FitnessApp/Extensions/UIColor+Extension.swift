@@ -18,6 +18,10 @@ extension UIColor {
     static let primaryBlack = UIColor(hex: "#000000")
     //Secondary colors
     static let secondaryGray = UIColor(hex: "#BFBFBF")
+    
+    //Additionary colors
+    static let greenColor = UIColor(hex: "#5EBC00")
+    static let redColor = UIColor(hex: "#FF6948")
 }
 
 //-MARK: Extension methods

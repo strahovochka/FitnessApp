@@ -7,6 +7,7 @@
 
 import UIKit
 
+let screenSize = UIScreen.main.bounds
 protocol UserDataChangable {
     func fetchData()
 }
@@ -51,6 +52,7 @@ class BaseViewController: UIViewController {
     }
     
     func customizeNavBar() {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationController?.navigationBar.titleTextAttributes = [
             .font: UIFont.mediumSaira?.withSize(18) ?? .systemFont(ofSize: 18),
             .foregroundColor: UIColor.primaryWhite

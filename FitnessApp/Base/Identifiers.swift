@@ -25,7 +25,8 @@ enum Identifiers {
     
     enum NibNames {
         static let textField = "CustomTextField"
-        static let optionCell = "OptionTableViewCell"
+        static let optionTableCell = "OptionTableViewCell"
         static let optionView = "OptionView"
+        static let optionCollectionCell = "OptionCollectionViewCell"
     }
 }

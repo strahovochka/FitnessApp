@@ -10,8 +10,8 @@ import Foundation
 struct UserModel: Codable, Equatable {
     let email: String
     let id: String
-    let userName: String
     let sex: String
+    let userName: String
     var profileImage: Data? = nil
     var userOptions: [OptionModel]? = nil
 }

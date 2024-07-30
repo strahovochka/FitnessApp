@@ -35,6 +35,13 @@ final class HomeViewModel: BaseViewModel<HomeCoordinator> {
         return ("", .male)
     }
     
+    func getVisibleOptions() -> [OptionModel] {
+        if let options = user?.userOptions {
+            return options.filter { $0.isShown ?? false }
+        }
+        return []
+    }
+    
     func getUser(completition: @escaping () -> ()) {
         FirebaseService.shared.getUser { [weak self] response in
             guard let self = self else { return }

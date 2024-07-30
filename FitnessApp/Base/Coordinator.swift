@@ -69,6 +69,7 @@ extension Coordinator {
                 }
             }
         }
+        //TODO: -Add delete photo action
         
         let cancelAtion = UIAlertAction(title: "Cancel", style: .cancel)
         alertVC.addAction(cameraAction)

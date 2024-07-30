@@ -28,8 +28,16 @@ final class OptionView: UIView {
     
     func config(with option: OptionModel, updateAction: ((OptionModel) -> ())?) {
         model = option
-        if let value = option.value {
-            textField.text = String(value)
+        optionSwitch.isOn = option.isShown ?? true
+        if let lastElement = option.valueArray.last {
+            if let value = lastElement {
+                textField.text = String(value)
+            } else {
+                if option.valueArray.count > 1 {
+                    textField.text = String(option.valueArray[option.valueArray.count - 2] ?? 0)
+                    optionSwitch.isOn = true
+                }
+            }
         } else {
             textField.text = ""
         }
@@ -41,23 +49,26 @@ final class OptionView: UIView {
         textField.setTextFieldDelegate(self)
         textField.delegate = self
         unitLabel.text = option.optionName.metricValue
-        optionSwitch.isOn = option.isShown ?? true
         self.updateAction = updateAction
     }
     
     func getModel() -> OptionModel? {
-        if let title = textField.labelTitle,
-           let optionName = OptionDataName(rawValue: title) {
-            return OptionModel(optionName: optionName, value: Double(textField.getText() ?? ""), isShown: optionSwitch.isOn)
+        guard let title = textField.labelTitle,
+              let optionName = OptionDataName(rawValue: title),
+              let model = model else {
+            return nil
         }
-        return nil
+        guard let value = Double(textField.getText() ?? "") else { return OptionModel(optionName: optionName, valueArray: [], dateArray: []) }
+        if let lastValue = model.valueArray.last ?? nil, lastValue == value {
+            return OptionModel(optionName: optionName, valueArray: model.valueArray, changedValue: model.changedValue, dateArray: model.dateArray, isShown: optionSwitch.isOn)
+        } else {
+            return OptionModel(optionName: optionName, valueArray: model.valueArray + [value], dateArray: model.dateArray + [Date().getSecondsSince1970()], isShown: optionSwitch.isOn)
+        }
     }
     
     func getOption() -> OptionDataName? {
-        if let title = textField.labelTitle, let option = OptionDataName(rawValue: title) {
-            return option
-        }
-        return nil
+        guard let title = textField.labelTitle, let option = OptionDataName(rawValue: title) else { return nil }
+        return option
     }
     
     func checkForError() -> Bool {
@@ -76,9 +87,8 @@ extension OptionView: UITextFieldDelegate {
 
 extension OptionView: CustomTextFieldDelegate {
     func updateValue(_ textField: CustomTextField, for tag: Int, as newValue: String) {
-        if let newModel = getModel() {
-            updateAction?(newModel)
-        }
+        guard let newModel = getModel() else { return }
+        updateAction?(newModel)
     }
 }
 
@@ -88,10 +98,8 @@ private extension OptionView {
         guard let view = nib.instantiate(withOwner: self, options: nil).first as? UIView else {
             fatalError("Unable to convert nib")
         }
-        
         view.frame = bounds
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
         addSubview(view)
         initialUISetup()
     }
@@ -103,8 +111,7 @@ private extension OptionView {
     }
     
     @IBAction func switchToggled(_ sender: Any) {
-        if let newModel = getModel() {
-            updateAction?(newModel)
-        }
+        guard let newModel = getModel() else { return }
+        updateAction?(newModel)
     }
 }

@@ -17,12 +17,10 @@ final class ProfileViewController: BaseViewController {
     var viewModel: ProfileViewModel?
     var delegate: UserDataChangable?
     
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(false, animated: true)
-        tabBarController?.tabBar.isHidden = true
-    }
-    
     override func viewDidLoad() {
+        if let sex = Sex(rawValue: viewModel?.user.sex ?? "") {
+            setBackground(for: sex)
+        }
         super.viewDidLoad()
         viewModel?.update = { [weak self] in
             self?.reload()
@@ -89,13 +87,13 @@ private extension ProfileViewController {
     }
     
     func configImageView() {
-        if let updatedImage = viewModel?.userPhoto {
-            profileImageView.image = updatedImage
+        if let profileImage = viewModel?.userPhoto {
+            profileImageView.image = profileImage
+            profileImageView.backgroundColor = .clear
+            profileImageView.contentMode = .scaleAspectFill
+            profileImageView.layer.borderWidth = 1
+            profileImageView.layer.borderColor = UIColor.primaryYellow.cgColor
         }
-        profileImageView.backgroundColor = .clear
-        profileImageView.contentMode = .scaleAspectFill
-        profileImageView.layer.borderWidth = 1
-        profileImageView.layer.borderColor = UIColor.primaryYellow.cgColor
     }
     
     func configStackView() {
@@ -109,12 +107,11 @@ private extension ProfileViewController {
                 optionsStackView.isHidden = false
                 viewModel.selectedOptions.forEach { option in
                     let view = OptionView()
-                    view.translatesAutoresizingMaskIntoConstraints = true
+                    view.translatesAutoresizingMaskIntoConstraints = false
                     view.heightAnchor.constraint(equalToConstant: 70).isActive = true
                     view.config(with: option) { [weak self] optionModel in
                         guard let self = self else { return }
                         self.viewModel?.updateOption(with: optionModel)
-                        self.reload()
                     }
                     optionsStackView.addArrangedSubview(view)
                 }

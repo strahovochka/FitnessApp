@@ -56,6 +56,18 @@ enum OptionDataName: String, Codable, CaseIterable {
 
 struct OptionModel: Codable, Hashable {
     var optionName: OptionDataName
-    var value: Double?
+    var valueArray: [Double?]
+    var changedValue: Double?
+    var dateArray: [Int]
     var isShown: Bool? = false
+    
+    func getChangedValue() -> Double? {
+        guard valueArray.count >= 2 else { return nil }
+        if let lastValue = valueArray.last ?? nil,
+           let beforeLastValue = valueArray[valueArray.count - 2] {
+            return lastValue - beforeLastValue
+        } else {
+            return nil
+        }
+    }
 }

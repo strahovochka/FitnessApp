@@ -18,19 +18,19 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
     private(set) var user: UserModel
     private(set) var selectedOptions: [OptionModel] = [] {
         didSet {
-            if !selectedOptions.isEmpty {
-                updatedUser.userOptions = selectedOptions
-            } else {
+            if selectedOptions.isEmpty {
                 updatedUser.userOptions = nil
+            } else {
+                updatedUser.userOptions = selectedOptions
             }
         }
     }
     private(set) var updatedUserName: String {
         didSet {
             if user.userName != updatedUserName && !updatedUserName.isEmpty  {
-                updatedUser = UserModel(email: user.email, id: user.id, userName: updatedUserName, sex: user.sex, profileImage: updatedUser.profileImage, userOptions: updatedUser.userOptions)
+                updatedUser = UserModel(email: user.email, id: user.id, sex: user.sex, userName: updatedUserName, profileImage: updatedUser.profileImage, userOptions: updatedUser.userOptions)
             } else {
-                updatedUser = UserModel(email: updatedUser.email, id: updatedUser.id, userName: user.userName, sex: updatedUser.sex, profileImage: updatedUser.profileImage, userOptions: updatedUser.userOptions)
+                updatedUser = UserModel(email: updatedUser.email, id: updatedUser.id, sex: updatedUser.sex, userName: user.userName, profileImage: updatedUser.profileImage, userOptions: updatedUser.userOptions)
             }
             self.update()
         }
@@ -52,21 +52,25 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
         self.user = user
         self.updatedUser = user
         updatedUserName = user.userName
+        if let profileImageData = user.profileImage {
+            userPhoto = UIImage(data: profileImageData)
+        }
         if let options = user.userOptions {
             selectedOptions = options
         }
     }
     
+    
     //MARK: -Update checks
     func isOptionsValid() -> Bool {
         if !selectedOptions.isEmpty {
-            return !selectedOptions.contains { $0.value == nil }
+            return !selectedOptions.contains { $0.valueArray == [] }
         }
         return true
     }
     
     func isSaveAllowed() -> Bool {
-        updatedUser != user
+        updatedUser != user 
     }
     
     //MARK: -Value updaters
@@ -74,20 +78,39 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
         var newOptions: [OptionModel] = []
         OptionDataName.allCases.forEach { optionName in
             if options.contains(optionName) {
-                if let selectedOption = selectedOptions.first(where: { $0.optionName == optionName}) {
+                if let selectedOption = selectedOptions.first(where: { $0.optionName == optionName }) {
                     newOptions.append(selectedOption)
+                } else if let oldOption = user.userOptions?.first(where: { $0.optionName == optionName }) {
+                    newOptions.append(oldOption)
                 } else {
-                    newOptions.append(OptionModel(optionName: optionName, isShown: true))
+                    newOptions.append(OptionModel(optionName: optionName, valueArray: [], changedValue: nil, dateArray: [], isShown: true))
                 }
             }
         }
         selectedOptions = newOptions
+        self.update()
     }
     
-    func updateOption(with model: OptionModel) {
-        if let optionIndex = selectedOptions.firstIndex(where: { $0.optionName == model.optionName }) {
-            selectedOptions[optionIndex] = model
+    func updateOption(with updatedOption: OptionModel) {
+        guard let selectedIndex = selectedOptions.firstIndex(where: { $0.optionName == updatedOption.optionName }) else { return }
+        var newOption = updatedOption
+        if updatedOption.valueArray.isEmpty || updatedOption.valueArray.count == 1 {
+            selectedOptions[selectedIndex] = updatedOption
+        } else {
+            guard let userIndex = user.userOptions?.firstIndex(where: { $0.optionName == updatedOption.optionName }),
+                  let lastValue = updatedOption.valueArray.last ?? nil,
+                  let lastSeledctedValue = user.userOptions?[userIndex].valueArray.last ?? nil,
+                  let lastDate = updatedOption.dateArray.last,
+                  let lastSeledctedDate = user.userOptions?[userIndex].dateArray.last,
+                  lastValue != lastSeledctedValue else { return }
+            if lastDate - lastSeledctedDate < 120 {
+                newOption.valueArray.remove(at: newOption.valueArray.count - 2)
+                newOption.dateArray.remove(at: newOption.dateArray.count - 2)
+            }
+            newOption.changedValue = newOption.getChangedValue()
+            selectedOptions[selectedIndex] = newOption
         }
+        self.update()
     }
     
     //MARK: -Upload method
@@ -119,10 +142,8 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
     
 //MARK: -Navigation
     func getProfileImage() -> UIImage? {
-        if let profileImageData = user.profileImage {
-            return UIImage(data: profileImageData)
-        }
-        return .editProfile
+        guard let userPhoto = userPhoto else { return .editProfile }
+        return userPhoto
     }
     
     func showImagePickerOptions(delegate: (UIImagePickerControllerDelegate & UINavigationControllerDelegate)) {

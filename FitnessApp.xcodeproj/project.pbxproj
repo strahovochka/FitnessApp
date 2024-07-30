@@ -26,6 +26,11 @@
 		042535652C39F44F00FE9611 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042535642C39F44F00FE9611 /* UIViewController+Extension.swift */; };
 		042DF4992C514183004436DD /* OptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4982C514183004436DD /* OptionView.swift */; };
 		042DF49D2C51426E004436DD /* OptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042DF49C2C51426E004436DD /* OptionView.xib */; };
+		042DF4A12C53C8AF004436DD /* OptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF49F2C53C8AF004436DD /* OptionCollectionViewCell.swift */; };
+		042DF4A22C53C8AF004436DD /* OptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042DF4A02C53C8AF004436DD /* OptionCollectionViewCell.xib */; };
+		042DF4A42C542744004436DD /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4A32C542743004436DD /* Double+Extensions.swift */; };
+		042DF4AF2C544850004436DD /* Gilroy-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 042DF4AE2C54484F004436DD /* Gilroy-Semibold.ttf */; };
+		042DF4B22C57DB81004436DD /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4B12C57DB81004436DD /* Date+Extension.swift */; };
 		0433DEAD2C4BB7E500DB4B31 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433DEAC2C4BB7E500DB4B31 /* UserModel.swift */; };
 		0435DB122C43CFC000D66FB1 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB112C43CFC000D66FB1 /* LogInViewModel.swift */; };
 		0435DB142C43CFD300D66FB1 /* LogInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB132C43CFD300D66FB1 /* LogInCoordinator.swift */; };
@@ -113,6 +118,11 @@
 		042535642C39F44F00FE9611 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		042DF4982C514183004436DD /* OptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionView.swift; sourceTree = "<group>"; };
 		042DF49C2C51426E004436DD /* OptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionView.xib; sourceTree = "<group>"; };
+		042DF49F2C53C8AF004436DD /* OptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCollectionViewCell.swift; sourceTree = "<group>"; };
+		042DF4A02C53C8AF004436DD /* OptionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionCollectionViewCell.xib; sourceTree = "<group>"; };
+		042DF4A32C542743004436DD /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
+		042DF4AE2C54484F004436DD /* Gilroy-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Semibold.ttf"; sourceTree = "<group>"; };
+		042DF4B12C57DB81004436DD /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		0433DEAC2C4BB7E500DB4B31 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		0435DB112C43CFC000D66FB1 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		0435DB132C43CFD300D66FB1 /* LogInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInCoordinator.swift; sourceTree = "<group>"; };
@@ -258,6 +268,15 @@
 			path = OptionView;
 			sourceTree = "<group>";
 		};
+		042DF49E2C53C875004436DD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				042DF49F2C53C8AF004436DD /* OptionCollectionViewCell.swift */,
+				042DF4A02C53C8AF004436DD /* OptionCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		0435DB102C43CFA700D66FB1 /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +291,7 @@
 		043C42AC2C4BB0C400FCF502 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				042DF4972C514161004436DD /* OptionView */,
 				043C42AD2C4BB0EA00FCF502 /* ProfileCoordinator.swift */,
 				043C42AF2C4BB0F500FCF502 /* ProfileViewModel.swift */,
 				043C42B12C4BB10200FCF502 /* ProfileViewController.swift */,
@@ -368,6 +388,7 @@
 		046B124D2C30BABE0095ECC7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				042DF49E2C53C875004436DD /* Cells */,
 				046B124E2C30BAE10095ECC7 /* HomeViewController.swift */,
 				046B12562C30C2690095ECC7 /* Home.storyboard */,
 				046B12582C30C2770095ECC7 /* HomeCoordinator.swift */,
@@ -396,6 +417,8 @@
 				04F3C5772C3D7475000E14C7 /* RegExp+Extension.swift */,
 				04F3C5792C3D77F1000E14C7 /* UITableView+Extension.swift */,
 				04F3C57B2C3D7814000E14C7 /* UITableViewCell+Extension.swift */,
+				042DF4A32C542743004436DD /* Double+Extensions.swift */,
+				042DF4B12C57DB81004436DD /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -403,7 +426,6 @@
 		046B12632C3402BF0095ECC7 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				042DF4972C514161004436DD /* OptionView */,
 				04C17A2C2C47D16A00B929B9 /* PopUp */,
 				046B12862C3689660095ECC7 /* UITextField */,
 				046B12672C3575210095ECC7 /* UIButton */,
@@ -425,6 +447,7 @@
 		046B126C2C35FAB80095ECC7 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				042DF4AE2C54484F004436DD /* Gilroy-Semibold.ttf */,
 				046B126D2C35FADC0095ECC7 /* SairaRoman-Regular.ttf */,
 			);
 			path = Fonts;
@@ -591,6 +614,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04F3C5572C3D3220000E14C7 /* TabBar.storyboard in Resources */,
+				042DF4AF2C544850004436DD /* Gilroy-Semibold.ttf in Resources */,
 				046B128B2C36D1B90095ECC7 /* SairaRoman-Regular.ttf in Resources */,
 				04F3C5662C3D3F44000E14C7 /* Registration.storyboard in Resources */,
 				043C42AB2C4914BC00FCF502 /* PopUp.storyboard in Resources */,
@@ -602,6 +626,7 @@
 				042DF49D2C51426E004436DD /* OptionView.xib in Resources */,
 				046B12922C39874A0095ECC7 /* Splash.storyboard in Resources */,
 				046B128A2C3689930095ECC7 /* CustomTextField.xib in Resources */,
+				042DF4A22C53C8AF004436DD /* OptionCollectionViewCell.xib in Resources */,
 				04E5AACA2C511A8500DA61C7 /* OptionTableViewCell.xib in Resources */,
 				041175EC2C3A8DB300059052 /* Calculator.storyboard in Resources */,
 				043C42B42C4BB10B00FCF502 /* Profile.storyboard in Resources */,
@@ -669,13 +694,16 @@
 				043C42B22C4BB10200FCF502 /* ProfileViewController.swift in Sources */,
 				042535632C39F36300FE9611 /* SplashCoordinator.swift in Sources */,
 				042DF4992C514183004436DD /* OptionView.swift in Sources */,
+				042DF4B22C57DB81004436DD /* Date+Extension.swift in Sources */,
 				04F3C5512C3D3185000E14C7 /* TabViewModel.swift in Sources */,
 				043C42AE2C4BB0EA00FCF502 /* ProfileCoordinator.swift in Sources */,
+				042DF4A12C53C8AF004436DD /* OptionCollectionViewCell.swift in Sources */,
 				041175FF2C3BCF7300059052 /* SplashViewModel.swift in Sources */,
 				046B128D2C36D3630095ECC7 /* UIFont+Extension.swift in Sources */,
 				0435DB142C43CFD300D66FB1 /* LogInCoordinator.swift in Sources */,
 				044E854E2C3E6A1300E0916D /* Identifiers.swift in Sources */,
 				043C42B02C4BB0F500FCF502 /* ProfileViewModel.swift in Sources */,
+				042DF4A42C542744004436DD /* Double+Extensions.swift in Sources */,
 				046B12512C30BB170095ECC7 /* BaseViewController.swift in Sources */,
 				046B12882C3689870095ECC7 /* CustomTextField.swift in Sources */,
 				04F3C5542C3D31A9000E14C7 /* TabViewController.swift in Sources */,
