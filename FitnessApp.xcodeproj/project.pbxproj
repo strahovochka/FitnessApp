@@ -31,6 +31,13 @@
 		042DF4A42C542744004436DD /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4A32C542743004436DD /* Double+Extensions.swift */; };
 		042DF4AF2C544850004436DD /* Gilroy-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 042DF4AE2C54484F004436DD /* Gilroy-Semibold.ttf */; };
 		042DF4B22C57DB81004436DD /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4B12C57DB81004436DD /* Date+Extension.swift */; };
+		042DF4B62C591BE3004436DD /* ProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4B42C591BE2004436DD /* ProgressTableViewCell.swift */; };
+		042DF4B72C591BE3004436DD /* ProgressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042DF4B52C591BE3004436DD /* ProgressTableViewCell.xib */; };
+		042DF4BC2C5A8590004436DD /* UserChangeObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4BB2C5A8590004436DD /* UserChangeObserver.swift */; };
+		042DF4BF2C5A8EA3004436DD /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4BE2C5A8EA2004436DD /* ChartViewController.swift */; };
+		042DF4C12C5A8EAE004436DD /* ChartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4C02C5A8EAE004436DD /* ChartCoordinator.swift */; };
+		042DF4C32C5A8EB8004436DD /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4C22C5A8EB8004436DD /* ChartViewModel.swift */; };
+		042DF4C52C5A8EC2004436DD /* Chart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042DF4C42C5A8EC2004436DD /* Chart.storyboard */; };
 		0433DEAD2C4BB7E500DB4B31 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433DEAC2C4BB7E500DB4B31 /* UserModel.swift */; };
 		0435DB122C43CFC000D66FB1 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB112C43CFC000D66FB1 /* LogInViewModel.swift */; };
 		0435DB142C43CFD300D66FB1 /* LogInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB132C43CFD300D66FB1 /* LogInCoordinator.swift */; };
@@ -123,6 +130,13 @@
 		042DF4A32C542743004436DD /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		042DF4AE2C54484F004436DD /* Gilroy-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Semibold.ttf"; sourceTree = "<group>"; };
 		042DF4B12C57DB81004436DD /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		042DF4B42C591BE2004436DD /* ProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTableViewCell.swift; sourceTree = "<group>"; };
+		042DF4B52C591BE3004436DD /* ProgressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressTableViewCell.xib; sourceTree = "<group>"; };
+		042DF4BB2C5A8590004436DD /* UserChangeObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChangeObserver.swift; sourceTree = "<group>"; };
+		042DF4BE2C5A8EA2004436DD /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		042DF4C02C5A8EAE004436DD /* ChartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCoordinator.swift; sourceTree = "<group>"; };
+		042DF4C22C5A8EB8004436DD /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
+		042DF4C42C5A8EC2004436DD /* Chart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chart.storyboard; sourceTree = "<group>"; };
 		0433DEAC2C4BB7E500DB4B31 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		0435DB112C43CFC000D66FB1 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		0435DB132C43CFD300D66FB1 /* LogInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInCoordinator.swift; sourceTree = "<group>"; };
@@ -218,6 +232,7 @@
 		041175D72C3A015200059052 /* Progress */ = {
 			isa = PBXGroup;
 			children = (
+				042DF4B32C591B6D004436DD /* Cells */,
 				041175ED2C3A8DC200059052 /* ProgressViewController.swift */,
 				041175EF2C3A8DCD00059052 /* ProgressViewModel.swift */,
 				041175F12C3A8DD800059052 /* ProgressCoordinator.swift */,
@@ -277,6 +292,34 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		042DF4B32C591B6D004436DD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				042DF4B42C591BE2004436DD /* ProgressTableViewCell.swift */,
+				042DF4B52C591BE3004436DD /* ProgressTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		042DF4BA2C5A8570004436DD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				042DF4BB2C5A8590004436DD /* UserChangeObserver.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		042DF4BD2C5A8E8E004436DD /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				042DF4BE2C5A8EA2004436DD /* ChartViewController.swift */,
+				042DF4C02C5A8EAE004436DD /* ChartCoordinator.swift */,
+				042DF4C22C5A8EB8004436DD /* ChartViewModel.swift */,
+				042DF4C42C5A8EC2004436DD /* Chart.storyboard */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
 		0435DB102C43CFA700D66FB1 /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,6 +374,7 @@
 		046B12332C3084BD0095ECC7 /* FitnessApp */ = {
 			isa = PBXGroup;
 			children = (
+				042DF4BA2C5A8570004436DD /* Helpers */,
 				04D2F19B2C510E8700F85ED9 /* Transition */,
 				041175D42C3A005200059052 /* Flow */,
 				046B12482C30BA480095ECC7 /* Application */,
@@ -348,6 +392,7 @@
 		046B12482C30BA480095ECC7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				042DF4BD2C5A8E8E004436DD /* Chart */,
 				04D2F1922C510CA700F85ED9 /* OptionsPopUp */,
 				043C42AC2C4BB0C400FCF502 /* Profile */,
 				04D356462C46A49F0087859F /* ForgotPassword */,
@@ -625,8 +670,10 @@
 				046B12572C30C2690095ECC7 /* Home.storyboard in Resources */,
 				042DF49D2C51426E004436DD /* OptionView.xib in Resources */,
 				046B12922C39874A0095ECC7 /* Splash.storyboard in Resources */,
+				042DF4B72C591BE3004436DD /* ProgressTableViewCell.xib in Resources */,
 				046B128A2C3689930095ECC7 /* CustomTextField.xib in Resources */,
 				042DF4A22C53C8AF004436DD /* OptionCollectionViewCell.xib in Resources */,
+				042DF4C52C5A8EC2004436DD /* Chart.storyboard in Resources */,
 				04E5AACA2C511A8500DA61C7 /* OptionTableViewCell.xib in Resources */,
 				041175EC2C3A8DB300059052 /* Calculator.storyboard in Resources */,
 				043C42B42C4BB10B00FCF502 /* Profile.storyboard in Resources */,
@@ -688,6 +735,7 @@
 				046B12532C30BBFE0095ECC7 /* AppCoordinator.swift in Sources */,
 				046B12832C3615760095ECC7 /* CustomSwitch.swift in Sources */,
 				046B125B2C30C2860095ECC7 /* HomeViewModel.swift in Sources */,
+				042DF4C32C5A8EB8004436DD /* ChartViewModel.swift in Sources */,
 				041175EE2C3A8DC200059052 /* ProgressViewController.swift in Sources */,
 				041175EA2C3A8DA900059052 /* CalculatorCoordinator.swift in Sources */,
 				041175E02C3A8D6D00059052 /* MusclesViewModel.swift in Sources */,
@@ -708,6 +756,7 @@
 				046B12882C3689870095ECC7 /* CustomTextField.swift in Sources */,
 				04F3C5542C3D31A9000E14C7 /* TabViewController.swift in Sources */,
 				041175E62C3A8D9100059052 /* ClaculatorViewController.swift in Sources */,
+				042DF4B62C591BE3004436DD /* ProgressTableViewCell.swift in Sources */,
 				046B12652C3407AB0095ECC7 /* UIColor+Extension.swift in Sources */,
 				042535652C39F44F00FE9611 /* UIViewController+Extension.swift in Sources */,
 				046B126B2C35F40B0095ECC7 /* CustomImageButton.swift in Sources */,
@@ -719,6 +768,7 @@
 				041175F02C3A8DCD00059052 /* ProgressViewModel.swift in Sources */,
 				04F3C5632C3D3F1E000E14C7 /* RegistrationViewController.swift in Sources */,
 				04F3C57A2C3D77F1000E14C7 /* UITableView+Extension.swift in Sources */,
+				042DF4BF2C5A8EA3004436DD /* ChartViewController.swift in Sources */,
 				04F3C55B2C3D3BFD000E14C7 /* BaseViewModel.swift in Sources */,
 				041175F62C3B3CC600059052 /* FirebaseService.swift in Sources */,
 				04E5AAC52C51182500DA61C7 /* AdjustableTableView.swift in Sources */,
@@ -738,12 +788,14 @@
 				0433DEAD2C4BB7E500DB4B31 /* UserModel.swift in Sources */,
 				041175E22C3A8D7900059052 /* MusclesCoordinator.swift in Sources */,
 				04E5AAC92C511A8500DA61C7 /* OptionTableViewCell.swift in Sources */,
+				042DF4C12C5A8EAE004436DD /* ChartCoordinator.swift in Sources */,
 				046B12602C32BAD10095ECC7 /* Coordinator.swift in Sources */,
 				0435DB162C43CFE200D66FB1 /* LogInViewController.swift in Sources */,
 				04CE3E8B2C4EF37A00A0C121 /* Style.swift in Sources */,
 				04F3C55E2C3D3EE1000E14C7 /* RegitstrationCoordinator.swift in Sources */,
 				04D3564A2C46A4C40087859F /* ForgotPasswordCoodinator.swift in Sources */,
 				04D2F1962C510CCB00F85ED9 /* OptionsPopUpCoordinator.swift in Sources */,
+				042DF4BC2C5A8590004436DD /* UserChangeObserver.swift in Sources */,
 				046B12792C3602910095ECC7 /* UIImage+Extension.swift in Sources */,
 				041175F22C3A8DD800059052 /* ProgressCoordinator.swift in Sources */,
 				04D356482C46A4B60087859F /* ForgotPasswordViewModel.swift in Sources */,

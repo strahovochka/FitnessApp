@@ -33,6 +33,7 @@ extension UIImage {
     //Icons
     static let backIcon = UIImage(named: "backIcon")
     static let successIcon = UIImage(named: "successIcon")
+    static let errorIcon = UIImage(named: "errorIcon")
     
     //Placeholders
     static let profileImage = UIImage(named: "profileImage")

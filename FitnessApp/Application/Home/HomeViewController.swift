@@ -24,14 +24,18 @@ final class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         configUI()
         configCollection()
-        guard let _ = viewModel?.user else  {
-            viewModel?.getUser { [weak self] in
+        guard let _ = viewModel?.user else {
+            viewModel?.getUser(completition: { [weak self] in
                 guard let self = self else { return }
                 DispatchQueue.main.async {
                     self.updateUI()
                 }
-            }
+            })
             return
+        }
+        viewModel?.update = { [weak self] in
+            guard let self = self else { return }
+            self.updateUI()
         }
         updateUI()
     }
@@ -59,30 +63,18 @@ private extension HomeViewController {
     }
     
     func updateUI() {
-        setBackground(for: viewModel?.getUserSex().sex ?? .male)
-        self.sexLabel.text = viewModel?.getUserSex().title
+        setBackground(for: viewModel?.user?.getSex() ?? .male)
+        self.sexLabel.text = viewModel?.user?.getSex().heroName
         self.nameLabel.text = viewModel?.user?.userName
         profileButton.setImage(viewModel?.getProfileImage(), for: .normal)
         collectionView.reloadData()
     }
     
     @IBAction func profileButtonPressed(_ sender: Any) {
-        viewModel?.goToProfile(delegate: self)
-    }
-    
-}
-
-
-extension HomeViewController: UserDataChangable {
-    func fetchData() {
-        viewModel?.getUser(completition: { [weak self] in
-            guard let self = self else { return }
-            DispatchQueue.main.async {
-                self.updateUI()
-            }
-        })
+        viewModel?.goToProfile()
     }
 }
+
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     

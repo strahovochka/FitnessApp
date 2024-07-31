@@ -21,6 +21,7 @@ enum Identifiers {
         static let popUp = "PopUp"
         static let profile = "Profile"
         static let optionsPopUp = "OptionsPopUp"
+        static let chart = "Chart"
     }
     
     enum NibNames {
@@ -28,5 +29,6 @@ enum Identifiers {
         static let optionTableCell = "OptionTableViewCell"
         static let optionView = "OptionView"
         static let optionCollectionCell = "OptionCollectionViewCell"
+        static let progressTableCell = "ProgressTableViewCell"
     }
 }

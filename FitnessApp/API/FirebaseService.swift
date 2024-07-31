@@ -91,7 +91,6 @@ class FirebaseService: NSObject {
                         } catch {
                             completition(.failure(error.localizedDescription))
                         }
-                        
                     }
                 } else {
                     completition(.failure(ErrorType.fetchDataError.rawValue))
@@ -149,6 +148,29 @@ class FirebaseService: NSObject {
             
         } else {
             completition(.failure(ErrorType.noCurrentUser.rawValue))
+        }
+    }
+    
+    func subcribe(completition: @escaping (Response<UserModel>) -> ()) {
+        guard let user = currentUser else { return }
+        let query = firestore.collection("users").whereField("id", isEqualTo: user.uid)
+        query.addSnapshotListener { snapshot, error in
+            if let error = error {
+                completition(.failure(error.localizedDescription))
+                return
+            }
+            if let snapshot = snapshot {
+                snapshot.documents.forEach { document in
+                    do {
+                        let user = try document.data(as: UserModel.self)
+                        completition(.success(user))
+                    } catch {
+                        completition(.failure(error.localizedDescription))
+                    }
+                }
+            } else {
+                completition(.failure(ErrorType.fetchDataError.rawValue))
+            }
         }
     }
 }

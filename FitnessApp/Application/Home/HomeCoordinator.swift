@@ -22,13 +22,14 @@ final class HomeCoordinator: Coordinator {
     func start() {
         let vc = HomeViewController.instantiate(from: Identifiers.Storyboard.home)
         let viewModel = HomeViewModel(user: user)
+        UserChangeManager.shared.add(observer: viewModel)
         viewModel.coordinator = self
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func navigateToProfile(with user: UserModel, delegate: UserDataChangable) {
-        let child = ProfileCoordinator(navigationController: navigationController, user: user, delegate: delegate)
+    func navigateToProfile(with user: UserModel) {
+        let child = ProfileCoordinator(navigationController: navigationController, user: user)
         childCoordinators.append(child)
         child.start()
     }

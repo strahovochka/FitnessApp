@@ -12,6 +12,7 @@ final class HomeViewModel: BaseViewModel<HomeCoordinator> {
     private(set) var user: UserModel?
     let heroPlaceholderName = "Hero"
     let namePlaceholder = "Name"
+    var update: () -> () = { }
     
     init(user: UserModel? = nil) {
         self.user = user
@@ -22,17 +23,6 @@ final class HomeViewModel: BaseViewModel<HomeCoordinator> {
             return UIImage(data: profileImageData)
         }
         return .profileImage
-    }
-    
-    func getUserSex() -> (title: String, sex: Sex) {
-        if let user = user {
-            if user.sex == "female" {
-                return ("Supergirl", .female)
-            } else {
-                return ("Superman", .male)
-            }
-        }
-        return ("", .male)
     }
     
     func getVisibleOptions() -> [OptionModel] {
@@ -57,9 +47,18 @@ final class HomeViewModel: BaseViewModel<HomeCoordinator> {
         }
     }
     
-    func goToProfile(delegate: UserDataChangable) {
+    func goToProfile() {
         if let user = user {
-            coordinator?.navigateToProfile(with: user, delegate: delegate)
+            coordinator?.navigateToProfile(with: user)
+        }
+    }
+}
+
+extension HomeViewModel: UserChangeObserver {
+    func fetchUpdatedUser() {
+        getUser { [weak self] in
+            guard let self = self else { return }
+            self.update()
         }
     }
 }

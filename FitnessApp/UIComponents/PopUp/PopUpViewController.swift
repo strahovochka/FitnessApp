@@ -9,14 +9,14 @@ import UIKit
 
 final class PopUpViewConrtoller: UIViewController {
     
-    @IBOutlet weak var labelImageView: UIImageView!
+    @IBOutlet weak private var labelImageView: UIImageView!
     @IBOutlet weak private var backView: UIView!
     @IBOutlet weak private var containerView: UIView!
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var buttonStackView: UIStackView!
     @IBOutlet weak private var buttonStackWidth: NSLayoutConstraint!
-    @IBOutlet weak var mainStackTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var mainStackBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak private var mainStackTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak private var mainStackBottomConstraint: NSLayoutConstraint!
     var viewModel: PopUpViewModel?
     
     override func viewDidLoad() {

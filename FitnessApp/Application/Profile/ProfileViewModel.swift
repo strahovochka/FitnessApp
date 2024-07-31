@@ -97,32 +97,32 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
         if updatedOption.valueArray.isEmpty || updatedOption.valueArray.count == 1 {
             selectedOptions[selectedIndex] = updatedOption
         } else {
-            guard let userIndex = user.userOptions?.firstIndex(where: { $0.optionName == updatedOption.optionName }),
+            if let userIndex = user.userOptions?.firstIndex(where: { $0.optionName == updatedOption.optionName }),
                   let lastValue = updatedOption.valueArray.last ?? nil,
                   let lastSeledctedValue = user.userOptions?[userIndex].valueArray.last ?? nil,
                   let lastDate = updatedOption.dateArray.last,
-                  let lastSeledctedDate = user.userOptions?[userIndex].dateArray.last,
-                  lastValue != lastSeledctedValue else { return }
-            if lastDate - lastSeledctedDate < 120 {
-                newOption.valueArray.remove(at: newOption.valueArray.count - 2)
-                newOption.dateArray.remove(at: newOption.dateArray.count - 2)
+                  let lastSeledctedDate = user.userOptions?[userIndex].dateArray.last {
+                if lastValue != lastSeledctedValue, lastDate - lastSeledctedDate < 120 {
+                    newOption.valueArray.remove(at: newOption.valueArray.count - 2)
+                    newOption.dateArray.remove(at: newOption.dateArray.count - 2)
+                }
+                newOption.changedValue = newOption.getChangedValue()
+                selectedOptions[selectedIndex] = newOption
             }
-            newOption.changedValue = newOption.getChangedValue()
-            selectedOptions[selectedIndex] = newOption
         }
         self.update()
     }
     
     //MARK: -Upload method
-    func uploadChanges(completition: @escaping () -> ()) {
+    func uploadChanges() {
         FirebaseService.shared.updateUser(updatedUser) { [weak self] response in
             guard let self = self else { return }
             switch response {
             case .success:
+                UserChangeManager.shared.notify()
                 self.coordinator?.showPopUp(title: "Profile has been saved", type: .buttonless(.successIcon), completition: {
                     self.coordinator?.navigateBack()
                 })
-                completition()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     UIView.animate(withDuration: 1.0) {
                         self.coordinator?.navigationController.presentedViewController?.view.alpha = 0
@@ -137,8 +137,6 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
             }
         }
     }
-    
-    
     
 //MARK: -Navigation
     func getProfileImage() -> UIImage? {
