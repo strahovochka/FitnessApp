@@ -19,6 +19,12 @@ final class ProgressViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
+        viewModel?.getUser(completition: { [weak self] in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.updateUI()
+            }
+        })
     }
     
     override func viewDidLoad() {

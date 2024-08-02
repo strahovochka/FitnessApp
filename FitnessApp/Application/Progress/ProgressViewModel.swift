@@ -46,12 +46,3 @@ final class ProgressViewModel: BaseViewModel<ProgressCoordinator> {
         coordinator?.navigateToChart(for: option)
     }
 }
-
-extension ProgressViewModel: UserChangeObserver {
-    func fetchUpdatedUser() {
-        getUser { [weak self] in
-            guard let self = self else { return }
-            self.update()
-        }
-    }
-}

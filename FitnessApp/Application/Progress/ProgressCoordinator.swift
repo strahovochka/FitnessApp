@@ -20,7 +20,6 @@ final class ProgressCoordinator: Coordinator {
     func start() {
         let vc = ProgressViewController.instantiate(from: Identifiers.Storyboard.progress)
         let viewModel = ProgressViewModel(user: user)
-        UserChangeManager.shared.add(observer: viewModel)
         viewModel.coordinator = self
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
