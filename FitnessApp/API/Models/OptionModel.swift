@@ -70,4 +70,10 @@ struct OptionModel: Codable, Hashable {
             return nil
         }
     }
+    
+    func getChangedValue(for position: Int) -> Double? {
+        guard (position < valueArray.count && position != 0) else { return nil }
+        guard let value = valueArray[position], let previousValue = valueArray[position - 1] else { return nil }
+        return value - previousValue
+    }
 }

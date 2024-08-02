@@ -8,7 +8,7 @@
 import UIKit
 
 extension UITableView {
-    func register(_ cell: UITableViewCell.Type) {
-        self.register(UINib(nibName: cell.cellIdentifier(), bundle: nil), forCellReuseIdentifier: cell.cellIdentifier())
+    func register(_ nibName: String) {
+        self.register(UINib(nibName: nibName, bundle: nil), forCellReuseIdentifier: nibName)
     }
 }

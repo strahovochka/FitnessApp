@@ -14,4 +14,9 @@ struct UserModel: Codable, Equatable {
     let userName: String
     var profileImage: Data? = nil
     var userOptions: [OptionModel]? = nil
+    
+    func getSex() -> Sex {
+        guard sex == Sex.female.rawValue else { return .male }
+        return .female
+    }
 }

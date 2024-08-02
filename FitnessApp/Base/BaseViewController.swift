@@ -8,15 +8,11 @@
 import UIKit
 
 let screenSize = UIScreen.main.bounds
-protocol UserDataChangable {
-    func fetchData()
-}
 
 class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setBackground()
         customizeNavBar()
     }
     
@@ -28,12 +24,7 @@ class BaseViewController: UIViewController {
         let imageView = UIImageView(frame: view.bounds)
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        switch sex {
-        case .female:
-            imageView.image = .backgroundWomanFull
-        case .male:
-            imageView.image = .backgroundMan
-        }
+        imageView.image = sex.image
         imageView.center = view.center
         imageView.addGradient([.clear, .primaryBlack], locations: [0.0, 0.7])
         imageView.addoverlay()
@@ -57,11 +48,7 @@ class BaseViewController: UIViewController {
             .font: UIFont.mediumSaira?.withSize(18) ?? .systemFont(ofSize: 18),
             .foregroundColor: UIColor.primaryWhite
         ]
-        customizeBackButton()
     }
-}
-
-private extension BaseViewController {
     
     func customizeBackButton() {
         let backView = UIStackView()
@@ -80,6 +67,9 @@ private extension BaseViewController {
         backButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backView)
     }
+}
+
+private extension BaseViewController {
     
     @objc func backAction() {
         self.navigationController?.popViewController(animated: true)

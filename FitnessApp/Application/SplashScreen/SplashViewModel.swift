@@ -5,7 +5,7 @@
 //  Created by Jane Strashok on 08.07.2024.
 //
 
-import Foundation
+import UIKit
 
 enum Sex: String {
     case male = "male"
@@ -17,6 +17,15 @@ enum Sex: String {
             return "Superman"
         case .female:
             return "Supergirl"
+        }
+    }
+    
+    var image: UIImage? {
+        switch self {
+        case .male:
+            return .backgroundManFull
+        case .female:
+            return .backgroundWomanFull
         }
     }
 }

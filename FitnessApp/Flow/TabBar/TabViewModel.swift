@@ -55,12 +55,9 @@ enum TabBarItem: Int, CaseIterable {
     func getCoodrinator(with user: UserModel? = nil) -> Coordinator {
         switch self {
         case .home:
-            if let user = user {
-                return HomeCoordinator(navigationController: UINavigationController(), user: user)
-            }
-            return HomeCoordinator(navigationController: UINavigationController())
+            return HomeCoordinator(navigationController: UINavigationController(), user: user)
         case .progress:
-            return ProgressCoordinator(navigationController: UINavigationController())
+            return ProgressCoordinator(navigationController: UINavigationController(), user: user)
         case .calculator:
             return CalculatorCoordinator(navigationController: UINavigationController())
         case .muscles:

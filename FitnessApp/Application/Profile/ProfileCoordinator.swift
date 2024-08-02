@@ -11,18 +11,15 @@ final class ProfileCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
     let user: UserModel
-    var delegate: UserDataChangable?
     
-    init(navigationController: UINavigationController, user: UserModel, delegate: UserDataChangable) {
+    init(navigationController: UINavigationController, user: UserModel) {
         self.navigationController = navigationController
         self.user = user
-        self.delegate = delegate
     }
     
     func start() {
         let vc = ProfileViewController.instantiate(from: Identifiers.Storyboard.profile)
         vc.hidesBottomBarWhenPushed = true
-        vc.delegate = delegate
         let viewModel = ProfileViewModel(user: user)
         viewModel.coordinator = self
         vc.viewModel = viewModel

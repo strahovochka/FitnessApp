@@ -15,7 +15,6 @@ final class ProfileViewController: BaseViewController {
     @IBOutlet weak private var optionsStackView: UIStackView!
     
     var viewModel: ProfileViewModel?
-    var delegate: UserDataChangable?
     
     override func viewDidLoad() {
         if let sex = Sex(rawValue: viewModel?.user.sex ?? "") {
@@ -30,7 +29,8 @@ final class ProfileViewController: BaseViewController {
     
     override func customizeNavBar() {
         super.customizeNavBar()
-        self.navigationItem.title = viewModel?.title
+        customizeBackButton()
+        self.title = viewModel?.title
         let saveButton = createNavButton(text: viewModel?.saveButtonText, selector: #selector(saveData), isEnabled: false)
         self.navigationItem.rightBarButtonItem = saveButton
     }
@@ -129,10 +129,7 @@ private extension ProfileViewController {
         }.contains { $0 }
         if !isDataInvalid {
             navigationItem.rightBarButtonItem?.isEnabled = false
-            viewModel?.uploadChanges { [weak self] in
-                guard let self = self else { return }
-                self.delegate?.fetchData()
-            }
+            viewModel?.uploadChanges()
         }
     }
     

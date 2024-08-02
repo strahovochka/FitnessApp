@@ -7,7 +7,11 @@
 
 import UIKit
 
-class TabViewController: UITabBarController {
+protocol UserDataChangeDelegate {
+    func updateUser()
+}
+
+final class TabViewController: UITabBarController {
     
     var viewModel: TabViewModel?
 
@@ -29,5 +33,4 @@ class TabViewController: UITabBarController {
         self.selectedIndex = TabBarItem.home.rawValue
         self.tabBar.isTranslucent = false
     }
-
 }

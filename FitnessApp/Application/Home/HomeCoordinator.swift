@@ -27,8 +27,8 @@ final class HomeCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func navigateToProfile(with user: UserModel, delegate: UserDataChangable) {
-        let child = ProfileCoordinator(navigationController: navigationController, user: user, delegate: delegate)
+    func navigateToProfile(with user: UserModel) {
+        let child = ProfileCoordinator(navigationController: navigationController, user: user)
         childCoordinators.append(child)
         child.start()
     }
