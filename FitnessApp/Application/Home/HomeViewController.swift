@@ -59,7 +59,7 @@ private extension HomeViewController {
     func configCollection() {
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(UINib(nibName: Identifiers.NibNames.optionCollectionCell, bundle: nil), forCellWithReuseIdentifier: Identifiers.NibNames.optionCollectionCell)
+        collectionView.register(Identifiers.NibNames.optionCollectionCell)
     }
     
     func updateUI() {

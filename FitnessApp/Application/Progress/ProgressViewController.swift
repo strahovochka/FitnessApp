@@ -62,7 +62,7 @@ private extension ProgressViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .clear
-        tableView.register(UINib(nibName: Identifiers.NibNames.progressTableCell, bundle: nil), forCellReuseIdentifier: Identifiers.NibNames.progressTableCell)
+        tableView.register(Identifiers.NibNames.progressTableCell)
     }
     
     func updateUI() {
@@ -96,5 +96,10 @@ extension ProgressViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         73
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let option = viewModel?.getOptions()[indexPath.row] else { return }
+        viewModel?.goToChart(for: option)
     }
 }

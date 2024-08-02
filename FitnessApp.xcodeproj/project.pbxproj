@@ -38,6 +38,7 @@
 		042DF4C12C5A8EAE004436DD /* ChartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4C02C5A8EAE004436DD /* ChartCoordinator.swift */; };
 		042DF4C32C5A8EB8004436DD /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4C22C5A8EB8004436DD /* ChartViewModel.swift */; };
 		042DF4C52C5A8EC2004436DD /* Chart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042DF4C42C5A8EC2004436DD /* Chart.storyboard */; };
+		042DF4C72C5AD5B1004436DD /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4C62C5AD5B1004436DD /* Int+Extension.swift */; };
 		0433DEAD2C4BB7E500DB4B31 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433DEAC2C4BB7E500DB4B31 /* UserModel.swift */; };
 		0435DB122C43CFC000D66FB1 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB112C43CFC000D66FB1 /* LogInViewModel.swift */; };
 		0435DB142C43CFD300D66FB1 /* LogInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB132C43CFD300D66FB1 /* LogInCoordinator.swift */; };
@@ -76,6 +77,10 @@
 		046B12952C39F20D0095ECC7 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12942C39F20D0095ECC7 /* UIView+Extension.swift */; };
 		04C17A2F2C47D18000B929B9 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C17A2D2C47D18000B929B9 /* PopUpViewController.swift */; };
 		04CE3E8B2C4EF37A00A0C121 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE3E8A2C4EF37A00A0C121 /* Style.swift */; };
+		04D082762C5BBB61000023A9 /* CollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D082752C5BBB61000023A9 /* CollectionView+Extension.swift */; };
+		04D0827A2C5CD596000023A9 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D082792C5CD596000023A9 /* BarChartView.swift */; };
+		04D0827E2C5CFF3E000023A9 /* CenteredCATextLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0827D2C5CFF3E000023A9 /* CenteredCATextLayer.swift */; };
+		04D082802C5D037A000023A9 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0827F2C5D037A000023A9 /* CALayer+Extension.swift */; };
 		04D2F1912C51075300F85ED9 /* OptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2F1902C51075300F85ED9 /* OptionModel.swift */; };
 		04D2F1942C510CBE00F85ED9 /* OptionsPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2F1932C510CBE00F85ED9 /* OptionsPopUpViewController.swift */; };
 		04D2F1962C510CCB00F85ED9 /* OptionsPopUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2F1952C510CCB00F85ED9 /* OptionsPopUpCoordinator.swift */; };
@@ -101,7 +106,6 @@
 		04F3C5662C3D3F44000E14C7 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F3C5652C3D3F44000E14C7 /* Registration.storyboard */; };
 		04F3C5782C3D7475000E14C7 /* RegExp+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3C5772C3D7475000E14C7 /* RegExp+Extension.swift */; };
 		04F3C57A2C3D77F1000E14C7 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3C5792C3D77F1000E14C7 /* UITableView+Extension.swift */; };
-		04F3C57C2C3D7814000E14C7 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3C57B2C3D7814000E14C7 /* UITableViewCell+Extension.swift */; };
 		B8E11BE2FD8050028CEA67CB /* Pods_FitnessApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0902B889C75A077F3D449C56 /* Pods_FitnessApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -137,6 +141,7 @@
 		042DF4C02C5A8EAE004436DD /* ChartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCoordinator.swift; sourceTree = "<group>"; };
 		042DF4C22C5A8EB8004436DD /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		042DF4C42C5A8EC2004436DD /* Chart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chart.storyboard; sourceTree = "<group>"; };
+		042DF4C62C5AD5B1004436DD /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		0433DEAC2C4BB7E500DB4B31 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		0435DB112C43CFC000D66FB1 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		0435DB132C43CFD300D66FB1 /* LogInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInCoordinator.swift; sourceTree = "<group>"; };
@@ -177,6 +182,10 @@
 		046B12942C39F20D0095ECC7 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		04C17A2D2C47D18000B929B9 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		04CE3E8A2C4EF37A00A0C121 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		04D082752C5BBB61000023A9 /* CollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+Extension.swift"; sourceTree = "<group>"; };
+		04D082792C5CD596000023A9 /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
+		04D0827D2C5CFF3E000023A9 /* CenteredCATextLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteredCATextLayer.swift; sourceTree = "<group>"; };
+		04D0827F2C5D037A000023A9 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		04D2F1902C51075300F85ED9 /* OptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionModel.swift; sourceTree = "<group>"; };
 		04D2F1932C510CBE00F85ED9 /* OptionsPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsPopUpViewController.swift; sourceTree = "<group>"; };
 		04D2F1952C510CCB00F85ED9 /* OptionsPopUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsPopUpCoordinator.swift; sourceTree = "<group>"; };
@@ -202,7 +211,6 @@
 		04F3C5652C3D3F44000E14C7 /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		04F3C5772C3D7475000E14C7 /* RegExp+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegExp+Extension.swift"; sourceTree = "<group>"; };
 		04F3C5792C3D77F1000E14C7 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
-		04F3C57B2C3D7814000E14C7 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		0902B889C75A077F3D449C56 /* Pods_FitnessApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitnessApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A74D7DEB44DD191C5A36C4E7 /* Pods-FitnessApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitnessApp.debug.xcconfig"; path = "Target Support Files/Pods-FitnessApp/Pods-FitnessApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C5E5F5AFB502649A631232E0 /* Pods-FitnessApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitnessApp.release.xcconfig"; path = "Target Support Files/Pods-FitnessApp/Pods-FitnessApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -312,6 +320,7 @@
 		042DF4BD2C5A8E8E004436DD /* Chart */ = {
 			isa = PBXGroup;
 			children = (
+				04D082772C5CD57F000023A9 /* View */,
 				042DF4BE2C5A8EA2004436DD /* ChartViewController.swift */,
 				042DF4C02C5A8EAE004436DD /* ChartCoordinator.swift */,
 				042DF4C22C5A8EB8004436DD /* ChartViewModel.swift */,
@@ -461,9 +470,11 @@
 				042535642C39F44F00FE9611 /* UIViewController+Extension.swift */,
 				04F3C5772C3D7475000E14C7 /* RegExp+Extension.swift */,
 				04F3C5792C3D77F1000E14C7 /* UITableView+Extension.swift */,
-				04F3C57B2C3D7814000E14C7 /* UITableViewCell+Extension.swift */,
 				042DF4A32C542743004436DD /* Double+Extensions.swift */,
 				042DF4B12C57DB81004436DD /* Date+Extension.swift */,
+				042DF4C62C5AD5B1004436DD /* Int+Extension.swift */,
+				04D082752C5BBB61000023A9 /* CollectionView+Extension.swift */,
+				04D0827F2C5D037A000023A9 /* CALayer+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -527,6 +538,15 @@
 				043C42AA2C4914BC00FCF502 /* PopUp.storyboard */,
 			);
 			path = PopUp;
+			sourceTree = "<group>";
+		};
+		04D082772C5CD57F000023A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04D082792C5CD596000023A9 /* BarChartView.swift */,
+				04D0827D2C5CFF3E000023A9 /* CenteredCATextLayer.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		04D2F1922C510CA700F85ED9 /* OptionsPopUp */ = {
@@ -739,7 +759,9 @@
 				041175EE2C3A8DC200059052 /* ProgressViewController.swift in Sources */,
 				041175EA2C3A8DA900059052 /* CalculatorCoordinator.swift in Sources */,
 				041175E02C3A8D6D00059052 /* MusclesViewModel.swift in Sources */,
+				042DF4C72C5AD5B1004436DD /* Int+Extension.swift in Sources */,
 				043C42B22C4BB10200FCF502 /* ProfileViewController.swift in Sources */,
+				04D082802C5D037A000023A9 /* CALayer+Extension.swift in Sources */,
 				042535632C39F36300FE9611 /* SplashCoordinator.swift in Sources */,
 				042DF4992C514183004436DD /* OptionView.swift in Sources */,
 				042DF4B22C57DB81004436DD /* Date+Extension.swift in Sources */,
@@ -762,8 +784,8 @@
 				046B126B2C35F40B0095ECC7 /* CustomImageButton.swift in Sources */,
 				041175D62C3A006C00059052 /* TabCoordinator.swift in Sources */,
 				04F3C5602C3D3EF1000E14C7 /* RegitstrationViewModel.swift in Sources */,
-				04F3C57C2C3D7814000E14C7 /* UITableViewCell+Extension.swift in Sources */,
 				04D2F19E2C510E9B00F85ED9 /* PopupTransitioningDelegate.swift in Sources */,
+				04D0827A2C5CD596000023A9 /* BarChartView.swift in Sources */,
 				04F3C5782C3D7475000E14C7 /* RegExp+Extension.swift in Sources */,
 				041175F02C3A8DCD00059052 /* ProgressViewModel.swift in Sources */,
 				04F3C5632C3D3F1E000E14C7 /* RegistrationViewController.swift in Sources */,
@@ -775,6 +797,7 @@
 				041175DE2C3A8D4B00059052 /* MusclesViewController.swift in Sources */,
 				04D2F1942C510CBE00F85ED9 /* OptionsPopUpViewController.swift in Sources */,
 				043C42A72C4912B500FCF502 /* PopUpViewModel.swift in Sources */,
+				04D0827E2C5CFF3E000023A9 /* CenteredCATextLayer.swift in Sources */,
 				046B124F2C30BAE10095ECC7 /* HomeViewController.swift in Sources */,
 				046B12352C3084BD0095ECC7 /* AppDelegate.swift in Sources */,
 				041175E82C3A8D9B00059052 /* CalculatorViewModel.swift in Sources */,
@@ -789,6 +812,7 @@
 				041175E22C3A8D7900059052 /* MusclesCoordinator.swift in Sources */,
 				04E5AAC92C511A8500DA61C7 /* OptionTableViewCell.swift in Sources */,
 				042DF4C12C5A8EAE004436DD /* ChartCoordinator.swift in Sources */,
+				04D082762C5BBB61000023A9 /* CollectionView+Extension.swift in Sources */,
 				046B12602C32BAD10095ECC7 /* Coordinator.swift in Sources */,
 				0435DB162C43CFE200D66FB1 /* LogInViewController.swift in Sources */,
 				04CE3E8B2C4EF37A00A0C121 /* Style.swift in Sources */,

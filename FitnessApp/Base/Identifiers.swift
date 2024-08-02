@@ -30,5 +30,6 @@ enum Identifiers {
         static let optionView = "OptionView"
         static let optionCollectionCell = "OptionCollectionViewCell"
         static let progressTableCell = "ProgressTableViewCell"
+        static let chartBarCollectionCell = "BarCollectionViewCell"
     }
 }

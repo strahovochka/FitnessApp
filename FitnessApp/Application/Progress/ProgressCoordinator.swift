@@ -25,4 +25,10 @@ final class ProgressCoordinator: Coordinator {
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
     }
+    
+    func navigateToChart(for option: OptionModel) {
+        let child = ChartCoordinator(navigationController: navigationController, option: option)
+        childCoordinators.append(child)
+        child.start()
+    }
 }

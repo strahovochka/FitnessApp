@@ -42,15 +42,8 @@ final class ProgressViewModel: BaseViewModel<ProgressCoordinator> {
         return options
     }
     
-    func getUserSex() -> Sex {
-        if let user = user {
-            if user.sex == Sex.female.rawValue {
-                return .female
-            } else {
-                return .male
-            }
-        }
-        return .male
+    func goToChart(for option: OptionModel) {
+        coordinator?.navigateToChart(for: option)
     }
 }
 
