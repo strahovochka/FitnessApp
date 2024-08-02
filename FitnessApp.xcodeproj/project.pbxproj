@@ -33,7 +33,6 @@
 		042DF4B22C57DB81004436DD /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4B12C57DB81004436DD /* Date+Extension.swift */; };
 		042DF4B62C591BE3004436DD /* ProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4B42C591BE2004436DD /* ProgressTableViewCell.swift */; };
 		042DF4B72C591BE3004436DD /* ProgressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042DF4B52C591BE3004436DD /* ProgressTableViewCell.xib */; };
-		042DF4BC2C5A8590004436DD /* UserChangeObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4BB2C5A8590004436DD /* UserChangeObserver.swift */; };
 		042DF4BF2C5A8EA3004436DD /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4BE2C5A8EA2004436DD /* ChartViewController.swift */; };
 		042DF4C12C5A8EAE004436DD /* ChartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4C02C5A8EAE004436DD /* ChartCoordinator.swift */; };
 		042DF4C32C5A8EB8004436DD /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4C22C5A8EB8004436DD /* ChartViewModel.swift */; };
@@ -136,7 +135,6 @@
 		042DF4B12C57DB81004436DD /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		042DF4B42C591BE2004436DD /* ProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTableViewCell.swift; sourceTree = "<group>"; };
 		042DF4B52C591BE3004436DD /* ProgressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressTableViewCell.xib; sourceTree = "<group>"; };
-		042DF4BB2C5A8590004436DD /* UserChangeObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChangeObserver.swift; sourceTree = "<group>"; };
 		042DF4BE2C5A8EA2004436DD /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		042DF4C02C5A8EAE004436DD /* ChartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCoordinator.swift; sourceTree = "<group>"; };
 		042DF4C22C5A8EB8004436DD /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
@@ -309,14 +307,6 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		042DF4BA2C5A8570004436DD /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				042DF4BB2C5A8590004436DD /* UserChangeObserver.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		042DF4BD2C5A8E8E004436DD /* Chart */ = {
 			isa = PBXGroup;
 			children = (
@@ -383,7 +373,6 @@
 		046B12332C3084BD0095ECC7 /* FitnessApp */ = {
 			isa = PBXGroup;
 			children = (
-				042DF4BA2C5A8570004436DD /* Helpers */,
 				04D2F19B2C510E8700F85ED9 /* Transition */,
 				041175D42C3A005200059052 /* Flow */,
 				046B12482C30BA480095ECC7 /* Application */,
@@ -819,7 +808,6 @@
 				04F3C55E2C3D3EE1000E14C7 /* RegitstrationCoordinator.swift in Sources */,
 				04D3564A2C46A4C40087859F /* ForgotPasswordCoodinator.swift in Sources */,
 				04D2F1962C510CCB00F85ED9 /* OptionsPopUpCoordinator.swift in Sources */,
-				042DF4BC2C5A8590004436DD /* UserChangeObserver.swift in Sources */,
 				046B12792C3602910095ECC7 /* UIImage+Extension.swift in Sources */,
 				041175F22C3A8DD800059052 /* ProgressCoordinator.swift in Sources */,
 				04D356482C46A4B60087859F /* ForgotPasswordViewModel.swift in Sources */,

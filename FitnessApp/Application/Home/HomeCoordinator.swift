@@ -22,7 +22,6 @@ final class HomeCoordinator: Coordinator {
     func start() {
         let vc = HomeViewController.instantiate(from: Identifiers.Storyboard.home)
         let viewModel = HomeViewModel(user: user)
-        UserChangeManager.shared.add(observer: viewModel)
         viewModel.coordinator = self
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)

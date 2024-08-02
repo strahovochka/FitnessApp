@@ -14,6 +14,7 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
     let addOptionsButtonText = "Add options".capitalized
     let saveButtonText = "Save"
     let textFieldData: TextFieldType = .name
+    let allowedChangeInterval: Int = 24*60*60
     private(set) var updatedUser: UserModel
     private(set) var user: UserModel
     private(set) var selectedOptions: [OptionModel] = [] {
@@ -102,7 +103,7 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
                   let lastSeledctedValue = user.userOptions?[userIndex].valueArray.last ?? nil,
                   let lastDate = updatedOption.dateArray.last,
                   let lastSeledctedDate = user.userOptions?[userIndex].dateArray.last {
-                if lastValue != lastSeledctedValue, lastDate - lastSeledctedDate < 120 {
+                if lastValue != lastSeledctedValue, lastDate - lastSeledctedDate < allowedChangeInterval {
                     newOption.valueArray.remove(at: newOption.valueArray.count - 2)
                     newOption.dateArray.remove(at: newOption.dateArray.count - 2)
                 }
@@ -119,7 +120,6 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
             guard let self = self else { return }
             switch response {
             case .success:
-                UserChangeManager.shared.notify()
                 self.coordinator?.showPopUp(title: "Profile has been saved", type: .buttonless(.successIcon), completition: {
                     self.coordinator?.navigateBack()
                 })

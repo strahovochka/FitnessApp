@@ -53,12 +53,3 @@ final class HomeViewModel: BaseViewModel<HomeCoordinator> {
         }
     }
 }
-
-extension HomeViewModel: UserChangeObserver {
-    func fetchUpdatedUser() {
-        getUser { [weak self] in
-            guard let self = self else { return }
-            self.update()
-        }
-    }
-}

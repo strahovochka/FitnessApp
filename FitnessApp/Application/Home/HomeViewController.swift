@@ -19,6 +19,12 @@ final class HomeViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        viewModel?.getUser(completition: { [weak self] in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.updateUI()
+            }
+        })
     }
 
     override func viewDidLoad() {
