@@ -21,6 +21,7 @@ final class LogInViewModel: BaseViewModel<LogInCoordinator> {
     func logIn(completition: @escaping (Bool) -> ()) {
         FirebaseService.shared.loginUser(withEmail: email, password: password) { [weak self] response in
             guard let self = self else { return }
+            let buttonConfig = PopUpButtonConfig(title: "Ok", type: .filled, action: nil)
             switch response {
             case .success(let user):
                 if user.sex.isEmpty {
@@ -30,10 +31,10 @@ final class LogInViewModel: BaseViewModel<LogInCoordinator> {
                 }
                 completition(true)
             case .failure(let error):
-                self.coordinator?.showPopUp(title: error, type: .oneButton((title: "Ok", type: .filled, action: nil)))
+                self.coordinator?.showPopUp(title: error, type: .oneButton(buttonConfig))
                 completition(false)
             case .unknown:
-                self.coordinator?.showPopUp(title: "An unknow error occured", type: .oneButton((title: "Ok", type: .filled, action: nil)))
+                self.coordinator?.showPopUp(title: "An unknow error occured", type: .oneButton(buttonConfig))
                 completition(false)
             }
         }

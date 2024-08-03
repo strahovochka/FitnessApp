@@ -13,6 +13,7 @@ final class ProfileViewController: BaseViewController {
     @IBOutlet weak private var explanationTextLabel: UILabel!
     @IBOutlet weak private var addOptionsButton: PlainButton!
     @IBOutlet weak private var optionsStackView: UIStackView!
+    @IBOutlet weak private var deleteAccountButton: PlainButton!
     
     var viewModel: ProfileViewModel?
     
@@ -84,6 +85,9 @@ private extension ProfileViewController {
         addOptionsButton.setType(.filled)
         addOptionsButton.title = viewModel?.addOptionsButtonText
         configStackView()
+        
+        deleteAccountButton.setType(.alert)
+        deleteAccountButton.title = viewModel?.deleteButtonText
     }
     
     func configImageView() {
@@ -145,5 +149,10 @@ private extension ProfileViewController {
             return nil
         }
         viewModel?.goToOptions(delegate: self, with: selection)
+    }
+    
+    
+    @IBAction func deleteButtonPressed(_ sender: Any) {
+        viewModel?.goToDeleteAccount()
     }
 }

@@ -77,4 +77,14 @@ extension Coordinator {
         alertVC.addAction(cancelAtion)
         self.navigationController.present(alertVC, animated: true)
     }
+    
+    func rebootApp() {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+        let sceneDelegate = windowScene.delegate as? SceneDelegate else { return }
+        let navigationController = UINavigationController()
+        let coordinator = AppCoordinator(navigationController: navigationController)
+        coordinator.start()
+        sceneDelegate.window?.rootViewController = navigationController
+        sceneDelegate.coordinator = coordinator
+    }
 }

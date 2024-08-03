@@ -27,7 +27,7 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="641"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="76" translatesAutoresizingMaskIntoConstraints="NO" id="Mqx-WX-S3G">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="504.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="523.33333333333337"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNl-RS-hid">
                                                 <rect key="frame" x="43" y="0.0" width="307" height="156"/>
@@ -47,23 +47,44 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Zyl-oT-8yV">
-                                                <rect key="frame" x="43" y="231.99999999999997" width="307" height="272.33333333333326"/>
+                                                <rect key="frame" x="43" y="231.99999999999997" width="307" height="291.33333333333326"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fM-7B-zYA" customClass="CustomTextField" customModule="FitnessApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="307" height="71"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kcS-ad-dsy">
+                                                        <rect key="frame" x="0.0" y="0.0" width="307" height="90"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOF-sl-dCR" customClass="PlainButton" customModule="FitnessApp" customModuleProvider="target">
+                                                                <rect key="frame" x="232" y="0.0" width="75" height="34.333333333333336"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                                <connections>
+                                                                    <action selector="deleteButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zq5-Am-pnS"/>
+                                                                </connections>
+                                                            </button>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fM-7B-zYA" customClass="CustomTextField" customModule="FitnessApp" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="19" width="307" height="71"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="71" id="XOn-2u-SMc"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="71" id="XOn-2u-SMc"/>
+                                                            <constraint firstItem="2fM-7B-zYA" firstAttribute="leading" secondItem="kcS-ad-dsy" secondAttribute="leading" id="5hO-0j-4Qf"/>
+                                                            <constraint firstAttribute="height" constant="90" id="FXL-YS-TDI"/>
+                                                            <constraint firstAttribute="bottom" secondItem="2fM-7B-zYA" secondAttribute="bottom" id="NTo-iU-OFz"/>
+                                                            <constraint firstItem="VOF-sl-dCR" firstAttribute="top" secondItem="kcS-ad-dsy" secondAttribute="top" id="NrN-as-N2H"/>
+                                                            <constraint firstAttribute="trailing" secondItem="VOF-sl-dCR" secondAttribute="trailing" id="uD7-L6-ySo"/>
+                                                            <constraint firstAttribute="trailing" secondItem="2fM-7B-zYA" secondAttribute="trailing" id="xq5-f6-h8e"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLV-Be-FuT">
-                                                        <rect key="frame" x="0.0" y="95" width="307" height="25.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="114" width="307" height="25.333333333333343"/>
                                                         <fontDescription key="fontDescription" name="SairaRoman-Light" family="Saira" pointSize="16"/>
                                                         <color key="textColor" name="secondaryGray"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="PR0-4a-rvM">
-                                                        <rect key="frame" x="0.0" y="144.33333333333331" width="307" height="128"/>
+                                                        <rect key="frame" x="0.0" y="163.33333333333331" width="307" height="128"/>
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
@@ -122,6 +143,7 @@
                     </view>
                     <connections>
                         <outlet property="addOptionsButton" destination="O4x-a7-Rgy" id="3QW-AL-F5T"/>
+                        <outlet property="deleteAccountButton" destination="VOF-sl-dCR" id="jta-pC-IVD"/>
                         <outlet property="explanationTextLabel" destination="GLV-Be-FuT" id="8qf-5W-dUD"/>
                         <outlet property="nameTextField" destination="2fM-7B-zYA" id="mWU-xx-jv5"/>
                         <outlet property="optionsStackView" destination="PR0-4a-rvM" id="4aT-rL-p8h"/>

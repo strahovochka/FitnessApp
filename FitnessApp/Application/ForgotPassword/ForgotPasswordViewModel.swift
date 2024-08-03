@@ -20,18 +20,19 @@ final class ForgotPasswordViewModel: BaseViewModel<ForgotPasswordCoodinator> {
     func resetPassword(completition: @escaping (Bool) -> ()) {
         FirebaseService.shared.resetPassword(for: email) { [weak self] response in
             guard let self = self else { return }
+            let okButtonConfig = PopUpButtonConfig(title: "Ok", type: .filled, action: nil)
             switch response {
             case .success:
-                self.coordinator?.showPopUp(title: "The form has been sent to your e-mail", type: .oneButton((title: "Ok", type: .filled, action: nil)))
+                self.coordinator?.showPopUp(title: "The form has been sent to your e-mail", type: .oneButton(okButtonConfig))
                 completition(true)
             case .failure(let error):
-                self.coordinator?.showPopUp(title: error, type: .twoButtons((leftButton: (title: "Cancel", type: .unfilled, action: {
-                    self.coordinator?.dismiss()
+                let cancelButtonConfig = PopUpButtonConfig(title: "Cancel", type: .unfilled) {
                     self.goBack()
-                }), rightButton: (title: "Ok", type: .filled, action: nil))))
+                }
+                self.coordinator?.showPopUp(title: error, type: .twoButtons((cancelButtonConfig, okButtonConfig)))
                 completition(false)
             case .unknown:
-                self.coordinator?.showPopUp(title: "An unknow error occured", type: .oneButton((title: "Ok", type: .filled, action: nil)))
+                self.coordinator?.showPopUp(title: "An unknow error occured", type: .oneButton(okButtonConfig))
             }
         }
     }

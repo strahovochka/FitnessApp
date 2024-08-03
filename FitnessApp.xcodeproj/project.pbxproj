@@ -80,6 +80,10 @@
 		04D0827A2C5CD596000023A9 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D082792C5CD596000023A9 /* BarChartView.swift */; };
 		04D0827E2C5CFF3E000023A9 /* CenteredCATextLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0827D2C5CFF3E000023A9 /* CenteredCATextLayer.swift */; };
 		04D082802C5D037A000023A9 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0827F2C5D037A000023A9 /* CALayer+Extension.swift */; };
+		04D082832C5D572D000023A9 /* DeleteAccountCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D082822C5D572D000023A9 /* DeleteAccountCoordinator.swift */; };
+		04D082852C5D5750000023A9 /* DeleteAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D082842C5D5750000023A9 /* DeleteAccountViewModel.swift */; };
+		04D082872C5D5776000023A9 /* DeleteAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D082862C5D5776000023A9 /* DeleteAccountViewController.swift */; };
+		04D082892C5D585E000023A9 /* DeleteAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D082882C5D585E000023A9 /* DeleteAccount.storyboard */; };
 		04D2F1912C51075300F85ED9 /* OptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2F1902C51075300F85ED9 /* OptionModel.swift */; };
 		04D2F1942C510CBE00F85ED9 /* OptionsPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2F1932C510CBE00F85ED9 /* OptionsPopUpViewController.swift */; };
 		04D2F1962C510CCB00F85ED9 /* OptionsPopUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2F1952C510CCB00F85ED9 /* OptionsPopUpCoordinator.swift */; };
@@ -184,6 +188,10 @@
 		04D082792C5CD596000023A9 /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
 		04D0827D2C5CFF3E000023A9 /* CenteredCATextLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteredCATextLayer.swift; sourceTree = "<group>"; };
 		04D0827F2C5D037A000023A9 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
+		04D082822C5D572D000023A9 /* DeleteAccountCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountCoordinator.swift; sourceTree = "<group>"; };
+		04D082842C5D5750000023A9 /* DeleteAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountViewModel.swift; sourceTree = "<group>"; };
+		04D082862C5D5776000023A9 /* DeleteAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountViewController.swift; sourceTree = "<group>"; };
+		04D082882C5D585E000023A9 /* DeleteAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DeleteAccount.storyboard; sourceTree = "<group>"; };
 		04D2F1902C51075300F85ED9 /* OptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionModel.swift; sourceTree = "<group>"; };
 		04D2F1932C510CBE00F85ED9 /* OptionsPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsPopUpViewController.swift; sourceTree = "<group>"; };
 		04D2F1952C510CCB00F85ED9 /* OptionsPopUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsPopUpCoordinator.swift; sourceTree = "<group>"; };
@@ -390,6 +398,7 @@
 		046B12482C30BA480095ECC7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				04D082812C5D56CC000023A9 /* DeleteAccount */,
 				042DF4BD2C5A8E8E004436DD /* Chart */,
 				04D2F1922C510CA700F85ED9 /* OptionsPopUp */,
 				043C42AC2C4BB0C400FCF502 /* Profile */,
@@ -538,6 +547,17 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		04D082812C5D56CC000023A9 /* DeleteAccount */ = {
+			isa = PBXGroup;
+			children = (
+				04D082822C5D572D000023A9 /* DeleteAccountCoordinator.swift */,
+				04D082842C5D5750000023A9 /* DeleteAccountViewModel.swift */,
+				04D082862C5D5776000023A9 /* DeleteAccountViewController.swift */,
+				04D082882C5D585E000023A9 /* DeleteAccount.storyboard */,
+			);
+			path = DeleteAccount;
+			sourceTree = "<group>";
+		};
 		04D2F1922C510CA700F85ED9 /* OptionsPopUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -676,6 +696,7 @@
 				0435DB182C43CFED00D66FB1 /* LogIn.storyboard in Resources */,
 				04D356452C46A3C00087859F /* GoogleService-Info.plist in Resources */,
 				046B123E2C3084BF0095ECC7 /* Assets.xcassets in Resources */,
+				04D082892C5D585E000023A9 /* DeleteAccount.storyboard in Resources */,
 				046B12572C30C2690095ECC7 /* Home.storyboard in Resources */,
 				042DF49D2C51426E004436DD /* OptionView.xib in Resources */,
 				046B12922C39874A0095ECC7 /* Splash.storyboard in Resources */,
@@ -776,6 +797,7 @@
 				04D2F19E2C510E9B00F85ED9 /* PopupTransitioningDelegate.swift in Sources */,
 				04D0827A2C5CD596000023A9 /* BarChartView.swift in Sources */,
 				04F3C5782C3D7475000E14C7 /* RegExp+Extension.swift in Sources */,
+				04D082832C5D572D000023A9 /* DeleteAccountCoordinator.swift in Sources */,
 				041175F02C3A8DCD00059052 /* ProgressViewModel.swift in Sources */,
 				04F3C5632C3D3F1E000E14C7 /* RegistrationViewController.swift in Sources */,
 				04F3C57A2C3D77F1000E14C7 /* UITableView+Extension.swift in Sources */,
@@ -795,6 +817,7 @@
 				046B126F2C35FD9B0095ECC7 /* PlainButton.swift in Sources */,
 				046B12592C30C2770095ECC7 /* HomeCoordinator.swift in Sources */,
 				04C17A2F2C47D18000B929B9 /* PopUpViewController.swift in Sources */,
+				04D082872C5D5776000023A9 /* DeleteAccountViewController.swift in Sources */,
 				0435DB122C43CFC000D66FB1 /* LogInViewModel.swift in Sources */,
 				046B12372C3084BD0095ECC7 /* SceneDelegate.swift in Sources */,
 				0433DEAD2C4BB7E500DB4B31 /* UserModel.swift in Sources */,
@@ -811,6 +834,7 @@
 				046B12792C3602910095ECC7 /* UIImage+Extension.swift in Sources */,
 				041175F22C3A8DD800059052 /* ProgressCoordinator.swift in Sources */,
 				04D356482C46A4B60087859F /* ForgotPasswordViewModel.swift in Sources */,
+				04D082852C5D5750000023A9 /* DeleteAccountViewModel.swift in Sources */,
 				04D2F1912C51075300F85ED9 /* OptionModel.swift in Sources */,
 				046B12952C39F20D0095ECC7 /* UIView+Extension.swift in Sources */,
 				04D2F19F2C510E9B00F85ED9 /* PopupTransitioningPresentationController.swift in Sources */,

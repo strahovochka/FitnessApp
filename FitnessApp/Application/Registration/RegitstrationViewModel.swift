@@ -91,15 +91,16 @@ final class RegistrationViewModel: BaseViewModel<RegistrationCoordinator> {
         let user = RegistrationModel(userName: userName, email: email, sex: nil, password: password)
         FirebaseService.shared.registerUser(user) { [weak self] response in
             guard let self = self else { return }
+            let buttonConfig = PopUpButtonConfig(title: "Ok", type: .filled, action: nil)
             switch response {
             case .success:
                 self.coordinator?.navigateToSplashScreen()
                 completition(true)
             case .failure(let error):
-                self.coordinator?.showPopUp(title: error, type: .oneButton((title: "Ok", type: .filled, action: nil)))
+                self.coordinator?.showPopUp(title: error, type: .oneButton(buttonConfig))
                 completition(false)
             case .unknown:
-                self.coordinator?.showPopUp(title: "An unknow error occured", type: .oneButton((title: "Ok", type: .filled, action: nil)))
+                self.coordinator?.showPopUp(title: "An unknow error occured", type: .oneButton(buttonConfig))
                 completition(false)
             }
         }

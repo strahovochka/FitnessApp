@@ -34,6 +34,13 @@ class PlainButton: UIButton {
         }
     }
     
+    var bgColor: UIColor? = nil {
+        didSet {
+            self.configuration?.baseBackgroundColor = bgColor
+            configUI()
+        }
+    }
+    
     init(type: PlainButton.ViewType) {
         self.type = type
         super.init(frame: .zero)
@@ -55,7 +62,7 @@ class PlainButton: UIButton {
         case .filled:
             var buttonConfig = UIButton.Configuration.filled()
             buttonConfig.cornerStyle = .capsule
-            buttonConfig.baseBackgroundColor = .primaryYellow
+            buttonConfig.baseBackgroundColor = bgColor == nil ? .primaryYellow : bgColor
             buttonConfig.baseForegroundColor = .primaryBlack
             self.configuration = buttonConfig
             self.setFont(.regularSaira)

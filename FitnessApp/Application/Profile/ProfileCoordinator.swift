@@ -31,4 +31,10 @@ final class ProfileCoordinator: Coordinator {
         childCoordinators.append(child)
         child.start()
     }
+    
+    func navigateToDeleteAccount(with user: UserModel) {
+        let child = DeleteAccountCoordinator(navigationController: navigationController, user: user)
+        childCoordinators.append(child)
+        child.start()
+    }
 }
