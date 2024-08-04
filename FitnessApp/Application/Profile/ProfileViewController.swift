@@ -18,10 +18,10 @@ final class ProfileViewController: BaseViewController {
     var viewModel: ProfileViewModel?
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         if let sex = Sex(rawValue: viewModel?.user.sex ?? "") {
             setBackground(for: sex)
         }
-        super.viewDidLoad()
         viewModel?.update = { [weak self] in
             self?.reload()
         }
