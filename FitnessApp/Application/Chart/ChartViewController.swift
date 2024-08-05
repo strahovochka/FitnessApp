@@ -16,6 +16,7 @@ final class ChartViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        removeBackground()
         configUI()
     }
     
@@ -32,6 +33,13 @@ final class ChartViewController: BaseViewController {
 }
 
 private extension ChartViewController {
+    func removeBackground() {
+        view.subviews.forEach { view in
+            guard let view = view as? UIImageView else { return }
+            view.removeFromSuperview()
+        }
+    }
+    
     func configUI() {
         self.view.backgroundColor = .primaryBlack
         optionNameLabel.text = viewModel?.mainTitle

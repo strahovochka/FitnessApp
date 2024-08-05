@@ -151,26 +151,33 @@ class FirebaseService: NSObject {
         }
     }
     
-    func subcribe(completition: @escaping (Response<UserModel>) -> ()) {
-        guard let user = currentUser else { return }
-        let query = firestore.collection("users").whereField("id", isEqualTo: user.uid)
-        query.addSnapshotListener { snapshot, error in
+    func deleteAccount(completition: @escaping (Response<Bool>) -> ()) {
+        guard let user = currentUser else {
+            completition(.failure(ErrorType.noCurrentUser.rawValue))
+            return
+        }
+        user.delete { [weak self] error in
+            guard let self = self else { return }
             if let error = error {
                 completition(.failure(error.localizedDescription))
                 return
             }
-            if let snapshot = snapshot {
-                snapshot.documents.forEach { document in
-                    do {
-                        let user = try document.data(as: UserModel.self)
-                        completition(.success(user))
-                    } catch {
-                        completition(.failure(error.localizedDescription))
-                    }
-                }
-            } else {
-                completition(.failure(ErrorType.fetchDataError.rawValue))
+            self.deleteDocument(with: user.uid, from: "users") { response in
+                completition(response)
             }
         }
+    }
+    
+    func deleteDocument(with id: String, from collection: String, completion: @escaping (Response<Bool>) -> ()) {
+        firestore
+            .collection(collection)
+            .document(id)
+            .delete { error in
+                if let error = error {
+                    completion(.failure(error.localizedDescription))
+                    return
+                }
+                completion(.success(true))
+            }
     }
 }

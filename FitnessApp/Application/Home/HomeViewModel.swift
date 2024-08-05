@@ -35,14 +35,15 @@ final class HomeViewModel: BaseViewModel<HomeCoordinator> {
     func getUser(completition: @escaping () -> ()) {
         FirebaseService.shared.getUser { [weak self] response in
             guard let self = self else { return }
+            let buttonConfig = PopUpButtonConfig(title: "Ok", type: .filled, action: nil)
             switch response {
             case .success(let userModel):
                 self.user = userModel
                 completition()
             case .failure(let error):
-                self.coordinator?.showPopUp(title: error, type: .oneButton((title: "Ok", type: .filled, action: nil)))
+                self.coordinator?.showPopUp(title: error, type: .oneButton(buttonConfig))
             case .unknown:
-                self.coordinator?.showPopUp(title: "An unknow error occured", type: .oneButton((title: "Ok", type: .filled, action: nil)))
+                self.coordinator?.showPopUp(title: "An unknow error occured", type: .oneButton(buttonConfig))
             }
         }
     }

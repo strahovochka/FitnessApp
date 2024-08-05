@@ -68,10 +68,9 @@ private extension PopUpViewConrtoller {
         button.title = config.title
         button.addAction(UIAction(handler: { [weak self] _ in
             guard let self = self else { return }
+            self.hide()
             if let action = config.action {
                 action()
-            } else {
-                self.hide()
             }
         }), for: .touchUpInside)
         buttonStackView.addArrangedSubview(button)

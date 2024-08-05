@@ -22,6 +22,7 @@ enum Identifiers {
         static let profile = "Profile"
         static let optionsPopUp = "OptionsPopUp"
         static let chart = "Chart"
+        static let deleteAccount = "DeleteAccount"
     }
     
     enum NibNames {

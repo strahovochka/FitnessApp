@@ -13,6 +13,7 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setBackground()
         customizeNavBar()
     }
     
@@ -21,15 +22,19 @@ class BaseViewController: UIViewController {
     }
     
     func setBackground(for sex: Sex = .male) {
-        let imageView = UIImageView(frame: view.bounds)
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.image = sex.image
-        imageView.center = view.center
-        imageView.addGradient([.clear, .primaryBlack], locations: [0.0, 0.7])
-        imageView.addoverlay()
-        view.addSubview(imageView)
-        self.view.sendSubviewToBack(imageView)
+        if let view = view.subviews.first as? UIImageView {
+            view.image = sex.image
+        } else {
+            let imageView = UIImageView(frame: view.bounds)
+            imageView.contentMode = .scaleAspectFill
+            imageView.clipsToBounds = true
+            imageView.image = sex.image
+            imageView.center = view.center
+            imageView.addGradient([.clear, .primaryBlack], locations: [0.0, 0.7])
+            imageView.addoverlay()
+            view.addSubview(imageView)
+            self.view.sendSubviewToBack(imageView)
+        }
     }
     
     func createNavButton(text: String?, selector: Selector, isEnabled: Bool = true) -> UIBarButtonItem {

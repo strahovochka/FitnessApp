@@ -6,7 +6,11 @@
 //
 
 import UIKit
-typealias PopUpButtonConfig = (title: String, type: PlainButton.ViewType, action: (()->())?)
+struct PopUpButtonConfig {
+    let title: String
+    let type: PlainButton.ViewType
+    let action: (() -> ())?
+}
 
 final class PopUpCoordinator: Coordinator {
 

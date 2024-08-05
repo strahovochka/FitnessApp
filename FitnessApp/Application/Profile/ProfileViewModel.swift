@@ -15,6 +15,8 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
     let saveButtonText = "Save"
     let textFieldData: TextFieldType = .name
     let allowedChangeInterval: Int = 24*60*60
+    let deleteButtonText = "Delete account"
+    
     private(set) var updatedUser: UserModel
     private(set) var user: UserModel
     private(set) var selectedOptions: [OptionModel] = [] {
@@ -118,6 +120,7 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
     func uploadChanges() {
         FirebaseService.shared.updateUser(updatedUser) { [weak self] response in
             guard let self = self else { return }
+            let buttonConfig = PopUpButtonConfig(title: "Ok", type: .filled, action: nil)
             switch response {
             case .success:
                 self.coordinator?.showPopUp(title: "Profile has been saved", type: .buttonless(.successIcon), completition: {
@@ -131,9 +134,9 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
                     }
                 }
             case .failure(let error):
-                self.coordinator?.showPopUp(title: error, type: .oneButton((title: "Ok", type: .filled, action: nil)))
+                self.coordinator?.showPopUp(title: error, type: .oneButton(buttonConfig))
             case .unknown:
-                self.coordinator?.showPopUp(title: "An unkowm error occured", type: .oneButton((title: "Ok", type: .filled, action: nil)))
+                self.coordinator?.showPopUp(title: "An unkowm error occured", type: .oneButton(buttonConfig))
             }
         }
     }
@@ -150,6 +153,10 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
     
     func goToOptions(delegate: OptionsPopUpDelegate, with selectedOptions: [OptionDataName]) {
         coordinator?.navigateToOptions(with: selectedOptions, delegate: delegate)
+    }
+    
+    func goToDeleteAccount() {
+        coordinator?.navigateToDeleteAccount(with: user)
     }
 }
 
