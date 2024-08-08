@@ -54,9 +54,7 @@ final class MusclesViewModel: UserDependentViewModel<MusclesCoordinator> {
         })
     }
     
-    func didSelectExercise(from muscle: String, _ name: String, selected: Bool) {
-        guard let muscleIndex = muscleExercises?.firstIndex(where: { $0.muscleName == muscle}),
-              let exerciseIndex = muscleExercises?[muscleIndex].exerciseList.firstIndex(where: { $0.name == name}) else { return }
+    func didSelectExercise(from muscleIndex: Int, _ exerciseIndex: Int, selected: Bool) {
         muscleExercises?[muscleIndex].exerciseList[exerciseIndex].isSelected.toggle()
         muscleExercises?[muscleIndex].count += selected ? 1 : -1
         self.onSelect?(muscleIndex)

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ExerciseCellDelegate {
-    func didSelectExercise(_ name: String, selected: Bool, cell: ExerciseTableViewCell)
+    func didSelectExercise(selected: Bool, cell: ExerciseTableViewCell)
 }
 
 class ExerciseTableViewCell: UITableViewCell {
@@ -89,8 +89,8 @@ private extension ExerciseTableViewCell {
     }
     
     @objc func didTap() {
-        guard let exercise = exercise else { return }
+        guard let _ = exercise else { return }
         self.exercise?.isSelected.toggle()
-        delegate?.didSelectExercise(exercise.name, selected: self.exercise?.isSelected ?? false, cell: self)
+        delegate?.didSelectExercise(selected: self.exercise?.isSelected ?? false, cell: self)
     }
 }

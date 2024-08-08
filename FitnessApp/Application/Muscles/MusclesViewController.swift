@@ -114,11 +114,8 @@ extension MusclesViewController: UITableViewDelegate, UITableViewDataSource {
 
 
 extension MusclesViewController: ExerciseCellDelegate {
-    func didSelectExercise(_ name: String, selected: Bool, cell: ExerciseTableViewCell) {
-        guard let index = tableView.indexPath(for: cell),
-        let muscleName = viewModel?.muscleExercises?[index.section].muscleName else {
-            return
-        }
-        viewModel?.didSelectExercise(from: muscleName, name, selected: selected)
+    func didSelectExercise(selected: Bool, cell: ExerciseTableViewCell) {
+        guard let index = tableView.indexPath(for: cell) else { return }
+        viewModel?.didSelectExercise(from: index.section, index.row, selected: selected)
     }
 }
