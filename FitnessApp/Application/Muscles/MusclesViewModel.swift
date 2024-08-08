@@ -40,40 +40,6 @@ final class MusclesViewModel: UserDependentViewModel<MusclesCoordinator> {
         muscleExercises = JSONParser.shared.fetchExercises()
     }
     
-    //TODO: -Separate service for parsing jsons singleton
-    func fetchExercises() -> [MuscleExercisesModel] {
-        guard let musclesPath = Bundle.main.path(forResource: Identifiers.FileNames.exercises, ofType: "json") else { return [] }
-        let url = URL(fileURLWithPath: musclesPath)
-        do {
-            let data = try Data(contentsOf: url)
-            let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-            
-            guard let exerciseArray = json as? [Any] else { return [] }
-            var allExercises = [MuscleExercisesModel]()
-            for muscleType in exerciseArray {
-                guard let muscleExercises = muscleType as? [String: Any] else { return [] }
-                guard let muscleName = muscleExercises["muscleName"] as? String,
-                      let exercisesList = muscleExercises["exercisesList"] as? [[String: Any]] else { return [] }
-                var exercises = [ExerciseModel]()
-                for exercise in exercisesList {
-                    guard let name = exercise["name"] as? String,
-                          let imageIcon = exercise["imageIcon"] as? String,
-                          let exerciseImage = exercise["imageIcon"] as? String,
-                          let descriptions = exercise["descriptions"] as? String,
-                          let exerciseType = exercise["exerciseType"] as? String,
-                          let equipment = exercise["equipment"] as? String,
-                          let level = exercise["level"] as? String else { return [] }
-                    exercises.append(ExerciseModel(name: name, imageIcon: imageIcon, exerciseImage: exerciseImage, descriptions: descriptions, exerciseType: ExerciseType(rawValue: exerciseType) ?? .powerlifting, equipment: Equipment(rawValue: equipment) ?? .bodyweight, level: Level(rawValue: level) ?? .beginner))
-                }
-                allExercises.append(MuscleExercisesModel(muscleName: muscleName, exerciseList: exercises))
-            }
-            return allExercises
-        } catch {
-            coordinator?.showPopUp(title: error.localizedDescription, type: .oneButton(PopUpButtonConfig(title: "Ok", type: .filled, action: nil)))
-        }
-        return []
-    }
-    
     func reset() {
         muscleExercises = muscleExercises?.map({ model in
             var newModel = model

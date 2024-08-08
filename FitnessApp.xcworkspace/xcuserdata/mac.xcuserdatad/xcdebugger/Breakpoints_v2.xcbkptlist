@@ -1054,7 +1054,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
             endingLineNumber = "81"
-            landmarkName = "numberOfSections(in:)"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1134,7 +1134,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "80"
             endingLineNumber = "80"
-            landmarkName = "numberOfSections(in:)"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1184,22 +1184,6 @@
             endingLineNumber = "25"
             landmarkName = "muscle"
             landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7DDEF735-E78C-4BDB-ADC3-52FFE22572BB"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FitnessApp/Application/Muscles/Cells/Header/MuscleHeaderView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "setCounterValue(_:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1358,7 +1342,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
             endingLineNumber = "106"
-            landmarkName = "tableView(_:viewForHeaderInSection:)"
+            landmarkName = "tableView(_:heightForHeaderInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

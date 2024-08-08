@@ -9,7 +9,7 @@ import UIKit
 
 final class MusclesViewController: BaseViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak private var tableView: UITableView!
     var viewModel: MusclesViewModel?
     
     override func viewDidLoad() {
@@ -119,7 +119,6 @@ extension MusclesViewController: ExerciseCellDelegate {
         let muscleName = viewModel?.muscleExercises?[index.section].muscleName else {
             return
         }
-        
         viewModel?.didSelectExercise(from: muscleName, name, selected: selected)
     }
 }

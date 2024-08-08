@@ -38,7 +38,6 @@ class ExerciseTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 6, left: 0, bottom: 6, right: 0))
     }
 }
 
@@ -65,8 +64,7 @@ private extension ExerciseTableViewCell {
         moreAboutButton.title = "More about"
         moreAboutButton.setFont(.lightNunito?.withSize(16))
         moreAboutButton.imageView?.image = .rightArrow
-        moreAboutButton.contentHorizontalAlignment = .left
-        moreAboutButton.contentMode = .left
+        moreAboutButton.configuration?.contentInsets = .zero
         
         selectedImageView.image = .selectedFilled
         selectedImageView.isHidden = true

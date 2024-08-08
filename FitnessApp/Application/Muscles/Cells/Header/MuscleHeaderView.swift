@@ -70,11 +70,7 @@ private extension MuscleHeaderView {
     }
     
     func setCounterValue(_ value: Int) {
-        if value > 0 {
-            counterLabel.isHidden = false
-            counterLabel.text = "\(value)"
-        } else {
-            counterLabel.isHidden = true
-        }
+        counterLabel.isHidden = !(value > 0)
+        counterLabel.text = "\(value)"
     }
 }

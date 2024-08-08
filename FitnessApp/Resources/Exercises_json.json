@@ -156,12 +156,7 @@
                 "exerciseType": "Powerlifting",
                 "equipment": "Barbell",
                 "level": "Experienced"
-            }
-        ]
-    },
-    {
-        "muscleName": "Quadriceps",
-        "exercisesList": [
+            },
             {
                 "name": "Lunges",
                 "imageIcon": "stopwatch",
