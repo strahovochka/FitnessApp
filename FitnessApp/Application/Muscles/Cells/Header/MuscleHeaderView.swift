@@ -9,7 +9,6 @@ import UIKit
 
 protocol HeaderViewDelegate: AnyObject {
     func toggleSection(header: MuscleHeaderView, section: Int)
-    func didSelectExercise(from muscle: String, _ name: String, selected: Bool)
 }
 
 class MuscleHeaderView: UITableViewHeaderFooterView {
@@ -77,12 +76,5 @@ private extension MuscleHeaderView {
         } else {
             counterLabel.isHidden = true
         }
-    }
-}
-
-extension MuscleHeaderView: ExerciseCellDelegate {
-    func didSelectExercise(_ name: String, selected: Bool) {
-        guard let muscleName = muscle?.muscleName else { return }
-        delegate?.didSelectExercise(from: muscleName, name, selected: selected)
     }
 }

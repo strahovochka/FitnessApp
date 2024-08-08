@@ -87,9 +87,7 @@ final class MusclesViewModel: UserDependentViewModel<MusclesCoordinator> {
             return newModel
         })
     }
-}
-
-extension MusclesViewModel: HeaderViewDelegate {
+    
     func didSelectExercise(from muscle: String, _ name: String, selected: Bool) {
         guard let muscleIndex = muscleExercises?.firstIndex(where: { $0.muscleName == muscle}),
               let exerciseIndex = muscleExercises?[muscleIndex].exerciseList.firstIndex(where: { $0.name == name}) else { return }
@@ -97,7 +95,9 @@ extension MusclesViewModel: HeaderViewDelegate {
         muscleExercises?[muscleIndex].count += selected ? 1 : -1
         self.onSelect?(muscleIndex)
     }
-    
+}
+
+extension MusclesViewModel: HeaderViewDelegate {
     func toggleSection(header: MuscleHeaderView, section: Int) {
         muscleExercises?[section].isCollapsed.toggle()
         self.reloadSection?(section)

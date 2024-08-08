@@ -18,9 +18,7 @@ final class MusclesViewController: BaseViewController {
         configTable()
         viewModel?.reloadSection = { [weak self] section in
             guard let self = self else { return }
-            self.tableView.beginUpdates()
-            self.tableView.reloadSections([section], with: .none)
-            self.tableView.endUpdates()
+            self.tableView.reloadSections([section], with: .automatic)
         }
         viewModel?.onSelect = { [weak self] section in
             guard let self = self else { return }
@@ -40,7 +38,7 @@ private extension MusclesViewController {
     func configTable() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.allowsMultipleSelection = true
+        tableView.allowsSelection = false
         tableView.showsVerticalScrollIndicator = false
         tableView.backgroundColor = .clear
         
@@ -59,9 +57,7 @@ private extension MusclesViewController {
     
     @objc func reset() {
         viewModel?.reset()
-        let range = NSMakeRange(0, self.tableView.numberOfSections)
-        let sections = NSIndexSet(indexesIn: range)
-        self.tableView.reloadSections(sections as IndexSet, with: .automatic)
+        self.tableView.reloadData()
         navigationItem.rightBarButtonItem = nil
     }
     
@@ -93,10 +89,9 @@ extension MusclesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.NibNames.exerciseCell, for: indexPath) as? ExerciseTableViewCell,
-              let exercise = viewModel?.muscleExercises?[indexPath.section].exerciseList[indexPath.row],
-              let headerView = tableView.headerView(forSection: indexPath.section) as? MuscleHeaderView else { return UITableViewCell() }
+              let exercise = viewModel?.muscleExercises?[indexPath.section].exerciseList[indexPath.row] else { return UITableViewCell() }
         cell.exercise = exercise
-        cell.delegate = headerView
+        cell.delegate = self
         return cell
     }
     
@@ -114,5 +109,17 @@ extension MusclesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         viewModel?.rowHeight ?? 0.0
+    }
+}
+
+
+extension MusclesViewController: ExerciseCellDelegate {
+    func didSelectExercise(_ name: String, selected: Bool, cell: ExerciseTableViewCell) {
+        guard let index = tableView.indexPath(for: cell),
+        let muscleName = viewModel?.muscleExercises?[index.section].muscleName else {
+            return
+        }
+        
+        viewModel?.didSelectExercise(from: muscleName, name, selected: selected)
     }
 }
