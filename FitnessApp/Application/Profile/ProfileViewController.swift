@@ -68,13 +68,6 @@ private extension ProfileViewController {
     }
     
     func configUI() {
-        profileImageView.backgroundColor = .primaryWhite.withAlphaComponent(0.3)
-        profileImageView.image = viewModel?.getProfileImage()
-        profileImageView.layer.cornerRadius = 8
-        profileImageView.layer.masksToBounds = true
-        profileImageView.contentMode = viewModel?.user.profileImage == nil ? .center : .scaleAspectFill
-        profileImageView.isUserInteractionEnabled = true
-        profileImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showPhotoOptions)))
         configImageView()
         nameTextField.labelTitle = viewModel?.textFieldData.title
         nameTextField.text = viewModel?.user.userName
@@ -91,12 +84,21 @@ private extension ProfileViewController {
     }
     
     func configImageView() {
+        profileImageView.layer.cornerRadius = 8
+        profileImageView.layer.masksToBounds = true
+        profileImageView.isUserInteractionEnabled = true
+        profileImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showPhotoOptions)))
         if let profileImage = viewModel?.userPhoto {
             profileImageView.image = profileImage
             profileImageView.backgroundColor = .clear
             profileImageView.contentMode = .scaleAspectFill
             profileImageView.layer.borderWidth = 1
             profileImageView.layer.borderColor = UIColor.primaryYellow.cgColor
+        } else {
+            profileImageView.image = .editProfile
+            profileImageView.backgroundColor = .primaryWhite.withAlphaComponent(0.3)
+            profileImageView.contentMode = .center
+            profileImageView.layer.borderWidth = 0
         }
     }
     
