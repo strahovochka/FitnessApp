@@ -76,4 +76,20 @@ struct OptionModel: Codable, Hashable {
         guard let value = valueArray[position], let previousValue = valueArray[position - 1] else { return nil }
         return value - previousValue
     }
+    
+    func getDictionary() -> [String: Any] {
+        var data: [String: Any] = [:]
+        data["optionName"] = optionName.rawValue
+        data["valueArray"] = valueArray
+        if let changedValue = changedValue {
+            data["changedValue"] = changedValue
+        }
+        data["dateArray"] = dateArray
+        if let isShown = isShown {
+            data["isShown"] = isShown
+        } else {
+            data["isShown"] = true
+        }
+        return data
+    }
 }

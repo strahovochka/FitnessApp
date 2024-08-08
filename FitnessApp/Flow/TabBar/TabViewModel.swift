@@ -61,7 +61,7 @@ enum TabBarItem: Int, CaseIterable {
         case .calculator:
             return CalculatorCoordinator(navigationController: UINavigationController())
         case .muscles:
-            return MusclesCoordinator(navigationController: UINavigationController())
+            return MusclesCoordinator(navigationController: UINavigationController(), user: user)
         }
     }
 }

@@ -26,6 +26,14 @@ extension UIFont {
     static let condensedExtraBoldFutura = UIFont(name: "Futura-CondensedExtraBold", size: 16)
     //Gilroy
     static let regularGilroy = UIFont(name: "Gilroy-Semibold", size: 16)
+    //Nunito family
+    static let regularNunito = UIFont(name: "Nunito-Regular", size: 16)
+    static let extraLightNunito = UIFont(name: "Nunito-ExtraLight", size: 16)
+    static let lightNunito = UIFont(name: "Nunito-Light", size: 16)
+    static let mediumNunito = UIFont(name: "Nunito-Medium", size: 16)
+    static let semiboldNunito = UIFont(name: "Nunito-SemiBold", size: 16)
+    static let boldNunito = UIFont(name: "Nunito-Bold", size: 16)
+    static let extraBoldNunito = UIFont(name: "Nunito-ExtraBold", size: 16)
 }
 
 extension UIFont {

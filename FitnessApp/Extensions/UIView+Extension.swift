@@ -27,5 +27,14 @@ extension UIView {
         overlay.alpha = alpha
         addSubview(overlay)
     }
+    
+    func animateRotation(by angle: CGFloat, duration: CFTimeInterval = 0.2) {
+        let animation = CABasicAnimation(keyPath: "transform.rotation")
+        animation.toValue = angle
+        animation.duration = duration
+        animation.isRemovedOnCompletion = false
+        animation.fillMode = .forwards
+        self.layer.add(animation, forKey: "transform.rotation")
+    }
 }
 

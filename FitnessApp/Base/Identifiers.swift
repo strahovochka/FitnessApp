@@ -32,5 +32,11 @@ enum Identifiers {
         static let optionCollectionCell = "OptionCollectionViewCell"
         static let progressTableCell = "ProgressTableViewCell"
         static let chartBarCollectionCell = "BarCollectionViewCell"
+        static let muscleHeader = "MuscleHeaderView"
+        static let exerciseCell = "ExerciseTableViewCell"
+    }
+    
+    enum FileNames {
+        static let exercises = "Exercises_json"
     }
 }

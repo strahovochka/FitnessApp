@@ -34,6 +34,9 @@ extension UIImage {
     static let backIcon = UIImage(named: "backIcon")
     static let successIcon = UIImage(named: "successIcon")
     static let errorIcon = UIImage(named: "errorIcon")
+    static let expandArrow = UIImage(named: "expandArrow")
+    static let rightArrow = UIImage(named: "rightArrow")
+    static let selectedFilled = UIImage(named: "selectedFilled")
     
     //Placeholders
     static let profileImage = UIImage(named: "profileImage")

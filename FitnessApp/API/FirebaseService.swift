@@ -10,8 +10,6 @@ import FirebaseCore
 import FirebaseAuth
 import FirebaseFirestore
 
-//TODO: -Make an adapter for firebase data
-
 class FirebaseService: NSObject {
     
     private enum ErrorType: String {
@@ -128,24 +126,18 @@ class FirebaseService: NSObject {
         }
     }
     
-    //TODO: update only changed fields
-    func updateUser(_ user: UserModel, completition: @escaping (Response<Bool>) -> ()) {
-        if let _ = currentUser {
-            do {
-                try firestore
-                    .collection("users")
-                    .document(user.id)
-                    .setData(from: user) { error in
-                        if let error = error {
-                            completition(.failure(error.localizedDescription))
-                            return
-                        }
-                        completition(.success(true))
+    func updateUser(_ data: [String: Any], completition: @escaping (Response<Bool>) -> ()) {
+        if let user = currentUser {
+            firestore
+                .collection("users")
+                .document(user.uid)
+                .setData(data, mergeFields: Array(data.keys)) { error in
+                    if let error = error {
+                        completition(.failure(error.localizedDescription))
+                        return
                     }
-            } catch {
-                completition(.failure(error.localizedDescription))
-            }
-            
+                    completition(.success(true))
+                }
         } else {
             completition(.failure(ErrorType.noCurrentUser.rawValue))
         }

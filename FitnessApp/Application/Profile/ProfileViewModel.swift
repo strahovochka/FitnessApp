@@ -118,7 +118,7 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
     
     //MARK: -Upload method
     func uploadChanges() {
-        FirebaseService.shared.updateUser(updatedUser) { [weak self] response in
+        FirebaseService.shared.updateUser(user.getChangedFields(from: updatedUser)) { [weak self] response in
             guard let self = self else { return }
             let buttonConfig = PopUpButtonConfig(title: "Ok", type: .filled, action: nil)
             switch response {
@@ -148,7 +148,10 @@ final class ProfileViewModel: BaseViewModel<ProfileCoordinator> {
     }
     
     func showImagePickerOptions(delegate: (UIImagePickerControllerDelegate & UINavigationControllerDelegate)) {
-        coordinator?.showImagePickerOptions(delegate: delegate)
+        coordinator?.showImagePickerOptions(delegate: delegate) { [weak self] in
+            guard let self = self else { return }
+            self.userPhoto = nil
+        }
     }
     
     func goToOptions(delegate: OptionsPopUpDelegate, with selectedOptions: [OptionDataName]) {

@@ -38,7 +38,7 @@ extension Coordinator {
     }
     
     
-    func showImagePickerOptions(delegate: (UIImagePickerControllerDelegate & UINavigationControllerDelegate)) {
+    func showImagePickerOptions(delegate: (UIImagePickerControllerDelegate & UINavigationControllerDelegate), deletePhotoAction: @escaping () -> ()) {
         let alertVC = UIAlertController(title: "Pick a profile photo", message: "Choose a picture from gallery or camera", preferredStyle: .actionSheet)
         let cameraAction = UIAlertAction(title: "Camera", style: .default) { [weak self] action in
             guard let self = self else { return }
@@ -55,6 +55,7 @@ extension Coordinator {
             }
             
         }
+        
         let libraryAction = UIAlertAction(title: "Library", style: .default) { [weak self] action in
             guard let self = self else { return }
             PHPhotoLibrary.requestAuthorization(for: .readWrite) { status in
@@ -69,11 +70,15 @@ extension Coordinator {
                 }
             }
         }
-        //TODO: -Add delete photo action
+        
+        let deletePhotoAction = UIAlertAction(title: "Delete photo", style: .default) { _  in
+            deletePhotoAction()
+        }
         
         let cancelAtion = UIAlertAction(title: "Cancel", style: .cancel)
         alertVC.addAction(cameraAction)
         alertVC.addAction(libraryAction)
+        alertVC.addAction(deletePhotoAction)
         alertVC.addAction(cancelAtion)
         self.navigationController.present(alertVC, animated: true)
     }
