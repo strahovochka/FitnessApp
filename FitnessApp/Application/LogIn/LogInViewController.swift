@@ -33,10 +33,8 @@ private extension LogInViewController {
         subtitle.font = .regularSaira?.withSize(24)
         if let viewModel = viewModel {
             for (index, data) in viewModel.textFieldsData.enumerated() {
-                textFields[index].labelTitle = data.title
-                textFields[index].placeholderText = data.placeholderText
+                textFields[index].setType(data)
                 textFields[index].errorChecker = data.getErrorChecker()
-                textFields[index].tag = data.rawValue
                 textFields[index].delegate = viewModel
             }
         }

@@ -8,7 +8,7 @@
 import UIKit
 
 final class TabCoordinator: NSObject, Coordinator {
-    var childCoordinators: [Coordinator] = []
+    
     var navigationController: UINavigationController
     let user: UserModel?
     

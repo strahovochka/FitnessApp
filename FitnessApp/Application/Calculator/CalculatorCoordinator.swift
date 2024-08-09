@@ -8,7 +8,7 @@
 import UIKit
 
 final class CalculatorCoordinator: Coordinator {
-    var childCoordinators: [Coordinator] = []
+    
     
     var navigationController: UINavigationController
     

@@ -10,5 +10,6 @@ platform :ios, '15.0'
 pod 'FirebaseAuth'
 pod 'FirebaseFirestore'
 pod 'FirebaseCore'
+pod 'ReadMoreTextView'
 
 end

@@ -9,7 +9,7 @@ import UIKit
 
 class BaseViewModel<T: Coordinator> {
     
-    weak var coordinator: T?
+    var coordinator: T?
     
     func imagePicker(sourceType: UIImagePickerController.SourceType) -> UIImagePickerController {
         let imagePicker = UIImagePickerController()

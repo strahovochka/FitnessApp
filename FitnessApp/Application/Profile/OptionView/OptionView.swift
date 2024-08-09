@@ -29,6 +29,7 @@ final class OptionView: UIView {
     func config(with option: OptionModel, updateAction: ((OptionModel) -> ())?) {
         model = option
         optionSwitch.isOn = option.isShown ?? true
+        
         if let lastElement = option.valueArray.last {
             if let value = lastElement {
                 textField.text = String(value)
@@ -46,8 +47,8 @@ final class OptionView: UIView {
             guard let value = Double(text) else { return true }
             return !(value >= option.optionName.minValue && value <= option.optionName.maxValue)
         }
-        textField.setTextFieldDelegate(self)
         textField.delegate = self
+        textField.keyboardType = .decimalPad
         unitLabel.text = option.optionName.metricValue
         self.updateAction = updateAction
     }
@@ -74,14 +75,6 @@ final class OptionView: UIView {
     func checkForError() -> Bool {
         textField.checkForError()
         return textField.getState() == .error
-    }
-}
-
-extension OptionView: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let allowedCharacters = CharacterSet.decimalDigits
-        let characterSet = CharacterSet(charactersIn: string)
-        return allowedCharacters.isSuperset(of: characterSet)
     }
 }
 

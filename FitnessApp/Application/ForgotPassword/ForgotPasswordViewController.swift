@@ -27,22 +27,26 @@ final class ForgotPasswordViewController: BaseViewController {
 
 private extension ForgotPasswordViewController {
     func configUI() {
+        guard let viewModel = viewModel else { return }
         mainTitleLabel.font = .boldFutura?.withSize(32)
-        mainTitleLabel.text = viewModel?.title
+        mainTitleLabel.text = viewModel.title
+        
         subtitleLabel.font = .regularSaira?.withSize(24)
-        subtitleLabel.text = viewModel?.subtitle
-        emailTextField.labelTitle = viewModel?.field.title
-        emailTextField.placeholderText = viewModel?.field.placeholderText
-        emailTextField.errorChecker = viewModel?.field.getErrorChecker()
+        subtitleLabel.text = viewModel.subtitle
+        
+        emailTextField.setType(viewModel.field)
+        emailTextField.errorChecker = viewModel.field.getErrorChecker()
         emailTextField.delegate = viewModel
-        emailTextField.tag = viewModel?.field.rawValue ?? TextFieldType.email.rawValue
+        
         explanationTextLabel.font = .lightSaira?.withSize(16)
         explanationTextLabel.numberOfLines = 0
-        explanationTextLabel.text = viewModel?.explanationText
+        explanationTextLabel.text = viewModel.explanationText
+        
         continueButton.setType(.filled)
-        continueButton.title = viewModel?.continueButtonText
+        continueButton.title = viewModel.continueButtonText
+        
         backToLoginButton.setType(.unfilled)
-        backToLoginButton.title = viewModel?.backToLoginButtonText
+        backToLoginButton.title = viewModel.backToLoginButtonText
     }
     
     @IBAction func backToLoginButtonPressed(_ sender: Any) {

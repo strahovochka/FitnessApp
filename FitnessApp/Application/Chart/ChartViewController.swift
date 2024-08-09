@@ -14,16 +14,15 @@ final class ChartViewController: BaseViewController {
     @IBOutlet weak private var chartDescriptionLabel: UILabel!
     var viewModel: ChartViewModel?
     
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         removeBackground()
+        showNavigationBar(backButtonEnabled: true)
         configUI()
-    }
-    
-    override func customizeNavBar() {
-        super.customizeNavBar()
-        customizeBackButton()
-        self.title = viewModel?.navigationTitle
     }
     
     override func viewDidLayoutSubviews() {
@@ -33,25 +32,21 @@ final class ChartViewController: BaseViewController {
 }
 
 private extension ChartViewController {
-    func removeBackground() {
-        view.subviews.forEach { view in
-            guard let view = view as? UIImageView else { return }
-            view.removeFromSuperview()
-        }
-    }
     
     func configUI() {
+        self.title = viewModel?.navigationTitle
         self.view.backgroundColor = .primaryBlack
+        
         optionNameLabel.text = viewModel?.mainTitle
         optionNameLabel.font = .regularSaira?.withSize(24)
         optionNameLabel.textColor = .primaryWhite
         optionNameLabel.textAlignment = .center
+        
         chartDescriptionLabel.text = viewModel?.dateTitle
         chartDescriptionLabel.font = .mediumSaira?.withSize(24)
         chartDescriptionLabel.textColor = .secondaryGray
         chartDescriptionLabel.textAlignment = .center
         chartDescriptionLabel.numberOfLines = 0
-        
     }
 }
 

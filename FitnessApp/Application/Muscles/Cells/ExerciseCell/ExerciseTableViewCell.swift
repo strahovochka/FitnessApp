@@ -26,6 +26,7 @@ class ExerciseTableViewCell: UITableViewCell {
             configSelectedState(for: exercise?.isSelected ?? false)
         }
     }
+    var moreAboutAction: ((_ cell: ExerciseTableViewCell) -> ())?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -65,6 +66,7 @@ private extension ExerciseTableViewCell {
         moreAboutButton.setFont(.lightNunito?.withSize(16))
         moreAboutButton.imageView?.image = .rightArrow
         moreAboutButton.configuration?.contentInsets = .zero
+        moreAboutButton.addTarget(self, action: #selector(moreAboutButtonPressed), for: .touchUpInside)
         
         selectedImageView.image = .selectedFilled
         selectedImageView.isHidden = true
@@ -72,9 +74,13 @@ private extension ExerciseTableViewCell {
     
     func configWithExercise() {
         guard let exercise = exercise else { return }
-        exerciseImageView.image = UIImage(named: exercise.imageIcon)
+        if let exerciseIcon = exercise.imageIcon {
+            exerciseImageView.image = exerciseIcon
+        } else {
+            exerciseImageView.image = .exerciseIcon
+        }
         exerciseNameLabel.text = exercise.name
-        characteristictsLabel.text = [exercise.equipment.rawValue, exercise.level.rawValue, exercise.exerciseType.rawValue].joined(separator: ", ")
+        characteristictsLabel.text = exercise.getCharacteristics()
     }
     
     func configSelectedState(for isSelected: Bool) {
@@ -92,5 +98,9 @@ private extension ExerciseTableViewCell {
         guard let _ = exercise else { return }
         self.exercise?.isSelected.toggle()
         delegate?.didSelectExercise(selected: self.exercise?.isSelected ?? false, cell: self)
+    }
+    
+    @objc func moreAboutButtonPressed() {
+        moreAboutAction?(self)
     }
 }

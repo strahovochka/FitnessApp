@@ -8,13 +8,17 @@
 import UIKit
 
 //TODO: -Make style for different ui elements
-struct Style {
+class Style {
     static func customizeNavBar() {
-        UINavigationBar.appearance().tintColor = .primaryYellow
-        let buttonAppearance = UIBarButtonItemAppearance(style: .plain)
-        buttonAppearance.normal.titleTextAttributes = [
-            .foregroundColor: UIColor.primaryYellow,
-            .font: UIFont.regularSaira?.withSize(18) ?? .systemFont(ofSize: 18)
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.configureWithOpaqueBackground()
+        navigationBarAppearance.titleTextAttributes = [
+            .foregroundColor : UIColor.primaryWhite,
+            .font: UIFont.mediumSaira?.withSize(18) ?? .systemFont(ofSize: 18)
         ]
+        navigationBarAppearance.backgroundColor = .clear
+        UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+        UINavigationBar.appearance().compactAppearance = navigationBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
     }
 }

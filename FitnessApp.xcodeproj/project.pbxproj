@@ -119,6 +119,10 @@
 		04FC59322C63C06500C446B0 /* Nunito.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04FC59312C63C06500C446B0 /* Nunito.ttf */; };
 		04FC59352C64DA9800C446B0 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC59342C64DA9800C446B0 /* JSONParser.swift */; };
 		04FC59372C64E68500C446B0 /* HidableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC59362C64E68400C446B0 /* HidableTableViewCell.swift */; };
+		04FC593A2C660B3800C446B0 /* ExerciseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC59392C660B3800C446B0 /* ExerciseCoordinator.swift */; };
+		04FC593C2C660B4300C446B0 /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC593B2C660B4300C446B0 /* ExerciseViewModel.swift */; };
+		04FC593E2C660B5100C446B0 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC593D2C660B5100C446B0 /* ExerciseViewController.swift */; };
+		04FC59402C660B5E00C446B0 /* Exercise.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FC593F2C660B5E00C446B0 /* Exercise.storyboard */; };
 		B8E11BE2FD8050028CEA67CB /* Pods_FitnessApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0902B889C75A077F3D449C56 /* Pods_FitnessApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -237,6 +241,10 @@
 		04FC59312C63C06500C446B0 /* Nunito.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Nunito.ttf; sourceTree = "<group>"; };
 		04FC59342C64DA9800C446B0 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		04FC59362C64E68400C446B0 /* HidableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HidableTableViewCell.swift; sourceTree = "<group>"; };
+		04FC59392C660B3800C446B0 /* ExerciseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCoordinator.swift; sourceTree = "<group>"; };
+		04FC593B2C660B4300C446B0 /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
+		04FC593D2C660B5100C446B0 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
+		04FC593F2C660B5E00C446B0 /* Exercise.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exercise.storyboard; sourceTree = "<group>"; };
 		0902B889C75A077F3D449C56 /* Pods_FitnessApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitnessApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A74D7DEB44DD191C5A36C4E7 /* Pods-FitnessApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitnessApp.debug.xcconfig"; path = "Target Support Files/Pods-FitnessApp/Pods-FitnessApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C5E5F5AFB502649A631232E0 /* Pods-FitnessApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitnessApp.release.xcconfig"; path = "Target Support Files/Pods-FitnessApp/Pods-FitnessApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -294,7 +302,6 @@
 				041175DF2C3A8D6D00059052 /* MusclesViewModel.swift */,
 				041175E12C3A8D7900059052 /* MusclesCoordinator.swift */,
 				041175E32C3A8D8300059052 /* Muscles.storyboard */,
-				04FC59242C639ED700C446B0 /* ExerciseModel.swift */,
 			);
 			path = Muscles;
 			sourceTree = "<group>";
@@ -372,6 +379,15 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		043F42462C6618430022310F /* JSONParser */ = {
+			isa = PBXGroup;
+			children = (
+				04FC59242C639ED700C446B0 /* ExerciseModel.swift */,
+				04FC59342C64DA9800C446B0 /* JSONParser.swift */,
+			);
+			path = JSONParser;
+			sourceTree = "<group>";
+		};
 		044E85512C3F395200E0916D /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -421,6 +437,7 @@
 		046B12482C30BA480095ECC7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				04FC59382C660B2500C446B0 /* Exercise */,
 				04D082812C5D56CC000023A9 /* DeleteAccount */,
 				042DF4BD2C5A8E8E004436DD /* Chart */,
 				04D2F1922C510CA700F85ED9 /* OptionsPopUp */,
@@ -667,9 +684,20 @@
 		04FC59332C64DA8400C446B0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				04FC59342C64DA9800C446B0 /* JSONParser.swift */,
+				043F42462C6618430022310F /* JSONParser */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		04FC59382C660B2500C446B0 /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				04FC59392C660B3800C446B0 /* ExerciseCoordinator.swift */,
+				04FC593B2C660B4300C446B0 /* ExerciseViewModel.swift */,
+				04FC593D2C660B5100C446B0 /* ExerciseViewController.swift */,
+				04FC593F2C660B5E00C446B0 /* Exercise.storyboard */,
+			);
+			path = Exercise;
 			sourceTree = "<group>";
 		};
 		33A51D1B8FDF0F25A4EF65A3 /* Frameworks */ = {
@@ -759,6 +787,7 @@
 				0435DB182C43CFED00D66FB1 /* LogIn.storyboard in Resources */,
 				04D356452C46A3C00087859F /* GoogleService-Info.plist in Resources */,
 				046B123E2C3084BF0095ECC7 /* Assets.xcassets in Resources */,
+				04FC59402C660B5E00C446B0 /* Exercise.storyboard in Resources */,
 				04D082892C5D585E000023A9 /* DeleteAccount.storyboard in Resources */,
 				046B12572C30C2690095ECC7 /* Home.storyboard in Resources */,
 				042DF49D2C51426E004436DD /* OptionView.xib in Resources */,
@@ -840,6 +869,7 @@
 				043C42B22C4BB10200FCF502 /* ProfileViewController.swift in Sources */,
 				04D082802C5D037A000023A9 /* CALayer+Extension.swift in Sources */,
 				042535632C39F36300FE9611 /* SplashCoordinator.swift in Sources */,
+				04FC593A2C660B3800C446B0 /* ExerciseCoordinator.swift in Sources */,
 				042DF4992C514183004436DD /* OptionView.swift in Sources */,
 				042DF4B22C57DB81004436DD /* Date+Extension.swift in Sources */,
 				04F3C5512C3D3185000E14C7 /* TabViewModel.swift in Sources */,
@@ -873,6 +903,7 @@
 				042DF4BF2C5A8EA3004436DD /* ChartViewController.swift in Sources */,
 				04F3C55B2C3D3BFD000E14C7 /* BaseViewModel.swift in Sources */,
 				04FC59212C6291E100C446B0 /* UserDependentViewModel.swift in Sources */,
+				04FC593E2C660B5100C446B0 /* ExerciseViewController.swift in Sources */,
 				04FC59282C63A6B600C446B0 /* MuscleHeaderView.swift in Sources */,
 				041175F62C3B3CC600059052 /* FirebaseService.swift in Sources */,
 				04E5AAC52C51182500DA61C7 /* AdjustableTableView.swift in Sources */,
@@ -887,6 +918,7 @@
 				04FC59252C639ED700C446B0 /* ExerciseModel.swift in Sources */,
 				04D3564C2C46A4D20087859F /* ForgotPasswordViewController.swift in Sources */,
 				046B126F2C35FD9B0095ECC7 /* PlainButton.swift in Sources */,
+				04FC593C2C660B4300C446B0 /* ExerciseViewModel.swift in Sources */,
 				046B12592C30C2770095ECC7 /* HomeCoordinator.swift in Sources */,
 				04C17A2F2C47D18000B929B9 /* PopUpViewController.swift in Sources */,
 				04D082872C5D5776000023A9 /* DeleteAccountViewController.swift in Sources */,

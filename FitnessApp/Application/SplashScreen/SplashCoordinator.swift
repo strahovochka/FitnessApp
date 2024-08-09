@@ -8,7 +8,7 @@
 import UIKit
 
 final class SplashCoordinator: Coordinator {
-    var childCoordinators: [Coordinator] = []
+    
     
     var navigationController: UINavigationController
     
@@ -26,7 +26,6 @@ final class SplashCoordinator: Coordinator {
     
     func navigateToTabBar() {
         let tabBarCoordinator = TabCoordinator(navigationController)
-        childCoordinators.append(tabBarCoordinator)
         tabBarCoordinator.start()
     }
 }

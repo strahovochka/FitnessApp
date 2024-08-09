@@ -9,7 +9,7 @@ import UIKit
 
 final class RegistrationCoordinator: Coordinator {
     
-    var childCoordinators: [Coordinator] = []
+    
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
@@ -26,13 +26,13 @@ final class RegistrationCoordinator: Coordinator {
     
     func navigateToSplashScreen() {
         let child = SplashCoordinator(navigationController: navigationController)
-        childCoordinators.append(child)
+        
         child.start()
     }
     
     func navigateToLogIn() {
         let child = LogInCoordinator(navigationController: navigationController)
-        childCoordinators.append(child)
+        
         child.start()
     }
 }

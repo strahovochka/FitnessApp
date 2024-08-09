@@ -8,7 +8,7 @@
 import UIKit
 
 final class ForgotPasswordCoodinator: Coordinator {
-    var childCoordinators: [Coordinator] = []
+    
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {

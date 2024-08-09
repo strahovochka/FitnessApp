@@ -13,12 +13,10 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
         setBackground()
-        customizeNavBar()
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
     }
     
     func setBackground(for sex: Sex = .male) {
@@ -37,6 +35,13 @@ class BaseViewController: UIViewController {
         }
     }
     
+    func removeBackground() {
+        view.subviews.forEach { view in
+            guard let view = view as? UIImageView else { return }
+            view.removeFromSuperview()
+        }
+    }
+    
     func createNavButton(text: String?, selector: Selector, isEnabled: Bool = true) -> UIBarButtonItem {
         let button = PlainButton(type: .unfilled)
         button.title = text
@@ -47,12 +52,11 @@ class BaseViewController: UIViewController {
         return barButton
     }
     
-    func customizeNavBar() {
+    func showNavigationBar(backButtonEnabled: Bool = false) {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-        self.navigationController?.navigationBar.titleTextAttributes = [
-            .font: UIFont.mediumSaira?.withSize(18) ?? .systemFont(ofSize: 18),
-            .foregroundColor: UIColor.primaryWhite
-        ]
+        if backButtonEnabled {
+            customizeBackButton()
+        }
     }
     
     func customizeBackButton() {
@@ -78,5 +82,9 @@ private extension BaseViewController {
     
     @objc func backAction() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func hideKeyboard() {
+        self.view.endEditing(true)
     }
 }

@@ -20,7 +20,7 @@ final class PopUpCoordinator: Coordinator {
         case twoButtons((leftButton: PopUpButtonConfig, rightButton: PopUpButtonConfig))
     }
     
-    var childCoordinators: [Coordinator] = []
+    
     var navigationController: UINavigationController
     let message: String
     let type: ViewType
