@@ -50,8 +50,10 @@
 		043C42B02C4BB0F500FCF502 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C42AF2C4BB0F500FCF502 /* ProfileViewModel.swift */; };
 		043C42B22C4BB10200FCF502 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C42B12C4BB10200FCF502 /* ProfileViewController.swift */; };
 		043C42B42C4BB10B00FCF502 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043C42B32C4BB10B00FCF502 /* Profile.storyboard */; };
+		043F42482C6648660022310F /* UITapGestureRecognizer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F42472C6648660022310F /* UITapGestureRecognizer+Extension.swift */; };
 		044E854E2C3E6A1300E0916D /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E854D2C3E6A1300E0916D /* Identifiers.swift */; };
 		044E85502C3F38EA00E0916D /* RegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E854F2C3F38EA00E0916D /* RegistrationModel.swift */; };
+		045C559E2C6921AD002F3731 /* UILable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045C559D2C6921AD002F3731 /* UILable+Extension.swift */; };
 		046B12352C3084BD0095ECC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12342C3084BD0095ECC7 /* AppDelegate.swift */; };
 		046B12372C3084BD0095ECC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12362C3084BD0095ECC7 /* SceneDelegate.swift */; };
 		046B123E2C3084BF0095ECC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 046B123D2C3084BF0095ECC7 /* Assets.xcassets */; };
@@ -170,8 +172,10 @@
 		043C42AF2C4BB0F500FCF502 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		043C42B12C4BB10200FCF502 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		043C42B32C4BB10B00FCF502 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		043F42472C6648660022310F /* UITapGestureRecognizer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+Extension.swift"; sourceTree = "<group>"; };
 		044E854D2C3E6A1300E0916D /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
 		044E854F2C3F38EA00E0916D /* RegistrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationModel.swift; sourceTree = "<group>"; };
+		045C559D2C6921AD002F3731 /* UILable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILable+Extension.swift"; sourceTree = "<group>"; };
 		046B12312C3084BD0095ECC7 /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		046B12342C3084BD0095ECC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		046B12362C3084BD0095ECC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -515,6 +519,8 @@
 				042DF4C62C5AD5B1004436DD /* Int+Extension.swift */,
 				04D082752C5BBB61000023A9 /* CollectionView+Extension.swift */,
 				04D0827F2C5D037A000023A9 /* CALayer+Extension.swift */,
+				043F42472C6648660022310F /* UITapGestureRecognizer+Extension.swift */,
+				045C559D2C6921AD002F3731 /* UILable+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -879,6 +885,7 @@
 				046B128D2C36D3630095ECC7 /* UIFont+Extension.swift in Sources */,
 				0435DB142C43CFD300D66FB1 /* LogInCoordinator.swift in Sources */,
 				044E854E2C3E6A1300E0916D /* Identifiers.swift in Sources */,
+				045C559E2C6921AD002F3731 /* UILable+Extension.swift in Sources */,
 				043C42B02C4BB0F500FCF502 /* ProfileViewModel.swift in Sources */,
 				042DF4A42C542744004436DD /* Double+Extensions.swift in Sources */,
 				04FC59372C64E68500C446B0 /* HidableTableViewCell.swift in Sources */,
@@ -933,6 +940,7 @@
 				0435DB162C43CFE200D66FB1 /* LogInViewController.swift in Sources */,
 				04CE3E8B2C4EF37A00A0C121 /* Style.swift in Sources */,
 				04F3C55E2C3D3EE1000E14C7 /* RegitstrationCoordinator.swift in Sources */,
+				043F42482C6648660022310F /* UITapGestureRecognizer+Extension.swift in Sources */,
 				04D3564A2C46A4C40087859F /* ForgotPasswordCoodinator.swift in Sources */,
 				04D2F1962C510CCB00F85ED9 /* OptionsPopUpCoordinator.swift in Sources */,
 				046B12792C3602910095ECC7 /* UIImage+Extension.swift in Sources */,

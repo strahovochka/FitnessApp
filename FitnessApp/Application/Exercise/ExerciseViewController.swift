@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import ReadMoreTextView
 
 final class ExerciseViewController: BaseViewController {
     
@@ -14,8 +13,8 @@ final class ExerciseViewController: BaseViewController {
     @IBOutlet weak private var iconImageView: UIImageView!
     @IBOutlet weak private var exerciseNameLabel: UILabel!
     @IBOutlet weak private var characteristicsLabel: UILabel!
-    @IBOutlet weak private var descriptionText: ReadMoreTextView!
-
+    @IBOutlet weak private var descriptionText: UILabel!
+    
     var viewModel: ExerciseViewModel?
 
     override func viewDidLoad() {
@@ -41,22 +40,25 @@ private extension ExerciseViewController {
         characteristicsLabel.textColor = .primaryYellow
         characteristicsLabel.numberOfLines = 0
         
+        descriptionText.numberOfLines = 4
+        descriptionText.isUserInteractionEnabled = true
         descriptionText.font = .lightSaira
         descriptionText.textColor = .secondaryGray
-        descriptionText.backgroundColor = .clear
-        descriptionText.shouldTrim = true
-        descriptionText.maximumNumberOfLines = 4
-        let attributedShowMoreString = NSAttributedString(string: viewModel?.showMoreText ?? "", attributes: [
-            .font: UIFont.lightSaira ?? .systemFont(ofSize: 16),
-            .foregroundColor: UIColor.primaryYellow
-        ])
-        descriptionText.attributedReadMoreText = attributedShowMoreString
         
         guard let exercise = viewModel?.exercise else { return }
         exerciseImageView.image = exercise.exerciseImage
         iconImageView.image = exercise.imageIcon
         exerciseNameLabel.text = exercise.name
         characteristicsLabel.text = exercise.getCharacteristics()
-        descriptionText.text = exercise.descriptions
+        descriptionText.addExpandingText(viewModel?.showMoreText ?? "", after: exercise.descriptions)
+        descriptionText.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showMorePressed(_:))))
+    }
+    
+    @objc func showMorePressed(_ gesture: UITapGestureRecognizer) {
+        guard let text = descriptionText.text, let viewModel = viewModel else { return }
+        let targetRange = (text as NSString).range(of: viewModel.showMoreText)
+        if gesture.didTap(label: descriptionText, inRange: targetRange) {
+            descriptionText.expand(with: viewModel.exercise.descriptions)
+        }
     }
 }
