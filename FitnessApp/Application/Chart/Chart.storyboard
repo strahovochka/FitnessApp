@@ -50,7 +50,9 @@
                     </view>
                     <connections>
                         <outlet property="barChart" destination="qRJ-Lj-xsQ" id="Aiy-Ah-weS"/>
+                        <outlet property="chartBottomOffset" destination="Hfk-CX-6mq" id="aVq-GE-VDW"/>
                         <outlet property="chartDescriptionLabel" destination="OaP-Ib-P7E" id="H8C-ej-Iqo"/>
+                        <outlet property="chartTopOffset" destination="61T-6v-eP4" id="KxF-WU-4FO"/>
                         <outlet property="optionNameLabel" destination="T0j-Y6-Y6c" id="PaA-77-3iO"/>
                     </connections>
                 </viewController>
