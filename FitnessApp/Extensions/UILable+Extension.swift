@@ -28,13 +28,10 @@ extension UILabel {
     
     func addExpandingText(_ expandingText: String, after text: String) {
         var expandableText = text
-        if numberOfVisibleLines(of: expandableText) > self.numberOfLines {
-            var truncatedText = text.components(separatedBy: " ")
-            while numberOfVisibleLines(of: expandableText) > self.numberOfLines {
-                truncatedText.popLast()
-                expandableText = truncatedText.joined(separator: " ") + expandingText
-            }
-            expandableText = truncatedText.joined(separator: " ").dropLast(expandingText.count) + expandingText
+        var truncatedText = text
+        while numberOfVisibleLines(of: expandableText) > self.numberOfLines {
+            truncatedText.popLast()
+            expandableText = truncatedText + expandingText
         }
         self.text = expandableText
         highlight(text: expandingText)

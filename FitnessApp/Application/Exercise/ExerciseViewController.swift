@@ -40,16 +40,22 @@ private extension ExerciseViewController {
         characteristicsLabel.textColor = .primaryYellow
         characteristicsLabel.numberOfLines = 0
         
-        descriptionText.numberOfLines = 4
-        descriptionText.isUserInteractionEnabled = true
-        descriptionText.font = .lightSaira
-        descriptionText.textColor = .secondaryGray
-        
         guard let exercise = viewModel?.exercise else { return }
         exerciseImageView.image = exercise.exerciseImage
         iconImageView.image = exercise.imageIcon
         exerciseNameLabel.text = exercise.name
         characteristicsLabel.text = exercise.getCharacteristics()
+        addExpandableText()
+    }
+    
+    func addExpandableText() {
+        descriptionText.numberOfLines = 4
+        descriptionText.isUserInteractionEnabled = true
+        descriptionText.font = .lightSaira
+        descriptionText.textColor = .secondaryGray
+        self.view.layoutIfNeeded()
+        
+        guard let exercise = viewModel?.exercise else { return }
         descriptionText.addExpandingText(viewModel?.showMoreText ?? "", after: exercise.descriptions)
         descriptionText.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showMorePressed(_:))))
     }
