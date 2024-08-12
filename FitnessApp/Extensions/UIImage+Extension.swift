@@ -41,6 +41,7 @@ extension UIImage {
     //Placeholders
     static let profileImage = UIImage(named: "profileImage")
     static let editProfile = UIImage(named: "editProfileImage")
+    static let exerciseIcon = UIImage(named: "exerciseIcon")
 }
 
 extension UIImage {

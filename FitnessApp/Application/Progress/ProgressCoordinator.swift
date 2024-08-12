@@ -8,7 +8,7 @@
 import UIKit
 
 final class ProgressCoordinator: Coordinator {
-    var childCoordinators: [Coordinator] = []
+    
     var navigationController: UINavigationController
     let user: UserModel?
     
@@ -27,7 +27,6 @@ final class ProgressCoordinator: Coordinator {
     
     func navigateToChart(for option: OptionModel) {
         let child = ChartCoordinator(navigationController: navigationController, option: option)
-        childCoordinators.append(child)
         child.start()
     }
 }

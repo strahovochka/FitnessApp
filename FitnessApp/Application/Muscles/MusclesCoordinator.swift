@@ -8,7 +8,7 @@
 import UIKit
 
 final class MusclesCoordinator: Coordinator {
-    var childCoordinators: [Coordinator] = []
+    
     var navigationController: UINavigationController
     let user: UserModel?
     
@@ -23,5 +23,10 @@ final class MusclesCoordinator: Coordinator {
         viewModel.coordinator = self
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToExercise(with exercise: ExerciseModel) {
+        let child = ExerciseCoordinator(navigationController: navigationController, exercise: exercise)
+        child.start()
     }
 }

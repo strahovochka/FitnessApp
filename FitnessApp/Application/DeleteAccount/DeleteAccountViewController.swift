@@ -22,24 +22,20 @@ final class DeleteAccountViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackground(for: viewModel?.user.getSex() ?? .male)
+        showNavigationBar(backButtonEnabled: true)
         configUI()
         viewModel?.disableDelete = { [weak self] isTrue in
             guard let self = self else { return }
             self.deleteButton.isActive = !isTrue
         }
     }
-    
-    override func customizeNavBar() {
-        super.customizeNavBar()
-        self.title = viewModel?.navigationTitle
-        customizeBackButton()
-    }
 }
 
 private extension DeleteAccountViewController {
     func configUI() {
-        textField.labelTitle = viewModel?.fieldType.title
-        textField.placeholderText = viewModel?.fieldType.placeholderText
+        self.title = viewModel?.navigationTitle
+        
+        textField.setType(viewModel?.fieldType ?? .email)
         textField.errorChecker = viewModel?.emailChecker
         
         explanationLabel.numberOfLines = 0

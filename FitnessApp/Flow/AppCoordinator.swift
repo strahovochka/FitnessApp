@@ -48,19 +48,19 @@ class AppCoordinator: Coordinator {
     
     func registerFlow() {
         let child = RegistrationCoordinator(navigationController: navigationController)
-        childCoordinators.append(child)
+        
         child.start()
     }
     
     func splashFlow() {
         let child = SplashCoordinator(navigationController: navigationController)
-        childCoordinators.append(child)
+        
         child.start()
     }
     
     func mainFlow(with user: UserModel) {
         let child = TabCoordinator(navigationController, user: user)
-        childCoordinators.append(child)
+        
         child.start()
     }
 }

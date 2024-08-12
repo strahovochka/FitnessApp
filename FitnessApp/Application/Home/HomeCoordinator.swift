@@ -9,7 +9,7 @@ import UIKit
 
 final class HomeCoordinator: Coordinator {
     
-    var childCoordinators: [Coordinator] = []
+    
     
     var navigationController: UINavigationController
     private var user: UserModel?
@@ -29,7 +29,7 @@ final class HomeCoordinator: Coordinator {
     
     func navigateToProfile(with user: UserModel) {
         let child = ProfileCoordinator(navigationController: navigationController, user: user)
-        childCoordinators.append(child)
+        
         child.start()
     }
 }

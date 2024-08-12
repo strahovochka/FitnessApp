@@ -19,37 +19,23 @@ final class ProgressViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
-        viewModel?.getUser(completition: { [weak self] in
-            guard let self = self else { return }
-            DispatchQueue.main.async {
-                self.updateUI()
-            }
-        })
+        viewModel?.getUser()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
         configTable()
-        guard let _ = viewModel?.user else {
-            viewModel?.getUser(completition: { [weak self] in
-                guard let self = self else { return }
-                DispatchQueue.main.async {
-                    self.updateUI()
-                }
-            })
-            return
-        }
+        showNavigationBar()
         viewModel?.update = { [weak self] in
             guard let self = self else { return }
             self.updateUI()
         }
+        guard let _ = viewModel?.user else {
+            viewModel?.getUser()
+            return
+        }
         updateUI()
-    }
-    
-    override func customizeNavBar() {
-        super.customizeNavBar()
-        self.title = viewModel?.navigationTitle
     }
     
     override func viewDidLayoutSubviews() {
@@ -60,6 +46,7 @@ final class ProgressViewController: BaseViewController {
 
 private extension ProgressViewController {
     func configUI() {
+        self.title = viewModel?.navigationTitle
         emptyViewContainer.isHidden = true
         tableView.isHidden = true
     }

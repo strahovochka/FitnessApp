@@ -19,29 +19,19 @@ final class HomeViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        viewModel?.getUser(completition: { [weak self] in
-            guard let self = self else { return }
-            DispatchQueue.main.async {
-                self.updateUI()
-            }
-        })
+        viewModel?.getUser()
     }
 
     override func viewDidLoad() {
         configUI()
         configCollection()
-        guard let _ = viewModel?.user else {
-            viewModel?.getUser(completition: { [weak self] in
-                guard let self = self else { return }
-                DispatchQueue.main.async {
-                    self.updateUI()
-                }
-            })
-            return
-        }
         viewModel?.update = { [weak self] in
             guard let self = self else { return }
             self.updateUI()
+        }
+        guard let _ = viewModel?.user else {
+            viewModel?.getUser()
+            return
         }
         updateUI()
     }
@@ -103,7 +93,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: screenSize.width - 106, height: 104)
+        CGSize(width: screenSize.width * 0.72, height: 104)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

@@ -37,11 +37,9 @@ private extension RegistrationViewController {
             subtitle.font = .regularSaira?.withSize(24)
             let textFieldsData = viewModel.textFieldsData
             for (index, data) in textFieldsData.enumerated() {
-                self.textFields[index].labelTitle = data.title
-                self.textFields[index].placeholderText = data.placeholderText
-                self.textFields[index].errorChecker = viewModel.getErrorChecker(for: data)
-                self.textFields[index].tag = data.rawValue
-                self.textFields[index].delegate = self.viewModel
+                textFields[index].setType(data)
+                textFields[index].errorChecker = viewModel.getErrorChecker(for: data)
+                textFields[index].delegate = self.viewModel
             }
             signUpButton.setType(.filled)
             signUpButton.title = viewModel.signInButtonText

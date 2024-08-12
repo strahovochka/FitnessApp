@@ -83,7 +83,6 @@ final class TabViewModel: BaseViewModel<TabCoordinator> {
             coordinator.navigationController.tabBarItem = UITabBarItem.init(title: tab.title, image: tab.image, tag: tab.rawValue)
             coordinator.navigationController.tabBarItem.selectedImage = tab.selectedImage
             coordinator.start()
-            self.coordinator?.childCoordinators.append(coordinator)
             controllers.append(coordinator.navigationController)
         }
         return controllers

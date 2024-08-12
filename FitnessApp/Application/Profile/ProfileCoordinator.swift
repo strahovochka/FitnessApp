@@ -8,7 +8,7 @@
 import UIKit
 
 final class ProfileCoordinator: Coordinator {
-    var childCoordinators: [Coordinator] = []
+    
     var navigationController: UINavigationController
     let user: UserModel
     
@@ -28,13 +28,13 @@ final class ProfileCoordinator: Coordinator {
     
     func navigateToOptions(with selectedOptions: [OptionDataName], delegate: OptionsPopUpDelegate) {
         let child = OptionsPopUpCoordinator(navigationController: navigationController, selection: selectedOptions, delegate: delegate)
-        childCoordinators.append(child)
+        
         child.start()
     }
     
     func navigateToDeleteAccount(with user: UserModel) {
         let child = DeleteAccountCoordinator(navigationController: navigationController, user: user)
-        childCoordinators.append(child)
+        
         child.start()
     }
 }

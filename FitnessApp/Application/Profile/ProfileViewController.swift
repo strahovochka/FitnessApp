@@ -22,18 +22,12 @@ final class ProfileViewController: BaseViewController {
         if let sex = Sex(rawValue: viewModel?.user.sex ?? "") {
             setBackground(for: sex)
         }
+        showNavigationBar(backButtonEnabled: true)
+        configSaveButton()
         viewModel?.update = { [weak self] in
             self?.reload()
         }
         configUI()
-    }
-    
-    override func customizeNavBar() {
-        super.customizeNavBar()
-        customizeBackButton()
-        self.title = viewModel?.title
-        let saveButton = createNavButton(text: viewModel?.saveButtonText, selector: #selector(saveData), isEnabled: false)
-        self.navigationItem.rightBarButtonItem = saveButton
     }
 }
 
@@ -69,9 +63,12 @@ private extension ProfileViewController {
     
     func configUI() {
         configImageView()
-        nameTextField.labelTitle = viewModel?.textFieldData.title
+        self.title = viewModel?.title
+        
+        nameTextField.setType(viewModel?.textFieldData ?? .name)
         nameTextField.text = viewModel?.user.userName
         nameTextField.delegate = viewModel
+        
         explanationTextLabel.text = viewModel?.explanationText
         explanationTextLabel.numberOfLines = 0
         
@@ -81,6 +78,11 @@ private extension ProfileViewController {
         
         deleteAccountButton.setType(.alert)
         deleteAccountButton.title = viewModel?.deleteButtonText
+    }
+    
+    func configSaveButton() {
+        let saveButton = createNavButton(text: viewModel?.saveButtonText, selector: #selector(saveData), isEnabled: false)
+        self.navigationItem.rightBarButtonItem = saveButton
     }
     
     func configImageView() {

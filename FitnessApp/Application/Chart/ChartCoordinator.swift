@@ -8,7 +8,7 @@
 import UIKit
 
 final class ChartCoordinator: Coordinator {
-    var childCoordinators: [Coordinator] = []
+    
     var navigationController: UINavigationController
     let option: OptionModel
     
@@ -19,6 +19,7 @@ final class ChartCoordinator: Coordinator {
     
     func start() {
         let vc = ChartViewController.instantiate(from: Identifiers.Storyboard.chart)
+        vc.hidesBottomBarWhenPushed = true
         let viewModel = ChartViewModel(option: option)
         viewModel.coordinator = self
         vc.viewModel = viewModel

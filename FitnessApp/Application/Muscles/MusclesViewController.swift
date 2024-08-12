@@ -16,6 +16,7 @@ final class MusclesViewController: BaseViewController {
         super.viewDidLoad()
         configUI()
         configTable()
+        showNavigationBar()
         viewModel?.reloadSection = { [weak self] section in
             guard let self = self else { return }
             self.tableView.reloadSections([section], with: .automatic)
@@ -92,6 +93,11 @@ extension MusclesViewController: UITableViewDelegate, UITableViewDataSource {
               let exercise = viewModel?.muscleExercises?[indexPath.section].exerciseList[indexPath.row] else { return UITableViewCell() }
         cell.exercise = exercise
         cell.delegate = self
+        cell.moreAboutAction = { [weak self] cell in
+            guard let self = self else { return }
+            guard let exercise = self.viewModel?.muscleExercises?[indexPath.section].exerciseList[indexPath.row] else { return }
+            self.viewModel?.goToExercise(with: exercise)
+        }
         return cell
     }
     

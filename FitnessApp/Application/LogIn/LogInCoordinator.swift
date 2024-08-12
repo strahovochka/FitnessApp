@@ -8,7 +8,7 @@
 import UIKit
 
 final class LogInCoordinator: Coordinator {
-    var childCoordinators: [Coordinator] = []
+    
     
     var navigationController: UINavigationController
     
@@ -26,19 +26,19 @@ final class LogInCoordinator: Coordinator {
     
     func navigateToTabBar(with user: UserModel) {
         let child = TabCoordinator(navigationController, user: user)
-        childCoordinators.append(child)
+        
         child.start()
     }
     
     func navigateToSplash() {
         let child = SplashCoordinator(navigationController: navigationController)
-        childCoordinators.append(child)
+        
         child.start()
     }
     
     func navigateToForgotPassword() {
         let child = ForgotPasswordCoodinator(navigationController: navigationController)
-        childCoordinators.append(child)
+        
         child.start()
     }
 }

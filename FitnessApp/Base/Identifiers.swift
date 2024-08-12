@@ -23,6 +23,7 @@ enum Identifiers {
         static let optionsPopUp = "OptionsPopUp"
         static let chart = "Chart"
         static let deleteAccount = "DeleteAccount"
+        static let exercise = "Exercise"
     }
     
     enum NibNames {

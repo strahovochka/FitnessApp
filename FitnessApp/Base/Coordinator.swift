@@ -10,7 +10,6 @@ import PhotosUI
 import ImageCaptureCore
 
 protocol Coordinator: AnyObject {
-    var childCoordinators: [Coordinator] { get set }
     var navigationController: UINavigationController { get }
     
     func start()
@@ -19,7 +18,6 @@ protocol Coordinator: AnyObject {
 extension Coordinator {
     func showPopUp(title: String, type: PopUpCoordinator.ViewType, completition: (() -> ())? = nil) {
         let child = PopUpCoordinator(navigationController: navigationController, message: title, type: type, completition: completition)
-        childCoordinators.append(child)
         child.start()
     }
     

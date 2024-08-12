@@ -59,6 +59,10 @@ final class MusclesViewModel: UserDependentViewModel<MusclesCoordinator> {
         muscleExercises?[muscleIndex].count += selected ? 1 : -1
         self.onSelect?(muscleIndex)
     }
+    
+    func goToExercise(with exercise: ExerciseModel) {
+        coordinator?.navigateToExercise(with: exercise)
+    }
 }
 
 extension MusclesViewModel: HeaderViewDelegate {
