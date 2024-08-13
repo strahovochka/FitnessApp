@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProgressTableViewCell: UITableViewCell {
+class UnderlinedTableViewCell: UITableViewCell {
     
     @IBOutlet weak private var optionTitleLabel: UILabel!
     override func awakeFromNib() {

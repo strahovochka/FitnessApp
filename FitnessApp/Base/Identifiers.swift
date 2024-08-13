@@ -31,7 +31,7 @@ enum Identifiers {
         static let optionTableCell = "OptionTableViewCell"
         static let optionView = "OptionView"
         static let optionCollectionCell = "OptionCollectionViewCell"
-        static let progressTableCell = "ProgressTableViewCell"
+        static let underlinedTableCell = "UnderlinedTableViewCell"
         static let chartBarCollectionCell = "BarCollectionViewCell"
         static let muscleHeader = "MuscleHeaderView"
         static let exerciseCell = "ExerciseTableViewCell"

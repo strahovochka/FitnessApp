@@ -31,8 +31,8 @@
 		042DF4A42C542744004436DD /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4A32C542743004436DD /* Double+Extensions.swift */; };
 		042DF4AF2C544850004436DD /* Gilroy-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 042DF4AE2C54484F004436DD /* Gilroy-Semibold.ttf */; };
 		042DF4B22C57DB81004436DD /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4B12C57DB81004436DD /* Date+Extension.swift */; };
-		042DF4B62C591BE3004436DD /* ProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4B42C591BE2004436DD /* ProgressTableViewCell.swift */; };
-		042DF4B72C591BE3004436DD /* ProgressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042DF4B52C591BE3004436DD /* ProgressTableViewCell.xib */; };
+		042DF4B62C591BE3004436DD /* UnderlinedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4B42C591BE2004436DD /* UnderlinedTableViewCell.swift */; };
+		042DF4B72C591BE3004436DD /* UnderlinedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042DF4B52C591BE3004436DD /* UnderlinedTableViewCell.xib */; };
 		042DF4BF2C5A8EA3004436DD /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4BE2C5A8EA2004436DD /* ChartViewController.swift */; };
 		042DF4C12C5A8EAE004436DD /* ChartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4C02C5A8EAE004436DD /* ChartCoordinator.swift */; };
 		042DF4C32C5A8EB8004436DD /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4C22C5A8EB8004436DD /* ChartViewModel.swift */; };
@@ -153,8 +153,8 @@
 		042DF4A32C542743004436DD /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		042DF4AE2C54484F004436DD /* Gilroy-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Semibold.ttf"; sourceTree = "<group>"; };
 		042DF4B12C57DB81004436DD /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
-		042DF4B42C591BE2004436DD /* ProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTableViewCell.swift; sourceTree = "<group>"; };
-		042DF4B52C591BE3004436DD /* ProgressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressTableViewCell.xib; sourceTree = "<group>"; };
+		042DF4B42C591BE2004436DD /* UnderlinedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedTableViewCell.swift; sourceTree = "<group>"; };
+		042DF4B52C591BE3004436DD /* UnderlinedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnderlinedTableViewCell.xib; sourceTree = "<group>"; };
 		042DF4BE2C5A8EA2004436DD /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		042DF4C02C5A8EAE004436DD /* ChartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCoordinator.swift; sourceTree = "<group>"; };
 		042DF4C22C5A8EB8004436DD /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
@@ -342,8 +342,8 @@
 		042DF4B32C591B6D004436DD /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				042DF4B42C591BE2004436DD /* ProgressTableViewCell.swift */,
-				042DF4B52C591BE3004436DD /* ProgressTableViewCell.xib */,
+				042DF4B42C591BE2004436DD /* UnderlinedTableViewCell.swift */,
+				042DF4B52C591BE3004436DD /* UnderlinedTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -798,7 +798,7 @@
 				046B12572C30C2690095ECC7 /* Home.storyboard in Resources */,
 				042DF49D2C51426E004436DD /* OptionView.xib in Resources */,
 				046B12922C39874A0095ECC7 /* Splash.storyboard in Resources */,
-				042DF4B72C591BE3004436DD /* ProgressTableViewCell.xib in Resources */,
+				042DF4B72C591BE3004436DD /* UnderlinedTableViewCell.xib in Resources */,
 				046B128A2C3689930095ECC7 /* CustomTextField.xib in Resources */,
 				042DF4A22C53C8AF004436DD /* OptionCollectionViewCell.xib in Resources */,
 				042DF4C52C5A8EC2004436DD /* Chart.storyboard in Resources */,
@@ -893,7 +893,7 @@
 				046B12882C3689870095ECC7 /* CustomTextField.swift in Sources */,
 				04F3C5542C3D31A9000E14C7 /* TabViewController.swift in Sources */,
 				041175E62C3A8D9100059052 /* ClaculatorViewController.swift in Sources */,
-				042DF4B62C591BE3004436DD /* ProgressTableViewCell.swift in Sources */,
+				042DF4B62C591BE3004436DD /* UnderlinedTableViewCell.swift in Sources */,
 				046B12652C3407AB0095ECC7 /* UIColor+Extension.swift in Sources */,
 				042535652C39F44F00FE9611 /* UIViewController+Extension.swift in Sources */,
 				046B126B2C35F40B0095ECC7 /* CustomImageButton.swift in Sources */,

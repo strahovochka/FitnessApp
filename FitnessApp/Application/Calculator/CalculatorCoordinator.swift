@@ -8,16 +8,19 @@
 import UIKit
 
 final class CalculatorCoordinator: Coordinator {
-    
-    
     var navigationController: UINavigationController
+    let user: UserModel?
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, user: UserModel? = nil) {
         self.navigationController = navigationController
+        self.user = user
     }
     
     func start() {
         let vc = CalculatorViewController.instantiate(from: Identifiers.Storyboard.calculator)
+        let viewModel = CalculatorViewModel(user: user)
+        viewModel.coordinator = self
+        vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
     }
 }
