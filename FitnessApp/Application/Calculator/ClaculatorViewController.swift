@@ -59,4 +59,9 @@ extension CalculatorViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         viewModel?.rowHeight ?? 0
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let calculatorType = viewModel?.cells[indexPath.row] else { return }
+        viewModel?.goToCalcuator(calculatorType)
+    }
 }

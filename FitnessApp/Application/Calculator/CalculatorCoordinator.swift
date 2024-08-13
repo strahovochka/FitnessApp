@@ -23,4 +23,9 @@ final class CalculatorCoordinator: Coordinator {
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
     }
+    
+    func navigateToCalculator(_ type: CalculatorType, _ sex: Sex) {
+        let child = DetailedCalculatorCoordinator(navigationController: navigationController, sex: sex, type: type)
+        child.start()
+    }
 }

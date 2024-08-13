@@ -166,6 +166,10 @@ final class CustomTextField: UIView {
         tag = type.rawValue
         keyboardType = type.keyboardType
     }
+    
+    func setLabelHidden(_ hidden: Bool) {
+        self.label.isHidden = hidden
+    }
 }
 
 //-MARK: Private functions
