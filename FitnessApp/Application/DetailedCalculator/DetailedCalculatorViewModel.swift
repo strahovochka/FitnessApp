@@ -68,6 +68,7 @@ final class DetailedCalculatorViewModel: BaseViewModel<DetailedCalculatorCoordin
     let inputs: [InputType]
     let calculateButtonText = "Calculate"
     let resultPlaceholderText = "Fill in your data"
+    let segmentItems = ["Superman", "Superwoman"]
     
     init(sex: Sex, type: CalculatorType) {
         self.sex = sex

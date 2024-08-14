@@ -10,6 +10,7 @@ import UIKit
 final class DetailedCalculatorViewController: BaseViewController {
     
     @IBOutlet weak private var calculatorNameLabel: UILabel!
+    @IBOutlet weak private var segmentedControl: CustomSegmentedControl!
     @IBOutlet weak private var inputsStackCiew: UIStackView!
     @IBOutlet weak private var resultLabel: UILabel!
     @IBOutlet weak private var resultDescriptionLabel: UILabel!
@@ -33,6 +34,8 @@ private extension DetailedCalculatorViewController {
         calculatorNameLabel.textColor = .primaryWhite
         calculatorNameLabel.font = .mediumSaira?.withSize(24)
         calculatorNameLabel.text = viewModel.type.name
+        
+        segmentedControl.items = viewModel.segmentItems
         
         viewModel.inputs.forEach { input in
             let inputView = CalculatorInputView()

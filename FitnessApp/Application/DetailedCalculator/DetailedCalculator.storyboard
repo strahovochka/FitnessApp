@@ -21,7 +21,7 @@
                                 <rect key="frame" x="43" y="59" width="307" height="641"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="eGU-Rd-krc">
-                                        <rect key="frame" x="0.0" y="0.0" width="307" height="412.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="307" height="479.33333333333331"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i8H-dR-MCP">
                                                 <rect key="frame" x="0.0" y="0.0" width="307" height="32"/>
@@ -35,11 +35,18 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awY-K5-KoQ" customClass="CustomSegmentedControl" customModule="FitnessApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="116.33333333333334" width="307" height="35"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="xLd-4R-hZg"/>
+                                                </constraints>
+                                            </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="HiC-TE-pZC">
-                                                <rect key="frame" x="0.0" y="116.33333333333334" width="307" height="128"/>
+                                                <rect key="frame" x="0.0" y="183.33333333333334" width="307" height="128.00000000000003"/>
                                             </stackView>
                                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z5S-6a-A34">
-                                                <rect key="frame" x="0.0" y="276.33333333333331" width="307" height="136"/>
+                                                <rect key="frame" x="0.0" y="343.33333333333331" width="307" height="136"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUI-oV-zZK">
                                                         <rect key="frame" x="0.0" y="0.0" width="307" height="93"/>
@@ -70,8 +77,10 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="HiC-TE-pZC" secondAttribute="trailing" id="0Cy-hp-NAc"/>
                                             <constraint firstItem="HiC-TE-pZC" firstAttribute="leading" secondItem="eGU-Rd-krc" secondAttribute="leading" id="0Qt-ja-ZFk"/>
+                                            <constraint firstItem="awY-K5-KoQ" firstAttribute="leading" secondItem="eGU-Rd-krc" secondAttribute="leading" id="0ks-fi-qZP"/>
                                             <constraint firstItem="z5S-6a-A34" firstAttribute="leading" secondItem="eGU-Rd-krc" secondAttribute="leading" id="aQG-pZ-v8Q"/>
                                             <constraint firstAttribute="trailing" secondItem="z5S-6a-A34" secondAttribute="trailing" id="pKh-Q7-IbF"/>
+                                            <constraint firstAttribute="trailing" secondItem="awY-K5-KoQ" secondAttribute="trailing" id="zcI-Q2-soN"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -123,6 +132,7 @@
                         <outlet property="inputsStackCiew" destination="HiC-TE-pZC" id="2i1-V2-0g0"/>
                         <outlet property="resultDescriptionLabel" destination="WxV-b6-hnZ" id="cSk-dk-CkA"/>
                         <outlet property="resultLabel" destination="rUI-oV-zZK" id="Yq9-sH-TBM"/>
+                        <outlet property="segmentedControl" destination="awY-K5-KoQ" id="74X-6t-w41"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
