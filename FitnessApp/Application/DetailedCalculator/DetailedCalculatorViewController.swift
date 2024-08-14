@@ -22,6 +22,10 @@ final class DetailedCalculatorViewController: BaseViewController {
         super.viewDidLoad()
         configUI()
         showNavigationBar(backButtonEnabled: true)
+        viewModel?.update = { [weak self] in
+            guard let self = self else { return }
+            self.configInputViews()
+        }
     }
 }
 
@@ -35,15 +39,9 @@ private extension DetailedCalculatorViewController {
         calculatorNameLabel.font = .mediumSaira?.withSize(24)
         calculatorNameLabel.text = viewModel.type.name
         
-        segmentedControl.items = viewModel.segmentItems
+        configSegmentedControl()
         
-        viewModel.inputs.forEach { input in
-            let inputView = CalculatorInputView()
-            inputView.config(with: input)
-            inputView.translatesAutoresizingMaskIntoConstraints = false
-            inputView.heightAnchor.constraint(equalToConstant: 42).isActive = true
-            inputsStackCiew.addArrangedSubview(inputView)
-        }
+        configInputViews()
 
         resultLabel.textAlignment = .center
         resultLabel.backgroundColor = .clear
@@ -58,6 +56,21 @@ private extension DetailedCalculatorViewController {
         
         calculateButton.title = viewModel.calculateButtonText
         calculateButton.setType(.filled)
+        calculateButton.addTarget(self, action: #selector(calculate), for: .touchUpInside)
+    }
+    
+    func configSegmentedControl() {
+        guard let viewModel = viewModel else { return }
+        if viewModel.type != .BDM {
+            segmentedControl.isHidden = false
+            segmentedControl.items = viewModel.segmentItems.map{ $0.heroName }
+            segmentedControl.didTapSegment = { [weak self] index in
+                guard let self = self else { return }
+                self.didTapOnSegment(index)
+            }
+        } else {
+            segmentedControl.isHidden = true
+        }
     }
     
     func configResultPlaceholder() {
@@ -65,5 +78,34 @@ private extension DetailedCalculatorViewController {
         resultLabel.font = .lightSaira?.withSize(18)
         resultLabel.text = viewModel?.resultPlaceholderText
         resultDescriptionLabel.isHidden = true
+    }
+
+    func configInputViews() {
+        guard let viewModel = viewModel else { return }
+        inputsStackCiew.subviews.forEach { $0.removeFromSuperview() }
+        let selectedInputs = viewModel.getSelectedInputs()
+        selectedInputs.forEach { (input, value) in
+            let view = input.createView()
+            view.config(with: input, value: value, delegate: viewModel)
+            view.translatesAutoresizingMaskIntoConstraints = false
+            view.heightAnchor.constraint(equalToConstant: 42).isActive = true
+            inputsStackCiew.addArrangedSubview(view)
+        }
+    }
+    
+    func didTapOnSegment(_ index: Int) {
+        guard let viewModel = viewModel else { return }
+        viewModel.selectedSegmentSex = viewModel.segmentItems[index]
+    }
+    
+    
+    @objc func calculate() {
+        inputsStackCiew.subviews.forEach { view in
+            guard let view = view as? CalculatorInputView else { return }
+            view.checkForError()
+        }
+        if inputsStackCiew.subviews.compactMap({ $0 as? CalculatorInputView}).contains(where: { $0.isError() }) {
+            
+        }
     }
 }

@@ -41,13 +41,30 @@ enum CalculatorType: CaseIterable {
     }
 }
 
-enum InputType: String {
+enum InputType: Int {
     case height
     case weight
     case neck
     case waist
     case hips
     case age
+    
+    var name: String {
+        switch self {
+        case .height:
+            return "Height"
+        case .weight:
+            return "Weight"
+        case .neck:
+            return "Neck"
+        case .waist:
+            return "Waist"
+        case .hips:
+            return "Hips"
+        case .age:
+            return "Age"
+        }
+    }
     
     var metricVale: String {
         switch self {
@@ -59,20 +76,53 @@ enum InputType: String {
             return "years"
         }
     }
+    
+    func createView() -> CalculatorInputView {
+        let view = CalculatorInputView()
+        view.config(with: self)
+        return view
+    }
 }
 
 final class DetailedCalculatorViewModel: BaseViewModel<DetailedCalculatorCoordinator> {
     let sex: Sex
     let type: CalculatorType
     let navigationTitle = "Calculator"
-    let inputs: [InputType]
+    var inputs: [Sex: [InputType: Double]]
     let calculateButtonText = "Calculate"
     let resultPlaceholderText = "Fill in your data"
-    let segmentItems = ["Superman", "Superwoman"]
+    let segmentItems = [Sex.male, Sex.female]
+    var selectedSegmentSex: Sex = .male {
+        didSet {
+            self.update()
+        }
+    }
+    
+    var update: () -> () = { }
     
     init(sex: Sex, type: CalculatorType) {
         self.sex = sex
         self.type = type
-        self.inputs = type.getInputs(for: .male)
+        self.inputs = [Sex.male, Sex.female].reduce(into: [:], { partialResult, sex in
+            partialResult[sex] = type.getInputs(for: sex).reduce(into: [:], { partialResult, input in
+                partialResult[input] = 0.0
+            })
+        })
+    }
+    
+    func getSelectedInputs() -> [(InputType, Double)] {
+        var result: [(InputType, Double)] = []
+        type.getInputs(for: selectedSegmentSex).forEach { input in
+            guard let value = inputs[selectedSegmentSex]?[input] else { return }
+            result.append((input, value))
+        }
+        return result
+    }
+}
+
+extension DetailedCalculatorViewModel: CustomTextFieldDelegate {
+    func updateValue(_ textField: CustomTextField, for tag: Int, as newValue: String) {
+        guard let inputType = InputType(rawValue: tag), let value = Double(newValue) else { return }
+        inputs[selectedSegmentSex]?[inputType] = value
     }
 }

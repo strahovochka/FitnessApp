@@ -23,9 +23,24 @@ final class CalculatorInputView: UIView {
         initSubviews()
     }
     
-    func config(with inputType: InputType) {
-        inputNameLabel.text = inputType.rawValue.capitalized
+    func config(with inputType: InputType, value: Double? = nil, delegate: CustomTextFieldDelegate? = nil) {
+        inputNameLabel.text = inputType.name
         metricLabel.text = inputType.metricVale
+        textField.tag = inputType.rawValue
+        textField.delegate = delegate
+        textField.errorChecker = { text in
+            return text.isEmpty || Double(text) == 0.0
+        }
+        guard let value = value, value > 0 else { return }
+        textField.text = value.roundedString(to: 1)
+    }
+    
+    func checkForError() {
+        textField.checkForError()
+    }
+    
+    func isError() -> Bool {
+        return textField.getState() == .error
     }
 }
 

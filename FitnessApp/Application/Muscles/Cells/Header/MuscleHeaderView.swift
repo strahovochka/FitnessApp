@@ -17,7 +17,7 @@ class MuscleHeaderView: UITableViewHeaderFooterView {
     @IBOutlet weak private var muscleNameLabel: UILabel!
     @IBOutlet weak private var counterLabel: UILabel!
     var isCollapsed: Bool = true
-    var delegate: HeaderViewDelegate?
+    weak var delegate: HeaderViewDelegate?
     
     var muscle: MuscleExercisesModel? {
         didSet {
