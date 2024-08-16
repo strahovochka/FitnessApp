@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040A18FF2C6E5D6D006B4843 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040A18FE2C6E5D6D006B4843 /* ActivityView.swift */; };
+		040A19012C6E5D76006B4843 /* ActivityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040A19002C6E5D76006B4843 /* ActivityView.xib */; };
 		041175D62C3A006C00059052 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175D52C3A006C00059052 /* TabCoordinator.swift */; };
 		041175DE2C3A8D4B00059052 /* MusclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175DD2C3A8D4B00059052 /* MusclesViewController.swift */; };
 		041175E02C3A8D6D00059052 /* MusclesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175DF2C3A8D6D00059052 /* MusclesViewModel.swift */; };
@@ -92,6 +94,10 @@
 		04D082852C5D5750000023A9 /* DeleteAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D082842C5D5750000023A9 /* DeleteAccountViewModel.swift */; };
 		04D082872C5D5776000023A9 /* DeleteAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D082862C5D5776000023A9 /* DeleteAccountViewController.swift */; };
 		04D082892C5D585E000023A9 /* DeleteAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D082882C5D585E000023A9 /* DeleteAccount.storyboard */; };
+		04D0D9192C6E551600930C68 /* ActivityPopUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0D9182C6E551600930C68 /* ActivityPopUpCoordinator.swift */; };
+		04D0D91B2C6E552500930C68 /* ActivityPopUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0D91A2C6E552500930C68 /* ActivityPopUpViewModel.swift */; };
+		04D0D91D2C6E553200930C68 /* ActivityPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0D91C2C6E553200930C68 /* ActivityPopUpViewController.swift */; };
+		04D0D91F2C6E554000930C68 /* ActivityPopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D0D91E2C6E554000930C68 /* ActivityPopUp.storyboard */; };
 		04D2F1912C51075300F85ED9 /* OptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2F1902C51075300F85ED9 /* OptionModel.swift */; };
 		04D2F1942C510CBE00F85ED9 /* OptionsPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2F1932C510CBE00F85ED9 /* OptionsPopUpViewController.swift */; };
 		04D2F1962C510CCB00F85ED9 /* OptionsPopUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2F1952C510CCB00F85ED9 /* OptionsPopUpCoordinator.swift */; };
@@ -136,6 +142,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040A18FE2C6E5D6D006B4843 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		040A19002C6E5D76006B4843 /* ActivityView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityView.xib; sourceTree = "<group>"; };
 		041175D52C3A006C00059052 /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
 		041175DD2C3A8D4B00059052 /* MusclesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusclesViewController.swift; sourceTree = "<group>"; };
 		041175DF2C3A8D6D00059052 /* MusclesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusclesViewModel.swift; sourceTree = "<group>"; };
@@ -223,6 +231,10 @@
 		04D082842C5D5750000023A9 /* DeleteAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountViewModel.swift; sourceTree = "<group>"; };
 		04D082862C5D5776000023A9 /* DeleteAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountViewController.swift; sourceTree = "<group>"; };
 		04D082882C5D585E000023A9 /* DeleteAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DeleteAccount.storyboard; sourceTree = "<group>"; };
+		04D0D9182C6E551600930C68 /* ActivityPopUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityPopUpCoordinator.swift; sourceTree = "<group>"; };
+		04D0D91A2C6E552500930C68 /* ActivityPopUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityPopUpViewModel.swift; sourceTree = "<group>"; };
+		04D0D91C2C6E553200930C68 /* ActivityPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityPopUpViewController.swift; sourceTree = "<group>"; };
+		04D0D91E2C6E554000930C68 /* ActivityPopUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivityPopUp.storyboard; sourceTree = "<group>"; };
 		04D2F1902C51075300F85ED9 /* OptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionModel.swift; sourceTree = "<group>"; };
 		04D2F1932C510CBE00F85ED9 /* OptionsPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsPopUpViewController.swift; sourceTree = "<group>"; };
 		04D2F1952C510CCB00F85ED9 /* OptionsPopUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsPopUpCoordinator.swift; sourceTree = "<group>"; };
@@ -280,6 +292,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040A18FD2C6E5D56006B4843 /* ActivityView */ = {
+			isa = PBXGroup;
+			children = (
+				040A18FE2C6E5D6D006B4843 /* ActivityView.swift */,
+				040A19002C6E5D76006B4843 /* ActivityView.xib */,
+			);
+			path = ActivityView;
+			sourceTree = "<group>";
+		};
 		041175D42C3A005200059052 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
@@ -455,6 +476,7 @@
 		046B12482C30BA480095ECC7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				04D0D9172C6E54FF00930C68 /* ActivityPopUp */,
 				04B1C2C82C6BB37300934729 /* DetailedCalculator */,
 				04FC59382C660B2500C446B0 /* Exercise */,
 				04D082812C5D56CC000023A9 /* DeleteAccount */,
@@ -645,6 +667,18 @@
 			path = DeleteAccount;
 			sourceTree = "<group>";
 		};
+		04D0D9172C6E54FF00930C68 /* ActivityPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				040A18FD2C6E5D56006B4843 /* ActivityView */,
+				04D0D9182C6E551600930C68 /* ActivityPopUpCoordinator.swift */,
+				04D0D91A2C6E552500930C68 /* ActivityPopUpViewModel.swift */,
+				04D0D91C2C6E553200930C68 /* ActivityPopUpViewController.swift */,
+				04D0D91E2C6E554000930C68 /* ActivityPopUp.storyboard */,
+			);
+			path = ActivityPopUp;
+			sourceTree = "<group>";
+		};
 		04D2F1922C510CA700F85ED9 /* OptionsPopUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -822,12 +856,14 @@
 			files = (
 				04F3C5572C3D3220000E14C7 /* TabBar.storyboard in Resources */,
 				042DF4AF2C544850004436DD /* Gilroy-Semibold.ttf in Resources */,
+				04D0D91F2C6E554000930C68 /* ActivityPopUp.storyboard in Resources */,
 				046B128B2C36D1B90095ECC7 /* SairaRoman-Regular.ttf in Resources */,
 				04F3C5662C3D3F44000E14C7 /* Registration.storyboard in Resources */,
 				04FC59322C63C06500C446B0 /* Nunito.ttf in Resources */,
 				043C42AB2C4914BC00FCF502 /* PopUp.storyboard in Resources */,
 				041175E42C3A8D8300059052 /* Muscles.storyboard in Resources */,
 				0435DB182C43CFED00D66FB1 /* LogIn.storyboard in Resources */,
+				040A19012C6E5D76006B4843 /* ActivityView.xib in Resources */,
 				04D356452C46A3C00087859F /* GoogleService-Info.plist in Resources */,
 				046B123E2C3084BF0095ECC7 /* Assets.xcassets in Resources */,
 				04B1C2D02C6BB3DF00934729 /* DetailedCalculator.storyboard in Resources */,
@@ -910,6 +946,7 @@
 				042DF4C32C5A8EB8004436DD /* ChartViewModel.swift in Sources */,
 				041175EE2C3A8DC200059052 /* ProgressViewController.swift in Sources */,
 				041175EA2C3A8DA900059052 /* CalculatorCoordinator.swift in Sources */,
+				04D0D91D2C6E553200930C68 /* ActivityPopUpViewController.swift in Sources */,
 				041175E02C3A8D6D00059052 /* MusclesViewModel.swift in Sources */,
 				042DF4C72C5AD5B1004436DD /* Int+Extension.swift in Sources */,
 				043C42B22C4BB10200FCF502 /* ProfileViewController.swift in Sources */,
@@ -964,6 +1001,7 @@
 				041175E82C3A8D9B00059052 /* CalculatorViewModel.swift in Sources */,
 				04B1C2CA2C6BB3AE00934729 /* DetailedCalculatorCoordinator.swift in Sources */,
 				043C42A92C4912F500FCF502 /* PopUpCoordinator.swift in Sources */,
+				04D0D9192C6E551600930C68 /* ActivityPopUpCoordinator.swift in Sources */,
 				04FC59252C639ED700C446B0 /* ExerciseModel.swift in Sources */,
 				04D3564C2C46A4D20087859F /* ForgotPasswordViewController.swift in Sources */,
 				046B126F2C35FD9B0095ECC7 /* PlainButton.swift in Sources */,
@@ -977,11 +1015,13 @@
 				04B1C2CC2C6BB3C000934729 /* DetailedCalculatorViewModel.swift in Sources */,
 				041175E22C3A8D7900059052 /* MusclesCoordinator.swift in Sources */,
 				04E5AAC92C511A8500DA61C7 /* OptionTableViewCell.swift in Sources */,
+				040A18FF2C6E5D6D006B4843 /* ActivityView.swift in Sources */,
 				042DF4C12C5A8EAE004436DD /* ChartCoordinator.swift in Sources */,
 				04D082762C5BBB61000023A9 /* CollectionView+Extension.swift in Sources */,
 				046B12602C32BAD10095ECC7 /* Coordinator.swift in Sources */,
 				0435DB162C43CFE200D66FB1 /* LogInViewController.swift in Sources */,
 				04CE3E8B2C4EF37A00A0C121 /* Style.swift in Sources */,
+				04D0D91B2C6E552500930C68 /* ActivityPopUpViewModel.swift in Sources */,
 				04F3C55E2C3D3EE1000E14C7 /* RegitstrationCoordinator.swift in Sources */,
 				043F42482C6648660022310F /* UITapGestureRecognizer+Extension.swift in Sources */,
 				04D3564A2C46A4C40087859F /* ForgotPasswordCoodinator.swift in Sources */,

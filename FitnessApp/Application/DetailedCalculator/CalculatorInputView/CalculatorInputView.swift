@@ -12,7 +12,6 @@ final class CalculatorInputView: UIView {
     @IBOutlet weak private var textField: CustomTextField!
     @IBOutlet weak private var metricLabel: UILabel!
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initSubviews()

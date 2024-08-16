@@ -15,6 +15,7 @@ final class DetailedCalculatorViewController: BaseViewController {
     @IBOutlet weak private var resultLabel: UILabel!
     @IBOutlet weak private var resultDescriptionLabel: UILabel!
     @IBOutlet weak private var calculateButton: PlainButton!
+    @IBOutlet weak private var activityLevelButton: UIButton!
     
     var viewModel: DetailedCalculatorViewModel?
     
@@ -25,6 +26,10 @@ final class DetailedCalculatorViewController: BaseViewController {
         viewModel?.update = { [weak self] in
             guard let self = self else { return }
             self.configInputViews()
+        }
+        viewModel?.updateActivityLevel = { [weak self] in
+            guard let self = self, let activityLevel = self.viewModel?.activityLevel else { return }
+            self.activityLevelButton.setTitle(activityLevel.shortDescription, for: .normal)
         }
     }
 }
@@ -53,6 +58,8 @@ private extension DetailedCalculatorViewController {
         resultDescriptionLabel.textColor = .primaryWhite
         resultDescriptionLabel.font = .lightSaira?.withSize(28)
         resultDescriptionLabel.textAlignment = .center
+        
+        configActivityButton()
         
         calculateButton.title = viewModel.calculateButtonText
         calculateButton.setType(.filled)
@@ -91,13 +98,26 @@ private extension DetailedCalculatorViewController {
             view.heightAnchor.constraint(equalToConstant: 42).isActive = true
             inputsStackCiew.addArrangedSubview(view)
         }
+        guard viewModel.type == .dailyCalorieRequirement else { return }
+    }
+    
+    func configActivityButton() {
+        activityLevelButton.isHidden = false
+        activityLevelButton.layer.masksToBounds = true
+        activityLevelButton.backgroundColor = .clear
+        activityLevelButton.layer.cornerRadius = activityLevelButton.frame.size.height / 2
+        activityLevelButton.layer.borderWidth = 1
+        activityLevelButton.layer.borderColor = UIColor.primaryWhite.cgColor
+        activityLevelButton.setTitle(viewModel?.activityButtonText, for: .normal)
+        activityLevelButton.setTitleColor(.primaryWhite, for: .normal)
+        activityLevelButton.titleLabel?.font = .regularSaira
+        activityLevelButton.addTarget(self, action: #selector(activityButtonPressed), for: .touchUpInside)
     }
     
     func didTapOnSegment(_ index: Int) {
         guard let viewModel = viewModel else { return }
         viewModel.selectedSegmentSex = viewModel.segmentItems[index]
     }
-    
     
     @objc func calculate() {
         inputsStackCiew.subviews.forEach { view in
@@ -107,5 +127,9 @@ private extension DetailedCalculatorViewController {
         if inputsStackCiew.subviews.compactMap({ $0 as? CalculatorInputView}).contains(where: { $0.isError() }) {
             
         }
+    }
+    
+    @objc func activityButtonPressed() {
+        viewModel?.goToActivityPopUp()
     }
 }

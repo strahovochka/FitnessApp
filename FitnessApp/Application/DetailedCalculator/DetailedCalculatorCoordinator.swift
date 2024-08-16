@@ -17,6 +17,7 @@ final class DetailedCalculatorCoordinator: Coordinator {
         self.sex = sex
         self.type = type
     }
+    
     func start() {
         let vc = DetailedCalculatorViewController.instantiate(from: Identifiers.Storyboard.detailedCalculator)
         vc.hidesBottomBarWhenPushed = true
@@ -26,5 +27,9 @@ final class DetailedCalculatorCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: true)
     }
     
-    
+    func navigateToActivityPopUp(selectedActivityLevel: DailyCaloriesRateAtivity?, delegate: ActivityLevelDelegate) {
+        let child = ActivityPopUpCoordinator(navigationController: navigationController, activityLevel: selectedActivityLevel)
+        child.delegate = delegate
+        child.start()
+    }
 }

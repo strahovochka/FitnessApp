@@ -25,6 +25,7 @@ enum Identifiers {
         static let deleteAccount = "DeleteAccount"
         static let exercise = "Exercise"
         static let detailedCalculator = "DetailedCalculator"
+        static let activityPopUp = "ActivityPopUp"
     }
     
     enum NibNames {
@@ -37,6 +38,7 @@ enum Identifiers {
         static let muscleHeader = "MuscleHeaderView"
         static let exerciseCell = "ExerciseTableViewCell"
         static let calculatorInput = "CalculatorInputView"
+        static let activityView = "ActivityView"
     }
     
     enum FileNames {
