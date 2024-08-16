@@ -25,11 +25,15 @@ final class DetailedCalculatorViewController: BaseViewController {
         showNavigationBar(backButtonEnabled: true)
         viewModel?.update = { [weak self] in
             guard let self = self else { return }
-            self.configInputViews()
+            self.updateUI()
         }
-        viewModel?.updateActivityLevel = { [weak self] in
-            guard let self = self, let activityLevel = self.viewModel?.activityLevel else { return }
-            self.activityLevelButton.setTitle(activityLevel.shortDescription, for: .normal)
+        viewModel?.updateActivityLevel = { [weak self] activityLevel in
+            guard let self = self, let activityLevel = activityLevel else { return }
+            self.updateActivityButton(with: activityLevel)
+        }
+        viewModel?.updateResult = { [weak self] in
+            guard let self = self else { return }
+            self.updateResult()
         }
     }
 }
@@ -45,8 +49,7 @@ private extension DetailedCalculatorViewController {
         calculatorNameLabel.text = viewModel.type.name
         
         configSegmentedControl()
-        
-        configInputViews()
+        updateInputs()
 
         resultLabel.textAlignment = .center
         resultLabel.backgroundColor = .clear
@@ -56,10 +59,12 @@ private extension DetailedCalculatorViewController {
         configResultPlaceholder()
         
         resultDescriptionLabel.textColor = .primaryWhite
-        resultDescriptionLabel.font = .lightSaira?.withSize(28)
+        resultDescriptionLabel.font = .lightSaira?.withSize(18)
         resultDescriptionLabel.textAlignment = .center
         
-        configActivityButton()
+        if viewModel.type == .dailyCalorieRequirement {
+            configActivityButton()
+        }
         
         calculateButton.title = viewModel.calculateButtonText
         calculateButton.setType(.filled)
@@ -68,7 +73,7 @@ private extension DetailedCalculatorViewController {
     
     func configSegmentedControl() {
         guard let viewModel = viewModel else { return }
-        if viewModel.type != .BDM {
+        if viewModel.type != .BMI {
             segmentedControl.isHidden = false
             segmentedControl.items = viewModel.segmentItems.map{ $0.heroName }
             segmentedControl.didTapSegment = { [weak self] index in
@@ -84,10 +89,47 @@ private extension DetailedCalculatorViewController {
         resultLabel.textColor = .secondaryGray
         resultLabel.font = .lightSaira?.withSize(18)
         resultLabel.text = viewModel?.resultPlaceholderText
-        resultDescriptionLabel.isHidden = true
+        guard let viewModel = viewModel, viewModel.type == .dailyCalorieRequirement else {
+            resultDescriptionLabel.isHidden = true
+            return
+        }
+        resultDescriptionLabel.isHidden = false
+        resultDescriptionLabel.text = viewModel.getLevel()?.description
     }
-
-    func configInputViews() {
+    
+    func configActivityButton() {
+        activityLevelButton.isHidden = false
+        activityLevelButton.layer.masksToBounds = true
+        activityLevelButton.backgroundColor = .clear
+        activityLevelButton.layer.cornerRadius = activityLevelButton.frame.size.height / 2
+        activityLevelButton.layer.borderWidth = 1
+        activityLevelButton.layer.borderColor = UIColor.primaryWhite.cgColor
+        activityLevelButton.setTitleColor(.primaryWhite, for: .normal)
+        activityLevelButton.titleLabel?.font = .regularSaira
+        activityLevelButton.addTarget(self, action: #selector(activityButtonPressed), for: .touchUpInside)
+        activityLevelButton.setTitle(viewModel?.activityButtonText, for: .normal)
+    }
+    
+    func configActivityErrorState() {
+        activityLevelButton.layer.borderColor = UIColor.primaryRed.cgColor
+        activityLevelButton.titleLabel?.textColor = .primaryRed
+    }
+    
+    func configInputError() {
+        resultLabel.layer.borderColor = UIColor.primaryRed.cgColor
+        resultLabel.textColor = .primaryRed
+        resultLabel.text = BMILevel.empty.rawValue
+    }
+    
+    //MARK: -Updaters
+    func updateUI() {
+        updateInputs()
+        updateResult()
+        guard let viewModel = viewModel, viewModel.type == .dailyCalorieRequirement else { return }
+        updateActivityButton(with: viewModel.getActivityLevel())
+    }
+    
+    func updateInputs() {
         guard let viewModel = viewModel else { return }
         inputsStackCiew.subviews.forEach { $0.removeFromSuperview() }
         let selectedInputs = viewModel.getSelectedInputs()
@@ -98,38 +140,71 @@ private extension DetailedCalculatorViewController {
             view.heightAnchor.constraint(equalToConstant: 42).isActive = true
             inputsStackCiew.addArrangedSubview(view)
         }
-        guard viewModel.type == .dailyCalorieRequirement else { return }
     }
     
-    func configActivityButton() {
-        activityLevelButton.isHidden = false
-        activityLevelButton.layer.masksToBounds = true
-        activityLevelButton.backgroundColor = .clear
-        activityLevelButton.layer.cornerRadius = activityLevelButton.frame.size.height / 2
-        activityLevelButton.layer.borderWidth = 1
+    func updateActivityButton(with activityLevel: DailyCaloriesRateAtivity? = nil) {
         activityLevelButton.layer.borderColor = UIColor.primaryWhite.cgColor
-        activityLevelButton.setTitle(viewModel?.activityButtonText, for: .normal)
-        activityLevelButton.setTitleColor(.primaryWhite, for: .normal)
-        activityLevelButton.titleLabel?.font = .regularSaira
-        activityLevelButton.addTarget(self, action: #selector(activityButtonPressed), for: .touchUpInside)
+        activityLevelButton.titleLabel?.textColor = .primaryWhite
+        guard let activityLevel = activityLevel, activityLevel != .empty else {
+            activityLevelButton.setTitle(viewModel?.activityButtonText, for: .normal)
+            return
+        }
+        activityLevelButton.setTitle(activityLevel.shortDescription, for: .normal)
+    }
+
+    func updateResult() {
+        guard let viewModel = viewModel else { return }
+        resultLabel.layer.borderColor = UIColor.primaryWhite.withAlphaComponent(0.4).cgColor
+        if viewModel.type != .dailyCalorieRequirement {
+            if let level = viewModel.getLevel() {
+                resultDescriptionLabel.isHidden = level.isEmpty
+                resultDescriptionLabel.text = level.description
+            }
+        }
+        
+        guard let result = viewModel.getCalculatedResult() else {
+            configResultPlaceholder()
+            return
+        }
+        resultLabel.font = .boldSaira?.withSize(24)
+        resultLabel.textColor = .primaryYellow
+        resultLabel.text = result.roundedString(to: 2)
     }
     
     func didTapOnSegment(_ index: Int) {
         guard let viewModel = viewModel else { return }
-        viewModel.selectedSegmentSex = viewModel.segmentItems[index]
+        viewModel.updateSelectedSegment(with: viewModel.segmentItems[index])
     }
     
+    //MARK: -Actions
+    
     @objc func calculate() {
+        guard let viewModel = viewModel else { return }
         inputsStackCiew.subviews.forEach { view in
             guard let view = view as? CalculatorInputView else { return }
             view.checkForError()
         }
+        var allowCalculation = true
         if inputsStackCiew.subviews.compactMap({ $0 as? CalculatorInputView}).contains(where: { $0.isError() }) {
-            
+            allowCalculation = false
+        }
+        if viewModel.type == .dailyCalorieRequirement && viewModel.getActivityLevel() == .empty {
+            allowCalculation = false
+            configActivityErrorState()
+        }
+        if allowCalculation {
+            viewModel.calculateResult()
+        } else {
+            configInputError()
         }
     }
     
     @objc func activityButtonPressed() {
         viewModel?.goToActivityPopUp()
+        guard let _ = viewModel?.getActivityLevel() else {
+            activityLevelButton.setTitleColor(.primaryWhite, for: .normal)
+            activityLevelButton.layer.borderColor = UIColor.primaryWhite.cgColor
+            return
+        }
     }
 }

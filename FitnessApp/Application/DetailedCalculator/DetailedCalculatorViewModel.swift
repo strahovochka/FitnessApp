@@ -7,258 +7,174 @@
 
 import Foundation
 
-protocol ResultLevel {
-    var description: String { get }
-}
-
-enum CalculatorType: CaseIterable {
-    case BDM
-    case fatPercentage
-    case dailyCalorieRequirement
-    
-    var name: String {
-        switch self {
-        case .BDM:
-            return "Body Mass Index"
-        case .fatPercentage:
-            return "Fat Percentage"
-        case .dailyCalorieRequirement:
-            return "Daily Calorie Requirement"
-        }
-    }
-    
-    
-    func getInputs(for sex: Sex) -> [InputType] {
-        switch self {
-        case .BDM:
-            return [.height, .weight]
-        case .fatPercentage:
-            switch sex {
-            case .male:
-                return [.height, .neck, .waist]
-            case .female:
-                return [.height, .neck, .waist, .hips]
-            }
-        case .dailyCalorieRequirement:
-            return [.height, .neck, .age]
-        }
-    }
-    
-    func getLevelDescription(from value: Double) -> ResultLevel {
-        switch self {
-        case .BDM:
-            return BMILevel.getLevel(from: value)
-        case .fatPercentage:
-            return FatPercentLevel.getLevel(from: value)
-        case .dailyCalorieRequirement:
-            return FatPercentLevel.getLevel(from: value)
-        }
-    }
-}
-
-enum BMILevel: String, ResultLevel {
-    case tooLow = "Severe weight deficiency"
-    case low = "Underweight"
-    case normal = "Norma"
-    case high = "Overweight"
-    case toHigh = "Obesity"
-    case extremlyHigh = "Obesity is severe"
-    case toExtremlyHigh = "Very severe obesity"
-    case empty = "Enter the correct values"
-    
-    var description: String {
-        self.rawValue
-    }
-    
-    static func getLevel(from value: Double) -> BMILevel {
-        switch value {
-        case 0.01...16.0:
-            return .tooLow
-        case 16...18.5:
-            return .low
-        case 18.5...24.99:
-            return .normal
-        case 25...30:
-            return .high
-        case 30...35:
-            return .toHigh
-        case 35...40:
-            return .extremlyHigh
-        case 40...:
-            return .toExtremlyHigh
-        default:
-            return .empty
-        }
-    }
-}
-
-enum FatPercentLevel: String, ResultLevel {
-    case toLow = "Severe underweight"
-    case low = "Severely underweight"
-    case notEnough = "Underweight"
-    case normal = "Norma"
-    case high = "Overweight"
-    case toHigh = "Obesity"
-    case empty = "Enter the correct values"
-    
-    var description: String {
-        self.rawValue
-    }
-    
-    static func getLevel(from value: Double) -> FatPercentLevel {
-        switch value {
-        case 2.0...5.0:
-            return .toLow
-        case 5.0...13.0:
-            return .low
-        case 13.0...17.0:
-            return .notEnough
-        case 17.0...22.0:
-            return .normal
-        case 22.0...29.0:
-            return .high
-        case 29.0...:
-            return .toHigh
-        default:
-            return .empty
-        }
-    }
-}
-
-enum DailyCaloriesRateAtivity: String {
-    case sitting = "sedentary lifestyle"
-    case light = "light activity (1 to 3 times a week)"
-    case middle = "medium activity (training 3-5 times a week)"
-    case high = "high activity (training 6-7 times a week)"
-    case extremal = "extremely high activity"
-    
-    var activityLevel: Double {
-        switch self {
-        case .sitting:
-            return 1.2
-        case .light:
-            return 1.38
-        case .middle:
-            return 1.56
-        case .high:
-            return 1.73
-        case .extremal:
-            return 1.95
-        }
-    }
-    
-    var shortDescription: String {
-        guard let startIndex = self.rawValue.firstIndex(of: "("), let endIndex = self.rawValue.lastIndex(of: ")") else { return self.rawValue }
-        let range = startIndex...endIndex
-        return self.rawValue.replacingCharacters(in: range, with: "")
-    }
-    
-    static var allCases: [DailyCaloriesRateAtivity] {
-        [.sitting, .light, .middle, .high, .extremal]
-    }
-}
-
-enum InputType: Int {
-    case height
-    case weight
-    case neck
-    case waist
-    case hips
-    case age
-    
-    var name: String {
-        switch self {
-        case .height:
-            return "Height"
-        case .weight:
-            return "Weight"
-        case .neck:
-            return "Neck"
-        case .waist:
-            return "Waist"
-        case .hips:
-            return "Hips"
-        case .age:
-            return "Age"
-        }
-    }
-    
-    var metricVale: String {
-        switch self {
-        case .height, .neck, .waist, .hips:
-            return "cm"
-        case .weight:
-            return "kg"
-        case .age:
-            return "years"
-        }
-    }
-    
-    func createView() -> CalculatorInputView {
-        let view = CalculatorInputView()
-        view.config(with: self)
-        return view
-    }
-}
-
 final class DetailedCalculatorViewModel: BaseViewModel<DetailedCalculatorCoordinator> {
+    
+    struct SexData {
+        private(set) var inputs: [InputType: Double]
+        private(set) var result: Double? = nil
+        private(set) var activityLevel: DailyCaloriesRateAtivity = .empty
+        private(set) var BMIResult: BMILevel = .empty
+        private(set) var fatResult: FatPercentLevel = .empty
+        
+        init(inputs: [InputType: Double]) {
+            self.inputs = inputs
+        }
+        
+        mutating func updateInput(_ input: InputType, with value: Double) {
+            inputs[input] = value
+        }
+        
+        mutating func updateResult(with value: Double?) {
+            result = value
+        }
+        
+        mutating func updateBMI(_ bmi: BMILevel) {
+            self.BMIResult = bmi
+        }
+        
+        mutating func updateFat(_ fatLevel: FatPercentLevel) {
+            self.fatResult = fatLevel
+        }
+        
+        mutating func updateActivityLevel(with level: DailyCaloriesRateAtivity) {
+            activityLevel = level
+        }
+        
+        func getOrderedInputs(for type: CalculatorType, and sex: Sex) -> [(InputType, Double)] {
+            var result = [(InputType, Double)]()
+            type.getInputs(for: sex).forEach { input in
+                guard let value = inputs[input] else { return }
+                result.append((input, value))
+            }
+            return result
+        }
+    }
+    
     let navigationTitle = "Calculator"
     let calculateButtonText = "Calculate"
     let resultPlaceholderText = "Fill in your data"
     let activityButtonText = "Choose activity level".capitalized
+    let caloriesDescriptionText = "Calories/day"
     
     let sex: Sex
     let type: CalculatorType
-    var inputs: [Sex: [InputType: Double]]
     let segmentItems = [Sex.male, Sex.female]
-    var activityLevel: DailyCaloriesRateAtivity? {
+    private(set) var sexData: [Sex: SexData] = [:] {
         didSet {
-            guard let _ = activityLevel else { return }
-            self.updateActivityLevel()
+            self.updateActivityLevel(sexData[selectedSegmentSex]?.activityLevel)
+            guard let _ = sexData[selectedSegmentSex]?.result else { return }
+            self.updateResult()
         }
     }
-    var selectedSegmentSex: Sex = .male {
+    
+    private(set) var selectedSegmentSex: Sex = .male {
         didSet {
             self.update()
         }
     }
     
     var update: () -> () = { }
-    var updateActivityLevel: () -> () = { }
+    var updateActivityLevel: (DailyCaloriesRateAtivity?) -> () = {_ in }
+    var updateResult: () -> () = { }
     
     init(sex: Sex, type: CalculatorType) {
         self.sex = sex
         self.type = type
-        self.inputs = [Sex.male, Sex.female].reduce(into: [:], { partialResult, sex in
+        let inputs = [Sex.male, Sex.female].reduce(into: [:], { partialResult, sex in
             partialResult[sex] = type.getInputs(for: sex).reduce(into: [:], { partialResult, input in
                 partialResult[input] = 0.0
             })
         })
+        switch type {
+        case .BMI:
+            guard let maleInputs = inputs[.male] else { return }
+            sexData[.male] = SexData(inputs: maleInputs)
+        case .fatPercentage, .dailyCalorieRequirement:
+            guard let maleInput = inputs[.male], let femaleInputs = inputs[.female] else { return }
+            sexData[.male] = SexData(inputs: maleInput)
+            sexData[.female] = SexData(inputs: femaleInputs)
+        }
     }
     
     func getSelectedInputs() -> [(InputType, Double)] {
-        var result: [(InputType, Double)] = []
-        type.getInputs(for: selectedSegmentSex).forEach { input in
-            guard let value = inputs[selectedSegmentSex]?[input] else { return }
-            result.append((input, value))
+        guard let sexData = sexData[selectedSegmentSex] else { return [] }
+        return sexData.getOrderedInputs(for: type, and: selectedSegmentSex)
+    }
+    
+    func getActivityLevel() -> DailyCaloriesRateAtivity? {
+        sexData[selectedSegmentSex]?.activityLevel
+    }
+    
+    func getLevel() -> ResultLevel? {
+        guard let sexData = sexData[selectedSegmentSex] else { return nil }
+        switch type {
+        case .BMI:
+            return sexData.BMIResult
+        case .fatPercentage:
+            return sexData.fatResult
+        case .dailyCalorieRequirement:
+            return sexData.activityLevel
         }
-        return result
+    }
+    
+    func getCalculatedResult() -> Double? {
+        sexData[selectedSegmentSex]?.result
+    }
+    
+    func updateSelectedSegment(with sex: Sex) {
+        self.selectedSegmentSex = sex
+    }
+    
+    func calculateResult() {
+        let result: Double
+        let resultInputs = type.getInputs(for: selectedSegmentSex).reduce(into: [:]) { partialResult, input in
+            partialResult[input] = sexData[selectedSegmentSex]?.inputs[input]
+        }
+        switch type {
+        case .BMI:
+            guard let height = resultInputs[.height], let weight = resultInputs[.weight] else { return }
+            result = Double(weight / ((height * height) / 10000))
+            sexData[selectedSegmentSex]?.updateBMI(BMILevel.getLevel(from: result))
+        case .fatPercentage:
+            guard let waist = resultInputs[.waist],
+                  let neck = resultInputs[.neck],
+                  let height = resultInputs[.height] else { return }
+            if selectedSegmentSex == .male {
+                result = (495 / (1.0324 - 0.19077 * log10(waist - neck) + 0.15456 * log10(height))) - 450
+            } else {
+                guard let hips = resultInputs[.hips] else { return }
+                result = (495 / (1.2958 - 0.35 * log10(waist + hips - neck) + 0.221 * log10(height))) - 450
+            }
+            sexData[selectedSegmentSex]?.updateFat(FatPercentLevel.getLevel(from: result))
+        case .dailyCalorieRequirement:
+            let sexConstant = (selectedSegmentSex == .male) ? 5 : -161
+            guard let weight = resultInputs[.weight],
+                  let height = resultInputs[.height],
+                  let age = resultInputs[.age],
+                  let activityLevel = sexData[selectedSegmentSex]?.activityLevel.value else { return }
+            result = (10 * weight + 6.25 * height - 5 * Double(age) + Double(sexConstant)) * activityLevel
+        }
+        sexData[selectedSegmentSex]?.updateResult(with: result)
     }
     
     func goToActivityPopUp() {
-        coordinator?.navigateToActivityPopUp(selectedActivityLevel: activityLevel, delegate: self)
+        coordinator?.navigateToActivityPopUp(selectedActivityLevel: sexData[selectedSegmentSex]?.activityLevel, delegate: self)
     }
 }
 
 extension DetailedCalculatorViewModel: CustomTextFieldDelegate {
     func updateValue(_ textField: CustomTextField, for tag: Int, as newValue: String) {
         guard let inputType = InputType(rawValue: tag), let value = Double(newValue) else { return }
-        inputs[selectedSegmentSex]?[inputType] = value
+        sexData[selectedSegmentSex]?.updateInput(inputType, with: value)
     }
 }
 
 extension DetailedCalculatorViewModel: ActivityLevelDelegate {
     func didSelectActivityLevel(_ level: DailyCaloriesRateAtivity?) {
-        activityLevel = level
+        guard let activityLevel = level else {
+            sexData[selectedSegmentSex]?.updateActivityLevel(with: .empty)
+            return
+        }
+        sexData[selectedSegmentSex]?.updateActivityLevel(with: activityLevel)
     }
 }

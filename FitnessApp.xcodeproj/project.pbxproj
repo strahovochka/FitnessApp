@@ -40,6 +40,11 @@
 		042DF4C32C5A8EB8004436DD /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4C22C5A8EB8004436DD /* ChartViewModel.swift */; };
 		042DF4C52C5A8EC2004436DD /* Chart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042DF4C42C5A8EC2004436DD /* Chart.storyboard */; };
 		042DF4C72C5AD5B1004436DD /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4C62C5AD5B1004436DD /* Int+Extension.swift */; };
+		0432A2262C6F96F3000F5959 /* CalculatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432A2252C6F96F3000F5959 /* CalculatorType.swift */; };
+		0432A2282C6F971A000F5959 /* BMILevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432A2272C6F971A000F5959 /* BMILevel.swift */; };
+		0432A22A2C6F972C000F5959 /* FatPercentageLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432A2292C6F972C000F5959 /* FatPercentageLevel.swift */; };
+		0432A22C2C6F9742000F5959 /* DailyCaloriesRateAtivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432A22B2C6F9742000F5959 /* DailyCaloriesRateAtivity.swift */; };
+		0432A22E2C6F9777000F5959 /* InputType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432A22D2C6F9777000F5959 /* InputType.swift */; };
 		0433DEAD2C4BB7E500DB4B31 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433DEAC2C4BB7E500DB4B31 /* UserModel.swift */; };
 		0435DB122C43CFC000D66FB1 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB112C43CFC000D66FB1 /* LogInViewModel.swift */; };
 		0435DB142C43CFD300D66FB1 /* LogInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB132C43CFD300D66FB1 /* LogInCoordinator.swift */; };
@@ -175,6 +180,11 @@
 		042DF4C22C5A8EB8004436DD /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		042DF4C42C5A8EC2004436DD /* Chart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chart.storyboard; sourceTree = "<group>"; };
 		042DF4C62C5AD5B1004436DD /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		0432A2252C6F96F3000F5959 /* CalculatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorType.swift; sourceTree = "<group>"; };
+		0432A2272C6F971A000F5959 /* BMILevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMILevel.swift; sourceTree = "<group>"; };
+		0432A2292C6F972C000F5959 /* FatPercentageLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FatPercentageLevel.swift; sourceTree = "<group>"; };
+		0432A22B2C6F9742000F5959 /* DailyCaloriesRateAtivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCaloriesRateAtivity.swift; sourceTree = "<group>"; };
+		0432A22D2C6F9777000F5959 /* InputType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputType.swift; sourceTree = "<group>"; };
 		0433DEAC2C4BB7E500DB4B31 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		0435DB112C43CFC000D66FB1 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		0435DB132C43CFD300D66FB1 /* LogInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInCoordinator.swift; sourceTree = "<group>"; };
@@ -393,6 +403,18 @@
 				042DF4C42C5A8EC2004436DD /* Chart.storyboard */,
 			);
 			path = Chart;
+			sourceTree = "<group>";
+		};
+		0432A2242C6F96CE000F5959 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				0432A2252C6F96F3000F5959 /* CalculatorType.swift */,
+				0432A2272C6F971A000F5959 /* BMILevel.swift */,
+				0432A2292C6F972C000F5959 /* FatPercentageLevel.swift */,
+				0432A22B2C6F9742000F5959 /* DailyCaloriesRateAtivity.swift */,
+				0432A22D2C6F9777000F5959 /* InputType.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		0435DB102C43CFA700D66FB1 /* LogIn */ = {
@@ -618,6 +640,7 @@
 		04B1C2C82C6BB37300934729 /* DetailedCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				0432A2242C6F96CE000F5959 /* Data */,
 				04B1C2D12C6BB94F00934729 /* CalculatorInputView */,
 				04B1C2C92C6BB3AE00934729 /* DetailedCalculatorCoordinator.swift */,
 				04B1C2CB2C6BB3C000934729 /* DetailedCalculatorViewModel.swift */,
@@ -965,6 +988,7 @@
 				044E854E2C3E6A1300E0916D /* Identifiers.swift in Sources */,
 				045C559E2C6921AD002F3731 /* UILable+Extension.swift in Sources */,
 				043C42B02C4BB0F500FCF502 /* ProfileViewModel.swift in Sources */,
+				0432A2282C6F971A000F5959 /* BMILevel.swift in Sources */,
 				042DF4A42C542744004436DD /* Double+Extensions.swift in Sources */,
 				04FC59372C64E68500C446B0 /* HidableTableViewCell.swift in Sources */,
 				046B12512C30BB170095ECC7 /* BaseViewController.swift in Sources */,
@@ -975,6 +999,7 @@
 				046B12652C3407AB0095ECC7 /* UIColor+Extension.swift in Sources */,
 				042535652C39F44F00FE9611 /* UIViewController+Extension.swift in Sources */,
 				046B126B2C35F40B0095ECC7 /* CustomImageButton.swift in Sources */,
+				0432A22A2C6F972C000F5959 /* FatPercentageLevel.swift in Sources */,
 				041175D62C3A006C00059052 /* TabCoordinator.swift in Sources */,
 				04F3C5602C3D3EF1000E14C7 /* RegitstrationViewModel.swift in Sources */,
 				04D2F19E2C510E9B00F85ED9 /* PopupTransitioningDelegate.swift in Sources */,
@@ -1004,6 +1029,7 @@
 				04D0D9192C6E551600930C68 /* ActivityPopUpCoordinator.swift in Sources */,
 				04FC59252C639ED700C446B0 /* ExerciseModel.swift in Sources */,
 				04D3564C2C46A4D20087859F /* ForgotPasswordViewController.swift in Sources */,
+				0432A22E2C6F9777000F5959 /* InputType.swift in Sources */,
 				046B126F2C35FD9B0095ECC7 /* PlainButton.swift in Sources */,
 				04FC593C2C660B4300C446B0 /* ExerciseViewModel.swift in Sources */,
 				046B12592C30C2770095ECC7 /* HomeCoordinator.swift in Sources */,
@@ -1020,6 +1046,7 @@
 				04D082762C5BBB61000023A9 /* CollectionView+Extension.swift in Sources */,
 				046B12602C32BAD10095ECC7 /* Coordinator.swift in Sources */,
 				0435DB162C43CFE200D66FB1 /* LogInViewController.swift in Sources */,
+				0432A22C2C6F9742000F5959 /* DailyCaloriesRateAtivity.swift in Sources */,
 				04CE3E8B2C4EF37A00A0C121 /* Style.swift in Sources */,
 				04D0D91B2C6E552500930C68 /* ActivityPopUpViewModel.swift in Sources */,
 				04F3C55E2C3D3EE1000E14C7 /* RegitstrationCoordinator.swift in Sources */,
@@ -1033,6 +1060,7 @@
 				04D2F1912C51075300F85ED9 /* OptionModel.swift in Sources */,
 				046B12952C39F20D0095ECC7 /* UIView+Extension.swift in Sources */,
 				04D2F19F2C510E9B00F85ED9 /* PopupTransitioningPresentationController.swift in Sources */,
+				0432A2262C6F96F3000F5959 /* CalculatorType.swift in Sources */,
 				046B12902C3987340095ECC7 /* SplashViewController.swift in Sources */,
 				04B1C2CE2C6BB3D100934729 /* DetailedCalculatorViewController.swift in Sources */,
 				04D2F1982C510CDA00F85ED9 /* OptionsPopUpViewModel.swift in Sources */,
