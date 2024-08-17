@@ -22,7 +22,7 @@ final class DetailedCalculatorViewModel: BaseViewModel<DetailedCalculatorCoordin
     private(set) var activityLevel: DailyCaloriesRateAtivity = .empty {
         didSet {
             guard activityLevel != .empty else { return }
-            self.updateActivityLevel(activityLevel)
+            self.updateActivityLevel()
         }
     }
     private(set) var result: (level: ResultLevel?, value: Double)? {
@@ -38,7 +38,7 @@ final class DetailedCalculatorViewModel: BaseViewModel<DetailedCalculatorCoordin
     }
     
     var update: () -> () = { }
-    var updateActivityLevel: (DailyCaloriesRateAtivity?) -> () = {_ in }
+    var updateActivityLevel: () -> () = { }
     var updateResult: () -> () = { }
     
     init(sex: Sex, type: CalculatorType) {

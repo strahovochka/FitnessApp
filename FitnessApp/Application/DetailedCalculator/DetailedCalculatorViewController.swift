@@ -26,11 +26,12 @@ final class DetailedCalculatorViewController: BaseViewController {
         viewModel?.update = { [weak self] in
             guard let self = self else { return }
             self.updateInputs()
+            self.updateActivityButton()
             self.updateResult()
         }
-        viewModel?.updateActivityLevel = { [weak self] activityLevel in
-            guard let self = self, let activityLevel = activityLevel else { return }
-            self.updateActivityButton(with: activityLevel)
+        viewModel?.updateActivityLevel = { [weak self] in
+            guard let self = self else { return }
+            self.updateActivityButton()
         }
         viewModel?.updateResult = { [weak self] in
             guard let self = self else { return }
@@ -138,10 +139,10 @@ private extension DetailedCalculatorViewController {
         }
     }
     
-    func updateActivityButton(with activityLevel: DailyCaloriesRateAtivity? = nil) {
+    func updateActivityButton() {
         activityLevelButton.layer.borderColor = UIColor.primaryWhite.cgColor
         activityLevelButton.titleLabel?.textColor = .primaryWhite
-        guard let activityLevel = activityLevel, activityLevel != .empty else {
+        guard let activityLevel = viewModel?.activityLevel, activityLevel != .empty else {
             activityLevelButton.setTitle(viewModel?.activityButtonText, for: .normal)
             return
         }
