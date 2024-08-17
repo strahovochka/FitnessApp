@@ -25,7 +25,8 @@ final class DetailedCalculatorViewController: BaseViewController {
         showNavigationBar(backButtonEnabled: true)
         viewModel?.update = { [weak self] in
             guard let self = self else { return }
-            self.updateUI()
+            self.updateInputs()
+            self.updateResult()
         }
         viewModel?.updateActivityLevel = { [weak self] activityLevel in
             guard let self = self, let activityLevel = activityLevel else { return }
@@ -94,7 +95,7 @@ private extension DetailedCalculatorViewController {
             return
         }
         resultDescriptionLabel.isHidden = false
-        resultDescriptionLabel.text = viewModel.getLevel()?.description
+        resultDescriptionLabel.text = viewModel.caloriesDescriptionText
     }
     
     func configActivityButton() {
@@ -118,16 +119,11 @@ private extension DetailedCalculatorViewController {
     func configInputError() {
         resultLabel.layer.borderColor = UIColor.primaryRed.cgColor
         resultLabel.textColor = .primaryRed
+        resultLabel.font = .regularSaira
         resultLabel.text = BMILevel.empty.rawValue
     }
     
     //MARK: -Updaters
-    func updateUI() {
-        updateInputs()
-        updateResult()
-        guard let viewModel = viewModel, viewModel.type == .dailyCalorieRequirement else { return }
-        updateActivityButton(with: viewModel.getActivityLevel())
-    }
     
     func updateInputs() {
         guard let viewModel = viewModel else { return }
@@ -156,13 +152,13 @@ private extension DetailedCalculatorViewController {
         guard let viewModel = viewModel else { return }
         resultLabel.layer.borderColor = UIColor.primaryWhite.withAlphaComponent(0.4).cgColor
         if viewModel.type != .dailyCalorieRequirement {
-            if let level = viewModel.getLevel() {
+            if let level = viewModel.result?.level {
                 resultDescriptionLabel.isHidden = level.isEmpty
                 resultDescriptionLabel.text = level.description
             }
         }
         
-        guard let result = viewModel.getCalculatedResult() else {
+        guard let result = viewModel.result?.value else {
             configResultPlaceholder()
             return
         }
@@ -188,7 +184,7 @@ private extension DetailedCalculatorViewController {
         if inputsStackCiew.subviews.compactMap({ $0 as? CalculatorInputView}).contains(where: { $0.isError() }) {
             allowCalculation = false
         }
-        if viewModel.type == .dailyCalorieRequirement && viewModel.getActivityLevel() == .empty {
+        if viewModel.type == .dailyCalorieRequirement && viewModel.activityLevel == .empty {
             allowCalculation = false
             configActivityErrorState()
         }
@@ -201,10 +197,7 @@ private extension DetailedCalculatorViewController {
     
     @objc func activityButtonPressed() {
         viewModel?.goToActivityPopUp()
-        guard let _ = viewModel?.getActivityLevel() else {
-            activityLevelButton.setTitleColor(.primaryWhite, for: .normal)
-            activityLevelButton.layer.borderColor = UIColor.primaryWhite.cgColor
-            return
-        }
+        activityLevelButton.setTitleColor(.primaryWhite, for: .normal)
+        activityLevelButton.layer.borderColor = UIColor.primaryWhite.cgColor
     }
 }

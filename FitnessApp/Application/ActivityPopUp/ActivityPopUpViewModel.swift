@@ -10,9 +10,9 @@ import Foundation
 final class ActivityPopUpViewModel: BaseViewModel<ActivityPopUpCoordinator> {
     let title = "Chose Your Activity Level"
     let confirmButtonText = "Confirm"
-    private(set) var selectedActivityLevel: DailyCaloriesRateAtivity?
+    private(set) var selectedActivityLevel: DailyCaloriesRateAtivity
     
-    init(selectedActivityLevel: DailyCaloriesRateAtivity?) {
+    init(selectedActivityLevel: DailyCaloriesRateAtivity) {
         self.selectedActivityLevel = selectedActivityLevel
     }
     

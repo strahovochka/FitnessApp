@@ -27,7 +27,7 @@ final class DetailedCalculatorCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func navigateToActivityPopUp(selectedActivityLevel: DailyCaloriesRateAtivity?, delegate: ActivityLevelDelegate) {
+    func navigateToActivityPopUp(selectedActivityLevel: DailyCaloriesRateAtivity, delegate: ActivityLevelDelegate) {
         let child = ActivityPopUpCoordinator(navigationController: navigationController, activityLevel: selectedActivityLevel)
         child.delegate = delegate
         child.start()

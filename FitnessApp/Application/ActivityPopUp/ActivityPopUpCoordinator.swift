@@ -9,11 +9,11 @@ import UIKit
 
 final class ActivityPopUpCoordinator: Coordinator {
     var navigationController: UINavigationController
-    let selectedActivityLevel: DailyCaloriesRateAtivity?
+    let selectedActivityLevel: DailyCaloriesRateAtivity
     weak var delegate: ActivityLevelDelegate?
     let transitionDelegate = PopupTransitioningDelegate()
     
-    init(navigationController: UINavigationController, activityLevel: DailyCaloriesRateAtivity?) {
+    init(navigationController: UINavigationController, activityLevel: DailyCaloriesRateAtivity) {
         self.navigationController = navigationController
         self.selectedActivityLevel = activityLevel
     }
