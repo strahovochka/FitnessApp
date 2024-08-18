@@ -27,7 +27,7 @@ final class DetailedCalculatorViewController: BaseViewController {
             guard let self = self else { return }
             self.updateInputs()
             self.updateActivityButton()
-            self.updateResult()
+            self.configResultPlaceholder()
         }
         viewModel?.updateActivityLevel = { [weak self] in
             guard let self = self else { return }
@@ -35,7 +35,7 @@ final class DetailedCalculatorViewController: BaseViewController {
         }
         viewModel?.updateResult = { [weak self] in
             guard let self = self else { return }
-            self.updateResult()
+            self.checkForErrorAndUpdate()
         }
     }
 }
@@ -49,6 +49,7 @@ private extension DetailedCalculatorViewController {
         calculatorNameLabel.textColor = .primaryWhite
         calculatorNameLabel.font = .mediumSaira?.withSize(24)
         calculatorNameLabel.text = viewModel.type.name
+        calculatorNameLabel.numberOfLines = 0
         
         configSegmentedControl()
         updateInputs()
@@ -147,6 +148,22 @@ private extension DetailedCalculatorViewController {
             return
         }
         activityLevelButton.setTitle(activityLevel.shortDescription, for: .normal)
+    }
+
+    func checkForErrorAndUpdate() {
+        guard let viewModel = viewModel else { return }
+        if viewModel.type != .dailyCalorieRequirement {
+            guard let level = viewModel.result?.level, !level.isEmpty else {
+                configInputError()
+                return
+            }
+        } else {
+            guard let result = viewModel.result?.value, result > 500 else {
+                configInputError()
+                return
+            }
+        }
+        updateResult()
     }
 
     func updateResult() {

@@ -54,21 +54,14 @@ private extension ActivityPopUpViewController {
     
     func configOptionsStack() {
         optionsStack.backgroundColor = .clear
+        guard let viewModel = viewModel else { return }
         DailyCaloriesRateAtivity.allCases.forEach { level in
             let view = ActivityView()
             view.backgroundColor = .clear
-            if let selectedLevel = viewModel?.selectedActivityLevel, selectedLevel == level {
-                view.config(with: level, isSelected: true) { [weak self] level in
-                    guard let self = self else { return }
-                    self.updateOptionsStack(levelToDeselect: self.viewModel?.selectedActivityLevel)
-                    self.viewModel?.setActivityLevel(level)
-                }
-            } else {
-                view.config(with: level, isSelected: false) { [weak self] level in
-                    guard let self = self else { return }
-                    self.updateOptionsStack(levelToDeselect: self.viewModel?.selectedActivityLevel)
-                    self.viewModel?.setActivityLevel(level)
-                }
+            view.config(with: level, isSelected: (viewModel.selectedActivityLevel == level)) { [weak self] level in
+                guard let self = self else { return }
+                self.updateOptionsStack(levelToDeselect: self.viewModel?.selectedActivityLevel)
+                self.viewModel?.setActivityLevel(level)
             }
             optionsStack.addArrangedSubview(view)
         }

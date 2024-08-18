@@ -42,7 +42,7 @@ enum BMILevel: String, ResultLevel {
         case 40...:
             return .toExtremlyHigh
         default:
-            return .tooLow
+            return .empty
         }
     }
 }

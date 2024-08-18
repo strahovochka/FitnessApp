@@ -19,30 +19,33 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xsL-Cf-0g3" customClass="CustomImageButton" customModule="FitnessApp" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="2" width="15" height="15"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="15" id="23L-X1-Asl"/>
-                        <constraint firstAttribute="width" secondItem="xsL-Cf-0g3" secondAttribute="height" multiplier="1:1" id="4NX-yV-vkS"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled"/>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZhS-WK-mcW">
-                    <rect key="frame" x="29.000000000000004" y="0.0" width="41.333333333333343" height="60"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="fVf-YK-I9r">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xsL-Cf-0g3" customClass="CustomImageButton" customModule="FitnessApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15" id="23L-X1-Asl"/>
+                                <constraint firstAttribute="width" secondItem="xsL-Cf-0g3" secondAttribute="height" multiplier="1:1" id="4NX-yV-vkS"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="filled"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZhS-WK-mcW">
+                            <rect key="frame" x="29" y="0.0" width="364" height="20.333333333333332"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
-                <constraint firstItem="xsL-Cf-0g3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="2" id="128-xg-eG2"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZhS-WK-mcW" secondAttribute="trailing" constant="14" id="KI1-b2-MzC"/>
-                <constraint firstItem="ZhS-WK-mcW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="MOQ-JZ-GbD"/>
-                <constraint firstItem="xsL-Cf-0g3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="TVc-q2-7il"/>
-                <constraint firstItem="ZhS-WK-mcW" firstAttribute="leading" secondItem="xsL-Cf-0g3" secondAttribute="trailing" constant="14" id="qa2-o6-qIp"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ZhS-WK-mcW" secondAttribute="bottom" id="uTg-Wb-G9p"/>
+                <constraint firstItem="fVf-YK-I9r" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="IMW-Xp-EnI"/>
+                <constraint firstAttribute="trailing" secondItem="fVf-YK-I9r" secondAttribute="trailing" id="a64-QQ-Lit"/>
+                <constraint firstItem="fVf-YK-I9r" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jOb-0B-v7I"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="fVf-YK-I9r" secondAttribute="bottom" id="wNM-hY-cwk"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="58.778625954198468" y="-259.85915492957747"/>

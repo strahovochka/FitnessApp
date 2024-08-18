@@ -66,35 +66,17 @@ final class DetailedCalculatorViewModel: BaseViewModel<DetailedCalculatorCoordin
     }
     
     func calculateResult() {
-        let result: Double
-        let level: ResultLevel?
         switch type {
         case .BMI:
-            guard let height = inputs[.height],
-                  let weight = inputs[.weight] else { return }
-            result = Double(weight / ((height * height) / 10000))
-            level = BMILevel.getLevel(from: result)
+            guard let bmi = calculateBMI() else { return }
+            self.result = bmi
         case .fatPercentage:
-            guard let waist = inputs[.waist],
-                  let neck = inputs[.neck],
-                  let height = inputs[.height] else { return }
-            if selectedSegmentSex == .male {
-                result = (495 / (1.0324 - 0.19077 * log10(waist - neck) + 0.15456 * log10(height))) - 450
-            } else {
-                guard let hips = inputs[.hips] else { return }
-                result = (495 / (1.2958 - 0.35 * log10(waist + hips - neck) + 0.221 * log10(height))) - 450
-            }
-            level = FatPercentLevel.getLevel(from: result)
+            guard let fatPercentage = calculateFat() else { return }
+            self.result = fatPercentage
         case .dailyCalorieRequirement:
-            let sexConstant = (selectedSegmentSex == .male) ? 5 : -161
-            guard let weight = inputs[.weight],
-                  let height = inputs[.height],
-                  let age = inputs[.age],
-                  activityLevel != .empty else { return }
-            result = (10 * weight + 6.25 * height - 5 * Double(age) + Double(sexConstant)) * activityLevel.value
-            level = nil
+            guard let calories = calculateCalories() else { return }
+            self.result = (nil, calories)
         }
-        self.result = (level, result)
     }
     
     func goToActivityPopUp() {
@@ -102,9 +84,48 @@ final class DetailedCalculatorViewModel: BaseViewModel<DetailedCalculatorCoordin
     }
 }
 
+private extension DetailedCalculatorViewModel {
+    func calculateBMI() -> (ResultLevel, Double)? {
+        guard let height = inputs[.height],
+              let weight = inputs[.weight] else { return nil }
+        let result = Double(weight / ((height * height) / 10000))
+        return(BMILevel.getLevel(from: result), result)
+    }
+    
+    func calculateFat() -> (ResultLevel, Double)? {
+        let result: Double
+        guard let waist = inputs[.waist],
+              let neck = inputs[.neck],
+              let height = inputs[.height] else { return nil }
+        if selectedSegmentSex == .male {
+            result = (495 / (1.0324 - 0.19077 * log10(waist - neck) + 0.15456 * log10(height))) - 450
+        } else {
+            guard let hips = inputs[.hips] else { return nil }
+            result = (495 / (1.2958 - 0.35 * log10(waist + hips - neck) + 0.221 * log10(height))) - 450
+        }
+        return (FatPercentLevel.getLevel(from: result), result)
+    }
+    
+    func calculateCalories() -> Double? {
+        let sexConstant = (selectedSegmentSex == .male) ? 5 : -161
+        guard let weight = inputs[.weight],
+              let height = inputs[.height],
+              let age = inputs[.age],
+              activityLevel != .empty else { return nil }
+        let result = (10 * weight + 6.25 * height - 5 * Double(age) + Double(sexConstant)) * activityLevel.value
+        return result
+    }
+}
+
 extension DetailedCalculatorViewModel: CustomTextFieldDelegate {
     func updateValue(_ textField: CustomTextField, for tag: Int, as newValue: String) {
-        guard let inputType = InputType(rawValue: tag), let value = Double(newValue) else { return }
+        guard let inputType = InputType(rawValue: tag) else { return }
+        guard let value = Double(newValue) else {
+            if newValue == "" {
+                inputs[inputType] = 0.0
+            }
+            return
+        }
         inputs[inputType] = value
     }
 }

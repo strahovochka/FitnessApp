@@ -21,35 +21,40 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoR-wV-QuT">
-                    <rect key="frame" x="0.0" y="10.666666666666664" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8js-D8-1Pi" customClass="CustomTextField" customModule="FitnessApp" customModuleProvider="target">
-                    <rect key="frame" x="64" y="0.0" width="95" height="42"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="95" id="egB-P6-3Wz"/>
-                    </constraints>
-                </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62h-Xp-Uos">
-                    <rect key="frame" x="167" y="10.666666666666664" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zgU-Z4-yTa">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoR-wV-QuT">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="42"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="F0D-04-Tge"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8js-D8-1Pi" customClass="CustomTextField" customModule="FitnessApp" customModuleProvider="target">
+                            <rect key="frame" x="68" y="0.0" width="95" height="42"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="95" id="egB-P6-3Wz"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62h-Xp-Uos">
+                            <rect key="frame" x="171" y="0.0" width="204" height="42"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
-                <constraint firstItem="62h-Xp-Uos" firstAttribute="leading" secondItem="8js-D8-1Pi" secondAttribute="trailing" constant="8" id="5Cq-7Y-453"/>
-                <constraint firstItem="8js-D8-1Pi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7cq-sx-hyy"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="8js-D8-1Pi" secondAttribute="bottom" id="N4e-nT-rH3"/>
-                <constraint firstItem="GoR-wV-QuT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="TKc-ih-lZg"/>
-                <constraint firstItem="GoR-wV-QuT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="efS-Oo-EcQ"/>
-                <constraint firstItem="62h-Xp-Uos" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="jaR-2b-3nU"/>
-                <constraint firstItem="8js-D8-1Pi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="64" id="rp3-QJ-67L"/>
+                <constraint firstAttribute="bottom" secondItem="zgU-Z4-yTa" secondAttribute="bottom" id="C90-lu-auU"/>
+                <constraint firstItem="zgU-Z4-yTa" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cC5-la-we1"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zgU-Z4-yTa" secondAttribute="trailing" id="jlo-WJ-c8M"/>
+                <constraint firstItem="zgU-Z4-yTa" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="wOq-yw-aOF"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="64.885496183206101" y="-169.71830985915494"/>

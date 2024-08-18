@@ -39,7 +39,7 @@ enum FatPercentLevel: String, ResultLevel {
         case 29.0...:
             return .toHigh
         default:
-            return .toLow
+            return .empty
         }
     }
 }
