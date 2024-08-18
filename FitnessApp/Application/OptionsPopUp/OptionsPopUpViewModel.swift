@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol OptionsPopUpDelegate {
+protocol OptionsPopUpDelegate: AnyObject {
     func selectOptions(_ options: [OptionDataName])
 }
 

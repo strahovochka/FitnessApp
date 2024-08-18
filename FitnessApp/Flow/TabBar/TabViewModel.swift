@@ -59,7 +59,7 @@ enum TabBarItem: Int, CaseIterable {
         case .progress:
             return ProgressCoordinator(navigationController: UINavigationController(), user: user)
         case .calculator:
-            return CalculatorCoordinator(navigationController: UINavigationController())
+            return CalculatorCoordinator(navigationController: UINavigationController(), user: user)
         case .muscles:
             return MusclesCoordinator(navigationController: UINavigationController(), user: user)
         }

@@ -23,7 +23,7 @@ extension UIView {
         switch type {
         case .axial:
             gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
-            gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+            gradientLayer.endPoint = CGPoint(x: 0.0, y: 1.0)
         case .radial:
             gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.5)
             gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)

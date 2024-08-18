@@ -55,7 +55,7 @@ private extension ProgressViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .clear
-        tableView.register(Identifiers.NibNames.progressTableCell)
+        tableView.register(Identifiers.NibNames.underlinedTableCell)
     }
     
     func updateUI() {
@@ -81,7 +81,7 @@ extension ProgressViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.NibNames.progressTableCell, for: indexPath) as? ProgressTableViewCell,
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.NibNames.underlinedTableCell, for: indexPath) as? UnderlinedTableViewCell,
               let option = viewModel?.getOptions()[indexPath.row] else { return UITableViewCell() }
         cell.config(with: option.optionName.rawValue)
         return cell

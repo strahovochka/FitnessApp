@@ -84,7 +84,7 @@ enum TextFieldType: Int, CaseIterable {
     
 }
 
-protocol CustomTextFieldDelegate {
+protocol CustomTextFieldDelegate: AnyObject {
     func updateValue(_ textField: CustomTextField, for tag: Int, as newValue: String)
 }
 
@@ -99,7 +99,7 @@ final class CustomTextField: UIView {
     @IBOutlet weak private var label: UILabel!
     @IBOutlet weak private var textField: UITextField!
     var errorChecker: ((String) -> (Bool))?
-    var delegate: CustomTextFieldDelegate?
+    weak var delegate: CustomTextFieldDelegate?
     
     var labelTitle: String? = "Label" {
         didSet {
@@ -165,6 +165,10 @@ final class CustomTextField: UIView {
         placeholderText = type.placeholderText
         tag = type.rawValue
         keyboardType = type.keyboardType
+    }
+    
+    func setLabelHidden(_ hidden: Bool) {
+        self.label.isHidden = hidden
     }
 }
 

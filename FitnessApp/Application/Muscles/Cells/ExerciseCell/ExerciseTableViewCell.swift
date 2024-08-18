@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol ExerciseCellDelegate {
+protocol ExerciseCellDelegate: AnyObject {
     func didSelectExercise(selected: Bool, cell: ExerciseTableViewCell)
 }
 
@@ -19,7 +19,7 @@ class ExerciseTableViewCell: UITableViewCell {
     @IBOutlet weak private var characteristictsLabel: UILabel!
     @IBOutlet weak private var moreAboutButton: PlainButton!
     @IBOutlet weak private var selectedImageView: UIImageView!
-    var delegate: ExerciseCellDelegate?
+    weak var delegate: ExerciseCellDelegate?
     var exercise: ExerciseModel? {
         didSet {
             configWithExercise()

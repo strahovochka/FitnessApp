@@ -16,7 +16,7 @@ final class OptionsPopUpViewController: UIViewController  {
     @IBOutlet weak private var cancelButton: UIButton!
     @IBOutlet weak private var selectButton: UIButton!
     
-    var delegate: OptionsPopUpDelegate?
+    weak var delegate: OptionsPopUpDelegate?
     var viewModel: OptionsPopUpViewModel?
     
     override func viewWillAppear(_ animated: Bool) {

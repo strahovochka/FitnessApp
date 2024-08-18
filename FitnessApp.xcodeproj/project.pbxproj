@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040A18FF2C6E5D6D006B4843 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040A18FE2C6E5D6D006B4843 /* ActivityView.swift */; };
+		040A19012C6E5D76006B4843 /* ActivityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040A19002C6E5D76006B4843 /* ActivityView.xib */; };
 		041175D62C3A006C00059052 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175D52C3A006C00059052 /* TabCoordinator.swift */; };
 		041175DE2C3A8D4B00059052 /* MusclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175DD2C3A8D4B00059052 /* MusclesViewController.swift */; };
 		041175E02C3A8D6D00059052 /* MusclesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041175DF2C3A8D6D00059052 /* MusclesViewModel.swift */; };
@@ -31,13 +33,18 @@
 		042DF4A42C542744004436DD /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4A32C542743004436DD /* Double+Extensions.swift */; };
 		042DF4AF2C544850004436DD /* Gilroy-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 042DF4AE2C54484F004436DD /* Gilroy-Semibold.ttf */; };
 		042DF4B22C57DB81004436DD /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4B12C57DB81004436DD /* Date+Extension.swift */; };
-		042DF4B62C591BE3004436DD /* ProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4B42C591BE2004436DD /* ProgressTableViewCell.swift */; };
-		042DF4B72C591BE3004436DD /* ProgressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042DF4B52C591BE3004436DD /* ProgressTableViewCell.xib */; };
+		042DF4B62C591BE3004436DD /* UnderlinedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4B42C591BE2004436DD /* UnderlinedTableViewCell.swift */; };
+		042DF4B72C591BE3004436DD /* UnderlinedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042DF4B52C591BE3004436DD /* UnderlinedTableViewCell.xib */; };
 		042DF4BF2C5A8EA3004436DD /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4BE2C5A8EA2004436DD /* ChartViewController.swift */; };
 		042DF4C12C5A8EAE004436DD /* ChartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4C02C5A8EAE004436DD /* ChartCoordinator.swift */; };
 		042DF4C32C5A8EB8004436DD /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4C22C5A8EB8004436DD /* ChartViewModel.swift */; };
 		042DF4C52C5A8EC2004436DD /* Chart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042DF4C42C5A8EC2004436DD /* Chart.storyboard */; };
 		042DF4C72C5AD5B1004436DD /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DF4C62C5AD5B1004436DD /* Int+Extension.swift */; };
+		0432A2262C6F96F3000F5959 /* CalculatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432A2252C6F96F3000F5959 /* CalculatorType.swift */; };
+		0432A2282C6F971A000F5959 /* BMILevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432A2272C6F971A000F5959 /* BMILevel.swift */; };
+		0432A22A2C6F972C000F5959 /* FatPercentageLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432A2292C6F972C000F5959 /* FatPercentageLevel.swift */; };
+		0432A22C2C6F9742000F5959 /* DailyCaloriesRateAtivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432A22B2C6F9742000F5959 /* DailyCaloriesRateAtivity.swift */; };
+		0432A22E2C6F9777000F5959 /* InputType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432A22D2C6F9777000F5959 /* InputType.swift */; };
 		0433DEAD2C4BB7E500DB4B31 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433DEAC2C4BB7E500DB4B31 /* UserModel.swift */; };
 		0435DB122C43CFC000D66FB1 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB112C43CFC000D66FB1 /* LogInViewModel.swift */; };
 		0435DB142C43CFD300D66FB1 /* LogInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB132C43CFD300D66FB1 /* LogInCoordinator.swift */; };
@@ -76,6 +83,12 @@
 		046B12902C3987340095ECC7 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B128F2C3987340095ECC7 /* SplashViewController.swift */; };
 		046B12922C39874A0095ECC7 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046B12912C39874A0095ECC7 /* Splash.storyboard */; };
 		046B12952C39F20D0095ECC7 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B12942C39F20D0095ECC7 /* UIView+Extension.swift */; };
+		04B1C2CA2C6BB3AE00934729 /* DetailedCalculatorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B1C2C92C6BB3AE00934729 /* DetailedCalculatorCoordinator.swift */; };
+		04B1C2CC2C6BB3C000934729 /* DetailedCalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B1C2CB2C6BB3C000934729 /* DetailedCalculatorViewModel.swift */; };
+		04B1C2CE2C6BB3D100934729 /* DetailedCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B1C2CD2C6BB3D100934729 /* DetailedCalculatorViewController.swift */; };
+		04B1C2D02C6BB3DF00934729 /* DetailedCalculator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B1C2CF2C6BB3DE00934729 /* DetailedCalculator.storyboard */; };
+		04B1C2D32C6BB96300934729 /* CalculatorInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B1C2D22C6BB96300934729 /* CalculatorInputView.xib */; };
+		04B1C2D52C6BB96F00934729 /* CalculatorInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B1C2D42C6BB96F00934729 /* CalculatorInputView.swift */; };
 		04C17A2F2C47D18000B929B9 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C17A2D2C47D18000B929B9 /* PopUpViewController.swift */; };
 		04CE3E8B2C4EF37A00A0C121 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE3E8A2C4EF37A00A0C121 /* Style.swift */; };
 		04D082762C5BBB61000023A9 /* CollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D082752C5BBB61000023A9 /* CollectionView+Extension.swift */; };
@@ -86,6 +99,10 @@
 		04D082852C5D5750000023A9 /* DeleteAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D082842C5D5750000023A9 /* DeleteAccountViewModel.swift */; };
 		04D082872C5D5776000023A9 /* DeleteAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D082862C5D5776000023A9 /* DeleteAccountViewController.swift */; };
 		04D082892C5D585E000023A9 /* DeleteAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D082882C5D585E000023A9 /* DeleteAccount.storyboard */; };
+		04D0D9192C6E551600930C68 /* ActivityPopUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0D9182C6E551600930C68 /* ActivityPopUpCoordinator.swift */; };
+		04D0D91B2C6E552500930C68 /* ActivityPopUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0D91A2C6E552500930C68 /* ActivityPopUpViewModel.swift */; };
+		04D0D91D2C6E553200930C68 /* ActivityPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0D91C2C6E553200930C68 /* ActivityPopUpViewController.swift */; };
+		04D0D91F2C6E554000930C68 /* ActivityPopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D0D91E2C6E554000930C68 /* ActivityPopUp.storyboard */; };
 		04D2F1912C51075300F85ED9 /* OptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2F1902C51075300F85ED9 /* OptionModel.swift */; };
 		04D2F1942C510CBE00F85ED9 /* OptionsPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2F1932C510CBE00F85ED9 /* OptionsPopUpViewController.swift */; };
 		04D2F1962C510CCB00F85ED9 /* OptionsPopUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2F1952C510CCB00F85ED9 /* OptionsPopUpCoordinator.swift */; };
@@ -111,6 +128,7 @@
 		04F3C5662C3D3F44000E14C7 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F3C5652C3D3F44000E14C7 /* Registration.storyboard */; };
 		04F3C5782C3D7475000E14C7 /* RegExp+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3C5772C3D7475000E14C7 /* RegExp+Extension.swift */; };
 		04F3C57A2C3D77F1000E14C7 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3C5792C3D77F1000E14C7 /* UITableView+Extension.swift */; };
+		04FB161A2C6BC4AF00AE951A /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB16192C6BC4AF00AE951A /* CustomSegmentedControl.swift */; };
 		04FC59212C6291E100C446B0 /* UserDependentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC59202C6291E100C446B0 /* UserDependentViewModel.swift */; };
 		04FC59232C639B4900C446B0 /* Exercises_json.json in Resources */ = {isa = PBXBuildFile; fileRef = 04FC59222C639B4900C446B0 /* Exercises_json.json */; };
 		04FC59252C639ED700C446B0 /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC59242C639ED700C446B0 /* ExerciseModel.swift */; };
@@ -129,6 +147,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040A18FE2C6E5D6D006B4843 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		040A19002C6E5D76006B4843 /* ActivityView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityView.xib; sourceTree = "<group>"; };
 		041175D52C3A006C00059052 /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
 		041175DD2C3A8D4B00059052 /* MusclesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusclesViewController.swift; sourceTree = "<group>"; };
 		041175DF2C3A8D6D00059052 /* MusclesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusclesViewModel.swift; sourceTree = "<group>"; };
@@ -153,13 +173,18 @@
 		042DF4A32C542743004436DD /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		042DF4AE2C54484F004436DD /* Gilroy-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Semibold.ttf"; sourceTree = "<group>"; };
 		042DF4B12C57DB81004436DD /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
-		042DF4B42C591BE2004436DD /* ProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTableViewCell.swift; sourceTree = "<group>"; };
-		042DF4B52C591BE3004436DD /* ProgressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressTableViewCell.xib; sourceTree = "<group>"; };
+		042DF4B42C591BE2004436DD /* UnderlinedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedTableViewCell.swift; sourceTree = "<group>"; };
+		042DF4B52C591BE3004436DD /* UnderlinedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnderlinedTableViewCell.xib; sourceTree = "<group>"; };
 		042DF4BE2C5A8EA2004436DD /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		042DF4C02C5A8EAE004436DD /* ChartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCoordinator.swift; sourceTree = "<group>"; };
 		042DF4C22C5A8EB8004436DD /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		042DF4C42C5A8EC2004436DD /* Chart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chart.storyboard; sourceTree = "<group>"; };
 		042DF4C62C5AD5B1004436DD /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		0432A2252C6F96F3000F5959 /* CalculatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorType.swift; sourceTree = "<group>"; };
+		0432A2272C6F971A000F5959 /* BMILevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMILevel.swift; sourceTree = "<group>"; };
+		0432A2292C6F972C000F5959 /* FatPercentageLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FatPercentageLevel.swift; sourceTree = "<group>"; };
+		0432A22B2C6F9742000F5959 /* DailyCaloriesRateAtivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCaloriesRateAtivity.swift; sourceTree = "<group>"; };
+		0432A22D2C6F9777000F5959 /* InputType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputType.swift; sourceTree = "<group>"; };
 		0433DEAC2C4BB7E500DB4B31 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		0435DB112C43CFC000D66FB1 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		0435DB132C43CFD300D66FB1 /* LogInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInCoordinator.swift; sourceTree = "<group>"; };
@@ -200,6 +225,12 @@
 		046B128F2C3987340095ECC7 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		046B12912C39874A0095ECC7 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		046B12942C39F20D0095ECC7 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		04B1C2C92C6BB3AE00934729 /* DetailedCalculatorCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCalculatorCoordinator.swift; sourceTree = "<group>"; };
+		04B1C2CB2C6BB3C000934729 /* DetailedCalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCalculatorViewModel.swift; sourceTree = "<group>"; };
+		04B1C2CD2C6BB3D100934729 /* DetailedCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCalculatorViewController.swift; sourceTree = "<group>"; };
+		04B1C2CF2C6BB3DE00934729 /* DetailedCalculator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailedCalculator.storyboard; sourceTree = "<group>"; };
+		04B1C2D22C6BB96300934729 /* CalculatorInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalculatorInputView.xib; sourceTree = "<group>"; };
+		04B1C2D42C6BB96F00934729 /* CalculatorInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorInputView.swift; sourceTree = "<group>"; };
 		04C17A2D2C47D18000B929B9 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		04CE3E8A2C4EF37A00A0C121 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		04D082752C5BBB61000023A9 /* CollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+Extension.swift"; sourceTree = "<group>"; };
@@ -210,6 +241,10 @@
 		04D082842C5D5750000023A9 /* DeleteAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountViewModel.swift; sourceTree = "<group>"; };
 		04D082862C5D5776000023A9 /* DeleteAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountViewController.swift; sourceTree = "<group>"; };
 		04D082882C5D585E000023A9 /* DeleteAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DeleteAccount.storyboard; sourceTree = "<group>"; };
+		04D0D9182C6E551600930C68 /* ActivityPopUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityPopUpCoordinator.swift; sourceTree = "<group>"; };
+		04D0D91A2C6E552500930C68 /* ActivityPopUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityPopUpViewModel.swift; sourceTree = "<group>"; };
+		04D0D91C2C6E553200930C68 /* ActivityPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityPopUpViewController.swift; sourceTree = "<group>"; };
+		04D0D91E2C6E554000930C68 /* ActivityPopUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivityPopUp.storyboard; sourceTree = "<group>"; };
 		04D2F1902C51075300F85ED9 /* OptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionModel.swift; sourceTree = "<group>"; };
 		04D2F1932C510CBE00F85ED9 /* OptionsPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsPopUpViewController.swift; sourceTree = "<group>"; };
 		04D2F1952C510CCB00F85ED9 /* OptionsPopUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsPopUpCoordinator.swift; sourceTree = "<group>"; };
@@ -235,6 +270,7 @@
 		04F3C5652C3D3F44000E14C7 /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		04F3C5772C3D7475000E14C7 /* RegExp+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegExp+Extension.swift"; sourceTree = "<group>"; };
 		04F3C5792C3D77F1000E14C7 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		04FB16192C6BC4AF00AE951A /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		04FC59202C6291E100C446B0 /* UserDependentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDependentViewModel.swift; sourceTree = "<group>"; };
 		04FC59222C639B4900C446B0 /* Exercises_json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Exercises_json.json; sourceTree = "<group>"; };
 		04FC59242C639ED700C446B0 /* ExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
@@ -266,6 +302,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040A18FD2C6E5D56006B4843 /* ActivityView */ = {
+			isa = PBXGroup;
+			children = (
+				040A18FE2C6E5D6D006B4843 /* ActivityView.swift */,
+				040A19002C6E5D76006B4843 /* ActivityView.xib */,
+			);
+			path = ActivityView;
+			sourceTree = "<group>";
+		};
 		041175D42C3A005200059052 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,8 +387,8 @@
 		042DF4B32C591B6D004436DD /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				042DF4B42C591BE2004436DD /* ProgressTableViewCell.swift */,
-				042DF4B52C591BE3004436DD /* ProgressTableViewCell.xib */,
+				042DF4B42C591BE2004436DD /* UnderlinedTableViewCell.swift */,
+				042DF4B52C591BE3004436DD /* UnderlinedTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -358,6 +403,18 @@
 				042DF4C42C5A8EC2004436DD /* Chart.storyboard */,
 			);
 			path = Chart;
+			sourceTree = "<group>";
+		};
+		0432A2242C6F96CE000F5959 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				0432A2252C6F96F3000F5959 /* CalculatorType.swift */,
+				0432A2272C6F971A000F5959 /* BMILevel.swift */,
+				0432A2292C6F972C000F5959 /* FatPercentageLevel.swift */,
+				0432A22B2C6F9742000F5959 /* DailyCaloriesRateAtivity.swift */,
+				0432A22D2C6F9777000F5959 /* InputType.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		0435DB102C43CFA700D66FB1 /* LogIn */ = {
@@ -441,6 +498,8 @@
 		046B12482C30BA480095ECC7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				04D0D9172C6E54FF00930C68 /* ActivityPopUp */,
+				04B1C2C82C6BB37300934729 /* DetailedCalculator */,
 				04FC59382C660B2500C446B0 /* Exercise */,
 				04D082812C5D56CC000023A9 /* DeleteAccount */,
 				042DF4BD2C5A8E8E004436DD /* Chart */,
@@ -534,6 +593,7 @@
 				046B12822C3615760095ECC7 /* CustomSwitch.swift */,
 				04E5AAC42C51182500DA61C7 /* AdjustableTableView.swift */,
 				04FC59362C64E68400C446B0 /* HidableTableViewCell.swift */,
+				04FB16192C6BC4AF00AE951A /* CustomSegmentedControl.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -577,6 +637,28 @@
 			path = SplashScreen;
 			sourceTree = "<group>";
 		};
+		04B1C2C82C6BB37300934729 /* DetailedCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				0432A2242C6F96CE000F5959 /* Data */,
+				04B1C2D12C6BB94F00934729 /* CalculatorInputView */,
+				04B1C2C92C6BB3AE00934729 /* DetailedCalculatorCoordinator.swift */,
+				04B1C2CB2C6BB3C000934729 /* DetailedCalculatorViewModel.swift */,
+				04B1C2CD2C6BB3D100934729 /* DetailedCalculatorViewController.swift */,
+				04B1C2CF2C6BB3DE00934729 /* DetailedCalculator.storyboard */,
+			);
+			path = DetailedCalculator;
+			sourceTree = "<group>";
+		};
+		04B1C2D12C6BB94F00934729 /* CalculatorInputView */ = {
+			isa = PBXGroup;
+			children = (
+				04B1C2D22C6BB96300934729 /* CalculatorInputView.xib */,
+				04B1C2D42C6BB96F00934729 /* CalculatorInputView.swift */,
+			);
+			path = CalculatorInputView;
+			sourceTree = "<group>";
+		};
 		04C17A2C2C47D16A00B929B9 /* PopUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -606,6 +688,18 @@
 				04D082882C5D585E000023A9 /* DeleteAccount.storyboard */,
 			);
 			path = DeleteAccount;
+			sourceTree = "<group>";
+		};
+		04D0D9172C6E54FF00930C68 /* ActivityPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				040A18FD2C6E5D56006B4843 /* ActivityView */,
+				04D0D9182C6E551600930C68 /* ActivityPopUpCoordinator.swift */,
+				04D0D91A2C6E552500930C68 /* ActivityPopUpViewModel.swift */,
+				04D0D91C2C6E553200930C68 /* ActivityPopUpViewController.swift */,
+				04D0D91E2C6E554000930C68 /* ActivityPopUp.storyboard */,
+			);
+			path = ActivityPopUp;
 			sourceTree = "<group>";
 		};
 		04D2F1922C510CA700F85ED9 /* OptionsPopUp */ = {
@@ -785,24 +879,28 @@
 			files = (
 				04F3C5572C3D3220000E14C7 /* TabBar.storyboard in Resources */,
 				042DF4AF2C544850004436DD /* Gilroy-Semibold.ttf in Resources */,
+				04D0D91F2C6E554000930C68 /* ActivityPopUp.storyboard in Resources */,
 				046B128B2C36D1B90095ECC7 /* SairaRoman-Regular.ttf in Resources */,
 				04F3C5662C3D3F44000E14C7 /* Registration.storyboard in Resources */,
 				04FC59322C63C06500C446B0 /* Nunito.ttf in Resources */,
 				043C42AB2C4914BC00FCF502 /* PopUp.storyboard in Resources */,
 				041175E42C3A8D8300059052 /* Muscles.storyboard in Resources */,
 				0435DB182C43CFED00D66FB1 /* LogIn.storyboard in Resources */,
+				040A19012C6E5D76006B4843 /* ActivityView.xib in Resources */,
 				04D356452C46A3C00087859F /* GoogleService-Info.plist in Resources */,
 				046B123E2C3084BF0095ECC7 /* Assets.xcassets in Resources */,
+				04B1C2D02C6BB3DF00934729 /* DetailedCalculator.storyboard in Resources */,
 				04FC59402C660B5E00C446B0 /* Exercise.storyboard in Resources */,
 				04D082892C5D585E000023A9 /* DeleteAccount.storyboard in Resources */,
 				046B12572C30C2690095ECC7 /* Home.storyboard in Resources */,
 				042DF49D2C51426E004436DD /* OptionView.xib in Resources */,
 				046B12922C39874A0095ECC7 /* Splash.storyboard in Resources */,
-				042DF4B72C591BE3004436DD /* ProgressTableViewCell.xib in Resources */,
+				042DF4B72C591BE3004436DD /* UnderlinedTableViewCell.xib in Resources */,
 				046B128A2C3689930095ECC7 /* CustomTextField.xib in Resources */,
 				042DF4A22C53C8AF004436DD /* OptionCollectionViewCell.xib in Resources */,
 				042DF4C52C5A8EC2004436DD /* Chart.storyboard in Resources */,
 				04E5AACA2C511A8500DA61C7 /* OptionTableViewCell.xib in Resources */,
+				04B1C2D32C6BB96300934729 /* CalculatorInputView.xib in Resources */,
 				041175EC2C3A8DB300059052 /* Calculator.storyboard in Resources */,
 				043C42B42C4BB10B00FCF502 /* Profile.storyboard in Resources */,
 				041175F42C3A8DDF00059052 /* Progress.storyboard in Resources */,
@@ -867,9 +965,11 @@
 				046B12832C3615760095ECC7 /* CustomSwitch.swift in Sources */,
 				04FC59352C64DA9800C446B0 /* JSONParser.swift in Sources */,
 				046B125B2C30C2860095ECC7 /* HomeViewModel.swift in Sources */,
+				04FB161A2C6BC4AF00AE951A /* CustomSegmentedControl.swift in Sources */,
 				042DF4C32C5A8EB8004436DD /* ChartViewModel.swift in Sources */,
 				041175EE2C3A8DC200059052 /* ProgressViewController.swift in Sources */,
 				041175EA2C3A8DA900059052 /* CalculatorCoordinator.swift in Sources */,
+				04D0D91D2C6E553200930C68 /* ActivityPopUpViewController.swift in Sources */,
 				041175E02C3A8D6D00059052 /* MusclesViewModel.swift in Sources */,
 				042DF4C72C5AD5B1004436DD /* Int+Extension.swift in Sources */,
 				043C42B22C4BB10200FCF502 /* ProfileViewController.swift in Sources */,
@@ -884,19 +984,22 @@
 				041175FF2C3BCF7300059052 /* SplashViewModel.swift in Sources */,
 				046B128D2C36D3630095ECC7 /* UIFont+Extension.swift in Sources */,
 				0435DB142C43CFD300D66FB1 /* LogInCoordinator.swift in Sources */,
+				04B1C2D52C6BB96F00934729 /* CalculatorInputView.swift in Sources */,
 				044E854E2C3E6A1300E0916D /* Identifiers.swift in Sources */,
 				045C559E2C6921AD002F3731 /* UILable+Extension.swift in Sources */,
 				043C42B02C4BB0F500FCF502 /* ProfileViewModel.swift in Sources */,
+				0432A2282C6F971A000F5959 /* BMILevel.swift in Sources */,
 				042DF4A42C542744004436DD /* Double+Extensions.swift in Sources */,
 				04FC59372C64E68500C446B0 /* HidableTableViewCell.swift in Sources */,
 				046B12512C30BB170095ECC7 /* BaseViewController.swift in Sources */,
 				046B12882C3689870095ECC7 /* CustomTextField.swift in Sources */,
 				04F3C5542C3D31A9000E14C7 /* TabViewController.swift in Sources */,
 				041175E62C3A8D9100059052 /* ClaculatorViewController.swift in Sources */,
-				042DF4B62C591BE3004436DD /* ProgressTableViewCell.swift in Sources */,
+				042DF4B62C591BE3004436DD /* UnderlinedTableViewCell.swift in Sources */,
 				046B12652C3407AB0095ECC7 /* UIColor+Extension.swift in Sources */,
 				042535652C39F44F00FE9611 /* UIViewController+Extension.swift in Sources */,
 				046B126B2C35F40B0095ECC7 /* CustomImageButton.swift in Sources */,
+				0432A22A2C6F972C000F5959 /* FatPercentageLevel.swift in Sources */,
 				041175D62C3A006C00059052 /* TabCoordinator.swift in Sources */,
 				04F3C5602C3D3EF1000E14C7 /* RegitstrationViewModel.swift in Sources */,
 				04D2F19E2C510E9B00F85ED9 /* PopupTransitioningDelegate.swift in Sources */,
@@ -921,9 +1024,12 @@
 				046B124F2C30BAE10095ECC7 /* HomeViewController.swift in Sources */,
 				046B12352C3084BD0095ECC7 /* AppDelegate.swift in Sources */,
 				041175E82C3A8D9B00059052 /* CalculatorViewModel.swift in Sources */,
+				04B1C2CA2C6BB3AE00934729 /* DetailedCalculatorCoordinator.swift in Sources */,
 				043C42A92C4912F500FCF502 /* PopUpCoordinator.swift in Sources */,
+				04D0D9192C6E551600930C68 /* ActivityPopUpCoordinator.swift in Sources */,
 				04FC59252C639ED700C446B0 /* ExerciseModel.swift in Sources */,
 				04D3564C2C46A4D20087859F /* ForgotPasswordViewController.swift in Sources */,
+				0432A22E2C6F9777000F5959 /* InputType.swift in Sources */,
 				046B126F2C35FD9B0095ECC7 /* PlainButton.swift in Sources */,
 				04FC593C2C660B4300C446B0 /* ExerciseViewModel.swift in Sources */,
 				046B12592C30C2770095ECC7 /* HomeCoordinator.swift in Sources */,
@@ -932,13 +1038,17 @@
 				0435DB122C43CFC000D66FB1 /* LogInViewModel.swift in Sources */,
 				046B12372C3084BD0095ECC7 /* SceneDelegate.swift in Sources */,
 				0433DEAD2C4BB7E500DB4B31 /* UserModel.swift in Sources */,
+				04B1C2CC2C6BB3C000934729 /* DetailedCalculatorViewModel.swift in Sources */,
 				041175E22C3A8D7900059052 /* MusclesCoordinator.swift in Sources */,
 				04E5AAC92C511A8500DA61C7 /* OptionTableViewCell.swift in Sources */,
+				040A18FF2C6E5D6D006B4843 /* ActivityView.swift in Sources */,
 				042DF4C12C5A8EAE004436DD /* ChartCoordinator.swift in Sources */,
 				04D082762C5BBB61000023A9 /* CollectionView+Extension.swift in Sources */,
 				046B12602C32BAD10095ECC7 /* Coordinator.swift in Sources */,
 				0435DB162C43CFE200D66FB1 /* LogInViewController.swift in Sources */,
+				0432A22C2C6F9742000F5959 /* DailyCaloriesRateAtivity.swift in Sources */,
 				04CE3E8B2C4EF37A00A0C121 /* Style.swift in Sources */,
+				04D0D91B2C6E552500930C68 /* ActivityPopUpViewModel.swift in Sources */,
 				04F3C55E2C3D3EE1000E14C7 /* RegitstrationCoordinator.swift in Sources */,
 				043F42482C6648660022310F /* UITapGestureRecognizer+Extension.swift in Sources */,
 				04D3564A2C46A4C40087859F /* ForgotPasswordCoodinator.swift in Sources */,
@@ -950,7 +1060,9 @@
 				04D2F1912C51075300F85ED9 /* OptionModel.swift in Sources */,
 				046B12952C39F20D0095ECC7 /* UIView+Extension.swift in Sources */,
 				04D2F19F2C510E9B00F85ED9 /* PopupTransitioningPresentationController.swift in Sources */,
+				0432A2262C6F96F3000F5959 /* CalculatorType.swift in Sources */,
 				046B12902C3987340095ECC7 /* SplashViewController.swift in Sources */,
+				04B1C2CE2C6BB3D100934729 /* DetailedCalculatorViewController.swift in Sources */,
 				04D2F1982C510CDA00F85ED9 /* OptionsPopUpViewModel.swift in Sources */,
 				044E85502C3F38EA00E0916D /* RegistrationModel.swift in Sources */,
 			);

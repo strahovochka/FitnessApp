@@ -155,7 +155,6 @@ private extension ProfileViewController {
         viewModel?.goToOptions(delegate: self, with: selection)
     }
     
-    
     @IBAction func deleteButtonPressed(_ sender: Any) {
         viewModel?.goToDeleteAccount()
     }

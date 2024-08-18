@@ -42,6 +42,13 @@ class CustomImageButton: UIButton {
         tapped.toggle()
     }
     
+    func deselect() {
+        if tapped {
+            self.setImage(unfilledImage, for: .normal)
+            tapped.toggle()
+        }
+    }
+    
     func setImaged(filled: UIImage?, unfilled: UIImage?) {
         self.unfilledImage = unfilled
         self.filledImage = filled

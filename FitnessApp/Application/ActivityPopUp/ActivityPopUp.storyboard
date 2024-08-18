@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Activity Pop Up View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="ActivityPopUpViewController" id="Y6W-OH-hqX" customClass="ActivityPopUpViewController" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KdO-AN-ufU">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gd5-9R-MMS">
+                                <rect key="frame" x="43" y="245" width="307" height="362.33333333333326"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="KoM-OQ-Kab">
+                                        <rect key="frame" x="11" y="13" width="285" height="329.33333333333331"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbh-Uu-dIT">
+                                                <rect key="frame" x="121.99999999999999" y="0.0" width="41.333333333333329" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="eaP-iC-3Q6">
+                                                <rect key="frame" x="11" y="50.333333333333314" width="263" height="200"/>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6i7-4W-5Mi" customClass="PlainButton" customModule="FitnessApp" customModuleProvider="target">
+                                                <rect key="frame" x="45" y="280.33333333333337" width="195" height="49"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="49" id="I4L-8I-WHw"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="6i7-4W-5Mi" secondAttribute="trailing" constant="45" id="1F3-Fp-F42"/>
+                                            <constraint firstAttribute="trailing" secondItem="eaP-iC-3Q6" secondAttribute="trailing" constant="11" id="baQ-Oc-DDY"/>
+                                            <constraint firstItem="eaP-iC-3Q6" firstAttribute="leading" secondItem="KoM-OQ-Kab" secondAttribute="leading" constant="11" id="dTx-cp-OTe"/>
+                                            <constraint firstItem="6i7-4W-5Mi" firstAttribute="leading" secondItem="KoM-OQ-Kab" secondAttribute="leading" constant="45" id="qwl-0e-iKo"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="KoM-OQ-Kab" firstAttribute="top" secondItem="gd5-9R-MMS" secondAttribute="top" constant="13" id="Gm8-zN-ZyF"/>
+                                    <constraint firstAttribute="trailing" secondItem="KoM-OQ-Kab" secondAttribute="trailing" constant="11" id="NiV-an-5Kc"/>
+                                    <constraint firstItem="KoM-OQ-Kab" firstAttribute="leading" secondItem="gd5-9R-MMS" secondAttribute="leading" constant="11" id="Pt9-sH-pL3"/>
+                                    <constraint firstAttribute="bottom" secondItem="KoM-OQ-Kab" secondAttribute="bottom" constant="20" id="o1q-pM-jAa"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <constraints>
+                            <constraint firstItem="gd5-9R-MMS" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="BOE-RD-tAD"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gd5-9R-MMS" secondAttribute="trailing" constant="43" id="Cws-51-nVT"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="KdO-AN-ufU" secondAttribute="trailing" id="IYo-V4-grC"/>
+                            <constraint firstItem="KdO-AN-ufU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="S7a-js-TiG"/>
+                            <constraint firstItem="gd5-9R-MMS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="43" id="e7z-0W-epO"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="KdO-AN-ufU" secondAttribute="bottom" id="ipD-ds-Jfm"/>
+                            <constraint firstItem="KdO-AN-ufU" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="xCz-OR-All"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="KdO-AN-ufU" id="5dt-kt-oQY"/>
+                        <outlet property="confirmButton" destination="6i7-4W-5Mi" id="CNk-Tq-NRs"/>
+                        <outlet property="contentBackgroundView" destination="gd5-9R-MMS" id="o53-4N-Mad"/>
+                        <outlet property="contentView" destination="KoM-OQ-Kab" id="44v-4c-QEC"/>
+                        <outlet property="optionsStack" destination="eaP-iC-3Q6" id="2oo-gx-x0j"/>
+                        <outlet property="titleLabel" destination="jbh-Uu-dIT" id="51i-Db-po7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="66" y="-2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

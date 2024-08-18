@@ -8,8 +8,6 @@
 import UIKit
 
 final class OptionsPopUpCoordinator: Coordinator {
-    
-    
     var navigationController: UINavigationController
     let selection: [OptionDataName]
     let delegate: OptionsPopUpDelegate

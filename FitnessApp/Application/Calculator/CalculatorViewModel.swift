@@ -7,6 +7,14 @@
 
 import Foundation
 
-final class CalculatorViewModel: BaseViewModel<CalculatorCoordinator> {
+final class CalculatorViewModel: UserDependentViewModel<CalculatorCoordinator> {
     
+    let navigationTitle = "Calculator"
+    let cells: [CalculatorType] = CalculatorType.allCases
+    let rowHeight: CGFloat = 57
+    
+    func goToCalcuator(_ type: CalculatorType) {
+        guard let user = user else { return }
+        coordinator?.navigateToCalculator(type, user.getSex())
+    }
 }
