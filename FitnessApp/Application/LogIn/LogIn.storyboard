@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SairaRoman-Regular.ttf">
+            <string>SairaRoman-Light</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Log In View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="LogInViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="LogInViewController" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sgB-Q6-SUO">
+                                <rect key="frame" x="0.0" y="103" width="430" height="715"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="2iF-IA-ro2">
+                                        <rect key="frame" x="0.0" y="0.0" width="430" height="412"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="uy0-IJ-Sbj">
+                                                <rect key="frame" x="96" y="0.0" width="238" height="97"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUPERHERO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b42-76-syO">
+                                                        <rect key="frame" x="16" y="0.0" width="206.33333333333334" height="41.666666666666664"/>
+                                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="32"/>
+                                                        <color key="textColor" name="primaryYellow"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login to your account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dd2-jP-I55">
+                                                        <rect key="frame" x="0.0" y="59" width="238" height="38"/>
+                                                        <fontDescription key="fontDescription" name="SairaRoman-Light" family="Saira" pointSize="24"/>
+                                                        <color key="textColor" name="primaryWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="97" id="yJY-Ux-ZEt"/>
+                                                </constraints>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgE-pS-dQE">
+                                                <rect key="frame" x="43" y="137" width="344" height="186"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="cAu-Me-XRd">
+                                                        <rect key="frame" x="0.0" y="0.0" width="344" height="158"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lyk-BN-hdl" customClass="CustomTextField" customModule="FitnessApp" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="344" height="71"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XfZ-fj-pFx" customClass="CustomTextField" customModule="FitnessApp" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="87" width="344" height="71"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            </view>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="158" id="8kJ-7A-pd7"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PeE-b9-xta" customClass="PlainButton" customModule="FitnessApp" customModuleProvider="target">
+                                                        <rect key="frame" x="184" y="162" width="160" height="24"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Forgot Password?"/>
+                                                        <connections>
+                                                            <action selector="forgotPasswordButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vfm-G7-gjo"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="cAu-Me-XRd" firstAttribute="top" secondItem="cgE-pS-dQE" secondAttribute="top" id="BRu-5z-esH"/>
+                                                    <constraint firstAttribute="trailing" secondItem="cAu-Me-XRd" secondAttribute="trailing" id="I2t-ou-Pkz"/>
+                                                    <constraint firstItem="PeE-b9-xta" firstAttribute="top" secondItem="cAu-Me-XRd" secondAttribute="bottom" constant="4" id="MMe-td-biG"/>
+                                                    <constraint firstAttribute="height" constant="186" id="OaW-8W-Agb"/>
+                                                    <constraint firstItem="cAu-Me-XRd" firstAttribute="leading" secondItem="cgE-pS-dQE" secondAttribute="leading" id="Zby-dg-98B"/>
+                                                    <constraint firstAttribute="bottom" secondItem="PeE-b9-xta" secondAttribute="bottom" id="aVE-T5-X74"/>
+                                                    <constraint firstAttribute="trailing" secondItem="PeE-b9-xta" secondAttribute="trailing" id="yj3-b0-iXY"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQL-9x-w9w" customClass="PlainButton" customModule="FitnessApp" customModuleProvider="target">
+                                                <rect key="frame" x="43" y="363" width="344" height="49"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="49" id="2Qg-6c-xVj"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Login"/>
+                                                <connections>
+                                                    <action selector="loginButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Daf-VU-pze"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="RQL-9x-w9w" firstAttribute="width" secondItem="cgE-pS-dQE" secondAttribute="width" id="Ok8-lc-iVt"/>
+                                            <constraint firstAttribute="trailing" secondItem="cgE-pS-dQE" secondAttribute="trailing" constant="43" id="VnE-Y3-pzt"/>
+                                            <constraint firstItem="cgE-pS-dQE" firstAttribute="leading" secondItem="2iF-IA-ro2" secondAttribute="leading" constant="43" id="eWW-2c-Cv1"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="qLB-De-0Dg" firstAttribute="height" secondItem="2iF-IA-ro2" secondAttribute="height" id="6p8-ZF-r0v"/>
+                                    <constraint firstItem="AY5-sY-BL2" firstAttribute="trailing" secondItem="2iF-IA-ro2" secondAttribute="trailing" id="DK5-2y-kGt"/>
+                                    <constraint firstItem="qLB-De-0Dg" firstAttribute="width" secondItem="2iF-IA-ro2" secondAttribute="width" id="Hi9-aR-U0b"/>
+                                    <constraint firstItem="2iF-IA-ro2" firstAttribute="leading" secondItem="AY5-sY-BL2" secondAttribute="leading" id="kG3-JY-kVF"/>
+                                    <constraint firstItem="2iF-IA-ro2" firstAttribute="top" secondItem="sgB-Q6-SUO" secondAttribute="top" id="vJ7-yx-F91"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="qLB-De-0Dg"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="AY5-sY-BL2"/>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hb1-5b-i1i">
+                                <rect key="frame" x="0.0" y="818" width="430" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgO-IJ-fVq" customClass="PlainButton" customModule="FitnessApp" customModuleProvider="target">
+                                        <rect key="frame" x="177.66666666666666" y="23.000000000000004" width="75" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="backToRegisterButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="D4s-fb-UD7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hgO-IJ-fVq" firstAttribute="centerY" secondItem="hb1-5b-i1i" secondAttribute="centerY" id="86x-OI-x46"/>
+                                    <constraint firstAttribute="height" constant="80" id="W0v-eU-rXB"/>
+                                    <constraint firstItem="hgO-IJ-fVq" firstAttribute="centerX" secondItem="hb1-5b-i1i" secondAttribute="centerX" id="gPx-xe-fcK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="hb1-5b-i1i" secondAttribute="bottom" id="4Mv-ST-tQc"/>
+                            <constraint firstItem="sgB-Q6-SUO" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="44" id="6OI-gm-dl2"/>
+                            <constraint firstItem="hb1-5b-i1i" firstAttribute="top" secondItem="sgB-Q6-SUO" secondAttribute="bottom" id="Chg-oy-23a"/>
+                            <constraint firstItem="hb1-5b-i1i" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="F3I-UN-oKj"/>
+                            <constraint firstItem="sgB-Q6-SUO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="H5J-Rw-5BT"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="sgB-Q6-SUO" secondAttribute="trailing" id="iOn-gR-nSu"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="hb1-5b-i1i" secondAttribute="trailing" id="t8O-JW-oBp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backToRegistrationButton" destination="hgO-IJ-fVq" id="n1c-Gu-Ltf"/>
+                        <outlet property="forgotPasswordButton" destination="PeE-b9-xta" id="Xax-vD-6g1"/>
+                        <outlet property="loginButton" destination="RQL-9x-w9w" id="iLS-Cx-rXa"/>
+                        <outlet property="mainTitle" destination="b42-76-syO" id="9Av-CL-4EM"/>
+                        <outlet property="subtitle" destination="dd2-jP-I55" id="oeU-Gg-FR6"/>
+                        <outletCollection property="textFields" destination="Lyk-BN-hdl" collectionClass="NSMutableArray" id="e8y-mr-vqO"/>
+                        <outletCollection property="textFields" destination="XfZ-fj-pFx" collectionClass="NSMutableArray" id="W37-AT-mmg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57" y="-2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="primaryWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primaryYellow">
+            <color red="1" green="0.85900002717971802" blue="0.3919999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

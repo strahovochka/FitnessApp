@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SairaRoman-Regular.ttf">
+            <string>SairaRoman-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="SplashViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="SplashViewController" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundWoman" translatesAutoresizingMaskIntoConstraints="NO" id="fvH-hD-832">
+                                <rect key="frame" x="0.0" y="426" width="393" height="426"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundMan" translatesAutoresizingMaskIntoConstraints="NO" id="Wzc-xu-CRw">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="426"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKq-S3-rmj" customClass="PlainButton" customModule="FitnessApp" customModuleProvider="target">
+                                <rect key="frame" x="124.66666666666669" y="621.66666666666663" width="144" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="SUPERGIRL"/>
+                                <connections>
+                                    <action selector="superGirlButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="4Lh-i6-jDo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kkh-qx-9aL" customClass="PlainButton" customModule="FitnessApp" customModuleProvider="target">
+                                <rect key="frame" x="124.66666666666669" y="196" width="144" height="34.333333333333343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="144" id="DQR-wo-teF"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="SUPERMAN"/>
+                                <connections>
+                                    <action selector="superManButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="owu-cg-ncG"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1Z-L1-aAe">
+                                <rect key="frame" x="0.0" y="330" width="393" height="192"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="choose a hero" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCS-e0-sIL">
+                                        <rect key="frame" x="145.33333333333334" y="98" width="102.66666666666666" height="25.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="SairaRoman-Regular" family="Saira" pointSize="16"/>
+                                        <color key="textColor" name="primaryWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUPERHERO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUA-uc-Jcb">
+                                        <rect key="frame" x="93.333333333333329" y="54.333333333333314" width="206.33333333333337" height="41.666666666666657"/>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="32"/>
+                                        <color key="textColor" name="primaryYellow"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="OUA-uc-Jcb" firstAttribute="centerX" secondItem="V1Z-L1-aAe" secondAttribute="centerX" id="8IF-oY-vWZ"/>
+                                    <constraint firstAttribute="centerY" secondItem="OUA-uc-Jcb" secondAttribute="bottom" id="Agw-f8-km9"/>
+                                    <constraint firstItem="uCS-e0-sIL" firstAttribute="top" secondItem="OUA-uc-Jcb" secondAttribute="bottom" constant="2" id="K3v-WO-3qs"/>
+                                    <constraint firstAttribute="height" constant="192" id="Kdl-XH-8ZT"/>
+                                    <constraint firstItem="uCS-e0-sIL" firstAttribute="centerX" secondItem="V1Z-L1-aAe" secondAttribute="centerX" id="hnu-5N-6iW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Kkh-qx-9aL" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="C0o-5y-SQM"/>
+                            <constraint firstItem="fvH-hD-832" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="M0Z-EX-c2n"/>
+                            <constraint firstItem="fvH-hD-832" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="SWo-vR-L8m"/>
+                            <constraint firstItem="aKq-S3-rmj" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="UNf-gA-MfL"/>
+                            <constraint firstItem="Kkh-qx-9aL" firstAttribute="centerY" secondItem="Wzc-xu-CRw" secondAttribute="centerY" id="UPa-Ru-N6D"/>
+                            <constraint firstItem="Wzc-xu-CRw" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="WyX-wO-ujS"/>
+                            <constraint firstItem="aKq-S3-rmj" firstAttribute="width" secondItem="Kkh-qx-9aL" secondAttribute="width" id="XMx-Qi-z39"/>
+                            <constraint firstItem="V1Z-L1-aAe" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="XNX-e3-3RR"/>
+                            <constraint firstAttribute="bottom" secondItem="fvH-hD-832" secondAttribute="bottom" id="eRK-GP-TRG"/>
+                            <constraint firstItem="V1Z-L1-aAe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="hXS-K8-rxR"/>
+                            <constraint firstItem="V1Z-L1-aAe" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="iR9-l2-AqP"/>
+                            <constraint firstItem="aKq-S3-rmj" firstAttribute="centerY" secondItem="fvH-hD-832" secondAttribute="centerY" id="pAb-35-2Lo"/>
+                            <constraint firstAttribute="centerY" secondItem="Wzc-xu-CRw" secondAttribute="bottom" id="rHh-7B-Hl6"/>
+                            <constraint firstItem="fvH-hD-832" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="u0L-0F-yOE"/>
+                            <constraint firstItem="Wzc-xu-CRw" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="umT-XV-74u"/>
+                            <constraint firstItem="Wzc-xu-CRw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="zl1-Nb-Czb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundManImage" destination="Wzc-xu-CRw" id="Cjn-GB-ZQ1"/>
+                        <outlet property="backgroundWomanImage" destination="fvH-hD-832" id="WIX-3P-rib"/>
+                        <outlet property="girlButton" destination="aKq-S3-rmj" id="ych-8i-sjZ"/>
+                        <outlet property="gradientView" destination="V1Z-L1-aAe" id="IIp-8F-UNa"/>
+                        <outlet property="mainTitle" destination="OUA-uc-Jcb" id="Rxu-QP-Oe1"/>
+                        <outlet property="manButton" destination="Kkh-qx-9aL" id="oEG-wl-rpP"/>
+                        <outlet property="subtitle" destination="uCS-e0-sIL" id="75v-hv-Pf7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="55.725190839694655" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backgroundMan" width="375" height="406"/>
+        <image name="backgroundWoman" width="375" height="406"/>
+        <namedColor name="primaryWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primaryYellow">
+            <color red="1" green="0.85900002717971802" blue="0.3919999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

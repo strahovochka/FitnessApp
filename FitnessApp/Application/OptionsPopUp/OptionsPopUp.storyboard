@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Options Pop Up View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="OptionsPopUpViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="OptionsPopUpViewController" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kPQ-3b-VKj">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="lw2-WE-lsA">
+                                <rect key="frame" x="23" y="137" width="347" height="384"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYB-C2-FEq">
+                                        <rect key="frame" x="0.0" y="0.0" width="347" height="56"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tfz-wv-ksz">
+                                                <rect key="frame" x="153" y="19" width="41.333333333333343" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="6G3-jd-ktF"/>
+                                            <constraint firstItem="Tfz-wv-ksz" firstAttribute="centerX" secondItem="KYB-C2-FEq" secondAttribute="centerX" id="dYy-lN-Wfj"/>
+                                            <constraint firstItem="Tfz-wv-ksz" firstAttribute="top" secondItem="KYB-C2-FEq" secondAttribute="top" constant="19" id="kKg-Y6-eJ9"/>
+                                        </constraints>
+                                    </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" restorationIdentifier="AdjustableTableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="38" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="b9U-H3-T0p" customClass="AdjustableTableView" customModule="FitnessApp" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="67" width="307" height="250"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="Sro-dQ-jbW"/>
+                                        </constraints>
+                                    </tableView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zd6-tt-ffF">
+                                        <rect key="frame" x="0.0" y="328" width="347" height="56"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOh-vF-YjF">
+                                                <rect key="frame" x="0.0" y="0.0" width="173.66666666666666" height="56"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <action selector="cancelButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="QP7-SR-4OX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoW-Xy-SKb">
+                                                <rect key="frame" x="173.66666666666663" y="0.0" width="173.33333333333337" height="56"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <action selector="selectButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1n9-VS-MVP"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="Xhy-Tr-sR4"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="b9U-H3-T0p" secondAttribute="trailing" constant="20" id="705-6s-QOM"/>
+                                    <constraint firstItem="b9U-H3-T0p" firstAttribute="leading" secondItem="lw2-WE-lsA" secondAttribute="leading" constant="20" id="Dqo-xV-Q2Y"/>
+                                    <constraint firstAttribute="trailing" secondItem="zd6-tt-ffF" secondAttribute="trailing" id="Dte-e7-pNr"/>
+                                    <constraint firstItem="zd6-tt-ffF" firstAttribute="leading" secondItem="lw2-WE-lsA" secondAttribute="leading" id="qgY-6H-3LB"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="lw2-WE-lsA" secondAttribute="trailing" constant="23" id="AF1-wn-SRd"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kPQ-3b-VKj" secondAttribute="trailing" id="Axq-wX-htP"/>
+                            <constraint firstItem="lw2-WE-lsA" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="SQl-x3-flP"/>
+                            <constraint firstItem="kPQ-3b-VKj" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="TVW-UZ-ukQ"/>
+                            <constraint firstItem="lw2-WE-lsA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="23" id="YEp-Qg-AXH"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="kPQ-3b-VKj" secondAttribute="bottom" id="a8O-rj-kuL"/>
+                            <constraint firstItem="kPQ-3b-VKj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="qid-2r-IJl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="kPQ-3b-VKj" id="cHE-ND-zje"/>
+                        <outlet property="cancelButton" destination="ZOh-vF-YjF" id="VTR-eu-53h"/>
+                        <outlet property="contentView" destination="lw2-WE-lsA" id="15A-LY-gYe"/>
+                        <outlet property="selectButton" destination="aoW-Xy-SKb" id="Vwh-Kx-SvR"/>
+                        <outlet property="tableView" destination="b9U-H3-T0p" id="Qqf-YR-aPS"/>
+                        <outlet property="titleLabel" destination="Tfz-wv-ksz" id="ZDd-Dc-yA2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57.251908396946561" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

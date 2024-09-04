@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SairaRoman-Regular.ttf">
+            <string>SairaRoman-Light</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Profile View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="ProfileViewController" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bQe-Ci-9gI">
+                                <rect key="frame" x="0.0" y="59" width="393" height="641"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="76" translatesAutoresizingMaskIntoConstraints="NO" id="Mqx-WX-S3G">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="523.33333333333337"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNl-RS-hid">
+                                                <rect key="frame" x="43" y="0.0" width="307" height="156"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zbg-71-bOh">
+                                                        <rect key="frame" x="91.666666666666657" y="32" width="124" height="124"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="zbg-71-bOh" secondAttribute="height" multiplier="1:1" id="5sX-YZ-JLo"/>
+                                                            <constraint firstAttribute="height" constant="124" id="Jzm-e8-YXe"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="156" id="AKy-J1-bDn"/>
+                                                    <constraint firstItem="zbg-71-bOh" firstAttribute="centerX" secondItem="bNl-RS-hid" secondAttribute="centerX" id="VDk-vB-Rge"/>
+                                                    <constraint firstAttribute="bottom" secondItem="zbg-71-bOh" secondAttribute="bottom" id="s24-eL-VMB"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Zyl-oT-8yV">
+                                                <rect key="frame" x="43" y="231.99999999999997" width="307" height="291.33333333333326"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kcS-ad-dsy">
+                                                        <rect key="frame" x="0.0" y="0.0" width="307" height="90"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOF-sl-dCR" customClass="PlainButton" customModule="FitnessApp" customModuleProvider="target">
+                                                                <rect key="frame" x="232" y="0.0" width="75" height="34.333333333333336"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                                <connections>
+                                                                    <action selector="deleteButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zq5-Am-pnS"/>
+                                                                </connections>
+                                                            </button>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fM-7B-zYA" customClass="CustomTextField" customModule="FitnessApp" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="19" width="307" height="71"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="71" id="XOn-2u-SMc"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="2fM-7B-zYA" firstAttribute="leading" secondItem="kcS-ad-dsy" secondAttribute="leading" id="5hO-0j-4Qf"/>
+                                                            <constraint firstAttribute="height" constant="90" id="FXL-YS-TDI"/>
+                                                            <constraint firstAttribute="bottom" secondItem="2fM-7B-zYA" secondAttribute="bottom" id="NTo-iU-OFz"/>
+                                                            <constraint firstItem="VOF-sl-dCR" firstAttribute="top" secondItem="kcS-ad-dsy" secondAttribute="top" id="NrN-as-N2H"/>
+                                                            <constraint firstAttribute="trailing" secondItem="VOF-sl-dCR" secondAttribute="trailing" id="uD7-L6-ySo"/>
+                                                            <constraint firstAttribute="trailing" secondItem="2fM-7B-zYA" secondAttribute="trailing" id="xq5-f6-h8e"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLV-Be-FuT">
+                                                        <rect key="frame" x="0.0" y="114" width="307" height="25.333333333333343"/>
+                                                        <fontDescription key="fontDescription" name="SairaRoman-Light" family="Saira" pointSize="16"/>
+                                                        <color key="textColor" name="secondaryGray"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="PR0-4a-rvM">
+                                                        <rect key="frame" x="0.0" y="163.33333333333331" width="307" height="128"/>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Zyl-oT-8yV" secondAttribute="trailing" constant="43" id="Ge4-sP-ddV"/>
+                                            <constraint firstAttribute="trailing" secondItem="bNl-RS-hid" secondAttribute="trailing" constant="43" id="JJ8-sO-QaQ"/>
+                                            <constraint firstItem="bNl-RS-hid" firstAttribute="leading" secondItem="Mqx-WX-S3G" secondAttribute="leading" constant="43" id="ecL-BH-04l"/>
+                                            <constraint firstItem="Zyl-oT-8yV" firstAttribute="leading" secondItem="Mqx-WX-S3G" secondAttribute="leading" constant="43" id="fNP-yc-ILs"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="gn0-On-bJg" firstAttribute="trailing" secondItem="Mqx-WX-S3G" secondAttribute="trailing" id="4gR-he-WAS"/>
+                                    <constraint firstItem="Mqx-WX-S3G" firstAttribute="leading" secondItem="gn0-On-bJg" secondAttribute="leading" id="CPC-xd-rZa"/>
+                                    <constraint firstItem="Mqx-WX-S3G" firstAttribute="top" secondItem="bQe-Ci-9gI" secondAttribute="top" id="F7R-6S-t1D"/>
+                                    <constraint firstItem="Mqx-WX-S3G" firstAttribute="height" secondItem="0Dn-zb-Uol" secondAttribute="height" id="QdJ-cw-2q8"/>
+                                    <constraint firstItem="Mqx-WX-S3G" firstAttribute="width" secondItem="0Dn-zb-Uol" secondAttribute="width" id="tB5-uD-LWo"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="0Dn-zb-Uol"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="gn0-On-bJg"/>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rNl-0a-MjA">
+                                <rect key="frame" x="0.0" y="700" width="393" height="118"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4x-a7-Rgy" customClass="PlainButton" customModule="FitnessApp" customModuleProvider="target">
+                                        <rect key="frame" x="43" y="21" width="307" height="49"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49" id="5mh-iN-VO8"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                        <connections>
+                                            <action selector="addOptionsButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ShK-E2-0n2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="O4x-a7-Rgy" firstAttribute="top" secondItem="rNl-0a-MjA" secondAttribute="top" constant="21" id="7F0-CF-ftF"/>
+                                    <constraint firstItem="O4x-a7-Rgy" firstAttribute="leading" secondItem="rNl-0a-MjA" secondAttribute="leading" constant="43" id="7fl-h4-1M4"/>
+                                    <constraint firstAttribute="height" constant="118" id="OiA-6D-EZa"/>
+                                    <constraint firstAttribute="trailing" secondItem="O4x-a7-Rgy" secondAttribute="trailing" constant="43" id="uhC-Fg-tHI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <constraints>
+                            <constraint firstItem="rNl-0a-MjA" firstAttribute="top" secondItem="bQe-Ci-9gI" secondAttribute="bottom" id="Fhm-nC-ZPD"/>
+                            <constraint firstItem="rNl-0a-MjA" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="LJu-7s-zZJ"/>
+                            <constraint firstItem="rNl-0a-MjA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="MDY-Wy-aHv"/>
+                            <constraint firstItem="bQe-Ci-9gI" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="QIQ-S2-xvz"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bQe-Ci-9gI" secondAttribute="trailing" id="gSO-Gt-OZi"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rNl-0a-MjA" secondAttribute="trailing" id="hmY-bl-V9d"/>
+                            <constraint firstItem="bQe-Ci-9gI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="nCO-SS-vyx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addOptionsButton" destination="O4x-a7-Rgy" id="3QW-AL-F5T"/>
+                        <outlet property="deleteAccountButton" destination="VOF-sl-dCR" id="jta-pC-IVD"/>
+                        <outlet property="explanationTextLabel" destination="GLV-Be-FuT" id="8qf-5W-dUD"/>
+                        <outlet property="nameTextField" destination="2fM-7B-zYA" id="mWU-xx-jv5"/>
+                        <outlet property="optionsStackView" destination="PR0-4a-rvM" id="4aT-rL-p8h"/>
+                        <outlet property="profileImageView" destination="zbg-71-bOh" id="uLT-jq-92V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57" y="-2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="secondaryGray">
+            <color red="0.74900001287460327" green="0.74900001287460327" blue="0.74900001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

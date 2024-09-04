@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Delete Account View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="DeleteAccountViewController" id="Y6W-OH-hqX" customClass="DeleteAccountViewController" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="gZq-AX-o8a">
+                                <rect key="frame" x="43" y="381" width="307" height="115.33333333333331"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tV4-xT-OaU" customClass="CustomTextField" customModule="FitnessApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="307" height="71"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="71" id="0mo-Fe-loW"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbF-t2-rKK">
+                                        <rect key="frame" x="0.0" y="95" width="307" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yse-af-v2e" customClass="PlainButton" customModule="FitnessApp" customModuleProvider="target">
+                                <rect key="frame" x="43" y="721" width="307" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="WJq-uc-EPr"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <action selector="deleteButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="BoA-4z-uZT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yse-af-v2e" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="AWy-ro-snH"/>
+                            <constraint firstItem="gZq-AX-o8a" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="43" id="Dpp-Gg-waO"/>
+                            <constraint firstItem="yse-af-v2e" firstAttribute="width" secondItem="gZq-AX-o8a" secondAttribute="width" id="HPV-uy-xMA"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gZq-AX-o8a" secondAttribute="trailing" constant="43" id="IQd-Nh-zi0"/>
+                            <constraint firstItem="gZq-AX-o8a" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="SXV-Ew-0p5"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="yse-af-v2e" secondAttribute="bottom" constant="48" id="Z7P-GM-76i"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="deleteButton" destination="yse-af-v2e" id="W5w-rc-Rh1"/>
+                        <outlet property="explanationLabel" destination="HbF-t2-rKK" id="tpo-hy-EM2"/>
+                        <outlet property="textField" destination="tV4-xT-OaU" id="xcc-Md-lha"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="48" y="-2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
