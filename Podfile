@@ -7,8 +7,17 @@ platform :ios, '15.0'
   use_frameworks!
 
   # Pods for FitnessApp
-pod 'FirebaseAuth'
-pod 'FirebaseFirestore'
-pod 'FirebaseCore'
+  pod 'FirebaseAuth'
+  pod 'FirebaseFirestore'
+  pod 'FirebaseCore'
+  
+  target 'FitTrackTests' do
+      inherit! :search_paths
+      # Pods for testing
+    end
+
+    target 'FitTrackUITests' do
+      # Pods for testing
+    end
 
 end
