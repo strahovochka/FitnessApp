@@ -7,10 +7,16 @@
 
 import UIKit
 
+protocol CalculatorInputViewDelegate: AnyObject {
+    func didEndEditing(_ inputView: CalculatorInputView)
+}
+
 final class CalculatorInputView: UIView {
     @IBOutlet weak private var inputNameLabel: UILabel!
     @IBOutlet weak private var textField: CustomTextField!
     @IBOutlet weak private var metricLabel: UILabel!
+    weak var delegate: CalculatorInputViewDelegate?
+    weak var nextInput: CalculatorInputView?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,6 +47,10 @@ final class CalculatorInputView: UIView {
     func isError() -> Bool {
         return textField.getState() == .error
     }
+    
+    func becomeResponder() {
+        textField.becomeResponder()
+    }
 }
 
 private extension CalculatorInputView {
@@ -62,8 +72,15 @@ private extension CalculatorInputView {
         textField.setLabelHidden(true)
         textField.placeholderText = ""
         textField.keyboardType = .decimalPad
+        textField.setDelegate(self)
         
         metricLabel.font = .systemFont(ofSize: 18, weight: .medium)
         metricLabel.textColor = .secondaryGray
+    }
+}
+
+extension CalculatorInputView: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        nextInput?.becomeResponder()
     }
 }
