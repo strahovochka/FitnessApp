@@ -131,13 +131,19 @@ private extension DetailedCalculatorViewController {
         guard let viewModel = viewModel else { return }
         inputsStackCiew.subviews.forEach { $0.removeFromSuperview() }
         let selectedInputs = viewModel.getSelectedInputs()
-        selectedInputs.forEach { (input, value) in
-            let view = input.createView()
-            view.config(with: input, value: value, delegate: viewModel)
+        var prev: CalculatorInputView? = nil
+        selectedInputs.enumerated().forEach { index, selected in
+            let view = selected.input.createView()
+            view.config(with: selected.input, value: selected.value, delegate: viewModel)
+            if index != 0 {
+                prev?.nextInput = view
+            }
+            prev = view
             view.translatesAutoresizingMaskIntoConstraints = false
             view.heightAnchor.constraint(equalToConstant: 42).isActive = true
             inputsStackCiew.addArrangedSubview(view)
         }
+        prev = nil
     }
     
     func updateActivityButton() {

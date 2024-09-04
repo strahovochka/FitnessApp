@@ -160,6 +160,10 @@ final class CustomTextField: UIView {
         textField.text
     }
     
+    func setDelegate(_ delegate: UITextFieldDelegate) {
+        textField.delegate = delegate
+    }
+    
     func setType(_ type: TextFieldType) {
         labelTitle = type.title
         placeholderText = type.placeholderText
@@ -169,6 +173,10 @@ final class CustomTextField: UIView {
     
     func setLabelHidden(_ hidden: Bool) {
         self.label.isHidden = hidden
+    }
+    
+    func becomeResponder() {
+        textField.becomeFirstResponder()
     }
 }
 
